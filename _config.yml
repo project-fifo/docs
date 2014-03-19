@@ -1,17 +1,5 @@
-#markdown: enhanced_kramdown
-markdown: kramdown
+markdown: redcarpet
 pygments: true
-save: false
-baseurl: /
-source: ./
-permalink: /:title
 
-kramdown:
-  use_coderay: false
-
-# Site globals used throughout docs.
-#project: Project FiFo
-#version: 0.4.3
-#github: project-fifo/docs
-#google_group: ""
-#ga_tracking_id: 
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]

@@ -21,4 +21,6 @@ STATE          STIME    FMRI
 online         Dec_31   svc:/network/chunter:default
 ```
 
-Once the service is running FiFO will auto-discover the node and after about a minute the SmartOS node will appear in the FiFO web browser to be managed. "chunter" will run by default on the admin NICs IP address. Chunter's configuration files reside in `/opt/chunter/etc`
+Once the service is running FiFO will auto-discover the node and after about a minute the SmartOS node will appear in the FiFO web browser to be managed.
+
+Chunter will try to guess the systems IP, it will look for a `fifo0` vnic, if this doesn't exit it will take the ip of the `admin` nic. If chunter registered with a wrong IP it needs to be changed in the config file, and the hypervisor reregistered. This can be done by [removing it](/sniffle/administration.html) and restarting chunter.

@@ -1,17 +1,15 @@
 markdown: enhanced_kramdown
 pygments: true
-lsi: false
-safe: false
 baseurl: /
+source: /
 permalink: /:title
 
 kramdown:
   use_coderay: false
 
 # Site globals used throughout docs.
-project: Project FiFo
-version: 0.4.3
-github: project-fifo/docs
-google_group: ""
-ga_tracking_id: 
-
+#project: Project FiFo
+#version: 0.4.3
+#github: project-fifo/docs
+#google_group: ""
+#ga_tracking_id: 

@@ -1,4 +1,5 @@
-markdown: enhanced_kramdown
+#markdown: enhanced_kramdown
+markdown: kramdown
 pygments: true
 save: false
 baseurl: /

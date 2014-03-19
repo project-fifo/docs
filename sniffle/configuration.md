@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Sniffle installation
+title: Sniffle configuration
 ---
 # Configuration file
 Sniffle's configuration file is located in `/opt/local/sniffle/etc/sniffle.conf` it is automatically generated on the first install and not overwritten on updates. Non the less the newst version of the file is always located in `/opt/local/sniffle/etc/sniffle.conf.example`.

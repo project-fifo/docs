@@ -4,6 +4,31 @@ title: Sniffle administration
 ---
 The sniffle admin command is `/opt/local/fifo-sniffle/bin/sniffle-admin` but many commands can also be accessed via `fifoadm` command. Please keep in mind that `fifoadm` is not designed as a every day command but only as a last fallback when commands are not available through the API.
 
+
+## General managemnet
+Sniffle uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. Sniffle can be enabled, disabled and restaerted via: `svcadm enable sniffle`, `svcadm disable sniffle` and `svcadm restart sniffle`
+
+### updating
+Sniffle can be updated by three simple steps.
+
+#### Installing the new package
+
+```bash
+pkgin -fy update
+pkgin -fy install fifo-sniffle
+```
+
+#### updating the config
+After the newest package is installed the config file should be checked for changes and eddited if needed. The `.example` file will always contain the newest version of the config `diff` is a handy tool to see if some settings need to be added to the existing file.
+
+```bash
+diff /opt/loca/fifo-sniffle/etc/sniffle.conf /opt/loca/fifo-sniffle/etc/sniffle.conf.example
+vi /opt/loca/fifo-sniffle/etc/sniffle.conf
+```
+
+#### restarting the service
+After the config is updated the service needs to be restarted, sniffle is running clustered and has more then `N` it is often possible to do a rolling update by restarting one by one.
+
 ## Cluster management
 
 ### sniffle-admin join `<nodename>@<ip>`

@@ -3,6 +3,8 @@ layout: default
 title: Project-FiFo configuration
 ---
 
+
+## Creating the Zone
 From the GZ (Global Zone) we install the base dataset we are going to use for our FiFo Zone and confirm its is installed:
 
 ```bash
@@ -52,6 +54,9 @@ vi setupfifo.json
 vmadm create -f setupfifo.json
 ```
 
+
+## Installing the services
+
 We now zlogin to our newly created FiFo zone and proceed with adding the FiFo package repository and then installing the FiFo packages
 
 ```bash
@@ -60,6 +65,14 @@ echo "http://release.project-fifo.net/pkg/dev/" >>/opt/local/etc/pkgin/repositor
 pkgin -fy up
 pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles
 cp /opt/local/fifo-jingles/config/nginx.conf /opt/local/etc/nginx/nginx.conf
+```
+
+## Configuration
+If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new `*.conf.example` files are added. The generated files contain some defaults it non the less adviced to take some time to configure [wiggle](/wiggle/configuration.html), [sniffle](/sniffle/configuration.html), [snarl](/snarl/configuration.html) and [howl](/howl/configuration.html).
+
+
+## Startup
+```bash
 svcadm enable epmd
 svcadm enable snarl
 svcadm enable sniffle
@@ -69,6 +82,7 @@ svcadm enable nginx
 svcs epmd snarl sniffle howl wiggle nginx
 ```
 
+## Initial administrative tasks
 The last step is to create an admin user with full permissions so we can login. The important part is to ensure that a permission called `...` is added, which assigns "ALL usage rights" to your admin user.
 
 ```

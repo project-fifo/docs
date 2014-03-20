@@ -1,5 +1,7 @@
 ---
 layout: default
+category: howl
+section: howl/configuration
 title: Howl configuration
 ---
 # Configuration file

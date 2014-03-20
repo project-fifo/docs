@@ -1,5 +1,7 @@
 ---
 layout: default
+section: chunter
+section: chunter/administration
 title: Chunter administration
 ---
 

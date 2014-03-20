@@ -1,5 +1,7 @@
 ---
 layout: default
+category: snarl
+section: snarl/configuration
 title: Snarl configuration
 ---
 # Configuration file

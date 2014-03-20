@@ -1,5 +1,7 @@
 ---
 layout: default
+category: sniffle
+section: sniffle/configuration
 title: Sniffle configuration
 ---
 # Configuration file

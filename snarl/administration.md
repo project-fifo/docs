@@ -1,5 +1,7 @@
 ---
 layout: default
+category: snarl
+section: snarl/administration
 title: snarl administration
 ---
 The snarl admin command is `/opt/local/fifo-snarl/bin/snarl-admin` but many commands can also be accessed via `fifoadm` command. Please keep in mind that `fifoadm` is not designed as a every day command but only as a last fallback when commands are not available through the API.

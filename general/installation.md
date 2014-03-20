@@ -1,5 +1,7 @@
 ---
 layout: default
+category: general
+section: general/installation
 title: Project-FiFo configuration
 ---
 

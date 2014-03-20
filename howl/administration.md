@@ -1,5 +1,7 @@
 ---
 layout: default
+category: howl
+section: howl/administration
 title: howl administration
 ---
 The howl admin command is `/opt/local/fifo-howl/bin/howl-admin`.

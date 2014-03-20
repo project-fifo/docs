@@ -1,5 +1,7 @@
 ---
 layout: default
+category: wiggle
+section: wiggle/administration
 title: wiggle administration
 ---
 The wiggle admin command is `/opt/local/fifo-wiggle/bin/wiggle-admin`.

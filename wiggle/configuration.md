@@ -1,5 +1,7 @@
 ---
 layout: default
+category: wiggle
+section: wiggle/configuration
 title: Wiggle configuration
 ---
 # Configuration file

@@ -1,5 +1,7 @@
 ---
 layout: default
+category: chunter
+section: chunter/installation
 title: Chunter installation
 ---
 

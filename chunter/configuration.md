@@ -1,5 +1,7 @@
 ---
 layout: default
+category: chunter
+section: chunter/configuration
 title: Chunter configuration
 ---
 # Configuration file

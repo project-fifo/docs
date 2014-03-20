@@ -10,7 +10,7 @@
     <link href="/assets/css/bootstrap.css" rel="stylesheet">
     <style>
       body { padding-top: 60px; /* 60px to make the container go all the way
-      to the bottom of the topbar */ }
+      to the bottom of the topbar */ };
     </style>
     <link href="https://github.global.ssl.fastly.net/assets/github-9c0ec1654aa17ac751c2c3274ab0aa3cb4cc75ea.css" media="all" rel="stylesheet" type="text/css" />
     <link href="https://github.global.ssl.fastly.net/assets/github2-43c85266b41a94cc6a086312256ffbb8b0340a48.css" media="all" rel="stylesheet" type="text/css" />
@@ -27,10 +27,6 @@
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
-
-
-    <style>
-    </style>
   </head>
   <body>
     <div class="navbar navbar-fixed-top">
@@ -49,24 +45,48 @@
       <div class="row">
         <div class="span3">
           <ul id="menu" class="nav nav-list" data-spy="affix">
-            <li class="nav-header">General</li>
-            <li data-section="general/installation"><a href="/general/installation.html">Installation</a></li>
-            <li class="nav-header">Sniffle</li>
-            <li data-section="sniffle/configuration"><a href="/sniffle/configuration.html">Configuration</a></li>
-            <li data-section="sniffle/administration"><a href="/sniffle/administration.html">Administration</a></li>
-            <li class="nav-header">Snarl</li>
-            <li data-section="snarl/configuration"><a href="/snarl/configuration.html">Configuration</a></li>
-            <li data-section="snarl/administration"><a href="/snarl/administration.html">Administration</a></li>
-            <li class="nav-header">Howl</li>
-            <li data-section="howl/configuration"><a href="/howl/configuration.html">Configuration</a></li>
-            <li data-section="howl/administration"><a href="/howl/administration.html">Administration</a></li>
-            <li class="nav-header">Wiggle</li>
-            <li data-section="wiggle/configuration"><a href="/wiggle/configuration.html">Configuration</a></li>
-            <li data-section="wiggle/administration"><a href="/wiggle/administration.html">Administration</a></li>
-            <li class="nav-header">Chunter</li>
-            <li data-section="chunter/installation"><a href="/chunter/installation.html">Installation</a></li>
-            <li data-section="chunter/configuration"><a href="/chunter/configuration.html">Configuration</a></li>
-            <li data-section="chunter/administration"><a href="/chunter/administration.html">Administration</a></li>
+            <li class="nav-header" onclick="select('general')">General</li>
+            <li data-section="general/installation" data-category="general">
+              <a href="/general/installation.html">Installation</a>
+            </li>
+            <li class="nav-header" onclick="select('sniffle')">Sniffle</li>
+            <li data-section="sniffle/configuration" data-category="sniffle">
+              <a href="/sniffle/configuration.html">Configuration</a>
+            </li>
+            <li data-section="sniffle/administration" data-category="sniffle">
+              <a href="/sniffle/administration.html">Administration</a>
+            </li>
+            <li class="nav-header" onclick="select('snarl')">Snarl</li>
+            <li data-section="snarl/configuration" data-category="snarl">
+              <a href="/snarl/configuration.html">Configuration</a>
+            </li>
+            <li data-section="snarl/administration" data-category="snarl">
+              <a href="/snarl/administration.html">Administration</a>
+            </li>
+            <li class="nav-header" onclick="select('howl')">Howl</li>
+            <li data-section="howl/configuration" data-category="howl">
+              <a href="/howl/configuration.html">Configuration</a>
+            </li>
+            <li data-section="howl/administration" data-category="howl">
+              <a href="/howl/administration.html">Administration</a>
+            </li>
+            <li class="nav-header" onclick="select('wiggle')">Wiggle</li>
+            <li data-section="wiggle/configuration" data-category="wiggle">
+              <a href="/wiggle/configuration.html">Configuration</a>
+            </li>
+            <li data-section="wiggle/administration" data-category="wiggle">
+              <a href="/wiggle/administration.html">Administration</a>
+            </li>
+            <li class="nav-header" onclick="select('chunter')">Chunter</li>
+            <li data-section="chunter/installation" data-category="chunter">
+              <a href="/chunter/installation.html">Installation</a>
+            </li>
+            <li data-section="chunter/configuration" data-category="chunter">
+              <a href="/chunter/configuration.html">Configuration</a>
+            </li>
+            <li data-section="chunter/administration" data-category="chunter">
+              <a href="/chunter/administration.html">Administration</a>
+            </li>
           </ul>
         </div>
         <div class="span9">
@@ -85,6 +105,15 @@
 
     <script>
       $('#menu [data-section="{{page.section}}"]').addClass('active');
+      function select(cat) {
+        $("#menu li").filter(function(i,e){
+          return $(e).attr("data-category") && 
+            $(e).attr("data-category") != cat &&
+            $(e).attr("data-category") != "{{page.category}}";
+        }).hide();
+        $('#menu [data-category="' + cat + '"]').show();
+      }
+      select("{{page.category}}");
     </script>
 
     <script type="text/javascript">

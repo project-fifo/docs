@@ -13,7 +13,11 @@ cd /opt
 curl -O http://release.project-fifo.net/chunter/dev/chunter-latest.gz
 gunzip chunter-latest.gz
 sh chunter-latest
+```
+
 Once services have been installed, we then enable the service and ensure that it is running
+
+```bash
 svcadm enable epmd chunter
 svcs chunter
 ```

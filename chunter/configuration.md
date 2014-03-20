@@ -12,6 +12,9 @@ The configuration file is documented inline but we'll go over go over some more 
 
 ## Genereal
 
+### `ip`
+The IP and Port reported to FiFo, this is normally auto detected ut in some cases needs to be changed to the right IP.
+
 ### `reserved_memory`
 The amount of memory reserved on the hypervisor that can not be given out to VM's, this can be very helpful to ensure some memory is left for the global zone and ARC.
 

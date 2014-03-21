@@ -46,6 +46,9 @@
         <div class="span3">
           <ul id="menu" class="nav nav-list" data-spy="affix">
             <li class="nav-header" onclick="select('general')">General</li>
+            <li data-section="general/welcome" data-category="general">
+              <a href="/">Welcome</a>
+            </li>
             <li data-section="general/installation" data-category="general">
               <a href="/general/installation.html">Installation</a>
             </li>
@@ -107,7 +110,7 @@
       $('#menu [data-section="{{page.section}}"]').addClass('active');
       function select(cat) {
         $("#menu li").filter(function(i,e){
-          return $(e).attr("data-category") && 
+          return $(e).attr("data-category") &&
             $(e).attr("data-category") != cat &&
             $(e).attr("data-category") != "{{page.category}}";
         }).hide();

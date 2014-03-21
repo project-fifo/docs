@@ -1,5 +1,7 @@
 ---
 layout: default
+category: general
+section: general/welcome
 title: Welcome
 ---
 

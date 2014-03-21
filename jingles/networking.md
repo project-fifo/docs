@@ -33,7 +33,6 @@ The default network list view shows the networks that are currently configured a
 
 To create a new network click on the "add network" button: ![](/assets/img/jingles/ipranges-add.png)
 
-
 ![](/assets/img/jingles/ipranges02.png)
 
 Populate the fields with network information relevant to the network you want to setup. The system will only allow you to select a valid network "Tag" that does in fact exist on one or more hypervisor /compute nodes.

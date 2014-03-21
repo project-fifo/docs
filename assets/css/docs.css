@@ -3,6 +3,47 @@ body {
     font-family: 'ProximaNova-Regular', Helvetica, sans-serif;
 }
 
+p.info {
+    border-left: 5px solid #428bca;
+    background: #5bc0de;
+    color: white;
+    padding: 5px;
+    padding-left: 15px;
+}
+
+.bs-callout {
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+}
+
+.bs-callout-warning {
+    background-color: #fcf8f2;
+    border-color: #f0ad4e;
+}
+
+.bs-callout-info {
+    background-color: #f4f8fa;
+    border-color: #5bc0de;
+}
+
+.bs-callout-danger {
+    background-color: #fdf7f7;
+    border-color: #d9534f;
+}
+
+.bs-callout-warning h4 {
+    color: #f0ad4e;
+}
+
+.bs-callout-info h4 {
+    color: #5bc0de;
+}
+
+.bs-callout-danger h4 {
+    color: #d9534f;
+}
+
 .navbar-inner {
     padding: 5px 0px;
     background-image: none;

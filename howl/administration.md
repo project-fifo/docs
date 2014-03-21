@@ -2,10 +2,10 @@
 layout: default
 category: howl
 section: howl/administration
-title: howl administration
+title: Howl Administration
 ---
+# Howl Administration
 The howl admin command is `/opt/local/fifo-howl/bin/howl-admin`.
-
 
 ## General managemnet
 howl uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. howl can be enabled, disabled and restaerted via: `svcadm enable howl`, `svcadm disable howl` and `svcadm restart howl`
@@ -31,7 +31,7 @@ vi /opt/loca/fifo-howl/etc/howl.conf
 #### restarting the service
 After the config is updated the service needs to be restarted, howl is running clustered and has more then `N` it is often possible to do a rolling update by restarting one by one.
 
-## Cluster management
+## Cluster management<a id="cluster"></a>
 
 ### howl-admin join `<nodename>@<ip>`
 Joins a howl cluster, please note that all data on the joining (not the joined) node is deleted.

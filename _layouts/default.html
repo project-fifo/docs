@@ -52,6 +52,9 @@
             <li data-section="general/installation" data-category="general">
               <a href="/general/installation.html">Installation</a>
             </li>
+            <li data-section="general/clustering" data-category="general">
+              <a href="/general/clustering.html">Clustering</a>
+            </li>
             <li class="nav-header" onclick="select('sniffle')">Sniffle</li>
             <li data-section="sniffle/configuration" data-category="sniffle">
               <a href="/sniffle/configuration.html">Configuration</a>
@@ -109,12 +112,12 @@
     <script>
       $('#menu [data-section="{{page.section}}"]').addClass('active');
       function select(cat) {
-        $("#menu li").filter(function(i,e){
-          return $(e).attr("data-category") &&
-            $(e).attr("data-category") != cat &&
-            $(e).attr("data-category") != "{{page.category}}";
-        }).hide();
-        $('#menu [data-category="' + cat + '"]').show();
+      $("#menu li").filter(function(i,e){
+      return $(e).attr("data-category") &&
+      $(e).attr("data-category") != cat &&
+      $(e).attr("data-category") != "{{page.category}}";
+      }).hide();
+      $('#menu [data-category="' + cat + '"]').show();
       }
       select("{{page.category}}");
     </script>

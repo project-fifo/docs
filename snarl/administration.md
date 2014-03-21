@@ -2,8 +2,9 @@
 layout: default
 category: snarl
 section: snarl/administration
-title: snarl administration
+title: Snarl Administration
 ---
+# Snarl Administration
 The snarl admin command is `/opt/local/fifo-snarl/bin/snarl-admin` but many commands can also be accessed via `fifoadm` command. Please keep in mind that `fifoadm` is not designed as a every day command but only as a last fallback when commands are not available through the API.
 
 
@@ -31,7 +32,7 @@ vi /opt/loca/fifo-snarl/etc/snarl.conf
 #### restarting the service
 After the config is updated the service needs to be restarted, snarl is running clustered and has more then `N` it is often possible to do a rolling update by restarting one by one.
 
-## Cluster management
+## Cluster management<a id="cluster"></a>
 
 ### snarl-admin join `<nodename>@<ip>`
 Joins a snarl cluster, please note that all data on the joining (not the joined) node is deleted.
@@ -73,14 +74,12 @@ All nodes are up and reachable
 ### snarl-admin status
 A simple command that returns the overall cluster status, it returns a propper return code and is useful for scripted rolling updates.
 
-
 ### snarl-admin aae-status
 
 Gives a detailed status on the AAE status of the system.
 
 ## Log Files
 FiFo uses extensive logging to make debugging issue and understanding behaviour. The log files are located in `/var/log/snarl/`. There are multiple log files with various severities.
-
 
 ### debug.log
 By default the debug log is disabled, it is very verbose and should not be enabled in production systems to enable it uncomment the followig line in the `snarl.conf`
@@ -94,29 +93,6 @@ This file contains logs of the level info and above, usually all interesting log
 
 ### error.log
 This files contains errors, it usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavuiour so sporadic entries might just be fine.
-
-
-
-## Global configuration
-In addition to the config files that apply on a per node level there are global configurations that can be changed from one system and are applied globally. Unless otherwise noted all those settings can be changed during runtime.
-
-### snarl-admin config show
-Shows a list of all settings in the global configuration.
-
-### snarl-admin config set `key` `value`
-Sets a global config value please see the followign sections for valid settings.
-
-### defaults.users.inital_group
-If this is set every user created gets placed into the group given. The value must be the UUID of the group.
-
-### defaults.users.inital_org
-If this is set every user created gets placed into the organisation given. The value must be the UUID of the organisation.
-
-### yubico.api.client_id
-When two factor authenticaiton is wanted this mist be set to the yubico API client ID.
-
-### yubico.api.secret_key
-When two factor authenticaiton is wanted this mist be set to the yubico API secret key.
 
 ## General tasks
 

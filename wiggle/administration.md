@@ -2,10 +2,10 @@
 layout: default
 category: wiggle
 section: wiggle/administration
-title: wiggle administration
+title: Wiggle Administration
 ---
+# Wiggle Administration
 The wiggle admin command is `/opt/local/fifo-wiggle/bin/wiggle-admin`.
-
 
 ## General managemnet
 wiggle uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. wiggle can be enabled, disabled and restaerted via: `svcadm enable wiggle`, `svcadm disable wiggle` and `svcadm restart wiggle`

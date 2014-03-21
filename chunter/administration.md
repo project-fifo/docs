@@ -1,9 +1,10 @@
 ---
 layout: default
-section: chunter
+category: chunter
 section: chunter/administration
-title: Chunter administration
+title: Chunter Administration
 ---
+# Chunter Administration
 
 ## General managemnet
 chunter uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. chunter can be enabled, disabled and restaerted via: `svcadm enable chunter`, `svcadm disable chunter` and `svcadm restart chunter`

@@ -2,10 +2,10 @@
 layout: default
 category: chunter
 section: chunter/installation
-title: Chunter installation
+title: Chunter Installation
 ---
+# Chunter Installation
 
-Chunter
 Please read the Chunter section in the current build section above for basic information on chunter and some helpful notes before continuing.
 
 To install "chunter" we do the following:

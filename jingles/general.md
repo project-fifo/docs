@@ -44,19 +44,20 @@ The CloudView page shows a graphical realtime representation of your entire clou
  - Distance :  The display distance of each vm from its central node.
  - Charge : The distance between each SmartOS server node.
  - Elasticity :  How elastic (wiggly) each vm's connection is in relation to its SmartOS node.
-2. CloudView icons and symbols 
-  1. ![Hypervisor](/assets/img/jingles/cloudview02.png)
-     1. Hovering your mouse pointer over a individual compute node will trigger a pop up window showing you information for that specific node.
-     2. Clicking on a node will take you to the hypervisors details page for that specific node.
-     3. Each compute node is represented by a "server graphic" and the total amount of physical ram in that node is overlaid on the graphic.
-     4. A  "memory bar" is shown under each node and shows how much of the total ram in each node is allocated to virtual machines (used, shown in yellow)
-     5. The name of the node is displayed under the "memory bar"
-  2. ![VM](/assets/img/jingles/cloudview03.png)
-     1. Hovering your mouse pointer over a individual machine will trigger a pop up window showing you information for that specific machine.
-     2. Clicking on a individual machine will take you to the machine details page for that specific machine.
-     3. A image icon is show for each type of machine. In the above example a SmartOS image is shown for a Joyent branded zone machine and a Penguin image is shown for a Linux KVM machine.
-     4. Each machine is attached to its host via a dashed connector line. This line will darken and flash bold in realtime representing the network throughput that machine is currently experiencing.
-     5. Machines that are heavily utilising their allocated cpu will be surrounded by a red circle. The more cpu being consumed, the darker the circle will become.
+
+2. CloudView icons and symbols
+ - ![Hypervisor](/assets/img/jingles/cloudview02.png)
+     - Hovering your mouse pointer over a individual compute node will trigger a pop up window showing you information for that specific node.
+     - Clicking on a node will take you to the hypervisors details page for that specific node.
+     - Each compute node is represented by a "server graphic" and the total amount of physical ram in that node is overlaid on the graphic.
+     - A  "memory bar" is shown under each node and shows how much of the total ram in each node is allocated to virtual machines (used, shown in yellow)
+     - The name of the node is displayed under the "memory bar"
+ - ![VM](/assets/img/jingles/cloudview03.png)
+     - Hovering your mouse pointer over a individual machine will trigger a pop up window showing you information for that specific machine.
+     - Clicking on a individual machine will take you to the machine details page for that specific machine.
+     - A image icon is show for each type of machine. In the above example a SmartOS image is shown for a Joyent branded zone machine and a Penguin image is shown for a Linux KVM machine.
+     - Each machine is attached to its host via a dashed connector line. This line will darken and flash bold in realtime representing the network throughput that machine is currently experiencing.
+     - Machines that are heavily utilising their allocated cpu will be surrounded by a red circle. The more cpu being consumed, the darker the circle will become.
 
 ## About
 
@@ -69,7 +70,7 @@ The about page contains useful or relevant information such as package versions,
  - bug tracker : The projects issue tracker where you can log problem tickets. http://jira.project-fifo.net/
  - mailing list : Link to projects google groups mailing list.
  - github : The projects source code repository. https://github.com/project-fifo
- - irc : This launches an additional browser window that connects you to the #project-fifo official irc channel on freenode.
+  - irc : This launches an additional browser window that connects you to the #project-fifo official irc channel on freenode.
  - follow us : A link to follow the projects official twitter feed. @project_fifo
 2. Versions : Shows the current versions of all the FiFo services and indicates whether new package updates are available.
 2. Messages : A message section that shows relevent or pertinent messages related to your installation.

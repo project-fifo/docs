@@ -27,7 +27,7 @@ When used together with [LeoFS](https://leofs.org) or other S3 compatible system
 #### `s3_upload_chunk_size`
 Size of the chunks for uploading to the S3 storage.
 
-#### `paralell_uploads`
+#### `parallel_uploads`
 Initial number of paralel uploads to S3.
 
 #### `max_paralell_uploads`

@@ -115,6 +115,8 @@ p.info {
     color: #111;
     font-weight: normal;
     letter-spacing: 2px;
+    cursor: pointer;
+    cursor: hand;
 }
 #menu li a {
     padding-top: 8px;

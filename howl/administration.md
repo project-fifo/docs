@@ -5,13 +5,13 @@ section: howl/administration
 title: Howl Administration
 ---
 # Howl Administration
-The howl admin command is `/opt/local/fifo-howl/bin/howl-admin`.
+The Howl admin command is `/opt/local/fifo-howl/bin/howl-admin`.
 
 ## General managemnet
-howl uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. howl can be enabled, disabled and restaerted via: `svcadm enable howl`, `svcadm disable howl` and `svcadm restart howl`
+Howl uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. howl can be enabled, disabled and restaerted via: `svcadm enable howl`, `svcadm disable howl` and `svcadm restart howl`
 
-### updating
-howl can be updated by three simple steps.
+### Updating
+Howl can be updated by three simple steps.
 
 #### Installing the new package
 
@@ -20,7 +20,7 @@ pkgin -fy update
 pkgin -fy install fifo-howl
 ```
 
-#### updating the config
+#### Updating the config
 After the newest package is installed the config file should be checked for changes and eddited if needed. The `.example` file will always contain the newest version of the config `diff` is a handy tool to see if some settings need to be added to the existing file.
 
 ```bash
@@ -28,7 +28,7 @@ diff /opt/loca/fifo-howl/etc/howl.conf /opt/loca/fifo-howl/etc/howl.conf.example
 vi /opt/loca/fifo-howl/etc/howl.conf
 ```
 
-#### restarting the service
+#### Restarting the service
 After the config is updated the service needs to be restarted, howl is running clustered and has more then `N` it is often possible to do a rolling update by restarting one by one.
 
 ## Cluster management<a id="cluster"></a>

@@ -9,10 +9,10 @@ The snarl admin command is `/opt/local/fifo-snarl/bin/snarl-admin` but many comm
 
 
 ## General managemnet
-snarl uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. snarl can be enabled, disabled and restaerted via: `svcadm enable snarl`, `svcadm disable snarl` and `svcadm restart snarl`
+Snarl uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. snarl can be enabled, disabled and restaerted via: `svcadm enable snarl`, `svcadm disable snarl` and `svcadm restart snarl`
 
-### updating
-snarl can be updated by three simple steps.
+### Updating
+Snarl can be updated by three simple steps.
 
 #### Installing the new package
 
@@ -21,7 +21,7 @@ pkgin -fy update
 pkgin -fy install fifo-snarl
 ```
 
-#### updating the config
+#### Updating the config
 After the newest package is installed the config file should be checked for changes and eddited if needed. The `.example` file will always contain the newest version of the config `diff` is a handy tool to see if some settings need to be added to the existing file.
 
 ```bash
@@ -29,7 +29,7 @@ diff /opt/loca/fifo-snarl/etc/snarl.conf /opt/loca/fifo-snarl/etc/snarl.conf.exa
 vi /opt/loca/fifo-snarl/etc/snarl.conf
 ```
 
-#### restarting the service
+#### Restarting the service
 After the config is updated the service needs to be restarted, snarl is running clustered and has more then `N` it is often possible to do a rolling update by restarting one by one.
 
 ## Cluster management<a id="cluster"></a>
@@ -56,7 +56,7 @@ Valid:1 / Leaving:0 / Exiting:0 / Joining:0 / Down:0
 ```
 
 ### snarl-admin ring-status
-Gives a extended report ont he ring, including handoffs and downed nodes.
+Gives a extended report on the ring, including handoffs and downed nodes.
 
 ```
 ================================== Claimant ===================================

@@ -8,7 +8,7 @@ title: Chunter Installation
 
 Please read the Chunter section in the current build section above for basic information on chunter and some helpful notes before continuing.
 
-To install "chunter" we do the following:
+To install "Chunter" we do the following:
 
 ```bash
 cd /opt

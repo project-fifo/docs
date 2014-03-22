@@ -7,7 +7,7 @@ title: Wiggle Configuration
 # Wiggle Configuration
 
 ## Configuration file
-wiggle's configuration file is located in `/opt/local/wiggle/etc/wiggle.conf` it is automatically generated on the first install and not overwritten on updates. Non the less the newst version of the file is always located in `/opt/local/wiggle/etc/wiggle.conf.example`.
+Wiggle's configuration file is located in `/opt/local/wiggle/etc/wiggle.conf` it is automatically generated on the first install and not overwritten on updates. Non the less the newst version of the file is always located in `/opt/local/wiggle/etc/wiggle.conf.example`.
 
 The configuration file is documented inline but we'll go over go over some more interesting settings here.
 

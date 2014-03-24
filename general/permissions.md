@@ -78,5 +78,5 @@ This group assumes all users are allowed ot use all packages and datasets (`pack
 </p>
 
 <p class="bs-callout bs-callout-info">
-This is meanted to be used in connection with the [Example Org](/general/permissions.html#example) to give users the right to create VM's otherwise the following permission needs to be added to grant all users permission to create VMs: `cloud->vms->create`.
+This is meanted to be used in connection with the <a href="/general/orgs.html#example">Example Org</a> to give users the right to create VM's otherwise the following permission needs to be added to grant all users permission to create VMs: `cloud->vms->create`.
 </p>

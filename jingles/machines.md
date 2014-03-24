@@ -6,36 +6,42 @@ title: Jingles Machines
 ---
 # Jingles Machines
 
-## List
+## List<a id="list"></a>
 ![](/assets/img/jingles/machines01.png)
 
 The "Machines" tab is the central area within the UI where new virtual machine are created and where most of the actions related to existing virtual machines are performed.
 
 1. Column Selector : Click the column selector and check the columns you would like to display.
+
     ![](/assets/img/jingles/machines02.png)
 
 2. The filter entry area is designed to selectively filter the machines that are displayed in your list by your filter criteria. The filter is designed to remember what you have typed and will continue filter by your custom criteria even if you leave and return to the machines tab.
 
     ![](/assets/img/jingles/machines03.png)
 
-3. Clicking on the "new machine button" will launch a new UI page which contains options relevant to new vm creation.
-    ![](/assets/img/jingles/machines04.png)
-    ![](/assets/img/jingles/machines05.png)
-     1. Choose the name or alias of your new machine.
-     2. Choose the dataset that will be used for your new machine.
-     3. Choose the package that will be used for your new machine.
-     4. Choose the network/s your machine will be connected to. Please note: you will only be able to select more than 1 network if the package selected supports multiple networks.
-     5. Choose optional advanced paramaters if you require them.
-
-         ![](/assets/img/jingles/machines06.png)
-
-     6. Click the create button to start machine creation.
+3. Clicking on the "new machine button" will launch a new UI page which contains options relevant to new vm creation.     ![](/assets/img/jingles/machines04.png)
 
 4. The "Action Icons" are used to perform specific actions on machines directly from list view list.
   1. ![](/assets/img/jingles/machines-kvm.png) Launch zone/kvm console.
   2. ![](/assets/img/jingles/machines-zone.png) Power on a machine.
 
-## Details
+## Create<a id="new"></a>
+
+![](/assets/img/jingles/machines05.png)
+
+1. Choose the name or alias of your new machine.
+2. Choose the dataset that will be used for your new machine.
+3. Choose the package that will be used for your new machine.
+4. Choose the network/s your machine will be connected to. Please note: you will only be able to select more than 1 network if the package selected supports multiple networks.
+5. Choose optional advanced paramaters if you require them.
+
+    ![](/assets/img/jingles/machines06.png)
+
+6. Click the create button to start machine creation.
+
+
+
+## Details<a id="details"></a>
 ![](/assets/img/jingles/machines07.png)
 
 1. Shows the current realtime state of the machine.

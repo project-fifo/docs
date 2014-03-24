@@ -6,7 +6,7 @@ title: Jingles Hypervisors
 ---
 # Jingles Hypervisors
 
-## List view
+## List view<a id="list"></a>
 
 ![](/assets/img/jingles/hypervisors01.jpg)
 
@@ -21,7 +21,7 @@ The hypervisors section shows a list of all compute nodes / servers under FiFo's
 - **Networks** The available networks configured on that compute node.
 - **Capabilities** Shows if the node is capable of zone and KVM virtualization.
 
-## Detauls
+## Details<a id="details"></a>
 ![](/assets/img/jingles/hypervisors02.jpg)
 
 The hypervisor details page shows information and contains sections related to an individual hypervisor.

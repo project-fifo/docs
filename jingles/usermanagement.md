@@ -6,9 +6,9 @@ title: Jingles Usermanagement
 ---
 # Jingles Usermanagement
 
-## Users<href id="users"></a>
+## Users<a id="users"></a>
 
-### list view
+### list view<a id="user-list"></a>
 
 ![](/assets/img/jingles/users01.png)
 
@@ -19,7 +19,7 @@ The default list view shows you a list of users that already exist in the system
 
 Clicking on the hyperlinked users name will take you to the users detail page as explained in a subsection below.
 
-### creation
+### creation<a id="user-create"></a>
 
 To create a user click on the ![add user](/assets/img/jingles/users-add.png) button.
 
@@ -29,7 +29,7 @@ This will take you to the new user creation page as shown below.
 
 Enter a username for your new user and please note that usernames are case sensitive. Enter a password for your new user by typing in the password twice. Only if the 2 passwords are identical will the "create" button appear. To complete user creation click on the create button.
 
-### details
+### details<a id="user-details"></a>
 
 Clicking on an individual hyperlinked user name will take you to the user details page.
 
@@ -60,9 +60,9 @@ The groups section allows you to add users to certain pre-existing groups. Users
 
 You can add your own ssh public key to your user profile by simply pasting in your key and clicking the save button. This will be used when the user creates a new machine and FiFo will automatically add the users key to the machines authorized_keys file. You should then be able to authenticate your ssh session without requiring password entry.
 
-## Groups<href id="groups"></a>
+## Groups<a id="groups"></a>
 
-### list view
+### list view<a id="group-list"></a>
 
 ![](/assets/img/jingles/groups01.png)
 
@@ -70,7 +70,7 @@ The "Groups" section is very similar to the "users" section and is the place wit
 
 To edit an existing group simply click on the groups name hyperlink. This will take you to the group details section.
 
-### creation
+### creation<a id="group-create"></a>
 
 To add a new group click on the "add group" button.
 
@@ -78,7 +78,7 @@ To add a new group click on the "add group" button.
 
 Enter a name for your new group and click on the "create" button.
 
-### details
+### details<a id="group-details"></a>
 
 To edit a group click on the group name hyperlink in the group list view.
 
@@ -94,6 +94,11 @@ FiFo includes a very powerful fine grained permission system that lets you tailo
 
 It is beyond the scope of this section to explain the permission system in necessary depth. For further information please consult the permissions wiki article.
 
-## Orgs<href id="orgs"></a>
+## Orgs<a id="orgs"></a>
 
-TODO
+### list view<a id="orgs-list"></a>
+
+
+### creation<a id="orgs-create"></a>
+
+### details<a id="orgs-details"></a>

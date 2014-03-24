@@ -6,7 +6,7 @@ title: Jingles General
 ---
 # Jingles General
 
-## Login
+## Login<a id="login"></a>
 
 ![Login](/assets/img/jingles/login.jpg)
 
@@ -18,7 +18,7 @@ Enter your valid credentials and click the "Ok" button to authenticate and login
 The little green dot in the top right corner, pointed to by the red arrow, shows that the web interface is successfully communicating with and connected to the backend. Should the web interface not be connected to the backend the dot will change to red and show an error message.
 </p>
 
-## Dashboard
+## Dashboard<a id="dashboard"></a>
 
 ![Dashboard](/assets/img/jingles/dashboard.jpg)
 
@@ -31,7 +31,7 @@ The status page is designed to show you an overview of your entire clouds status
 3. The "disk bar" shows the percentage of disk storage used across your entire cloud.
 4. Shows a quick overview of how many virtual machines exist in your cloud as well as the number of hypervisors (compute servers) that make up your cloud.
 
-## Cloudview
+## Cloudview<a id="cloudview"></a>
 
 ![Cloudview](/assets/img/jingles/cloudview01.png)
 
@@ -59,7 +59,7 @@ The CloudView page shows a graphical realtime representation of your entire clou
      - Each machine is attached to its host via a dashed connector line. This line will darken and flash bold in realtime representing the network throughput that machine is currently experiencing.
      - Machines that are heavily utilising their allocated cpu will be surrounded by a red circle. The more cpu being consumed, the darker the circle will become.
 
-## About
+## About<a id="about"></a>
 
 ![about](/assets/img/jingles/about.png)
 

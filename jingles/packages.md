@@ -7,7 +7,7 @@ title: Jingles Packages
 # Jingles Packages
 
 
-## List
+## List<a id="list"></a>
 
 ![](/assets/img/jingles/packages01.jpg)
 
@@ -23,7 +23,7 @@ Clicking on the package name / hyperlink will bring up the package details page.
 
 ![](/assets/img/jingles/packages02.jpg)
 
-## Package creation
+## Creation<a id="new"></a>
 Clicking on the "add package" button will take you to the package creation page as shown below:
 
 ![](/assets/img/jingles/packages03.jpg)
@@ -82,3 +82,5 @@ There are many additional keys and attributes you can use when creating package 
 - `uuid` - uuid of the hypervisor
 - `alias` - hypervisor name, e.g. `"00-0c-29-18-ec-10"` or `"compute-node-2"`
 - `virtualisation` - node virtualisation type capability e.g. `"zone"` or `"kvm"`
+
+## Details<a id="details"></a>

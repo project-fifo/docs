@@ -6,7 +6,7 @@ title: Jingles Datasets
 ---
 # Jingles Datasets
 
-## Installed Datasets
+## Installed Datasets<a id="installed"></a>
 
 ![](/assets/img/jingles/datasets01.jpg)
 
@@ -20,7 +20,7 @@ The installed datasets tab shows you which datasets exist in the internal reposi
 
 To delete a dataset and remove it from the repository click on the "x" delete icon next to the individual dataset.
 
-## Remote Datasets
+## Remote Datasets<a id="remote"></a>
 
 ![](/assets/img/jingles/datasets03.jpg)
 
@@ -30,3 +30,6 @@ The remote datasets tab is where you choose which external datasets you would li
 2. Shows the external repository FiFO is currently associated with.
 
 Should you wish to change the remote repository source this can be configured by editing the [configuration file](/jingles/configuration.html).
+
+## Details<a id="details"></a>
+TODO

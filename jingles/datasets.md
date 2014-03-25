@@ -32,4 +32,10 @@ The remote datasets tab is where you choose which external datasets you would li
 Should you wish to change the remote repository source this can be configured by editing the [configuration file](/jingles/configuration.html).
 
 ## Details<a id="details"></a>
-TODO
+![](/assets/img/jingles/datasets04.png)
+
+The dataset details allow edit some details of a dataset after it was imported.
+
+1. The currently attached NIC's can be deleted one by one.
+2. Allows adding a new required NIC.
+3. Saves the changes.

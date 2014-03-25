@@ -10,18 +10,31 @@ title: Jingles Networking
 ## Networks<a id="networks"></a>
 
 ### List<a id="networks-list"></a>
-TODO
+![](/assets/img/jingles/networks01.png)
+
+Lists the Netowrks known to FiFo.
+
+1. Allows deleting a Network.
+2. Adds a new Network.
 
 ### Create<a id="networks-new"></a>
-TODO
+![](/assets/img/jingles/networks02.png)
+
+Creating a new Network is simple there are not many changes to be made.
+
+1. The name of the network.
+2. Click to create a network.
 
 ### Details<a id="networks-details"></a>
-TODO
+![](/assets/img/jingles/networks03.png)
+
+1. Select a iprange to add to the network.
+2. Delete a iprange form a network.
+3. Deletes the entire iprange.
 
 ## IP-Ranges<a id="ipranges"></a>
 
 ### List<a id="ipranges-list"></a>
-TODO
 
 ![](/assets/img/jingles/ipranges01.png)
 
@@ -54,5 +67,3 @@ Enter the "first" and "last" IP address in the range that you want FiFo to alloc
 When all required fields are filled in, the "Create" button will appear.
 
 Click on the "Create" button to save your new network: ![](/assets/img/jingles/ipranges-create.png)
-
-### Details<a id="ipranges-details"></a>

@@ -61,9 +61,15 @@ vmadm create -f setupfifo.json
 
 We now zlogin to our newly created FiFo zone and proceed with adding the FiFo package repository and then installing the FiFo packages
 
+<p class="bs-callout bs-callout-info">
+Please note that this is for the reelease version of FiFo to installed the current development version use `VERSION=dev` instead of `VERSION=rel`.
+</p>
+
+
 ```bash
 zlogin <fifo-vm-uuid>
-echo "http://release.project-fifo.net/pkg/dev/" >>/opt/local/etc/pkgin/repositories.conf
+VERSION=rel
+echo "http://release.project-fifo.net/pkg/${VERSION}/" >>/opt/local/etc/pkgin/repositories.conf
 pkgin -fy up
 pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles
 cp /opt/local/fifo-jingles/config/nginx.conf /opt/local/etc/nginx/nginx.conf

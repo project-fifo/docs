@@ -10,9 +10,14 @@ Please read the Chunter section in the current build section above for basic inf
 
 To install "Chunter" we do the following:
 
+<p class="bs-callout bs-callout-info">
+Please note that this is for the reelease version of FiFo to installed the current development version use `VERSION=dev` instead of `VERSION=rel`.
+</p>
+
 ```bash
+VERSION=rel
 cd /opt
-curl -O http://release.project-fifo.net/chunter/dev/chunter-latest.gz
+curl -O http://release.project-fifo.net/chunter/${VERSION}/chunter-latest.gz
 gunzip chunter-latest.gz
 sh chunter-latest
 ```

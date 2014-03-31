@@ -24,7 +24,7 @@ Starting with this release we use [Cuttlefish](https://github.com/basho/cuttlefi
 
 #### Global configuration
 
-With some of the settings (like the s3 or yubikey settings) globally valid it makes sense to not require them to be configured for each node, so they are now globally configurable with `sniffle-admin config` and `snarl-admin config`, exact details are described in the [sniffle configuration](/sniffle/configuration.html#global) and [snarl configuration](/snarl/configuration.html#global) section
+With some of the settings (like the s3 or yubikey settings) globally valid it makes sense to not require them to be configured for each node, so they are now globally configurable with `sniffle-admin config` and `snarl-admin config`, exact details are described in the [sniffle configuration](/sniffle/configuration.html#global) and [snarl configuration](/snarl/configuration.html#global) section.
 
 #### Reserved memory
 
@@ -42,7 +42,7 @@ Starting with this release Snarl allows for synchronizing logins, groups, organi
 
 #### Yubikey support
 
-A cloud requires security, and while a normal username/password login is nice and good it sometimes isn't enough. Yubikeys are a very simple answer to multi factor authentication and supporting them is now a build in feature in Snarl. The configuration is rather easy and can be done via the new [global configuration](/snarl/configuration.html#yubikey)
+A cloud requires security, and while a normal username/password login is nice and good it sometimes isn't enough. Yubikeys are a very simple answer to multi factor authentication and supporting them is now a build in feature in Snarl. The configuration is rather easy and can be done via the new [global configuration](/snarl/configuration.html#yubikey).
 
 ### Sniffle
 
@@ -77,7 +77,7 @@ FiFo now allows managing services (as in SMF services) over the FiFo API this me
 
 Sniffle now contains code to trigger chunter updates, this simplifies the management of large amounts of hypervisors since it requires just one command to update all of them instead of doing it on each one on it's own. However it still is possible to trigger single hypervisors either locally or from fifo directly.
 
-The related commands in the FiFo Zone are: `fifoadm hypervisors update` and `fifoadm hypervisors update <hypervisor>`
+The related commands in the FiFo Zone are: `fifoadm hypervisors update` and `fifoadm hypervisors update <hypervisor>`.
 
 ### General
 

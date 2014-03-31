@@ -16,10 +16,11 @@ The default list view shows you a list of users that already exist in the system
 
 - **Name** The users name.
 - **Groups**  The groups the user belongs to.
+- **Orgs**  The organisations the user belongs to, the active one ins in **bold**
 
 Clicking on the hyperlinked users name will take you to the users detail page as explained in a subsection below.
 
-### creation<a id="user-create"></a>
+### creation<a id="user-new"></a>
 
 To create a user click on the ![add user](/assets/img/jingles/users-add.png) button.
 
@@ -70,7 +71,7 @@ The "Groups" section is very similar to the "users" section and is the place wit
 
 To edit an existing group simply click on the groups name hyperlink. This will take you to the group details section.
 
-### creation<a id="group-create"></a>
+### creation<a id="group-new"></a>
 
 To add a new group click on the "add group" button.
 

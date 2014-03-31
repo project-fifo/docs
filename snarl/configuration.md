@@ -33,7 +33,7 @@ The number of VNodes used by FiFo, this setting can only be changed before the s
 #### `leveldb.mmap_size`
 The chunk size of each mmaped file, this has a huge impact of the memory requirements. Since FiFo does not store lots of data a setting of `1MB` is a valid value for small and medium installations, the settings can be increased as long as it is ensured that enough memory is present.
 
-### Multi DC support
+### Multi DC support<a id="multidc"></a>
 The mutli DC support in FiFo is based in Snarl, it works by syncronizing userdata between all datacenters. Synchronization happens on a point to point system meaning that each Snarl instance in `DC1` syncronizes with one system in `DC2`.
 
 By default the synchronization subsystem is disabled, it needs to be enabled and configured in order to propperly propagate data.
@@ -60,7 +60,7 @@ This defines how often it should be checked if differences exists betwen local a
 If a command is send to a sync partner and this trheashold is excided the connection will attempt to bounc and be reistablished.
 
 
-### [Yubico](https://yubico.com/) support
+### [Yubico](https://yubico.com/) support<a id="yubikey"></a>
 FiFo support two factor authentication with Yubikeys, to enable this snarl needs to be set up a API key with the following settings:
 
 #### `yubico.client_id`
@@ -69,7 +69,7 @@ This section deals with Yubikey support a API key and client ID can be obtained 
 #### `yubico.secret_key`
 The Secret key related that was issued along with the Yubico cleint ID.
 
-## Global configuration
+## Global configuration<a id="global"></a>
 In addition to the config files that apply on a per node level there are global configurations that can be changed from one system and are applied globally. Unless otherwise noted all those settings can be changed during runtime.
 
 ### snarl-admin config show

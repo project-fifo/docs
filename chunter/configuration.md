@@ -6,7 +6,7 @@ title: Chunter Configuration
 ---
 # Chunter Configuration
 
-## Configuration file
+## Configuration file<a id="file"></a>
 Chunter's configuration file is located in `/opt/chunter/etc/chunter.conf` it is automatically generated on the first install and not overwritten on updates. Non the less the newst version of the file is always located in `/opt/chunter/etc/chunter.conf.example`.
 
 In addition Chunter keeps a file `/opt/chunter/etc/hostid` that helps identifying the host thorught udpates, hostname changes, and reinstallations.

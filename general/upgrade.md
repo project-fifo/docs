@@ -5,7 +5,6 @@ section: general/upgrade
 title: Project-FiFo Upgrade Guide
 ---
 
-
 # General instructions
 
 The General instructions cover steps that will initiate the update, please be aware that depending on your update path additional steps might be required. The version specific section covers the steps required to go from one version to another. While you're on release following these on a version update is enough. Things are a bit more complicated when living on the bleeding edge (aka dev) is a bit more complicated, in general you should check here on every update since required steps for a version upgrade will slowly grow during the development process.

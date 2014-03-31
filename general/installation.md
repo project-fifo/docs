@@ -5,6 +5,9 @@ section: general/installation
 title: Project-FiFo configuration
 ---
 
+<p class="bs-callout bs-callout-danger">
+Please be aware that this guide covers the installation of a <b>single</b> FiFo zone, while this is suppored and might be acceptable for a prive 'for fun' server a production environment should consist of <b>at least 5 physically seperated</b> zone! Details on how to set up clustering can be found in the <a href="/general/clustering.html">Clustering</a> section.
+</p>
 
 ## Creating the Zone
 From the GZ (Global Zone) we install the base dataset we are going to use for our FiFo Zone and confirm its is installed:

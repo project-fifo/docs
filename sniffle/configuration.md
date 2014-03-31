@@ -39,7 +39,7 @@ The number of VNodes used by fifo, this setting can only be changed before the s
 #### `leveldb.mmap_size`
 The chunk size of each mmaped file, this has a huge impact of the memory requirements. Since FiFo does not store lots of data a setting of `1MB` is a valid value for small and medium installations, the settings can be increased as long as it is ensured that enough memory is present.
 
-## Global configuration
+## Global configuration<a id="global"></a>
 In addition to the config files that apply on a per node level there are global configurations that can be changed from one system and are applied globally. Unless otherwise noted all those settings can be changed during runtime.
 
 ### sniffle-admin config show

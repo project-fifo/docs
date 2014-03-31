@@ -48,7 +48,7 @@ fifoadm hypervisors update
 this will trigger all hypervisors to update.
 
 
-## 0.4.3
+## 0.4.3<a id="0.4.3"></a>
 
 This version introduces a new system for config files. The aim is to make fifo more ops friendly by providing more human readable configuration with documentation.
 

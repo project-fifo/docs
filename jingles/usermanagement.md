@@ -60,7 +60,7 @@ The groups section allows you to add users to certain pre-existing groups. Users
 ![](/assets/img/jingles/users06.png)
 
 <p class="bs-callout bs-callout-danger">
-Note that SSH keys need to have the form `ssh-rsa <key-data> <key-id>`, other key, while valid will be refused.
+Note that SSH keys need to have the form <pre>ssh-rsa <key-data> <key-id></pre>, other key, while valid will be refused.
 </p>
 
 You can add your own ssh public key to your user profile by simply pasting in your key and clicking the save button. This will be used when the user creates a new machine and FiFo will automatically add the users key to the machines authorized_keys file. You should then be able to authenticate your ssh session without requiring password entry.

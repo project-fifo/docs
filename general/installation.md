@@ -100,7 +100,11 @@ The last step is to create an admin user with full permissions so we can login. 
 fifoadm users add admin
 fifoadm users grant admin ...
 fifoadm users passwd admin admin
+```
+
 If you want to add a default user group execute the following commands to assign basic permissions to the group so that users belonging to this group can create and manage their own vm's.
+
+```
 fifoadm groups add Users
 fifoadm groups grant Users cloud cloud status
 fifoadm groups grant Users cloud datasets list

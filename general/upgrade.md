@@ -47,6 +47,19 @@ fifoadm hypervisors update
 this will trigger all hypervisors to update.
 
 
+## 0.4.4<a id="0.4.4"></a>
+
+With 0.4.4 there is a considerable update of the database this means additional steps need to be taken. Once all serivces have been updated the following commands need to be run:
+
+<p class="bs-callout bs-callout-danger">
+It is critical that <b>ALL</b> services are running and connected during this update otherwise dataloss can occour!
+</p>
+
+```
+/opt/loca/fifo-sniffle/bin/sniffle-admin db update
+/opt/loca/fifo-snarl/bin/snarl-admin db update
+```
+
 ## 0.4.3<a id="0.4.3"></a>
 
 This version introduces a new system for config files. The aim is to make fifo more ops friendly by providing more human readable configuration with documentation.

@@ -104,10 +104,15 @@ fifoadm users passwd admin admin
 
 If you want to add a default user group execute the following commands to assign basic permissions to the group so that users belonging to this group can create and manage their own vm's.
 
+<p class="bs-callout bs-callout-info">
+In 0.4.4 groups got renamed to roles if you are on dev this commands need to be changed accordingly.
+</p>
+
 ```
 fifoadm groups add Users
 fifoadm groups grant Users cloud cloud status
 fifoadm groups grant Users cloud datasets list
+fifoadm groups grant Users cloud networks list
 fifoadm groups grant Users cloud ipranges list
 fifoadm groups grant Users cloud packages list
 fifoadm groups grant Users cloud vms list

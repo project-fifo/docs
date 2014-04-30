@@ -55,9 +55,16 @@ With 0.4.4 there is a considerable update of the database this means additional 
 It is critical that <b>ALL</b> services are running and connected during this update otherwise dataloss can occour!
 </p>
 
-```
+```bash
 /opt/loca/fifo-sniffle/bin/sniffle-admin db update
 /opt/loca/fifo-snarl/bin/snarl-admin db update
+```
+
+This changes also affect the AAE code, this means when AAE is enabled the old AAE data needs to be deleted, this has no impact on the system itself. The services should be disabled when the AAE data is deleted:
+
+```bash
+rm -r /var/db/sniffle/anti_entropy
+rm -r /var/db/snarl/anti_entropy
 ```
 
 ## 0.4.3<a id="0.4.3"></a>

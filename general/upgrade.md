@@ -56,8 +56,8 @@ It is critical that <b>ALL</b> services are running and connected during this up
 </p>
 
 ```bash
-/opt/loca/fifo-sniffle/bin/sniffle-admin db update
-/opt/loca/fifo-snarl/bin/snarl-admin db update
+sniffle-admin db update
+snarl-admin db update
 ```
 
 This changes also affect the AAE code, this means when AAE is enabled the old AAE data needs to be deleted, this has no impact on the system itself. The services should be disabled when the AAE data is deleted:

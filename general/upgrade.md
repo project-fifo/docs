@@ -9,6 +9,10 @@ title: Project-FiFo Upgrade Guide
 
 The General instructions cover steps that will initiate the update, please be aware that depending on your update path additional steps might be required. The version specific section covers the steps required to go from one version to another. While you're on release following these on a version update is enough. Things are a bit more complicated when living on the bleeding edge (aka dev) is a bit more complicated, in general you should check here on every update since required steps for a version upgrade will slowly grow during the development process.
 
+<p class="bs-callout bs-callout-danger">
+It is highly advised to make a snapshot of the FiFo zone before updating, while the procedure should be safe it is always better to stay on the side of caution.
+</p>
+
 
 ## Zone
 To upgrade the components in a zone it's nessessart to install the new packages and restart the services, in addition to this sometimes additional steps are needed depended on the update.

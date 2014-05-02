@@ -118,6 +118,7 @@ fifoadm groups grant Users cloud packages list
 fifoadm groups grant Users cloud vms list
 fifoadm groups grant Users cloud vms create
 fifoadm groups grant Users hypervisors _ create
+fifoadm groups grant Users groups <uuid of Users group> get
 ```
 
 That's it. You can now log out of your "fifo" zone and back into the global zone and continue with installing the "chunter" service.

@@ -52,8 +52,8 @@ This is a awesome capability to ensure that if a certain package is used it will
 
 Some example hypothetical scenarios where this could be useful are:
 
- - Ensuring a certain user or group's vm's only gets deployed on a certain grade of hardware.
- - Ensuring that specific user or groups vm's do not get deployed on shared compute nodes e.g. private non shared physical hardware.
+ - Ensuring a certain user or role's vm's only gets deployed on a certain grade of hardware.
+ - Ensuring that specific user or roles vm's do not get deployed on shared compute nodes e.g. private non shared physical hardware.
  - Ensuring that very big vm's with a big ram requirement only get deployed on nodes that have more than 256GB of ram and at least cpu's with 8 cores.
 
 ...and more... your imagination is the only limit.

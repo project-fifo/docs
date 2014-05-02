@@ -34,43 +34,43 @@ Allows to grant a permission to the user.
 Allows to revoke a permission from the user.
 
 ### `users-><UUID>->join`
-Allows to have the user join a group.
+Allows to have the user join a role.
 
 ### `users-><UUID>->leave`
-Allows to remove the user from a group.
+Allows to remove the user from a role.
 
-## Groups<a id="groups"></a>
-Group permissions start with `groups->` followed by the UUID of the group. In addition to user specific permissions the following `cloud` global permission exist.
+## Roles<a id="roles"></a>
+Role permissions start with `roles->` followed by the UUID of the role. In addition to user specific permissions the following `cloud` global permission exist.
 
-### `cloud->groups->list`
-Allows to list groups, the `get` permission on each group determins which users are seen during the list.
+### `cloud->roles->list`
+Allows to list roles, the `get` permission on each role determins which users are seen during the list.
 
-### `cloud->groups->create`
-Allows the to create new groups.
+### `cloud->roles->create`
+Allows the to create new roles.
 
-### `groups-><UUID>->get`
-Allows to see the group/read it's data.
+### `roles-><UUID>->get`
+Allows to see the role/read it's data.
 
-### `groups-><UUID>->delete`
-Allows to delete the group.
+### `roles-><UUID>->delete`
+Allows to delete the role.
 
-### `groups-><UUID>->edit`
-Allows to change the group.
+### `roles-><UUID>->edit`
+Allows to change the role.
 
-### `groups-><UUID>->grant`
-Allows to grant a permission to the group.
+### `roles-><UUID>->grant`
+Allows to grant a permission to the role.
 
-### `groups-><UUID>->revoke`
-Allows to revoke a permission from the group.
+### `roles-><UUID>->revoke`
+Allows to revoke a permission from the role.
 
-### `groups-><UUID>->join`
-Allows to have a user join the group.
+### `roles-><UUID>->join`
+Allows to have a user join the role.
 
-### `groups-><UUID>->leave`
-Allows to removea user from the group.
+### `roles-><UUID>->leave`
+Allows to removea user from the role.
 
 ## Organisations<a id="organisations"></a>
-Group Permissions start with `orgs->` followed by the UUID of the organisation. In addition to user specific permissions the following `cloud` global permission exist.
+Role Permissions start with `orgs->` followed by the UUID of the organisation. In addition to user specific permissions the following `cloud` global permission exist.
 
 ### `cloud->orgs->list`
 Allows to list organisations, the `get` permission on each organisation determins which users are seen during the list.

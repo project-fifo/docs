@@ -96,17 +96,17 @@ This files contains errors, it usually should be mostly empty but please keep in
 
 ## General tasks
 
-### snarl-admin `users|group` add `<name>`
-Adds a user or group, especially helpful when no users exist yet.
+### snarl-admin `users|role` add `<name>`
+Adds a user or role, especially helpful when no users exist yet.
 
-### snarl-admin `users|group` grant `<name>` `<permission>` `[<permission>]`
-Grants a user or group permissions. A permission can have multiple epements so: `snarl-admin users grant user some special permissions` would grant `some->special->permissions` to `user`. `...` and `_` are special cases and not taken as strings but as the wildcards for the permission section where `_` means this level matches and `...` means evertying below this level matches.
+### snarl-admin `users|role` grant `<name>` `<permission>` `[<permission>]`
+Grants a user or role permissions. A permission can have multiple epements so: `snarl-admin users grant user some special permissions` would grant `some->special->permissions` to `user`. `...` and `_` are special cases and not taken as strings but as the wildcards for the permission section where `_` means this level matches and `...` means evertying below this level matches.
 
 ### snarl-admin `users` passwd `<username>` `<password>`
 Changes the password for a user.
 
-### snarl-admin `users|groups|orgs|` list
-Lists all users, groups or organisations.
+### snarl-admin `users|roles|orgs|` list
+Lists all users, roles or organisations.
 
-### snarl-admin `users|groups|orgss|` delete `<name>`
-Delets a given user, group or organisation.
+### snarl-admin `users|roles|orgss|` delete `<name>`
+Delets a given user, role or organisation.

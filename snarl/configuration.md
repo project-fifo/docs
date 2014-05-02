@@ -78,8 +78,8 @@ Shows a list of all settings in the global configuration.
 ### snarl-admin config set `key` `value`
 Sets a global config value please see the followign sections for valid settings.
 
-### defaults.users.inital_group
-If this is set every user created gets placed into the group given. The value must be the UUID of the group.
+### defaults.users.inital_role
+If this is set every user created gets placed into the role given. The value must be the UUID of the role.
 
 ### defaults.users.inital_org
 If this is set every user created gets placed into the organisation given. The value must be the UUID of the organisation.

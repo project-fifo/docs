@@ -102,24 +102,24 @@ fifoadm users grant admin ...
 fifoadm users passwd admin admin
 ```
 
-If you want to add a default user group execute the following commands to assign basic permissions to the group so that users belonging to this group can create and manage their own vm's.
+If you want to add a default user role execute the following commands to assign basic permissions to the role so that users belonging to this role can create and manage their own vm's.
 
 <p class="bs-callout bs-callout-info">
-In 0.4.4 groups got renamed to roles if you are on dev this commands need to be changed accordingly.
+Pre 0.4.4 roles were named to groups if you are using a older sniffle substiture roles for groups in the following commands
 </p>
 
 ```
-fifoadm groups add Users
-fifoadm groups grant Users cloud cloud status
-fifoadm groups grant Users cloud datasets list
-fifoadm groups grant Users cloud networks list
-fifoadm groups grant Users cloud ipranges list
-fifoadm groups grant Users cloud packages list
-fifoadm groups grant Users cloud vms list
-fifoadm groups grant Users cloud vms create
-fifoadm groups grant Users hypervisors _ create
-fifoadm groups grant Users datasets _ create
-fifoadm groups grant Users groups <uuid of Users group> get
+fifoadm roles add Users
+fifoadm roles grant Users cloud cloud status
+fifoadm roles grant Users cloud datasets list
+fifoadm roles grant Users cloud networks list
+fifoadm roles grant Users cloud ipranges list
+fifoadm roles grant Users cloud packages list
+fifoadm roles grant Users cloud vms list
+fifoadm roles grant Users cloud vms create
+fifoadm roles grant Users hypervisors _ create
+fifoadm roles grant Users datasets _ create
+fifoadm roles grant Users roles <uuid of Users role> get
 ```
 
 That's it. You can now log out of your "fifo" zone and back into the global zone and continue with installing the "chunter" service.

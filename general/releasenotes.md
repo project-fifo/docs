@@ -38,7 +38,7 @@ Upon the first install chunter tries to guess the IP configuration of the system
 
 #### Multi-Datacenter support
 
-Starting with this release Snarl allows for synchronizing logins, groups, organizations and tokens over multiple data centers. This makes it possible to combine multiple data centers into one logical FiFo unit while still keeping the datacenter operation tasks separated to prevent dependencies and possible downtime. This requires [setting up synchronization endpoints](/snarl/configuration.html#multidc) between involved services.
+Starting with this release Snarl allows for synchronizing logins, roles, organizations and tokens over multiple data centers. This makes it possible to combine multiple data centers into one logical FiFo unit while still keeping the datacenter operation tasks separated to prevent dependencies and possible downtime. This requires [setting up synchronization endpoints](/snarl/configuration.html#multidc) between involved services.
 
 #### Yubikey support
 

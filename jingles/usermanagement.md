@@ -15,7 +15,7 @@ title: Jingles Usermanagement
 The default list view shows you a list of users that already exist in the system:
 
 - **Name** The users name.
-- **Groups**  The groups the user belongs to.
+- **Roles**  The roles the user belongs to.
 - **Orgs**  The organisations the user belongs to, the active one ins in **bold**
 
 Clicking on the hyperlinked users name will take you to the users detail page as explained in a subsection below.
@@ -45,15 +45,15 @@ Clicking on an individual hyperlinked user name will take you to the user detail
 
 ![](/assets/img/jingles/users04.png)
 
-FiFo includes a very powerful fine grained permission system that lets you tailor specific permissions for specific users or groups. This allows you to control what areas within the "User Interface" users can see and what actions they may perform on different objects such as machines, datasets, packages etc.
+FiFo includes a very powerful fine grained permission system that lets you tailor specific permissions for specific users or roles. This allows you to control what areas within the "User Interface" users can see and what actions they may perform on different objects such as machines, datasets, packages etc.
 
 It is beyond the scope of this section to explain the permission system in necessary depth. For further information please consult the permissions wiki article.
 
-#### Groups
+#### Roles
 
 ![](/assets/img/jingles/users05.png)
 
-The groups section allows you to add users to certain pre-existing groups. Users who get assigned to a specific group will inherit all the permissions and access rights of that group.
+The roles section allows you to add users to certain pre-existing roles. Users who get assigned to a specific role will inherit all the permissions and access rights of that role.
 
 #### SSH Keys
 
@@ -65,37 +65,37 @@ Note that SSH keys need to have the form 'ssh-rsa key-data key-id', other key, w
 
 You can add your own ssh public key to your user profile by simply pasting in your key and clicking the save button. This will be used when the user creates a new machine and FiFo will automatically add the users key to the machines authorized_keys file. You should then be able to authenticate your ssh session without requiring password entry.
 
-## Groups<a id="groups"></a>
+## Roles<a id="roles"></a>
 
-### list view<a id="group-list"></a>
+### list view<a id="role-list"></a>
 
-![](/assets/img/jingles/groups01.png)
+![](/assets/img/jingles/roles01.png)
 
-The "Groups" section is very similar to the "users" section and is the place within FiFo where you create groups and manage group permissions.
+The "Roles" section is very similar to the "users" section and is the place within FiFo where you create roles and manage role permissions.
 
-To edit an existing group simply click on the groups name hyperlink. This will take you to the group details section.
+To edit an existing role simply click on the roles name hyperlink. This will take you to the role details section.
 
-### creation<a id="group-new"></a>
+### creation<a id="role-new"></a>
 
-To add a new group click on the "add group" button.
+To add a new role click on the "add role" button.
 
-![](/assets/img/jingles/groups02.png)
+![](/assets/img/jingles/roles02.png)
 
-Enter a name for your new group and click on the "create" button.
+Enter a name for your new role and click on the "create" button.
 
-### details<a id="group-details"></a>
+### details<a id="role-details"></a>
 
-To edit a group click on the group name hyperlink in the group list view.
+To edit a role click on the role name hyperlink in the role list view.
 
-![](/assets/img/jingles/groups03.png)
+![](/assets/img/jingles/roles03.png)
 
-1. The name of the group you are working with.
-2. The Tab's available for the group.
-3. The Details view shows the unique UUID of the group.
+1. The name of the role you are working with.
+2. The Tab's available for the role.
+3. The Details view shows the unique UUID of the role.
 
-![](/assets/img/jingles/groups04.png)
+![](/assets/img/jingles/roles04.png)
 
-FiFo includes a very powerful fine grained permission system that lets you tailor specific permissions for specific users or groups. This allows you to control what areas within the "User Interface" users can see and what actions they may perform on different objects such as machines, datasets, packages etc.
+FiFo includes a very powerful fine grained permission system that lets you tailor specific permissions for specific users or roles. This allows you to control what areas within the "User Interface" users can see and what actions they may perform on different objects such as machines, datasets, packages etc.
 
 It is beyond the scope of this section to explain the permission system in necessary depth. For further information please consult the permissions wiki article.
 

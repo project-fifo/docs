@@ -6,6 +6,16 @@ title: Release Notes
 ---
 
 
+## 0.4.4<a id="0.4.4"></a>
+
+* A important update to the Active Active Entropy engine.
+* Commands to perform database updates.
+* Diagnostic commands (sniffle-diag, snarl-diag, ...).
+* The commands sniffle, snarl, sniffle-admin, and snarl-admin are now put into /opt/local/sbin.
+* A chineese translation of the UI.
+* More improvements on the config files.
+* Minor fixes and improvements.
+
 ## 0.4.3<a id="0.4.3"></a>
 
 This is the so far biggest release of Project-FiFo, aside of the usual improvements and fixes we've added a good number of new and exciting features!

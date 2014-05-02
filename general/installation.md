@@ -118,6 +118,7 @@ fifoadm groups grant Users cloud packages list
 fifoadm groups grant Users cloud vms list
 fifoadm groups grant Users cloud vms create
 fifoadm groups grant Users hypervisors _ create
+fifoadm groups grant Users datasets _ create
 fifoadm groups grant Users groups <uuid of Users group> get
 ```
 

@@ -20,7 +20,7 @@ A **Cluster** is a collection of VM's, where the Cluster guarantees that the VM'
 However it is possible to remove VM's from a cluster at any point in time. Viewing a cluster shows all the assigned VM's and the **Stacks** it is part of.
 
 ## Stacks<a id="stacks"></a>
-Unlike a ** Cluster** a **Stack** has no guarantees but offers a 'best effort' in placing VM's. A stack is Bouild out of multiple clusters an FiFo will try to place new VM's within a stack (or therefore a cluster within the stack) as close as possible to other VM's in the stack.
+Unlike a **Cluster** a **Stack** has no guarantees but offers a 'best effort' in placing VM's. A stack is Bouild out of multiple clusters an FiFo will try to place new VM's within a stack (or therefore a cluster within the stack) as close as possible to other VM's in the stack.
 
 Please not that only clusters can belong to a stack, VM's can't directly be placed here. However it is fully possible to make a cluster with a single VM in it - this also allows to later extend the functionality of this cluster into more VM's.
 

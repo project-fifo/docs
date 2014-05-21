@@ -14,14 +14,14 @@ From the GZ (Global Zone) we install the base dataset we are going to use for ou
 
 ```bash
 imgadm update
-imgadm import 17c98640-1fdb-11e3-bf51-3708ce78e75a
+imgadm import dc0688b2-c677-11e3-90ac-13373101c543
 imgadm list | grep 17c98640
 ```
 
 If installed successfully you should see:
 
 ```
-17c98640-1fdb-11e3-bf51-3708ce78e75a  base64  13.2.1   smartos  2013-09-20T15:02:46Z
+dc0688b2-c677-11e3-90ac-13373101c543  base64  13.4.2   smartos  2013-09-20T15:02:46Z
 ```
 
 Sample contents of setupfifo.json
@@ -30,7 +30,7 @@ Sample contents of setupfifo.json
 {
  "autoboot": true,
  "brand": "joyent",
- "image_uuid": "17c98640-1fdb-11e3-bf51-3708ce78e75a",
+ "image_uuid": "dc0688b2-c677-11e3-90ac-13373101c543",
  "max_physical_memory": 3072,
  "cpu_cap": 100,
  "alias": "fifo",

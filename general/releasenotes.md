@@ -5,6 +5,15 @@ section: general/releasenotes
 title: Release Notes
 ---
 
+## 0.4.5<a id="0.4.5"></a>
+* Cloud topology
+  * Clusters - ensuring VM's are not placed on the same hypervisor.
+  * Stacks - keeping VM's placed as close as possible.
+  * Hypervisor topology - describing the layout of the cloud to FiFo.
+* Caching for wiggle.
+* Dataset upload over the fifo commandline client.
+* Dry run VM creation to ensure validity of Package/Dataset/Network combination prior to Vm creation.
+* As usual fixes and improvments.
 
 ## 0.4.4<a id="0.4.4"></a>
 

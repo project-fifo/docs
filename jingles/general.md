@@ -7,7 +7,9 @@ title: Jingles General
 # Jingles General
 
 ## Login<a id="login"></a>
-
+<p class="bs-callout bs-callout-warning">
+The OTP (One Time Password) field can be left empty unless a YubiKey was specifically added to the user, this is never the case for newly created users!
+</p>
 ![Login](/assets/img/jingles/login.jpg)
 
 When you first connect to the web interface via a web browser you will be presented with a login screen as shown above.

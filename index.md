@@ -4,7 +4,7 @@ category: general
 section: general/welcome
 title: Welcome
 ---
-
+![showcase](assets/img/jingles/fifo-showcase.jpg)
 Project FiFo is an open-source Cloud Management and Orchestration system for [SmartOS](https://smartos.org) virtualisation environments. The components of FiFo are written entirely in Erlang which gives the suite excellent stability and fault recovery as it continues maturing to a production quality release.
 
 ### Current Release = 0.4.5 "Whirling Whippet" 

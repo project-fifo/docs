@@ -34,7 +34,7 @@ Clicking on the "add package" button will take you to the package creation page 
 3. Create optional package rules if you require them. example:
     ![](/assets/img/jingles/packages04.jpg)
 
-    In the above example we are essentially saying that the **"uuid"** of the hypervisor must equal "**00-25-90-96-f3-f6**". The result of choosing this package when creating a machine will ensure that the vm/machine only gets created on the hypervisor / compute node you specified.
+    In the above example we are essentially saying that the **"uuid"** of the hypervisor must equal "**ee1c3236-a2b1-43fa-ac52-8d6d9c7a3dc3**". The result of choosing this package when creating a machine will ensure that the vm/machine only gets created on the hypervisor / compute node you specified.
 
 4. Click on the <kbd>+</kbd> plus button to create additional package rules.
 

@@ -6,10 +6,10 @@ title: Jingles Topology
 ---
 # Topology
 
-Topology allows you explain the layout of your network and datacenter to FiFo, this allows FiFo to make bett decisions when placing your VMs by being able to calculate the distance between hypervisors and by that Mv's.
+Topology is where tell FiFo the layout of your network and datacenter. This allows FiFo to make better decisions when placing your VMs. It does this by calculating the distances between hypervisors and specific VMs.
 
-The topology is expressed by giving each hypervisor a path, the where the first element in a path is the highest in the herachy and the lowest is the last. A top most element for each part is assumed but not shown since it can neither be modifed nor deleted, this ensures all path' are conncted. The last element of a past should be the hypervisor itself which also is the default total past.
+The topology is expressed by giving each hypervisor a path. The "where" the first element in a path is the highest in the hierarchy and the lowest is the last. A top most element for each part is assumed but not shown since it can neither be modified nor deleted, this ensures all path' are connected. The last element of a past should be the hypervisor itself which also is the default total past.
 
-Pathes can be changed by clicking on the hypervisor in the topoligy view, new elements added to the front of the path, the view is automatically cahnged to display the cloud layout in a tree like strucutre.
+Paths can be changed by clicking on the hypervisor in the topology view, new elements added to the front of the path, the view is automatically changed to display the cloud layout in a tree like structure.
 
 ![List](/assets/img/jingles/topology01.png)

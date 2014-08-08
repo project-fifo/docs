@@ -6,7 +6,7 @@ title: Project-FiFo configuration
 ---
 
 <p class="bs-callout bs-callout-danger">
-Please be aware that this guide covers the installation of a <b>single</b> FiFo zone, while this is suppored and might be acceptable for a prive 'for fun' server a production environment should consist of <b>at least 5 physically seperated</b> zone! Details on how to set up clustering can be found in the <a href="/general/clustering.html">Clustering</a> section.
+Please be aware that this guide covers the installation of a <b>single</b> FiFo zone, while this is supported and might be acceptable for a private 'for fun' server a production environment should consist of <b>at least 5 physically separated</b> zone! Details on how to set up clustering can be found in the <a href="/general/clustering.html">Clustering</a> section.
 </p>
 
 ## Creating the Zone
@@ -51,7 +51,7 @@ Sample contents of setupfifo.json
 }
 ```
 
-Next we create our FiFo JSON payload file and save it incase we need to reinstall again at a later stage.
+Next we create our FiFo JSON payload file and save it in case we need to reinstall again at a later stage.
 
 ```bash
 cd /opt
@@ -65,7 +65,7 @@ vmadm create -f setupfifo.json
 We now zlogin to our newly created FiFo zone and proceed with adding the FiFo package repository and then installing the FiFo packages
 
 <p class="bs-callout bs-callout-info">
-Please note that this is for the reelease version of FiFo to installed the current development version use `VERSION=dev` instead of `VERSION=rel`.
+Please note that this is for the release version of FiFo to installed the current development version use `VERSION=dev` instead of `VERSION=rel`.
 </p>
 
 
@@ -79,7 +79,7 @@ cp /opt/local/fifo-jingles/config/nginx.conf /opt/local/etc/nginx/nginx.conf
 ```
 
 ## Configuration
-If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new `*.conf.example` files are added. The generated files contain some defaults it non the less adviced to take some time to configure [wiggle](/wiggle/configuration.html), [sniffle](/sniffle/configuration.html), [snarl](/snarl/configuration.html) and [howl](/howl/configuration.html).
+If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new `*.conf.example` files are added. The generated files contain some defaults it non the less advised to take some time to configure [wiggle](/wiggle/configuration.html), [sniffle](/sniffle/configuration.html), [snarl](/snarl/configuration.html) and [howl](/howl/configuration.html).
 
 
 ## Startup
@@ -94,6 +94,14 @@ svcs epmd snarl sniffle howl wiggle nginx
 ```
 
 ## Initial administrative tasks
+
+<p class="bs-callout bs-callout-info">
+Starting with 0.6.0 (current dev) Snarl supports multiple realms, unless otherwise configured fifo will use the 'default' realm.</br>
+In consequence this means all user and roll commands need an additional argument, the realm is specified as first argument behind the command so it changes as follows:</br>
+'fifoadm users add admin' becomes 'fifoadm users add default admin'.
+</p>
+
+
 The last step is to create an admin user with full permissions so we can login. The important part is to ensure that a permission called `...` is added, which assigns "ALL usage rights" to your admin user.
 
 ```
@@ -104,9 +112,6 @@ fifoadm users passwd admin admin
 
 If you want to add a default user role execute the following commands to assign basic permissions to the role so that users belonging to this role can create and manage their own vm's.
 
-<p class="bs-callout bs-callout-info">
-Pre 0.4.4 roles were named to groups if you are using a older sniffle substiture roles for groups in the following commands
-</p>
 
 ```
 fifoadm roles add Users

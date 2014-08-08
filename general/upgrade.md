@@ -15,7 +15,7 @@ It is highly advised to make a snapshot of the FiFo zone before updating, while 
 
 
 ## Zone
-To upgrade the components in a zone it's nessessart to install the new packages and restart the services, in addition to this sometimes additional steps are needed depended on the update.
+To upgrade the components in a zone it's necessary to install the new packages and restart the services, in addition to this sometimes additional steps are needed depended on the update.
 
 ```bash
 pkgin -fy up
@@ -50,13 +50,21 @@ fifoadm hypervisors update
 
 this will trigger all hypervisors to update.
 
+## 0.6.0<a id="0.4.4"></a>
+Version 0.6.0 of fifo introduces a version of Snarl that allows to have multiple parallel authentication realms inside of Snarl. To support this the former global information into a realm this can be archived by running the DB update command:
+
+```bash
+snarl-admin db update default
+```
+
+This will place all users, roles and organizations into the `default` realm. Another realm can be chosen but it will require configuring the remaining fifo services to use this.
 
 ## 0.4.4<a id="0.4.4"></a>
 
-With 0.4.4 there is a considerable update of the database this means additional steps need to be taken. Once all serivces have been updated the following commands need to be run:
+With 0.4.4 there is a considerable update of the database this means additional steps need to be taken. Once all services have been updated the following commands need to be run:
 
 <p class="bs-callout bs-callout-danger">
-It is critical that <b>ALL</b> services are running and connected during this update otherwise dataloss can occour!
+It is critical that <b>ALL</b> services are running and connected during this update otherwise data loss can occur!
 </p>
 
 ```bash
@@ -76,7 +84,7 @@ rm -r /var/db/snarl/anti_entropy
 This version introduces a new system for config files. The aim is to make fifo more ops friendly by providing more human readable configuration with documentation.
 
 <p class="bs-callout bs-callout-danger">
-The old files will conflict with the existing ones so it is important to transfair the changes form the old files and adjust them accordingly in the new files then <b>delete</b> the old files.
+The old files will conflict with the existing ones so it is important to transfer the changes form the old files and adjust them accordingly in the new files then <b>delete</b> the old files.
 </p>
 
 * **Chunter**

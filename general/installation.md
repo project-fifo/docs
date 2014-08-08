@@ -15,7 +15,7 @@ From the GZ (Global Zone) we install the base dataset we are going to use for ou
 ```bash
 imgadm update
 imgadm import dc0688b2-c677-11e3-90ac-13373101c543
-imgadm list | grep 17c98640
+imgadm list | grep dc0688b2
 ```
 
 If installed successfully you should see:

@@ -4,7 +4,7 @@ category: jingles
 section: jingles/usermanagement
 title: Jingles Usermanagement
 ---
-# Jingles Usermanagement
+# Jingles User Management
 
 ## Users<a id="users"></a>
 

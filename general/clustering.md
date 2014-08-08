@@ -55,6 +55,6 @@ To add a server the following steps need to be taken, exact descriptions of each
 Removing a server is as simple as adding one, but to ensure it is not picked up again after it is removed the line `mdns.server = disabled` should be added to the configuration file of the server to be removed.
 
 - on the **existing server** check the server status with [ring-status](/sniffle/administration.html#ring-status) and [member-status](/sniffle/administration.html#member-status) commands.
-- on the **server to be removed** run the [join](/sniffle/administration.html#leave) command.
+- on the **server to be removed** run the [leave](/sniffle/administration.html#leave) command.
 - on the **existing server** re check the server status with [ring-status](/sniffle/administration.html#ring-status) and [member-status](/sniffle/administration.html#member-status) commands.
 - once the server is removed it is restarted and can be shut down using the `svcadm disable sniffle` command.

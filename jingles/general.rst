@@ -81,7 +81,7 @@ The *About Page* contains useful and relevant information such as package versio
  * bug tracker : The project's issue tracker where you can log problem tickets. http://jira.project-fifo.net/
  * mailing list : Link to the project's google groups mailing list.
  * github : The project's source code repository. https://github.com/project-fifo
-  * irc : This launches an additional browser window that connects you to the #project-fifo official irc channel on freenode.
+ * irc : This launches an additional browser window that connects you to the #project-fifo official irc channel on freenode.
  * follow us : A link to follow the project's official twitter feed. @project_fifo
 2. Versions : Shows the current versions of all the *FiFo* services and indicates whether new package updates are available.
 3. Messages : A message section that shows relevent or pertinent messages related to your installation.

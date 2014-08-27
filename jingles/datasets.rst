@@ -33,7 +33,7 @@ The remote datasets tab is where you choose which external datasets you would li
 	1. To "import" a dataset simply click on the import button. The importing dataset progress bar will then be visible in the "dataset installed" tab.
 	2. Shows the external repository *FiFo* is currently associated with.
 
-Should you wish to change the remote repository source this can be configured by editing the `configuration file<jingles/configuration.html>`_.
+Should you wish to change the remote repository source this can be configured by editing the `configuration file <configuration.html>`_.
 
 
 Details

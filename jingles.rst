@@ -10,17 +10,13 @@ Jingles
    :glob:
 
    jingles/configuration
-   jingles/datasets
-   jingles/dtrace
    jingles/general
+   jingles/usermanagement
+   jingles/machines
    jingles/groupings
    jingles/hypervisors
-   jingles/machines
-   jingles/networking
-   jingles/packages
    jingles/typology
-   jingles/usermanagement
-
-   
-
-
+   jingles/datasets
+   jingles/packages
+   jingles/networking
+   jingles/dtrace

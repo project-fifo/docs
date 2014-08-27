@@ -1,7 +1,7 @@
 .. Project-FiFo documentation master file, created by
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
-Sniffle
+Jingles
 #######
 
 .. toctree::
@@ -9,6 +9,18 @@ Sniffle
    :maxdepth: 2
    :glob:
 
-   sniffle/configuration
-   sniffle/administration
-   sniffle/permissions
+   jingles/configuration
+   jingles/datasets
+   jingles/dtrace
+   jingles/general
+   jingles/groupings
+   jingles/hypervisors
+   jingles/machines
+   jingles/networking
+   jingles/packages
+   jingles/typology
+   jingles/usermanagement
+
+   
+
+

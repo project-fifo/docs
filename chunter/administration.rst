@@ -13,7 +13,7 @@ Chunter uses the SMF to manage it's running state so it is restarted in the case
 Updating
 --------
 
-Chunter can be updated by running `/opt/chunter/bin/update` this script will check for new updates and install them as needed.
+Chunter can be updated by running ``/opt/chunter/bin/update`` this script will check for new updates and install them as needed.
 
 Installing the new package
 ``````````````````````````
@@ -25,7 +25,7 @@ Installing the new package
 Updating the config
 ```````````````````
 
-After the newest package is installed the config file should be checked for changes and eddited if needed. The `.example` file will always contain the newest version of the config `diff` is a handy tool to see if some settings need to be added to the existing file.
+After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
 .. code-block:: bash
 
@@ -34,9 +34,9 @@ After the newest package is installed the config file should be checked for chan
 
 Restarting the service
 ``````````````````````
-Chunter cna be restarte by running `svcadm restart chunter`.
+Chunter cna be restarte by running ``svcadm restart chunter``.
 
 Manually created VM's
 `````````````````````
 
-Chunter does not automatically detect manually created VM's to make chunter aware of them chunter needs to be restarted: `svcadm restart chunter`.
+Chunter does not automatically detect manually created VM's to make chunter aware of them chunter needs to be restarted: ``svcadm restart chunter``.

@@ -5,11 +5,6 @@
 General
 *******
 
-1. `Login`_
-2. `Dashboard`_
-3. `Cloudview`_
-4. `About`_
-
 Login
 #####
 

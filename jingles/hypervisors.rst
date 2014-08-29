@@ -5,11 +5,6 @@
 Hypervisors
 ***********
 
-1. `List View`_
-2. `Details`_
-3. `Performance`_
-4. `Characteristics`_
-
 List View
 #########
 

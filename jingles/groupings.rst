@@ -5,9 +5,6 @@
 Stacks & Clusters
 *****************
 
-1. `Clusters`_
-2. `Stacks`_
-
 With the help of **Stacks** and **Clusters** it is possible to 'define' the design of applications deployed within the *FiFo* Cloud. This helps the system make intelligent decisions regarding VM placement.
 
 .. image:: /_static/images/jingles/groupings01.png

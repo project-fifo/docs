@@ -5,20 +5,20 @@
 Administration
 **************
 
-The sniffle admin command is ``sniffle-admin`` but many commands can also be accessed via ``fifoadm`` command. Please keep in mind that ``fifoadm`` is not designed as a every day command but only as a last fallback when commands are not available through the API.
+The `Sniffle <../sniffle.html>`_ admin command is ``sniffle-admin`` but many commands can also be accessed via ``fifoadm`` command. Please keep in mind that ``fifoadm`` is not designed as an every day command but only as a last fallback when commands are not available through the API.
 
 General managemnet
-==================
+##################
 
-Sniffle uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. Sniffle can be enabled, disabled and restarted via: ``svcadm enable sniffle``, ``svcadm disable sniffle`` and ``svcadm restart sniffle``
+`Sniffle <../sniffle.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. `Sniffle <../sniffle.html>`_ can be enabled, disabled and restarted via: ``svcadm enable sniffle``, ``svcadm disable sniffle`` and ``svcadm restart sniffle``
 
 Updating
---------
+********
 
-Sniffle can be updated by three simple steps.
+`Sniffle <../sniffle.html>`_ can be updated by three simple steps.
 
 Installing the new package
-``````````````````````````
+**************************
 
 .. code-block:: bash
 
@@ -27,7 +27,7 @@ Installing the new package
 
 
 Updating the config
-````````````````````
+*******************
 
 After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
@@ -37,11 +37,12 @@ After the newest package is installed the config file should be checked for chan
    vi /opt/loca/fifo-sniffle/etc/sniffle.conf
 
 Restarting the service
-``````````````````````
-After the config is updated the service needs to be restarted, sniffle is running clustered and has more then ``N`` it is often possible to do a rolling update by restarting one by one.
+**********************
+
+After the config is updated the service needs to be restarted. `Sniffle <../sniffle.html>`_ is running clustered and has more then ``N`` it is often possible to do a rolling update by restarting one by one.
 
 Cluster management
-==================
+******************
 
 sniffle-admin join ``<nodename>@<ip>``
     Joins a sniffle cluster, please note that all data on the joining (not the joined) node is deleted.
@@ -89,9 +90,9 @@ sniffle-admin aae-status
     Gives a detailed status on the AAE status of the system.
 
 Log Files
-=========
+#########
 
-FiFo uses extensive logging to make debugging issue and understanding behaviour. The log files are located in ``/var/log/sniffle/``. There are multiple log files with various severities.
+*FiFo* uses extensive logging to make debugging issue and understanding behaviour. The log files are located in ``/var/log/sniffle/``. There are multiple log files with various severities.
 
 
 debug.log
@@ -108,7 +109,7 @@ error.log
     This files contains errors, it usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavuiour so sporadic entries might just be fine.
 
 General tasks
-=============
+#############
 
 sniffle-admin hypervisors <subcommand>
     * list - lists all avaiable hypervisors

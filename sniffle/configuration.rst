@@ -6,18 +6,20 @@ Configuration
 *************
 
 Configuration file
-==================
+##################
 
-Sniffle's configuration file is located in ``/opt/local/sniffle/etc/sniffle.conf`` it is automatically generated on the first install and not overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/sniffle/etc/sniffle.conf.example``.
+`Sniffle <../sniffle.html>`_'s configuration file is located in ``/opt/local/sniffle/etc/sniffle.conf``. It is automatically generated on the first install and not overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/sniffle/etc/sniffle.conf.example``.
 
 The configuration file is documented inline but we'll go over go over some more interesting settings here.
 
 Active Anti Entropy (AAE)
--------------------------
+*************************
 
-AAE is riak's mechanism of background synchronization of systems to ensure a higher data consistency, it was ported to FiFo to offer incrased stability in multi node setups. AAE increases the required resources conciderably and does not have much use with a single system so it is **disabled by default**.
+AAE is riak's mechanism of background synchronization of systems to ensure a higher data consistency. It was ported to *FiFo* in order to offer incrased stability in multi node setups. AAE increases the required resources conciderably and does not have much use with a single system so it is **disabled by default**.
 
-Having more then one system it strongly recommanded to enable AAE! It is possible to selectively enable and disable for different subsystems, generally it is OK keep it disabled for ``images`` since data does not chagne, all other systems should be switched on.
+.. Attention::
+
+  When having more then one system it is strongly recommanded to enable AAE! It is possible to selectively enable and disable for different subsystems. Generally it is OK keep it disabled for ``images`` since data does not chagne, all other systems should be switched on.
 
 ::
 
@@ -33,24 +35,24 @@ Having more then one system it strongly recommanded to enable AAE! It is possibl
    package.aae = on
 
 Database
---------
+********
 
-FiFo uses ``leveldb`` as it's backend database, leveldb has many different tuneables some of the more important ones are.
+*FiFo* uses ``leveldb`` as its backend database. Leveldb has many different tuneables some of the more important ones are.
 
 
 ring_size
-    The number of VNodes used by fifo, this setting can only be changed before the system is booted the first time so choose it carefully, it defaults to ``8`` but with more then one systems it is very sensible to increase this number higher, generally ``~10`` vnodes per physical node are a good rule of thumb. The ``ring_size`` needs to be a a power of two (``2``, ``4``, ``8`` ... ``64`` ...).
+    The number of VNodes used by *FiFo*. This setting can only be changed before the system is booted the first time so choose it carefully. It defaults to ``8`` but with more then one systems it is very reacts very sensible the higher this number is set . Generally ``~10`` vnodes per physical node are a good rule of thumb. The ``ring_size`` needs to be a a power of two (``2``, ``4``, ``8`` ... ``64`` ...).
 
 leveldb.mmap_size
-    The chunk size of each mmaped file, this has a huge impact of the memory requirements. Since FiFo does not store lots of data a setting of ``1MB`` is a valid value for small and medium installations, the settings can be increased as long as it is ensured that enough memory is present.
+    The chunk size of each mmaped file. This has a huge impact of the memory requirements. Since *FiFo* does not store lots of data a setting of ``1MB`` is a valid value for small and medium installations.The settings can be increased as long as it is ensured that enough memory is present.
 
 Global configuration
-=====================
+####################
 
-In addition to the config files that apply on a per node level there are global configurations that can be changed from one system and are applied globally. Unless otherwise noted all those settings can be changed during runtime.
+In addition to the config files that apply on a per node level there are global configurations that can be changed from one system and are applied globally. Unless otherwise noted all these settings can be changed during runtime.
 
-sniffle-admin config show
---------------------------
+Sniffle-admin config show
+*************************
 
 Shows a list of all settings in the global configuration.
 
@@ -72,8 +74,8 @@ Shows a list of all settings in the global configuration.
     storage.s3.image_buc                                        fifo-images
 
 
-sniffle-admin config set ``<key>`` ``<value>``
-----------------------------------------------
+Sniffle-admin config set ``<key>`` ``<value>``
+**********************************************
 
 Sets a global config value please see the followign sections for valid settings.
 

@@ -7,7 +7,8 @@ Permissions
 ***********
 
 Datasets
-========
+########
+
 Dataset Permissions start with ``datasets->`` followed by the UUID of the dataset. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->datasets->list``
@@ -26,7 +27,7 @@ Dataset Permissions start with ``datasets->`` followed by the UUID of the datase
     Allows to change the dataset.
 
 D-Trace
-=======
+#######
 
 D-Trace Permissions start with ``dtraces->`` followed by the UUID of the dtrace. In addition to user specific permissions the following ``cloud`` global permission exist.
 
@@ -49,7 +50,7 @@ D-Trace Permissions start with ``dtraces->`` followed by the UUID of the dtrace.
     Allows to run this script.
 
 Hypervisors
-===========
+###########
 
 Hypervisor Permissions start with ``hypervisors->`` followed by the UUID of the hypervisor. In addition to user specific permissions the following ``cloud`` global permission exist.
 
@@ -72,7 +73,7 @@ Hypervisor Permissions start with ``hypervisors->`` followed by the UUID of the 
     Allows to create VM's on this hypervisor.
 
 IP-Ranges
-=========
+#########
 
 IP-Range Permissions start with ``ipranges->`` followed by the UUID of the iprange. In addition to user specific permissions the following ``cloud`` global permission exist.
 
@@ -92,7 +93,7 @@ Allows the to create new ipranges.
     Allows to change the iprange.
 
 Networks
-========
+########
 
 Network Permissions start with ``networks->`` followed by the UUID of the network. In addition to user specific permissions the following ``cloud`` global permission exist.
 
@@ -112,7 +113,7 @@ Network Permissions start with ``networks->`` followed by the UUID of the networ
     Allows to change the network.
 
 Packages
-========
+########
 
 Package Permissions start with ``packages->`` followed by the UUID of the package. In addition to user specific permissions the following ``cloud`` global permission exist.
 
@@ -132,14 +133,15 @@ Allows the to create new packages.
     Allows to change the package.
 
 VMs
-===
+###
+
 VMs Permissions start with ``vms->`` followed by the UUID of the VM. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->packages->list``
     Allows to list packages, the ``get`` permission on each package determins which vm are seen during the list.
 
 ``cloud->packages->create``
-Allows the to create new Vm.
+    Allows the to create new Vm.
 
 ``vms-><UUID>->get``
     Allows to see the VM/read it's data.

@@ -6,18 +6,20 @@ Configuration
 *************
 
 Configuration file
-==================
+##################
 
-Snarl's configuration file is located in ``/opt/local/snarl/etc/snarl.conf`` it is automatically generated on the first install and not overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/snarl/etc/snarl.conf.example``.
+`Snarl <../snarl.html>`_'s configuration file is located in ``/opt/local/snarl/etc/snarl.conf``. it is automatically generated on the first install and will not be overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/snarl/etc/snarl.conf.example``.
 
-The configuration file is documented inline but we'll go over go over some more interesting settings here.
+The configuration file is documented inline but we'll go over some more interesting settings here.
 
 Active Anti Entropy (AAE)
--------------------------
+*************************
 
-AAE is riak's mechanism of background syncronisation of systems to ensure a higher data consistency, it was ported to FiFo to offer incrased stability in multi node setups. AAE increases the required resources conciderably and does not have much use with a single system so it is **disabled by default**.
+AAE is riak's mechanism of background syncronisation of systems to ensure a higher data consistency. It was ported to FiFo to offer incrased stability in multi node setups. AAE increases the required resources conciderably and does not have much use with a single system so it is **disabled by default**.
 
-Having more then one system it strongly recommanded to enable AAE!
+.. attention::
+
+    When having more then one system it strongly recommanded to enable AAE!
 
 ::
 
@@ -26,9 +28,9 @@ Having more then one system it strongly recommanded to enable AAE!
 
 
 Database
---------
+********
 
-FiFo uses ``leveldb`` as it's backend databas, leveldb has many different tuneables some of the more important ones are.
+*FiFo* uses ``leveldb`` as it's backend databas. Leveldb has many different tuneables some of the more important ones are.
 
 ``ring_size``
     The number of VNodes used by FiFo, this setting can only be changed before the system is booted the first time so choose it carefully, it defaults to ``8`` but with more then one systems it is very sensible to increase this number higher, generally ``~10`` vnodes per physical node are a good rule of thumb. The ``ring_size`` needs to be a a power of two (``2``, ``4``, ``8`` ... ``64`` ...).
@@ -37,11 +39,11 @@ FiFo uses ``leveldb`` as it's backend databas, leveldb has many different tuneab
     The chunk size of each mmaped file, this has a huge impact of the memory requirements. Since FiFo does not store lots of data a setting of ``1MB`` is a valid value for small and medium installations, the settings can be increased as long as it is ensured that enough memory is present.
 
 Multi DC support
-----------------
+****************
 
-The mutli DC support in FiFo is based in Snarl, it works by syncronizing userdata between all datacenters. Synchronization happens on a point to point system meaning that each Snarl instance in ``DC1`` syncronizes with one system in ``DC2``.
+The mutli DC support in FiFo is based in `Snarl <../snarl.html>`_. It works by syncronizing userdata between all datacenters. Synchronization happens on a point to point system meaning that each `Snarl <../snarl.html>`_ instance in ``DC1`` syncronizes with one system in ``DC2``.
 
-By default the synchronization subsystem is disabled, it needs to be enabled and configured in order to propperly propagate data.
+By default the synchronization subsystem is disabled. It needs to be enabled and configured in order to propperly propagate data.
 
 ``sync``
     Either set to ``on`` or ``off`` enabeling or disabeling the system, a restart is required to enable it but it can be changed at any time after the installation.
@@ -66,18 +68,18 @@ By default the synchronization subsystem is disabled, it needs to be enabled and
 
 
 `Yubico <https://yubico.com/>`_
--------------------------------
+********************************
 
-FiFo support two factor authentication with Yubikeys, to enable this snarl needs to be set up a API key with the following settings:
+*FiFo* support two factor authentication with Yubikeys, to enable this `Snarl <../snarl.html>`_ needs to be set up a API key with the following settings:
 
 ``yubico.client_id``
-    This section deals with Yubikey support a API key and client ID can be obtained from [the yubico page](https://upgrade.yubico.com/getapikey/).
+    This section deals with Yubikey support. An API key and client ID can be obtained from https://upgrade.yubico.com/getapikey/.
 
 ``yubico.secret_key``
-    The Secret key related that was issued along with the Yubico cleint ID.
+    The secret key related that was issued along with the Yubico cleint ID.
 
 Global configuration
-====================
+####################
 
 In addition to the config files that apply on a per node level there are global configurations that can be changed from one system and are applied globally. Unless otherwise noted all those settings can be changed during runtime.
 

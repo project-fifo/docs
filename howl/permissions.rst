@@ -6,7 +6,7 @@ Permissions
 ***********
 
 Channels
-========
+########
 
 User permissions start with ``channels->`` followed by the UUID of the channel.
 

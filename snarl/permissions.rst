@@ -6,7 +6,7 @@ Permissions
 ***********
 
 Users
-=====
+#####
 
 User permissions start with ``users->`` followed by the UUID of the user. In addition to user specific permissions the following ``cloud`` global permission exist.
 
@@ -41,7 +41,7 @@ User permissions start with ``users->`` followed by the UUID of the user. In add
     Allows to remove the user from a role.
 
 Roles
-=====
+#####
 
 Role permissions start with ``roles->`` followed by the UUID of the role. In addition to user specific permissions the following ``cloud`` global permission exist.
 
@@ -73,7 +73,7 @@ Role permissions start with ``roles->`` followed by the UUID of the role. In add
     Allows to removea user from the role.
 
 Organisations
-=============
+#############
 
 Role Permissions start with ``orgs->`` followed by the UUID of the organisation. In addition to user specific permissions the following ``cloud`` global permission exist.
 

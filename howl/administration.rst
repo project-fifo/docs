@@ -5,20 +5,20 @@
 Administration
 **************
 
-The Howl admin command is ``howl-admin``.
+The `Howl <../howl.html>`_ admin command is ``howl-admin``.
 
 General managemnet
-==================
+##################
 
-Howl uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. howl can be enabled, disabled and restaerted via: ``svcadm enable howl``, ``svcadm disable howl`` and ``svcadm restart howl``
+`Howl <../howl.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. `Howl <../howl.html>`_ can be enabled, disabled and restaerted via: ``svcadm enable howl``, ``svcadm disable howl`` and ``svcadm restart howl``
 
 Updating
---------
+********
 
-Howl can be updated by three simple steps.
+`Howl <../howl.html>`_ can be updated by three simple steps.
 
 Installing the new package
-``````````````````````````
+**************************
 
 .. code-block:: bash
 
@@ -26,7 +26,7 @@ Installing the new package
    pkgin -fy install fifo-howl
 
 Updating the config
-```````````````````
+*******************
 
 After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
@@ -37,15 +37,15 @@ After the newest package is installed the config file should be checked for chan
 
 
 Restarting the service
-``````````````````````
+**********************
 
-After the config is updated the service needs to be restarted, howl is running clustered and has more then ``N`` it is often possible to do a rolling update by restarting one by one.
+After the config is updated the service needs to be restarted. `Howl <../howl.html>`_ is running clustered and has more then ``N``. It is often possible to do a rolling update by restarting one by one.
 
 Cluster management
-==================
+##################
 
 howl-admin join ``<nodename>@<ip>``
-    Joins a howl cluster, please note that all data on the joining (not the joined) node is deleted.
+    Joins a `Howl <../howl.html>`_ cluster, please note that all data on the joining (not the joined) node is deleted.
 
 howl-admin leave
     Cleanly removes a node from the ring. This is helpful when nodes get moved and the cluster downsized
@@ -67,7 +67,7 @@ howl-admin member-status
 
 
 howl-admin ring-status
-    Gives a extended report ont he ring, including handoffs and downed nodes.
+    Gives a extended report on the ring. Including handoffs and downed nodes.
 
     ::
 
@@ -84,20 +84,20 @@ howl-admin ring-status
 
 
 howl-admin status
-    A simple command that returns the overall cluster status, it returns a propper return code and is useful for scripted rolling updates.
+    A simple command that returns the overall cluster status. It returns a propper return code and is useful for scripted rolling updates.
 
 
 howl-admin aae-status
     Gives a detailed status on the AAE status of the system.
 
 Log Files
-=========
+#########
 
-FiFo uses extensive logging to make debugging issue and understanding behaviour. The log files are located in ``/var/log/howl/``. There are multiple log files with various severities.
+*FiFo* uses extensive logging to make debugging issue and understanding behaviour. The log files are located in ``/var/log/howl/``. There are multiple log files with various severities.
 
 
 debug.log
-    By default the debug log is disabled, it is very verbose and should not be enabled in production systems to enable it uncomment the followig line in the ``howl.conf``
+    By default the debug log is disabled. It is very verbose and should not be enabled in production systems. To enable it uncomment the followig line in the ``howl.conf``
 
     ::
 
@@ -105,7 +105,7 @@ debug.log
 
 
 console.log
-    This file contains logs of the level info and above, usually all interesting logs can be found here.
+    This file contains logs of the level info and above. Usually all interesting logs can be found here.
 
 error.log
-    This files contains errors, it usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavuiour so sporadic entries might just be fine.
+    This files contains errors. It usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavuiour so sporadic entries might just be fine.

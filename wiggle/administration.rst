@@ -5,19 +5,20 @@
 Administration
 **************
 
-The wiggle admin command is ``wiggle-admin``.
+The `Wiggle <../wiggle.html>`_ admin command is ``wiggle-admin``.
 
 General managemnet
-==================
+##################
 
-Wiggle uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. Wiggle can be enabled, disabled and restaerted via: ``svcadm enable wiggle``, ``svcadm disable wiggle`` and ``svcadm restart wiggle``
+`Wiggle <../wiggle.html>`_ uses the SMF to manage its running state so it is restarted in the case of crashes and booted accordingly on system start. `Wiggle <../wiggle.html>`_ can be enabled, disabled and restaerted via: ``svcadm enable wiggle``, ``svcadm disable wiggle`` and ``svcadm restart wiggle``
 
 Updating
---------
-Wiggle can be updated by three simple steps.
+********
+
+`Wiggle <../wiggle.html>`_ can be updated by three simple steps.
 
 Installing the new package
-``````````````````````````
+**************************
 
 .. code-block:: bash
 
@@ -25,9 +26,9 @@ Installing the new package
    pkgin -fy install fifo-wiggle
 
 Updating the config
-```````````````````
+*******************
 
-After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
+After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config. ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
 .. code-block:: bash
 
@@ -36,5 +37,5 @@ After the newest package is installed the config file should be checked for chan
 
 
 Restarting the service
-``````````````````````
-After the config is updated the service needs to be restarted, Wiggle is running clustered and has more then ``N`` it is often possible to do a rolling update by restarting one by one.
+**********************
+After the config is updated the service needs to be restarted. `Wiggle <../wiggle.html>`_ is running clustered and has more then ``N`` it is often possible to do a rolling update by restarting one by one.

@@ -5,16 +5,6 @@
 Packages
 ********
 
-1. `List`_
-2. `Creation`_
-
-	- `Package rules`_
-	- `weight`_
-	- `condition`_
-	- `attribute`_
-	- `usable attributes`_
-3. `Details`_
-
 List
 ####
 

@@ -5,16 +5,6 @@
 Machines
 ********
 
-1. `List`_
-2. `Create`_
-3. `Details`_
-
-    - `Machine Performance Tab`_
-    - `Snapshots`_ 
-    - `Resize`_
-    - `History`_
-    - `Notes`_
-
 List
 ####
 

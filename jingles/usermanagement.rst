@@ -5,25 +5,6 @@
 User Management
 ***************
 
-1. `Users`_
-
-	- `List View - Users`_
-	- `Creation - Users`_ 
-	- `Details - Users`_
-	- `Permissions - Users`_
-	- `Roles - Users`_
-	- `SSH Keys - Users`_
-2. `Roles`_
-
-	- `List View - Roles`_
-	- `Creation - Roles`_
-	- `Details - Roles`_
-3. `Orgs`_
-
-	- `List View - Orgs`_
-	- `Creation - Orgs`_
-	- `Details - Orgs`_
-
 Users
 #####
 

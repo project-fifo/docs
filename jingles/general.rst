@@ -44,6 +44,7 @@ Cloudview
 The *CloudView* page shows a graphical realtime representation of your entire cloud. This "*10,000 foot view*" is extremely useful for visualising your cloud in operation as well as quickly determining which VM's or nodes are under load or misbehaving.
 
 1. CloudView Controls
+
  * Full screen : Expands CloudView to full screen view. This is very useful when you have a large cloud with a lot of nodes.
  * Reset : This resets the controls to default.
  * Zoom : Controls the zoom level (The higher the zoom level the more elements you can fit in the same space)
@@ -77,11 +78,14 @@ About
 The *About Page* contains useful and relevant information such as package versions, *FiFo* team members and contributors as well as a full copy of the open source licence (CDDL) the project is licensed under.
 
 1. Various links : Contains links related to the project:
+
  * website : The project's website (you are currently on it). http://project-fifo.net/
  * bug tracker : The project's issue tracker where you can log problem tickets. http://jira.project-fifo.net/
  * mailing list : Link to the project's google groups mailing list.
  * github : The project's source code repository. https://github.com/project-fifo
  * irc : This launches an additional browser window that connects you to the #project-fifo official irc channel on freenode.
  * follow us : A link to follow the project's official twitter feed. @project_fifo
+ 
 2. Versions : Shows the current versions of all the *FiFo* services and indicates whether new package updates are available.
+
 3. Messages : A message section that shows relevent or pertinent messages related to your installation.

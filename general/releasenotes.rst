@@ -150,8 +150,8 @@ With a growing number services running inside of *FiFo* the amount of memory it 
 UI
 **
 
-Jingles
-*******
+`Jingles <../jingles.html>`_
+****************************
 
 The entire user interface has been reworked providing a lighter and more pleasant look while improving usability and providing a more logical structure of the components.
 

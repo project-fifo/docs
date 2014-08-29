@@ -9,9 +9,11 @@ Release Notes
 #####
 
 * Cloud topology
+  
   * Clusters - ensuring VMs are not placed on the same hypervisor.
   * Stacks - keeping VMs placed as close as possible.
   * Hypervisor topology - describing the layout of the cloud to *FiFo*.
+  
 * Caching for `Wiggle <../wiggle.html>`_.
 * Dataset upload over the *Fifo* commandline client.
 * Dry run VM creation to ensure validity of Package/Dataset/Network combination prior to VM creation.

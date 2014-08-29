@@ -5,11 +5,30 @@
 User Management
 ***************
 
+1. `Users`_
+
+	- `List View - Users`_
+	- `Creation - Users`_ 
+	- `Details - Users`_
+	- `Permissions - Users`_
+	- `Roles - Users`_
+	- `SSH Keys - Users`_
+2. `Roles`_
+
+	- `List View - Roles`_
+	- `Creation - Roles`_
+	- `Details - Roles`_
+3. `Orgs`_
+
+	- `List View - Orgs`_
+	- `Creation - Orgs`_
+	- `Details - Orgs`_
+
 Users
 #####
 
-List View
-*********
+List View - Users
+*****************
 
 .. image:: /_static/images/jingles/users01.png
 
@@ -21,8 +40,8 @@ The default list view shows you a list of users that already exist in the system
 
 Clicking on the hyperlinked user's name will take you to that user's detail page as explained in a subsection below.
 
-Creation
-********
+Creation - Users
+****************
 
 To create a user click on the |add user| button.
 
@@ -34,8 +53,8 @@ This will take you to the new user creation page as shown below.
 
 Enter a username for your new user. Please note that usernames are case sensitive. Enter a password for your new user by typing in the password twice. Only if the two passwords are identical the "create" button will appear. To complete user creation click on the "create" button.
 
-Details
-*******
+Details - Users
+***************
 
 Clicking on an individual hyperlinked user name will take you to that user's details page.
 
@@ -48,8 +67,8 @@ Clicking on an individual hyperlinked user name will take you to that user's det
 
 .. |trash icon| image:: /_static/images/jingles/users-delete.png
 
-Permissions
-***********
+Permissions - Users
+*******************
 
 .. image:: /_static/images/jingles/users04.png
 
@@ -60,15 +79,15 @@ It is beyond the scope of this section to explain the permission system in neces
 .. note::
 	The `Permissions <https://project-fifo.net/display/PF/Permissions>`_ wiki article is not filled with content yet.
 
-Roles
-*****
+Roles - Users
+*************
 
 .. image:: /_static/images/jingles/users05.png
 
 The roles section allows you to add users to certain pre-existing roles. Users who get assigned to a specific role will inherit all the permissions and access rights of that role.
 
-SSH Keys
-********
+SSH Keys - Users
+****************
 
 .. image:: /_static/images/jingles/users06.png
 
@@ -82,8 +101,8 @@ You can add your own ssh public key to your user profile by simply pasting in yo
 Roles
 #####
 
-List View
-*********
+List View - Roles
+*****************
 
 .. image:: /_static/images/jingles/roles01.png
 
@@ -91,8 +110,8 @@ The **Roles** section is very similar to the **Users** section and is the place 
 
 To edit an existing role simply click on the roles name hyperlink. This will take you to the role details section.
 
-Creation
-********
+Creation - Roles
+****************
 
 To add a new role click on the add role button.
 
@@ -100,8 +119,8 @@ To add a new role click on the add role button.
 
 Enter a name for your new role and click on the create button.
 
-Details
-*******
+Details - Roles
+***************
 
 To edit a role click on the role name hyperlink in the role list view.
 
@@ -123,11 +142,27 @@ It is beyond the scope of this section to explain the permission system in neces
 Orgs
 ####
 
-List View
-*********
+.. attention::
 
-Creation
-********
+	content is missing
 
-Details
-*******
+List View - Orgs
+****************
+
+.. attention::
+
+	content is missing
+
+Creation - Orgs
+***************
+
+.. attention::
+
+	content is missing
+
+Details - Orgs
+**************
+
+.. attention::
+
+	content is missing

@@ -5,6 +5,9 @@
 Datasets
 ********
 
+1. `Installed Datasets`_
+2. `Remote Datasets`_
+3. `Details`_
 
 Installed Datasets
 ##################

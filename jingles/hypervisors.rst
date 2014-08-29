@@ -5,6 +5,11 @@
 Hypervisors
 ***********
 
+1. `List View`_
+2. `Details`_
+3. `Performance`_
+4. `Characteristics`_
+
 List View
 #########
 
@@ -37,7 +42,7 @@ The individual tabs relating to the hypervisor (`Performance`_ | `Characteristic
   - **Memory** Memory and L1 and L2 cache / arc statistics.
   - **Storage** pool sizes, used and free space as well as the "Health Status" of your pools.
   - **Networks** ip, nic name, driver and mac address details.
-  
+
 3. Clicking on the "Disks" hyperlink will expand the section and show you individual disk drive ID's and sizes.
 
 .. image:: /_static/images/jingles/hypervisors-disks.png

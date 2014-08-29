@@ -25,6 +25,7 @@ The **Machines** tab is the central area within the UI where new virtual machine
 .. |new machine button| image:: /_static/images/jingles/machines04.png
 
 4. The **Action Icons** are used to perform specific actions on machines directly from list view list.
+
   1. |button 1| Launch zone/kvm console.
   2. |button 2| Power on a machine.
 
@@ -76,11 +77,15 @@ Details
 5. The default "details" tab includes a color selector which will mark your vm a certain color in the "machine list" view page. This is useful for easily and quickly identifying certain machines in the list or for grouping certain types of machines by colors.
 6. Clicking on the "blue" edit configuration icon will expand a section which will allow you to change certain machine fields.
 
-    .. image:: /_static/images/jingles/machines-conf.png
+|picture|
+
      - **Describe** An internal own use field that can be enabled as one of the columns in machine list view.
      - **Alias** Change the alias of the machine.
      - **Hostname** Change the hostname of the machine.
      - **Resolvers** Change the resolvers of the machine.
+
+.. |picture| image:: /_static/images/jingles/machines-conf.png
+
 
 Machine Performance TAB
 ***********************

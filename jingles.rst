@@ -15,7 +15,7 @@ Jingles
    jingles/machines
    jingles/groupings
    jingles/hypervisors
-   jingles/typology
+   jingles/topology
    jingles/datasets
    jingles/packages
    jingles/networking

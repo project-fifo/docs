@@ -21,7 +21,7 @@ We are **community** driven and as such have a open and **friendly** eco-system,
 
 Most of the folks who develop and use fifo hang out on Freenode IRC in the **#project-fifo** channel. Why not come join us and say hi and meet the team.
 
-* `Bug Tracjer <http://jira.project-fifo.net/>`_
+* `Bug Tracker <http://jira.project-fifo.net/>`_
 * `FiFo mailing list <https://groups.google.com/forum/?fromgroups#!forum/project-fifo>`_
 * `twitter @project_fifo <https://twitter.com/project_fifo>`_
 * `Google+ <https://plus.google.com/+ProjectfifoNetHome>`_

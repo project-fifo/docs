@@ -13,9 +13,9 @@ Permissions
    Permissions can be given to both users and roles, however it best practice to concentrate on using roles to organize permissions.
 
 
-FiFo's permission system uses a nested tree to represent it's permissions going from the general to the sepecific. Generally the second level is the UUID of the element with the exeption of the ``cloud`` tree.
+*FiFo*'s permission system uses a nested tree to represent its permissions going from the general to the sepecific. Generally the second level is the UUID of the element with the exeption of the ``cloud`` tree.
 
-::
+  ::
 
    --vms
    |   |
@@ -42,7 +42,7 @@ FiFo's permission system uses a nested tree to represent it's permissions going 
 
 For simplicity permissions are represented by the path of the permission joined by ``->``. There are two special permissions, ``...`` which represents the "everything below this level" and ``_`` to everything at this level.
 
-So translating the tree above this would look like:
+So the ``cloud`` tree can be interpreted like this:
 
 - ``vms->vm1->get`` - can see VM ``vm1``
 - ``vms->vm1->stop`` - can stop VM ``vm1``
@@ -50,19 +50,20 @@ So translating the tree above this would look like:
 - ``users->_->get`` - can see every user
 - ``roles->...`` - can do everything with all roles
 
-In the pecific examples ``<UUID>`` is treated as a placeholder for a element or of cause can be ``_`` for all elements.
+In the specific examples ``<UUID>`` is treated as a placeholder for a element or of cause can be ``_`` for all elements.
 
-For the specific permissions on [users](/snarl/permissions.html#users), [organisations](/snarl/permissions.html#organisations) and [roles](/snarl/permissions.html#roles) please see the [Snarl Permissions]() section. For [vms](/sniffle/permissions.html#vms), [hypervisors](/sniffle/permissions.html#hypervisors), [datasets](/sniffle/permissions.html#datasets), [dtrace](/sniffle/permissions.html#dtrace), [ipranges](/sniffle/permissions.html#ipranges), [networks](/sniffle/permissions.html#networks) and [packages](/sniffle/permissions.html#packages) see the [Sniffle Permissions](/sniffle/permissions.html) section. For [channels](/howl/permissions.html#channels) see the [Howl Permissions](/howl/permissions.html) section.
+.. seealso::
+  For the specific permissions on `users <../snarl/permissions.html#users>`_, `roles <../snarl/permissions.html#roles>`_ and `organisations <../snarl/permissions.html#organisations>`_ please see the `Snarl Permissions <../snarl/permissions.html>`_ section. For `VMs <../sniffle/permissions.html#vms>`_, `hypervisors <../sniffle/permissions.html#hypervisors>`_, `datasets <../sniffle/permissions.html#datasets>`_, `dtrace <../sniffle/permissions.html#dtrace>`_, `ipranges <../sniffle/permissions.html#ipranges>`_, `networks <../sniffle/permissions.html#networks>`_ and `packages <../sniffle/permissions.html#packages>`_ see the `Sniffle Permissions <../sniffle/permissions.html>`_ section. For `channels <../howls/permissions.html#channels>`_ see the `Howl Permissions <../howl/permissions.html>`_ section.
 
 Organisations
 =============
 
-FiFo abstracts the concept of a *Organisation* (Customer, Client) away from the user. This means one *Organistaiton* can have multiple users, and a *User* (for example an admin user) can belong to multiple *Organisations*. However, belonging to an *Organisation* does not grant a *User* any permissions, this is handled by assigning *Roles*. A *User* can select one of the *Organisations* he blongs to *active* meaning he acts for the *Organisation* and triggers certain events.
+*FiFo* abstracts the concept of an *Organisation* (Customer, Client) away from the user. This means one *Organistaiton* can have multiple users, and a *User* (for example an admin user) can belong to multiple *Organisations*. However, belonging to an *Organisation* does not grant a *User* any permissions, this is handled by assigning *Roles*. A *User* can select one of the *Organisations* he blongs to *active* meaning he acts for the *Organisation* and triggers certain events.
 
 Triggers
 --------
 
-Triggers are where Organisation get their power from. They are miniature scripts that get executed when certain events occour.
+*Triggers* are where *Organisation* get their power from. They are miniature scripts that get executed when certain events occour.
 
 Trigger events
 ``````````````
@@ -122,7 +123,7 @@ This is an example for a general Users roles that covers the basic permissions r
 
 .. warning::
 
-   Please note the ``channels->_->join`` permission, this is to work around the limitations of how howl checks permissions at this moment, however channels are read only and require knowledge about the VM's UUID to join. This can be skipped but will not allow to see metrics for VM's that permissions are received via Organisation grant triggers. This is mea
+   Please note the ``channels->_->join`` permission. This permission exists to work around limitations in the way howl checks permissions. However channels are read only and require knowledge about the VMs UUID to join. This can be skipped but will not allow to see metrics for VMs that permissions are received via Organisation grant triggers.
 
 
 ::
@@ -147,20 +148,21 @@ This is an example for a general Users roles that covers the basic permissions r
 
 .. note::
 
-   This role assumes all users are allowed ot use all packages and datasets (``packages->_->get`` and ``datasets->_->get``) if this is not wanted the permissions must be set on a different level and more respective.
+   This role assumes all users are allowed to use all packages and datasets (``packages->_->get`` and ``datasets->_->get``) if this is not wanted the permissions must be set on a different level and more respective.
 
 .. note::
 
-   This is meanted to be used in connection with the <a href="/general/rightmanagement.html#org-example">Example Org</a> to give users the right to create VM's otherwise the following permission needs to be added to grant all users permission to create VMs: ``cloud->vms->create``.
+   This is meant to be used in connection with the <a href="/general/rightmanagement.html#org-example">Example Org</a> to give users the right to create VMs. Otherwise the following permission needs to be added to grant all users permission to create VMs: ``cloud->vms->create``.
 
 
 Organisation
 ------------
 
-Here is a set of rules that represents a good default organisation with three assiciarted roles. This is meant to be used in combination with a general [Users Role](/general/rightmanagement.html#org-example)
+Here is a set of rules that represents a good default organisation with three assiciarted roles. This is meant to be used in combination with a general User Role.
 
 Admins
 ``````
+
 
 Administrative users that have full power over resources of the Organistation.
 
@@ -195,7 +197,7 @@ Triggers
 Users
 `````
 
-Normal users that can can see, start, stop, restart VM's but not create or delete them.
+Normal users can see, start, restart and stop VMs but are not allowed to create or delete them.
 
 Basic permissions
 ''''''''''''''''''
@@ -227,7 +229,7 @@ Triggers
 RO
 ``
 
-Read Only users that can see VM's but not work with them.
+Read Only users that can see VMs but are not allowed to work with them.
 
 Basic permissions
 '''''''''''''''''

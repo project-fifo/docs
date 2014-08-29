@@ -5,7 +5,6 @@ Chunter
 #######
 
 .. toctree::
-   :hidden:
    :maxdepth: 2
    :glob:
 

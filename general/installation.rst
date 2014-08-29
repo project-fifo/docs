@@ -6,12 +6,19 @@ Installation
 
 .. warning::
 
-   Please be aware that this guide covers the installation of a **single** FiFo zone, while this is supported and might be acceptable for a private 'for fun' server a production environment should consist of **at least 5 physically separated<** zone! Details on how to set up clustering can be found in the <a href="/general/clustering.html">Clustering</a> section.
+   Please be aware that this guide covers the installation of a **single** *FiFo Zone*, while this is supported and might be acceptable for a private 'for fun' server. A production environment should consist of **at least 5 physically separated<** zone!. 
+
+.. seealso::
+
+  Details on how to set up clustering can be found in the `Clustering file <clustering.html>`_.
+
 
 
 Creating the Zone
 -----------------
-From the GZ (Global Zone) we install the base dataset we are going to use for our FiFo Zone and confirm its is installed:
+
+
+From the *GZ (Global Zone)* we install the base dataset we are going to use for our *FiFo Zone* and confirm its is installed:
 
 
 .. code-block:: bash
@@ -56,7 +63,7 @@ Sample contents of ``setupfifo.json``
    }
 
 
-Next we create our FiFo JSON payload file and save it in case we need to reinstall again at a later stage.
+Next we create our *FiFo JSON* payload file and save it in case we need to reinstall again at a later stage.
 
 .. code-block:: bash
 
@@ -69,13 +76,7 @@ Next we create our FiFo JSON payload file and save it in case we need to reinsta
 Installing the services
 -----------------------
 
-We now zlogin to our newly created FiFo zone and proceed with adding the FiFo package repository and then installing the FiFo packages
-
-.. note::
-
-   Please note that this is for the release version of FiFo to installed the current development version use `VERSION=dev` instead of `VERSION=rel`.
-
-
+We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *FiFo* package repository and then installing the *FiFo* packages
 
 .. code-block:: bash
 
@@ -86,11 +87,16 @@ We now zlogin to our newly created FiFo zone and proceed with adding the FiFo pa
    pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles
    cp /opt/local/fifo-jingles/config/nginx.conf /opt/local/etc/nginx/nginx.conf
 
+.. note::
+
+  - To install the release version use `VERSION=rel`
+  - To install the current ddevelopment version use `VERSION=dev`
+
 
 Configuration
 -------------
 
-If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new ``*.conf.example`` files are added. The generated files contain some defaults it non the less advised to take some time to configure [wiggle](/wiggle/configuration.html), [sniffle](/sniffle/configuration.html), [snarl](/snarl/configuration.html) and [howl](/howl/configuration.html).
+If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new ``*.conf.example`` files are added. The generated files contain some defaults. However is it advised to take some time to configure `Wiggle <../wiggle/configuration.html>`_, `Sniffle <../sniffle/configuration.html>`_, `Snarl <../snarl/configuration.html>`_ and `Howl <../howl/configuration.html>`_.
 
 
 Startup
@@ -112,7 +118,7 @@ Initial administrative tasks
 
 .. note::
 
-   Starting with 0.6.0 (current dev) Snarl supports multiple realms, unless otherwise configured fifo will use the 'default' realm.
+   Starting with 0.6.0 (current dev) Snarl supports multiple realms. Unless otherwise configured FiFo will use the 'default' realm.
 
    In consequence this means all user and roll commands need an additional argument, the realm is specified as first argument behind the command so it changes as follows:
 
@@ -146,4 +152,4 @@ The last step is to create an admin user with full permissions so we can login. 
    fifoadm roles grant Users roles <uuid of Users role> get
 
 
-That's it. You can now log out of your "fifo" zone and back into the global zone and continue with installing the "chunter" service.
+That's it. You can now log out of your *FiFo Zone* and back into the *Global Zone* and continue with installing the *Chunter* service.

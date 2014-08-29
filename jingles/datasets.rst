@@ -27,7 +27,7 @@ Remote Datasets
 
 .. image:: /_static/images/jingles/datasets03.jpg
 
-The remote datasets tab is where you choose which external datasets you would like to import into *FiFo's* internal dataset repository. By default *FiFo* is pre-configured to pull datasets from http://datasets.at the community dataset repository which contains all the official *Joyent* datasets as well as community contributed datasets.
+The remote datasets tab is where you choose which external datasets you would like to import into *FiFo's* internal dataset repository. By default *FiFo* is pre-configured to pull datasets from `datasetsat <http://www.datasets.at>`_ the community dataset repository which contains all the official *Joyent* datasets as well as community contributed datasets.
 
 	1. To "import" a dataset simply click on the import button. The importing dataset progress bar will then be visible in the "dataset installed" tab.
 	2. Shows the external repository *FiFo* is currently associated with.

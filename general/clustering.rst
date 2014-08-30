@@ -26,13 +26,13 @@ Cluster/Distribution
 
 Some components can't be stateless since they need to maintain some kind of data. To achieve a high level of availability these components run in a clustered/distributed mode. *FiFo* uses *riak core* as a distribution layer. This means that it follows an eventual consistent model and utilises all nodes that are present in the cluster which allows *FiFo* to survive single nodes failing as long as a minimum number of nodes is present.
 
-The following nodes are running based on riak core:
+The following components are based on riak core:
 
 * `Sniffle <../sniffle.html>`_
 * `Snarl <../snarl.html>`_
 * `Howl <../howl.html>`_
 
-Being based on riak core it is recommended for ideal running operation to run at least five instances of this service on different hardware machines. This cluster is called a ring in riak terms (this has to do with the dynamo paper for those interested).
+Due to these services being based on riak core it is recommended that for continual uptime to run at least five instances of this service on different hardware machines. This cluster is called a ring in riak terms (this has to do with the `dynamo paper <http://www.allthingsdistributed.com/files/amazon-dynamo-sosp2007.pdf>`_ for those interested).
 
 `Chunter <../chunter.html>`_
 ****************************
@@ -46,7 +46,8 @@ Changing the cluster
 
 	If the cluster is set up before the system goes into production there is not mucht to worry about. However there are situations where it is required to extend or shrink the cluster during production. Generally there is nothing that prevents extending or shrinking a cluster during production but it requires the user to perform an additional step.
 
-To prevent interruptions it is nessessariy to disable the ``mdns`` on the nodes that you want to add or remove. Otherwise other services will think these nodes are valid parts of the cluster and therefore try to access them. To disable ``mdns`` the configuration option ``mdns.server = disabled`` needs to be added to the  `Sniffle Configuration File <../sniffle/configuration.html#mdns>`_, `Snarl Configuration File <../Snarl/configuration.html#mdns>`_ or `Howl Configuration File <../howl/configuration.html#mdns>`_ depending on what service is added or removed. This should be done before the services are first started or removed / leaves.
+.. warning:: 
+	To prevent interruptions it is nessessary to disable the ``mdns`` on the nodes that you want to add or remove. Otherwise other services will think these nodes are valid parts of the cluster and therefore try to access them. To disable ``mdns`` the configuration option ``mdns.server = disabled`` needs to be added to the  `Sniffle Configuration File <../sniffle/configuration.html#mdns>`_, `Snarl Configuration File <../Snarl/configuration.html#mdns>`_ or `Howl Configuration File <../howl/configuration.html#mdns>`_ depending on what service is added or removed. This should be done before the services are first started or removed / leaves.
 
 For the following section the existing server will be named ``sniffle@10.0.0.1`` and the new server will be named ``sniffle@10.0.0.2``, if multiple servers exist it does not matter which one is picked. Also keep in mind that for working with a `Howl <../howl.html>`_ or `Snarl <../snarl.html>`_ cluster the section before the ``@`` needs to be replaced with ``howl`` and ``snarl`` respectively.
 

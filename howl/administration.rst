@@ -17,16 +17,16 @@ Updating
 
 `Howl <../howl.html>`_ can be updated by three simple steps.
 
-Installing the new package
-**************************
+1. Installing the new package
+*****************************
 
 .. code-block:: bash
 
    pkgin -fy update
    pkgin -fy install fifo-howl
 
-Updating the config
-*******************
+2. Updating the config
+**********************
 
 After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
@@ -36,10 +36,10 @@ After the newest package is installed the config file should be checked for chan
    vi /opt/loca/fifo-howl/etc/howl.conf
 
 
-Restarting the service
-**********************
+3. Restarting the service
+*************************
 
-After the config is updated the service needs to be restarted. `Howl <../howl.html>`_ is running clustered and has more then ``N``. It is often possible to do a rolling update by restarting one by one.
+After the config is updated the service needs to be restarted. If `Howl <../howl.html>`_ is running in a clustered configuration and has more then ``N`` nodes it is often possible to do a rolling update by restarting one by one.
 
 Cluster management
 ##################
@@ -84,7 +84,7 @@ howl-admin ring-status
 
 
 howl-admin status
-    A simple command that returns the overall cluster status. It returns a propper return code and is useful for scripted rolling updates.
+    A simple command that returns the overall cluster status. It returns a proper return code and is useful for scripted rolling updates.
 
 
 howl-admin aae-status
@@ -97,7 +97,7 @@ Log Files
 
 
 debug.log
-    By default the debug log is disabled. It is very verbose and should not be enabled in production systems. To enable it uncomment the followig line in the ``howl.conf``
+    By default the debug log is disabled. It is very verbose and should not be enabled in production systems. To enable it uncomment the following line in the ``howl.conf``
 
     ::
 

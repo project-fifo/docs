@@ -6,11 +6,11 @@ Installation
 
 .. warning::
 
-   Please be aware that this guide covers the installation of a **single** *FiFo Zone*, while this is supported and might be acceptable for a private 'for fun' server. A production environment should consist of **at least 5 physically separated<** zone!. 
+   Please be aware that this guide covers the installation of a **single** *FiFo Zone*, while this is supported and might be acceptable for a private 'for fun' server. A production environment should consist of **at least 5 physically separated** zones!. 
 
 .. seealso::
 
-  Details on how to set up clustering can be found in the `Clustering file <clustering.html>`_.
+  Details on how to set up clustering can be found in the `Clustering <clustering.html>`_ section.
 
 
 
@@ -18,7 +18,7 @@ Creating the Zone
 -----------------
 
 
-From the *GZ (Global Zone)* we install the base dataset we are going to use for our *FiFo Zone* and confirm its is installed:
+From the *GZ (Global Zone)* we install the base dataset we are going to use for our *FiFo Zone* and confirm it is installed:
 
 
 .. code-block:: bash
@@ -90,7 +90,7 @@ We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *Fi
 .. note::
 
   - To install the release version use `VERSION=rel`
-  - To install the current ddevelopment version use `VERSION=dev`
+  - To install the current development version use `VERSION=dev`
 
 
 Configuration
@@ -120,9 +120,9 @@ Initial administrative tasks
 
    Starting with 0.6.0 (current dev) Snarl supports multiple realms. Unless otherwise configured FiFo will use the 'default' realm.
 
-   In consequence this means all user and roll commands need an additional argument, the realm is specified as first argument behind the command so it changes as follows:
+   In consequence this means all user and roll commands need an additional argument, the realm is specified as first argument behind the command so that it changes as follows:
 
-   ``fifoadm users add admin`` becomes ``fifoadm users add default admin``.
+   ``fifoadm users add admin`` when using 0.6.0 or newer is ``fifoadm users add default admin``.
 
 
 
@@ -135,7 +135,7 @@ The last step is to create an admin user with full permissions so we can login. 
    fifoadm users passwd admin admin
 
 
-   If you want to add a default user role execute the following commands to assign basic permissions to the role so that users belonging to this role can create and manage their own vm's.
+If you want to add a default user role execute the following commands to assign basic permissions to the role so that users belonging to this role can create and manage their own vm's.
 
 .. code-block:: bash
 
@@ -152,4 +152,4 @@ The last step is to create an admin user with full permissions so we can login. 
    fifoadm roles grant Users roles <uuid of Users role> get
 
 
-That's it. You can now log out of your *FiFo Zone* and back into the *Global Zone* and continue with installing the *Chunter* service.
+That's it. You can now log out of your *FiFo Zone* and back into the *Global Zone* and continue with installing the *Chunter* service (`directions here <../chunter/installation.html>`_).

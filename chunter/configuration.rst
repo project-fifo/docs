@@ -8,9 +8,9 @@ Configuration
 Configuration file
 ##################
 
-`Chunter <../chunter.html>`_'s configuration file is located in `/opt/chunter/etc/chunter.conf`. It is automatically generated on the first install and will not be overwritten on updates. None the less the newst version of the file is always located in `/opt/chunter/etc/chunter.conf.example`.
+`Chunter's <../chunter.html>`_ configuration file is located in `/opt/chunter/etc/chunter.conf`. It is automatically generated on the first install and will not be overwritten on updates. None the less the newst version of the file is always located in `/opt/chunter/etc/chunter.conf.example`.
 
-In addition `Chunter <../chunter.html>`_ keeps a file `/opt/chunter/etc/hostid` that helps identifying the host thorught udpates, hostname changes, and reinstallations.
+In addition Chunter keeps a file `/opt/chunter/etc/hostid` that helps identifying the host throughout updates, hostname changes, and reinstallations.
 
 The configuration file is documented inline but we'll go over some more interesting settings here.
 
@@ -26,7 +26,7 @@ Genereal
 S3
 **
 
-When used together with `LeoFS <https://leofs.org>`_ or other S3 compatible systems `Chunter <../chunter.html>`_ stores backups in the object store.
+When used together with `LeoFS <https://leofs.org>`_ or other S3 compatible systems Chunter stores backups in the object store.
 
 `s3_upload_chunk_size`
     Size of the chunks for uploading to the S3 storage.
@@ -52,7 +52,7 @@ When used together with `LeoFS <https://leofs.org>`_ or other S3 compatible syst
 Intervals
 *********
 
-`Chunter <../chunter.html>`_ allows the users to configure various intervals that get a balance between accuracy and load. The defaults are sensible values but can be tuned as needed.
+Chunter allows the users to configure various intervals that get a balance between accuracy and load. The defaults are sensible values but can be tuned as needed.
 
 `update_services_interval`
     The interval services for a zone are checked. The default is 10s. Changes are noted even when the state is the same at least for the nsq logging.
@@ -61,7 +61,7 @@ Intervals
     The interval the ZFS snapshots are checked. This should not be too fast since it will increase load. The default is every 15 minutes. This also does not change too often so increasing it does not make too much sense.
 
 `zonemon_interval`
-    The intervals the zones are checked for their state. This means running `zoneadm list -ip` on the node. This is only required if a change is missed due to some hickup but it ensures that the state of zones is always up to date.
+    The intervals the zones are checked for their state. This means running `zoneadm list -ip` on the node. This is only required if a change is missed due to some hiccup but it ensures that the state of zones is always up to date.
 
     Generally the more often this happen the lower are the chances a state is misrepresented but the higher is the load on the system. This operation is fairly inexpensive.
 

@@ -8,12 +8,12 @@ Administration
 General managemnet
 ##################
 
-`Chunter <../chunter.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. `Chunter <../chunter.html>`_ can be enabled, disabled and restaerted via: `svcadm enable chunter`, `svcadm disable chunter` and `svcadm restart chunter`
+`Chunter <../chunter.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. Chunter can be enabled, disabled and restaerted via: ``svcadm enable chunter``, ``svcadm disable chunter`` and ``svcadm restart chunter``
 
 Updating
 ********
 
-`Chunter <../chunter.html>`_ can be updated by running ``/opt/chunter/bin/update`` this script will check for new updates and install them as needed.
+Chunter can be updated by running ``/opt/chunter/bin/update`` this script will check for new updates and install them as needed.
 
 Installing the new package
 **************************
@@ -25,7 +25,7 @@ Installing the new package
 Updating the config
 *******************
 
-After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config. ``diff`` is a handy tool to see if some settings need to be added to the existing file.
+After the newest package is installed the config file should be checked for changes and edited if needed. The ``.example`` file will always contain the newest version of the config. ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
 .. code-block:: bash
 
@@ -35,9 +35,9 @@ After the newest package is installed the config file should be checked for chan
 Restarting the service
 **********************
 
-`Chunter <../chunter.html>`_ can be restarte by running ``svcadm restart chunter``.
+Chunter can be restarte by running ``svcadm restart chunter``.
 
 Manually created VM's
 *********************
 
-`Chunter <../chunter.html>`_ does not automatically detect manually created VMs. To make `Chunter <../chunter.html>`_ aware of them it needs to be restarted: ``svcadm restart chunter``.
+Chunter does not automatically detect manually created VMs. To make Chunter aware of them it needs to be restarted: ``svcadm restart chunter``.

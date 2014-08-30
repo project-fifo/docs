@@ -8,7 +8,7 @@ Configuration
 Configuration file
 ##################
 
-`Snarl <../snarl.html>`_'s configuration file is located in ``/opt/local/snarl/etc/snarl.conf``. it is automatically generated on the first install and will not be overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/snarl/etc/snarl.conf.example``.
+`Snarl's <../snarl.html>`_ configuration file is located in ``/opt/local/fifo-snarl/etc/snarl.conf``. It is automatically generated on the first install and will not be overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/snarl/etc/snarl.conf.example``.
 
 The configuration file is documented inline but we'll go over some more interesting settings here.
 
@@ -30,7 +30,7 @@ AAE is riak's mechanism of background syncronisation of systems to ensure a high
 Database
 ********
 
-*FiFo* uses ``leveldb`` as it's backend databas. Leveldb has many different tuneables some of the more important ones are.
+*FiFo* uses *LevelDB* as it's backend database. LevelDB has many different tuneables. Some of the more important ones are:
 
 ``ring_size``
     The number of VNodes used by FiFo, this setting can only be changed before the system is booted the first time so choose it carefully, it defaults to ``8`` but with more then one systems it is very sensible to increase this number higher, generally ``~10`` vnodes per physical node are a good rule of thumb. The ``ring_size`` needs to be a a power of two (``2``, ``4``, ``8`` ... ``64`` ...).
@@ -41,9 +41,9 @@ Database
 Multi DC support
 ****************
 
-The mutli DC support in FiFo is based in `Snarl <../snarl.html>`_. It works by syncronizing userdata between all datacenters. Synchronization happens on a point to point system meaning that each `Snarl <../snarl.html>`_ instance in ``DC1`` syncronizes with one system in ``DC2``.
+The mutli DC support in FiFo is based in `Snarl <../snarl.html>`_. It works by syncronizing user data between all datacenters. Synchronization happens on a point to point system meaning that each `Snarl <../snarl.html>`_ instance in ``DC1`` syncronizes with one system in ``DC2``.
 
-By default the synchronization subsystem is disabled. It needs to be enabled and configured in order to propperly propagate data.
+By default the synchronization subsystem is disabled. It needs to be enabled and configured in order to properly propagate data.
 
 ``sync``
     Either set to ``on`` or ``off`` enabeling or disabeling the system, a restart is required to enable it but it can be changed at any time after the installation.
@@ -55,7 +55,7 @@ By default the synchronization subsystem is disabled. It needs to be enabled and
     One Sniffle node is able to sync to multiple remote nodes, usually it should have exactly one parter per datacenter, haveing multiple partners in the same datacenter is unsupported can have unforseen results. The syntax is ``<IP>:<Port>``.
 
 ``sync.build_interval``
-    For each subsystem snarl keeps a list of hashes, the ``build_interval`` determins how often the system rebuilds this from scratch. Aside of the full rebuild the hashes are dynamically updated.
+    For each subsystem Snarl keeps a list of hashes, the ``build_interval`` determines how often the system rebuilds this from scratch. Aside of the full rebuild the hashes are dynamically updated.
 
 ``sync.read_delay``
     During a full rebuild reads from the Snarl system are delayed to prevent slowing down the database during the rebuild this value specifies the delay between reads.
@@ -64,7 +64,7 @@ By default the synchronization subsystem is disabled. It needs to be enabled and
     This defines how often it should be checked if differences exists betwen local and remote nodes. Please keep in mind that sync should be set up in both directions this syncs will be performed about twice as often as specified here.
 
 ``sync.recv_timeout``
-    If a command is send to a sync partner and this trheashold is excided the connection will attempt to bounc and be reistablished.
+    If a command is send to a sync partner and this threshold is exceeded the connection will attempt to bounce and be reestablished.
 
 
 `Yubico <https://yubico.com/>`_

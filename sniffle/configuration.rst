@@ -8,7 +8,7 @@ Configuration
 Configuration file
 ##################
 
-`Sniffle <../sniffle.html>`_'s configuration file is located in ``/opt/local/sniffle/etc/sniffle.conf``. It is automatically generated on the first install and not overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/sniffle/etc/sniffle.conf.example``.
+`Sniffle <../sniffle.html>`_'s configuration file is located in ``/opt/local/fifo-sniffle/etc/sniffle.conf``. It is automatically generated on the first install and not overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/fifo-sniffle/etc/sniffle.conf.example``.
 
 The configuration file is documented inline but we'll go over go over some more interesting settings here.
 
@@ -37,7 +37,7 @@ AAE is riak's mechanism of background synchronization of systems to ensure a hig
 Database
 ********
 
-*FiFo* uses ``leveldb`` as its backend database. Leveldb has many different tuneables some of the more important ones are.
+*FiFo* uses `*LevelDB* as its backend database. LevelDB has many different tuneables some of the more important ones are.
 
 
 ring_size

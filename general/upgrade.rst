@@ -2,13 +2,13 @@
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
 **********
-Upgradeing
+Upgrading
 **********
 
 General instructions
 ####################
 
-The General instructions cover steps that will initiate the update. Please be aware that depending on your update path additional steps might be required. The version specific section covers the steps required to go from one version to another. While you're on release following these on a version update is enough. Things are a bit more complicated when living on the bleeding edge (aka dev). In general you should check here on every update since required steps for a version upgrade will slowly grow during the development process.
+These instructions cover steps that will initiate the update. Please be aware that depending on your update path additional steps might be required. The version specific section covers the steps required to go from one version to another. While you're on release following these on a version update is enough. Things are a bit more complicated when living on the bleeding edge (aka dev). In general you should check here on every update since required steps for a version upgrade will slowly grow during the development process.
 
 .. warning::
 
@@ -59,7 +59,7 @@ this will trigger all hypervisors to update.
 0.6.0
 *****
 
-Version 0.6.0 of fifo introduces a version of `Snarl <../snarl.html>`_ that allows to have multiple parallel authentication realms inside of `Snarl <../snarl.html>`_. To support this the former global information into a realm can be archived by running the DB update command:
+Version 0.6.0 of FiFo introduces a feature that allows to have multiple parallel authentication realms inside of `Snarl <../snarl.html>`_. To support this the former global information into a realm can be archived by running the DB update command:
 
 .. warning::
 

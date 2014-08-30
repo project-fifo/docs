@@ -64,9 +64,9 @@ Adding a server
 
 To add a server the following steps need to be taken: 
 
-- on the **existing server** check the server status with `ring status <../sniffle/administration.html#ring-status>`_ and `member status <../sniffle/administration.html#member-status>`_.
+- on the **existing server** check the server status with `ring status <../sniffle/administration.html#cluster-management>`_ and `member status <../sniffle/administration.html#cluster-management>`_.
 - on the **new server** join the **existing server** with the `join <../sniffle/administration.html#join>`_ command.
-- on the **existing server** re check the server status with `ring status <../sniffle/administration.html#ring-status>`_ and `member status <../sniffle/administration.html#member-status>`_. commands.
+- on the **existing server** re check the server status with `ring status <../sniffle/administration.html#cluster-management>`_ and `member status <../sniffle/administration.html#cluster-management>`_. commands.
 
 .. seealso::
 
@@ -77,6 +77,6 @@ Removing a server
 
 Removing a server is as simple as adding one. To ensure it is not picked up again after it is removed the line ``mdns.server = disabled`` should be added to the configuration file of the server you want to remove.
 
-- on the **existing server** check the server status with `ring status <../sniffle/administration.html#ring-status>`_ and `member status <../sniffle/administration.html#member-status>`_.
-- on the **existing server** re check the server status with `ring status <../sniffle/administration.html#ring-status>`_ and `member status <../sniffle/administration.html#member-status>`_ commands.
+- on the **existing server** check the server status with `ring status <../sniffle/administration.html#cluster-management>`_ and `member status <../sniffle/administration.html#cluster-management>`_.
+- on the **existing server** re check the server status with `ring status <../sniffle/administration.html#cluster-management>`_ and `member status <../sniffle/administration.html#cluster-management>`_ commands.
 - once the server is removed it is restarted and can be shut down using the ``svcadm disable sniffle`` command.

@@ -53,34 +53,43 @@ sniffle-admin leave
 sniffle-admin remove ``<nodename>@<ip>``
     Forcefully removes a node from the ring. This can be used after fatal node cluster.
 
-sniffle-admin member-status<a id="member-status"></a>
+sniffle-admin member-status
     Lists the status of each node and the distribution of data over the ring nodes.
 
-    ..
-
-        ================================= Membership ==================================
-        Status     Ring    Pending    Node
-        -------------------------------------------------------------------------------
-        valid     100.0%      --      'snarl@172.16.0.254'
-        -------------------------------------------------------------------------------
-        Valid:1 / Leaving:0 / Exiting:0 / Joining:0 / Down:0
-
+    +-----------------------------------------------------------------+
+    |                           Membership                            |
+    +========+==========+=========+===================================+
+    | Status | Ring     | Pending | Nodes                             |
+    +--------+----------+---------+-----------------------------------+
+    | valid  | 100.0%   |   --    | 'snarl@172.16.0.254'              |
+    +--------+----------+---------+-----------------------------------+    
+    |Valid:1 | Leaving:0|Exiting:0| Joining:0 | Down:0                |
+    +--------+----------+---------+-----------+-----------------------+
 
 sniffle-admin ring-status
     Gives a extended report ont he ring, including handoffs and downed nodes.
 
-    ..
-
-        ================================== Claimant ===================================
-        Claimant:  'snarl@172.16.0.254'
-        Status:     up
-        Ring Ready: true
-
-        ============================== Ownership Handoff ==============================
-        No pending changes.
-
-        ============================== Unreachable Nodes ==============================
-        All nodes are up and reachable
+    +-------------------------------------------------------------------+
+    |Claimant                                                           |
+    +===========+=======================================================+
+    |Claimant   |'snarl@172.16.0.254'                                   |
+    +-----------+--------------------+----------------------------------+    
+    |Status     | up                 |                                  |
+    +-----------+--------------------+----------------------------------+
+    |Ring Ready | true               |                                  |
+    +-----------+--------------------+----------------------------------+ 
+    
+    +-------------------------------------------------------------------+
+    | Ownership handoff                                                 |
+    +===================================================================+
+    | No pending changes.                                               |
+    +-------------------------------------------------------------------+
+    
+    +-------------------------------------------------------------------+
+    | Unreachable Nodes                                                 |
+    +===================================================================+
+    | All nodes are up and reachable                                    |
+    +-------------------------------------------------------------------+
 
 sniffle-admin status
     A simple command that returns the overall cluster status, it returns a propper return code and is useful for scripted rolling updates.

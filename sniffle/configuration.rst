@@ -37,7 +37,7 @@ AAE is riak's mechanism of background synchronization of systems to ensure a hig
 Database
 ********
 
-*FiFo* uses `*LevelDB* as its backend database. LevelDB has many different tuneables some of the more important ones are.
+*FiFo* uses *LevelDB* as its backend database. LevelDB has many different tuneables some of the more important ones are.
 
 
 ring_size

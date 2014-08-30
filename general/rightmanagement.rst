@@ -2,7 +2,7 @@
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
 ***************
-Rightmanagement
+Rights Management
 ***************
 
 Permissions
@@ -237,6 +237,7 @@ Basic permissions
 Those are the basic permissions the RO role starts off with.
 
 ::
+
    roles-> <RO UUID> ->get
    roles-> <Admins UUID> ->get
    roles-> <Users UUID> ->get

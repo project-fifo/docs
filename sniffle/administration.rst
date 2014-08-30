@@ -17,8 +17,8 @@ Updating
 
 `Sniffle <../sniffle.html>`_ can be updated by three simple steps.
 
-Installing the new package
-**************************
+1. Installing the new package
+*****************************
 
 .. code-block:: bash
 
@@ -26,8 +26,8 @@ Installing the new package
    pkgin -fy install fifo-sniffle
 
 
-Updating the config
-*******************
+2. Updating the config
+**********************
 
 After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
@@ -36,10 +36,10 @@ After the newest package is installed the config file should be checked for chan
    diff /opt/loca/fifo-sniffle/etc/sniffle.conf /opt/loca/fifo-sniffle/etc/sniffle.conf.example
    vi /opt/loca/fifo-sniffle/etc/sniffle.conf
 
-Restarting the service
-**********************
+3. Restarting the service
+*************************
 
-After the config is updated the service needs to be restarted. `Sniffle <../sniffle.html>`_ is running clustered and has more then ``N`` it is often possible to do a rolling update by restarting one by one.
+After the config is updated the service needs to be restarted. If `Sniffle <../sniffle.html>`_ is running in a clustered configuration and has more then ``N`` nodes it is often possible to do a rolling update by restarting one by one.
 
 Cluster management
 ******************
@@ -51,7 +51,7 @@ sniffle-admin leave
     Cleanly removes a node from the ring. This is helpful when nodes get moved and the cluster downsized
 
 sniffle-admin remove ``<nodename>@<ip>``
-    Forcefully removes a node from the ring. This can be used after fatal node cluster.
+    Forcefully removes a node from the ring. This can be used after fatal node crash.
 
 sniffle-admin member-status
     Lists the status of each node and the distribution of data over the ring nodes.
@@ -67,7 +67,7 @@ sniffle-admin member-status
     +--------+----------+---------+-----------+-----------------------+
 
 sniffle-admin ring-status
-    Gives a extended report ont he ring, including handoffs and downed nodes.
+    Gives a extended report on the ring, including handoffs and downed nodes.
 
     +-------------------------------------------------------------------+
     |Claimant                                                           |
@@ -105,9 +105,9 @@ Log Files
 
 
 debug.log
-    By default the debug log is disabled, it is very verbose and should not be enabled in production systems to enable it uncomment the followig line in the ``sniffle.conf``
+    By default the debug log is disabled, it is very verbose and should not be enabled in production systems. To enable it uncomment the followig line in the ``sniffle.conf``
 
-    ..
+    ::
 
         log.debug.file = /var/log/sniffle/debug.log
 

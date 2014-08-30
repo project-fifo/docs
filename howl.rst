@@ -4,6 +4,22 @@
 Howl
 ####
 
+Howl is Project FiFo's live comminications service. Howl live updates the user interface (Jingles)
+when changes occur in the backend. Howl checks with snarl (Project FiFo's RBAC service) for which
+events a user has permission to see. 
+
+Howl is a riak_core and web-socket based message delivery system with the following properties:
+
+* No SPOF when using multiple nodes.
+* The front end is a cowboy web server that accepts web socket connections.
+* The backend is a simple TPC/BERT based protocol.
+* Each riak_core node offers both a front end and a backend, those front and back ends are equal, as in sending messages to any backend will reach any front end.
+* Messages are send to channels, and clients can subscribe to channels.
+
+
+*Howl Section Topics:*
+
+
 .. toctree::
    :maxdepth: 2
    :glob:

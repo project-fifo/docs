@@ -1,7 +1,7 @@
 .. Project-FiFo documentation master file, created by
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
-Welcome to Project-FiFo's documentation!
+Welcome to Project-FiFo documentation!
 ========================================
 
 .. image:: _static/images/jingles/fifo-showcase.jpg
@@ -17,9 +17,9 @@ The project has 2 installable versions - Current **Release** and a **Development
 
 Our Eco-System
 --------------
-We are **community** driven and as such have a open and **friendly** eco-system, we encourage community engagement, contribution and feedback. Please join us and get involved by giving us new feature ideas or helping out with code or Documentation.
+We are **community** driven and as such have a open and **very friendly** eco-system, we encourage community engagement, contribution and feedback. Please join us and get involved by giving us new feature ideas or helping out with code or Documentation.
 
-Most of the folks who develop and use fifo hang out on Freenode IRC in the **#project-fifo** channel. Why not come join us and say hi and meet the team.
+Most of the folks who develop and use fifo hang out on Freenode IRC in the **#project-fifo** channel. Why not come join us and say hi and meet the team?
 
 * `Bug Tracker <http://jira.project-fifo.net/>`_
 * `FiFo mailing list <https://groups.google.com/forum/?fromgroups#!forum/project-fifo>`_
@@ -27,9 +27,6 @@ Most of the folks who develop and use fifo hang out on Freenode IRC in the **#pr
 * `Google+ <https://plus.google.com/+ProjectfifoNetHome>`_
 * `FiFo on Github <https://github.com/project-fifo>`_
 
-
-
-Contents:
 
 .. toctree::
    :hidden:

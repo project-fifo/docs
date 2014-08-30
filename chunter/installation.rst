@@ -39,6 +39,6 @@ If the service is running you should see:
    online         Dec_31   svc:/network/chunter:default
 
 
-Once the service is running *FiFO* will auto-discover the node and after about a minute the *SmartOS Node* will appear in the *FiFO* web browser to be managed.
+Once the service is running *FiFo* will auto-discover the node and after about a minute the *SmartOS Node* will appear in the *FiFo* web browser to be managed.
 
-`Chunter <../chunter.html>`_ will try to guess the systems IP. It will look for a ``fifo0`` vnic. If this doesn't exist it will take the IP of the ``admin`` nic. If `Chunter <../chunter.html>`_ registered with a wrong IP it needs to be changed in the config file and the hypervisor need to be reregistered. This can be done by `removing it <../sniffle/administration.html>`_ and restarting `Chunter <../chunter.html>`_.
+`Chunter <../chunter.html>`_ will try to guess the systems IP. It will look for a ``fifo0`` vnic. If this doesn't exist it will take the IP of the ``admin`` nic. If Chunter registered with a wrong IP the correct IP can be changed in the config file. After changing the IP address in the config the hypervisor need to be reregistered. This can be done by `removing it <../sniffle/administration.html>`_ and restarting Chunter ``svcadm restart chunter``).

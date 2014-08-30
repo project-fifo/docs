@@ -5,15 +5,37 @@
 Release Notes
 *************
 
+0.6.0
+#####
+
+* Moved all datastrucutres to CRDT's
+
+  This will bring a huge improvment in stability and the capability to deal with network failures and partitions. As part of this also the conversion to JSON for the API was pushed away from the core components towards the API endpoints.
+
+* Supporting multiple realms for Snarl
+
+  * This allows to use the same Snarl for multiple useses.
+
+* Metric support for Snarl sending data to `DalmatierDB <https://dalmatiner.io>`_
+* Added EQC (Erlang Quick Check) tests for datatypes and some components.
+* Logging of VM creation is vastly improved to allow better determination of problems.
+* Improvements of the cold migration workflow in the ui.
+* Numerous UI and UX improvements
+* Fixes of edgecasees and minor bugs
+* Updated the documentation to use sphynx and `Read the docs <http://readthedocs.org>`_
+* Updated to the latest riak_core
+* Updated to cowboy and ranch 1.0.0
+
+
 0.4.5
 #####
 
 * Cloud topology
-  
+
   * Clusters - ensuring VMs are not placed on the same hypervisor.
   * Stacks - keeping VMs placed as close as possible.
   * Hypervisor topology - describing the layout of the cloud to *FiFo*.
-  
+
 * Caching for `Wiggle <../wiggle.html>`_.
 * Dataset upload over the *Fifo* commandline client.
 * Dry run VM creation to ensure validity of Package/Dataset/Network combination prior to VM creation.

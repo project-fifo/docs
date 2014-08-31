@@ -6,6 +6,7 @@ Technical
 
 .. toctree::
    :maxdepth: 2
-   :glob:
 
-   technical/api/general
+   technical/api/general.rst
+   technical/api/sessions.rst
+   technical/api/users.rst

@@ -1,0 +1,91 @@
+.. Project-FiFo documentation master file, created by
+   Heinz N. Gies on Fri Aug 15 03:25:49 2014.
+
+API - Users
+###########
+
+.. http:get:: /users
+
+   Lists all users.
+
+.. http:get:: /users/(uuid:user)
+
+   Retrives session data, analog to `GET /users/UUID <users.html>`_
+
+   **Related permissions**:
+
+     * cloud -> cloud -> status
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+	  GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+	  host: cloud.project-fifo.net
+	  accept: applicaiton/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+	  HTTP/1.1 200 OK
+	  vary: Accept
+	  content-type: application/json
+
+	  {
+	   "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+	   "name": "admin",
+	   "roles": [],
+	   "org": "",
+	   "orgs": [],
+	   "permissions": [["..."]],
+	   "keys": {"key-id": "ssh-rsa ..."},
+	   "yubikeys": [],
+	   "metadata": {}
+	  }
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :resheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the session information is returned
+   :status 404: the session was not found
+   :status 503: one or more subsystems could not be reached
+
+   :>json string uuid: UUID of the user that was logged in
+   :>json string name: name of the user that was logged in
+   :>json array roles: list of role-UUIDs the user is member of
+   :>json string org: UUID of the currently active org of the user
+   :>json array orgs: list of org-uuid the user is member of
+   :>json array permissions: list of permissions this user has
+   :>json object keys: SSH public keys registered for this user
+   :>json yubikeys keys: YubiKey Id's for this user
+   :>json object metadata: metadata assosiated with the user
+
+
+
+
+.. http:delete:: /users/(uuid:session)
+
+   Deletes the user with the given `uuid`.
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+	  DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+	  host: cloud.project-fifo.net
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+	  HTTP/1.1 204 No Content
+
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the session was successfully deleted
+   :status 404: the session was not found
+   :status 503: one or more subsystems could not be reached
+
+

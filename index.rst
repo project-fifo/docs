@@ -39,3 +39,4 @@ Most of the folks who develop and use fifo hang out on Freenode IRC in the **#pr
    wiggle.rst
    chunter.rst
    jingles.rst
+   troubleshooting.rst

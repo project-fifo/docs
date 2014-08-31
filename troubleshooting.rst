@@ -175,6 +175,7 @@ ____
         27841 sniffle  1112M  771M sleep   56    0   1:39:02 0.1% beam.smp/184
 
     *Note that SIZE is much bigger then RSS, this is caused by mmaped files for the database and can cause problems if it grows too big!*
+
 ____
 
  
@@ -239,6 +240,7 @@ ____
 
 
     Note: ``libsniffle:servers().`` and ``libsniffle:version().`` need to be entered after attaching to wigle
+
 ____
 
 - **Wiggle can connect to Snarl**
@@ -259,6 +261,7 @@ ____
 
 
     Note: ``libsnarl:servers().`` and ``libsnarl:version().`` need to be entered after attaching to wigle
+
 ____
 
 - **Wiggle can connect to Howl**
@@ -279,6 +282,7 @@ ____
 
 
     Note: ``libhowl:servers().`` and ``libhowl:version().`` need to be entered after attaching to wigle
+
 ____
 
 - **Logs**
@@ -301,6 +305,7 @@ ____
 
 
     Note: Note crashes can happen even when the system runs fine. 
+
 ____
 
 VMs / Hypervisors / etc:
@@ -317,6 +322,7 @@ VMs / Hypervisors / etc:
         Hypervisor         IP               Memory          State
         ------------------ ---------------- --------------- -------------
         00-15-17-b8-16-fc  172.16.0.4       25064/32699     ok
+
 ____
 
 - **List VMs**
@@ -339,6 +345,7 @@ ____
         87cc64b1-3990-4cf6-a54d-dbc2e66adddc 00-15-17-b8-16-fc -               installing
         1df09840-f2bb-48fb-a3b3-5fe679849baf 00-15-17-b8-16-fc mail            running 
         6d4a35a6-41d8-4a44-9977-e010b3ed307a 00-15-17-b8-16-fc test            running
+
 ____
 
 - **Fetch details on a misbehaving VM**
@@ -353,6 +360,7 @@ ____
          "hypervisor": "00-15-17-b8-16-fc",
          "state": "installing_dataset"
         }
+
 ____
 
 There are a lot more calls for fifoadm that can help depending on where things lead. 

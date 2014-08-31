@@ -34,6 +34,10 @@ API - General
 
    Retrives the general cloud status.
 
+   **Related permissions**:
+
+     * cloud -> cloud -> status
+
    **Example request**:
 
    .. sourcecode:: http

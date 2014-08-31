@@ -31,6 +31,8 @@ sys.path.insert(0, os.path.abspath('./_extensions/'))
 # extensions = ['sphinxcontrib.httpdomain', 'sphinxcontrib.erlangdomain']
 extensions = ['httpdomain', 'erlangdomain']
 
+http_index_shortname = 'api/0.1.0'
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 

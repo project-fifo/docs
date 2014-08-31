@@ -6,5 +6,7 @@ Technical
 
 .. toctree::
    :maxdepth: 2
+   
+   :glob:
 
    technical/api/general.rst

@@ -126,25 +126,26 @@ This is an example for a general Users roles that covers the basic permissions r
    Please note the ``channels->_->join`` permission. This permission exists to work around limitations in the way howl checks permissions. However channels are read only and require knowledge about the VMs UUID to join. This can be skipped but will not allow to see metrics for VMs that permissions are received via Organisation grant triggers.
 
 
-::
+.. code-block:: bash
 
-   channels->_->join
-   cloud->cloud->status
-   cloud->datasets->list
-   cloud->dtraces->list
-   cloud->roles->list
-   cloud->hypervisors->list
-   cloud->ipranges->list
-   cloud->networks->list
-   cloud->orgs->list
-   cloud->packages->list
-   cloud->users->list
-   cloud->vms->list
-   roles->Users->get
-   hypervisors->_->create
-   hypervisors->_->get
-   packages->_->get
-   datasets->_->get
+   fifoadm roles grant default $Users channels _ join
+   fifoadm roles grant default $Users cloud cloud status
+   fifoadm roles grant default $Users cloud datasets list
+   fifoadm roles grant default $Users cloud dtraces list
+   fifoadm roles grant default $Users cloud hypervisors list
+   fifoadm roles grant default $Users cloud ipranges list
+   fifoadm roles grant default $Users cloud networks list
+   fifoadm roles grant default $Users cloud orgs list
+   fifoadm roles grant default $Users cloud packages list
+   fifoadm roles grant default $Users cloud roles list
+   fifoadm roles grant default $Users cloud users list
+   fifoadm roles grant default $Users cloud vms create
+   fifoadm roles grant default $Users cloud vms list
+   fifoadm roles grant default $Users datasets _ get
+   fifoadm roles grant default $Users hypervisors _ create
+   fifoadm roles grant default $Users hypervisors _ get
+   fifoadm roles grant default $Users packages _ get
+   fifoadm roles grant default $Users roles $Users get
 
 .. note::
 

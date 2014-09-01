@@ -13,7 +13,7 @@ Permissions
    Permissions can be given to both users and roles, however it best practice to concentrate on using roles to organize permissions.
 
 
-*FiFo*'s permission system uses a nested tree to represent its permissions going from the general to the sepecific. Generally the second level is the UUID of the element with the exeption of the ``cloud`` tree.
+*FiFo*'s permission system uses a nested tree to represent its permissions going from the general to the specific. Generally the second level is the UUID of the element with the exception of the ``cloud`` tree.
 
   ::
 
@@ -58,12 +58,12 @@ In the specific examples ``<UUID>`` is treated as a placeholder for a element or
 Organisations
 =============
 
-*FiFo* abstracts the concept of an *Organisation* (Customer, Client) away from the user. This means one *Organistaiton* can have multiple users, and a *User* (for example an admin user) can belong to multiple *Organisations*. However, belonging to an *Organisation* does not grant a *User* any permissions, this is handled by assigning *Roles*. A *User* can select one of the *Organisations* he blongs to *active* meaning he acts for the *Organisation* and triggers certain events.
+*FiFo* abstracts the concept of an *Organisation* (Customer, Client) away from the user. This means one *Organisation* can have multiple users, and a *User* (for example an admin user) can belong to multiple *Organisations*. However, belonging to an *Organisation* does not grant a *User* any permissions, this is handled by assigning *Roles*. A *User* can select one of the *Organisations* he belongs to *active* meaning he acts for the *Organisation* and triggers certain events.
 
 Triggers
 --------
 
-*Triggers* are where *Organisation* get their power from. They are miniature scripts that get executed when certain events occour.
+*Triggers* are where *Organisation* get their power from. They are miniature scripts that get executed when certain events occur.
 
 Trigger events
 ``````````````
@@ -77,7 +77,7 @@ dataset_create
     Triggered when a dataset created, the element passed is the UUID of the new dataset.
 
 user_create
-    Triggered when a user is created, the element passed is the UUID of the new ser.
+    Triggered when a user is created, the element passed is the UUID of the new user.
 
 Trigger actions
 ```````````````
@@ -85,7 +85,7 @@ Trigger actions
 Actions are what happens when a trigger is created, the special term ``$`` in the trigger will replaced with the element provided by the event.
 
 role_grant
-    Grants a triggers automatically grant a permission to a *Role*. The elements provided for this tirgger are:
+    Grants a triggers automatically grant a permission to a *Role*. The elements provided for this trigger are:
 
     target
         the uuid of the *Role* to grant to.
@@ -94,7 +94,7 @@ role_grant
         the permission to grant where ``$`` marks the uuid of the element.
 
 user_grant
-    Grants a triggers automatically grant a permission to a *User*. The elements provided for this tirgger are:
+    Grants a triggers automatically grant a permission to a *User*. The elements provided for this trigger are:
 
         target
             the uuid of the *User* to grant to.
@@ -158,7 +158,7 @@ This is an example for a general Users roles that covers the basic permissions r
 Organisation
 ------------
 
-Here is a set of rules that represents a good default organisation with three assiciarted roles. This is meant to be used in combination with a general User Role.
+Here is a set of rules that represents a good default organisation with three associated roles. This is meant to be used in combination with a general User Role.
 
 Admins
 ``````

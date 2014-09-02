@@ -31,8 +31,7 @@ If installed successfully you should see:
 
 .. code-block:: bash
 
-   dc0688b2-c677-11e3-90ac-13373101c543  base64  13.4.2   smartos  2013-09-20T15:02:46Z
-
+   d34c301e-10c3-11e4-9b79-5f67ca448df0  base64        14.2.0    smartos  2014-07-21T10:43:17Z
 
 Sample contents of ``setupfifo.json``
 
@@ -42,7 +41,7 @@ Sample contents of ``setupfifo.json``
    {
     "autoboot": true,
     "brand": "joyent",
-    "image_uuid": "dc0688b2-c677-11e3-90ac-13373101c543",
+    "image_uuid": "d34c301e-10c3-11e4-9b79-5f67ca448df0",
     "max_physical_memory": 3072,
     "cpu_cap": 100,
     "alias": "fifo",
@@ -116,40 +115,30 @@ Startup
 Initial administrative tasks
 ----------------------------
 
-.. note::
-
-   Starting with 0.6.0 (current dev) Snarl supports multiple realms. Unless otherwise configured FiFo will use the 'default' realm.
-
-   In consequence this means all user and roll commands need an additional argument, the realm is specified as first argument behind the command so that it changes as follows:
-
-   ``fifoadm users add admin`` when using 0.6.0 or newer is ``fifoadm users add default admin``.
-
-
-
 The last step is to create an admin user with full permissions so we can login. The important part is to ensure that a permission called ``...`` is added, which assigns "ALL usage rights" to your admin user.
 
 .. code-block:: bash
 
-   fifoadm users add admin
-   fifoadm users grant admin ...
-   fifoadm users passwd admin admin
+   fifoadm users add default admin
+   fifoadm users grant default admin ...
+   fifoadm users passwd default admin admin
 
 
 If you want to add a default user role execute the following commands to assign basic permissions to the role so that users belonging to this role can create and manage their own vm's.
 
 .. code-block:: bash
 
-   fifoadm roles add Users
-   fifoadm roles grant Users cloud cloud status
-   fifoadm roles grant Users cloud datasets list
-   fifoadm roles grant Users cloud networks list
-   fifoadm roles grant Users cloud ipranges list
-   fifoadm roles grant Users cloud packages list
-   fifoadm roles grant Users cloud vms list
-   fifoadm roles grant Users cloud vms create
-   fifoadm roles grant Users hypervisors _ create
-   fifoadm roles grant Users datasets _ create
-   fifoadm roles grant Users roles <uuid of Users role> get
+   fifoadm roles add default Users
+   fifoadm roles grant default Users cloud cloud status
+   fifoadm roles grant default Users cloud datasets list
+   fifoadm roles grant default Users cloud networks list
+   fifoadm roles grant default Users cloud ipranges list
+   fifoadm roles grant default Users cloud packages list
+   fifoadm roles grant default Users cloud vms list
+   fifoadm roles grant default Users cloud vms create
+   fifoadm roles grant default Users hypervisors _ create
+   fifoadm roles grant default Users datasets _ create
+   fifoadm roles grant default Users roles <uuid of Users role> get
 
 
 That's it. You can now log out of your *FiFo Zone* and back into the *Global Zone* and continue with installing the *Chunter* service (`directions here <../chunter/installation.html>`_).

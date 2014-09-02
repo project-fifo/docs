@@ -111,17 +111,17 @@ error.log
 General tasks
 #############
 
-snarl-admin ``users|role`` add ``<name>``
+snarl-admin ``users|role`` add ``<realm>`` ``<name>``
     Adds a user or role, especially helpful when no users exist yet.
 
-snarl-admin ``users|role`` grant ``<name>`` ``<permission>`` ``[<permission>]``
+snarl-admin ``users|role`` grant ``<realm>`` ``<name>`` ``<permission>`` ``[<permission>]``
     Grants a user or role permissions. A permission can have multiple epements so: ``snarl-admin users grant user some special permissions`` would grant ``some->special->permissions`` to ``user``. ``...`` and ``_`` are special cases and not taken as strings but as the wildcards for the permission section where ``_`` means this level matches and ``...`` means evertying below this level matches.
 
-snarl-admin ``users`` passwd ``<username>`` ``<password>``
+snarl-admin ``users`` passwd ``<realm>`` ``<username>`` ``<password>``
     Changes the password for a user.
 
-snarl-admin ``users|roles|orgs|`` list
+snarl-admin ``users|roles|orgs|`` list ``<realm>``
     Lists all users, roles or organisations.
 
-snarl-admin ``users|roles|orgss|`` delete ``<name>``
+snarl-admin ``users|roles|orgss|`` delete ``<realm>`` ``<name>``
     Delets a given user, role or organisation.

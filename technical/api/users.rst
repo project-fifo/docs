@@ -127,7 +127,7 @@ API - Users
 
 .. http:put:: /users/(uuid:user)/permissions/<permission>
 
-   Grants permission to user with given *uuid*.
+   Grants <permission> to user with given *uuid*.
 
    **Related permissions**
 
@@ -138,41 +138,41 @@ API - Users
 
 .. http:delete:: /users/(uuid:user)/permissions/<permission>
 
-   Revokes permission for user with given *uuid*.
+   Revokes <permission> for user with given *uuid*.
 
    **Related permissions**
 
    * users -> ID -> revoke
-   * permissions -> PERMISSIONS -> grant
+   * permissions -> PERMISSION -> revoke
 
 
-.. http:get:: /users/(uuid:user)/groups
+.. http:get:: /users/(uuid:user)/roles
 
-   Lists groups for user with given *uuid*.
+   Lists roles for user with given *uuid*.
 
    **Related permissions**
 
    users -> ID -> get
 
 
-.. http:put:: /users/(uuid:user)/groups/(uuid:group)
+.. http:put:: /users/(uuid:user)/roles/(uuid:role)
 
-   Joins user with given *uuid* to group with given *uuid*.
+   Joins user with given *uuid* to role with given *uuid*.
 
    **Related permissions**
 
    * users -> ID -> join
-   * groups -> ID -> join
+   * roles -> ID -> join
 
 
-.. http:delete:: /users/(uuid:user)/groups/(uuid:group) 
+.. http:delete:: /users/(uuid:user)/roles/(uuid:role) 
 
-   Deletes user with given *uuid* from group with given *uuid*.
+   Deletes user with given *uuid* from role with given *uuid*.
 
    **Related permissions**
 
     * users -> UUID -> edit
-    * groups -> ID -> edit
+    * roles -> ID -> edit
 
 
 .. http:get:: /users/(uuid:user)/keys
@@ -245,7 +245,7 @@ API - Users
    **Related permissions**
 
    * users -> ID -> join
-   * groups -> ID join
+   * roles -> ID join
 
 
 .. http:put:: /users/(uuid:user)/metadata[/...]
@@ -254,10 +254,10 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> get
+   users -> UUID -> edit
 
 
-.. http:put:: /users/(uuid:user)/metadata[/...]
+.. http:delete:: /users/(uuid:user)/metadata/...
 
    Removes a key from the metadata for user with given *uuid*.
 

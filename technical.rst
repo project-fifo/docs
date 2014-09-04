@@ -10,3 +10,8 @@ Technical
    technical/api/general.rst
    technical/api/sessions.rst
    technical/api/users.rst
+   technical/api/roles.rst
+   technical/api/orgs.rst
+   technical/api/cloud.rst
+   technical/api/hypervisors.rst
+   technical/api/vms.rst

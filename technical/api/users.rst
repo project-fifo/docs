@@ -25,7 +25,7 @@ API - Users
 
 .. http:get:: /users/(uuid:user)
 
-   Returns user with given *uudi*.
+   Returns user with given *uuid*.
 
    **Related permissions**
 
@@ -131,7 +131,9 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> grant 
+   * users -> ID -> grant
+   * permissions -> PERMISSIONS -> grant
+
 
 
 .. http:delete:: /users/(uuid:user)/permissions/<permission>
@@ -140,7 +142,8 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> revoke
+   * users -> ID -> revoke
+   * permissions -> PERMISSIONS -> grant
 
 
 .. http:get:: /users/(uuid:user)/groups
@@ -190,9 +193,9 @@ API - Users
    users -> UUID -> edit
 
 
-.. http:delete:: /users/(uuid:user)/keys/<keyid>
+.. http:delete:: /users/(uuid:user)/keys/(uuid:key)
 
-   Deltes key with given *keyid* for user with given *uuid*.
+   Deltes key with given *uuid* for user with given *uuid*.
 
    **Related permissions**
 
@@ -217,9 +220,9 @@ API - Users
    users -> UUID -> edit 
 
 
-.. http:delete:: /users/(uuid:user)/yubikeys/<keyid>
+.. http:delete:: /users/(uuid:user)/yubikeys/(uuid:key)
 
-   Deletes key with given *keyid* for user with given *uuid*.
+   Deletes key with given *uuid* for user with given *uuid*.
 
    **Related permissions**
 
@@ -235,18 +238,28 @@ API - Users
    users -> ID -> get
 
 
-
 .. http:put:: /users/<(uuid:user)>/orgs/(uuid:org)
 
    Joins user with given *uuuid* to org with given *uuid* (optionally sets it to active).
 
    **Related permissions**
 
-   users -> UUID -> edit
+   * users -> ID -> join
+   * groups -> ID join
+
 
 .. http:put:: /users/(uuid:user)/metadata[/...]
 
    Sets a metadata key for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> ID -> get
+
+
+.. http:put:: /users/(uuid:user)/metadata[/...]
+
+   Removes a key from the metadata for user with given *uuid*.
 
    **Related permissions**
 

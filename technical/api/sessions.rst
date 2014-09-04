@@ -47,7 +47,7 @@ API - Sessions
 
 .. http:get:: /sessions/(uuid:session)
 
-   Retrives session data, analog to `GET /users/UUID <users.html#get--users-(uuid-%20user)>`_
+   Retrives session data, analogous to `GET /users/UUID <users.html#get--users-(uuid-%20user)>`_
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :resheader content-type: the returned datatype, usually ``application/json``

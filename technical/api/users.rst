@@ -25,7 +25,7 @@ API - Users
 
 .. http:get:: /users/(uuid:user)
 
-   Retrives session data for user with given *uuid*. Analog to `GET /users/UUID <users.html>`_
+   Returns user with given *uudi*.
 
    **Related permissions**
 

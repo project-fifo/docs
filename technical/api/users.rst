@@ -1,48 +1,63 @@
 .. Project-FiFo documentation master file, created by
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
+***********
 API - Users
-###########
+***********
 
 .. http:get:: /users
 
    Lists all users.
 
+   **Related permissions**
+
+   users -> ID -> list 
+
+
+.. http:post:: /users
+
+   Creates a new user.
+
+   **Related permissions**
+
+   users -> ID -> create
+
+
 .. http:get:: /users/(uuid:user)
 
-   Retrives session data, analog to `GET /users/UUID <users.html>`_
+   Retrives session data for user with given *uuid*. Analog to `GET /users/UUID <users.html>`_
 
-   **Related permissions**:
+   **Related permissions**
 
-     * cloud -> cloud -> status
+   users -> ID -> get
 
    **Example request**:
 
    .. sourcecode:: http
 
-	  GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-	  host: cloud.project-fifo.net
-	  accept: applicaiton/json
+     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
 
    **Example response**:
 
    .. sourcecode:: http
 
-	  HTTP/1.1 200 OK
-	  vary: Accept
-	  content-type: application/json
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
 
-	  {
-	   "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-	   "name": "admin",
-	   "roles": [],
-	   "org": "",
-	   "orgs": [],
-	   "permissions": [["..."]],
-	   "keys": {"key-id": "ssh-rsa ..."},
-	   "yubikeys": [],
-	   "metadata": {}
-	  }
+     {
+      "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+      "name": "admin",
+      "roles": [],
+      "org": "",
+      "orgs": [],
+      "permissions": [["..."]],
+      "keys": {"key-id": "ssh-rsa ..."},
+      "yubikeys": [],
+      "metadata": {}
+     }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :resheader content-type: the returned datatype, usually ``application/json``
@@ -63,29 +78,179 @@ API - Users
    :>json object metadata: metadata assosiated with the user
 
 
+.. http:put:: /users/(uuid:user)
+
+   Changes password for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> ID -> passwd
 
 
-.. http:delete:: /users/(uuid:session)
+.. http:delete:: /users/(uuid:user)
 
-   Deletes the user with the given `uuid`.
+   Deletes user with given *uuid*.
+
+   **Related permissions**
+
+   users -> ID -> delete
 
    **Example request**:
 
    .. sourcecode:: http
 
-	  DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-	  host: cloud.project-fifo.net
+     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
 
    **Example response**:
 
    .. sourcecode:: http
 
-	  HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
 
    :resheader x-snarl-token: the snarl token for this session
 
    :status 204: the session was successfully deleted
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
+
+      
+
+.. http:get:: /users/(uuid:user)/permissions
+
+   Lists permissions for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> ID -> get
+
+
+.. http:put:: /users/(uuid:user)/permissions/<permission>
+
+   Grants permission to user with given *uuid*.
+
+   **Related permissions**
+
+   users -> ID -> grant 
+
+
+.. http:delete:: /users/(uuid:user)/permissions/<permission>
+
+   Revokes permission for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> ID -> revoke
+
+
+.. http:get:: /users/(uuid:user)/groups
+
+   Lists groups for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> ID -> get
+
+
+.. http:put:: /users/(uuid:user)/groups/(uuid:group)
+
+   Joins user with given *uuid* to group with given *uuid*.
+
+   **Related permissions**
+
+   * users -> ID -> join
+   * groups -> ID -> join
+
+
+.. http:delete:: /users/(uuid:user)/groups/(uuid:group) 
+
+   Deletes user with given *uuid* from group with given *uuid*.
+
+   **Related permissions**
+
+    * users -> UUID -> edit
+    * groups -> ID -> edit
+
+
+.. http:get:: /users/(uuid:user)/keys
+
+   Lists all install keys for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> UUID -> get
+
+
+.. http:put:: /users/(uuid:user)/keys
+
+   Adds a new SSH key to user with given *uuid*.
+
+   **Related permissions**
+
+   users -> UUID -> edit
+
+
+.. http:delete:: /users/(uuid:user)/keys/<keyid>
+
+   Deltes key with given *keyid* for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> UUID -> edit
+
+
+.. http:get:: /users/(uuid:user)/yubikeys
+
+   Lists all install keys for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> UUID -> get
+
+
+.. http:put:: /users/(uuid:user)/yubikeys
+
+   Adds a new SSH key to user with given *uuid*.
+
+   **Related permissions**
+
+   users -> UUID -> edit 
+
+
+.. http:delete:: /users/(uuid:user)/yubikeys/<keyid>
+
+   Deletes key with given *keyid* for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> UUID -> edit
+
+
+.. http:get:: /users/(uuid:user)/orgs
+
+   Lists all user orgs.
+
+   *Related permissions**
+
+   users -> ID -> get
+
+
+
+.. http:put:: /users/<(uuid:user)>/orgs/(uuid:org)
+
+   Joins user with given *uuuid* to org with given *uuid* (optionally sets it to active).
+
+   **Related permissions**
+
+   users -> UUID -> edit
+
+.. http:put:: /users/(uuid:user)/metadata[/...]
+
+   Sets a metadata key for user with given *uuid*.
+
+   **Related permissions**
+
+   users -> UUID -> edit
+
 
 

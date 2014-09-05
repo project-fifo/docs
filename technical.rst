@@ -12,7 +12,6 @@ Technical
    technical/api/users.rst
    technical/api/roles.rst
    technical/api/orgs.rst
-   technical/api/cloud.rst
    technical/api/hypervisors.rst
    technical/api/vms.rst
    technical/api/networks.rst

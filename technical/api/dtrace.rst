@@ -2,34 +2,32 @@
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
 ************
-API - Roles
+API - DTrace
 ************
 
-.. http:get:: /roles
+.. http:get:: /dtrace
 
-   Lists all roles.
-
-   **Related permissions**
-
-   cloud -> roles -> list 
-
-
-.. http:post:: /roles
-
-   Creates a new role.
+   Lists all dtrace scripts.
 
    **Related permissions**
 
-   cloud -> roles -> create
+   cloud -> dtrace -> list
 
+.. http:post:: /dtrace
 
-.. http:get:: /roles/(uuid:role)
-
-   Returns role with given *uuid*.
+   Creates a dtrace script.
 
    **Related permissions**
 
-   roles -> ID -> get
+   cloud -> dtrace -> create
+
+.. http:get:: /dtrace/(uuid:dtrace)
+
+   Returns dtrace script for given *uuid*.
+
+   **Related permissions**
+
+   dtrace -> UUID -> get
 
    **Example request**:
 
@@ -52,9 +50,11 @@ API - Roles
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
       "name": "admin",
-      "permissions": [["..."]],
+      "script": "",
+      "config": {},
       "metadata": {}
      }
+
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :resheader content-type: the returned datatype, usually ``application/json``
@@ -65,58 +65,34 @@ API - Roles
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+.. http:put:: /dtrace/(uuid:dtrace)
 
-.. http:delete:: /roles/(uuid:roles)
-
-   Deletes role with given *uuid*.
-
-   **Related permissions**
-
-   roles -> ID -> delete
-      
-
-.. http:get:: /roles/(uuid:role)/permissions
-
-   Lists permissions for role with given *uuid*.
+   Edits dtrace script with given *uuid*.
 
    **Related permissions**
 
-   roles -> ID -> get
+   dtrace -> UUID -> edit
 
+.. http:delete:: /dtrace/(uuid:dtrace)
 
-.. http:put:: /roles/(uuid:role)/permissions/<permission>
-
-   Grants <permission> for role with given *uuid*.
-
-   **Related permissions**
-
-   * roles -> ID -> grant
-   * permissions -> PERMISSION -> grant
-
-
-.. http:delete:: /roles/(uuid:role)/permissions/<permission>
-
-   Revokes <permission> for role with given *uuid*.
+   Deletes dtrace script with given *uuid*.
 
    **Related permissions**
 
-   * users -> ID -> grant
-   * permissions -> PERMISSIONS -> revoke
+   dtrace -> UUID -> delete
 
+.. http:put:: /dtrace/(uuid:dtrace)/metadata[/...]
 
-.. http:put:: /roles/(uuid:role)/metadata[/...]
-
-   Sets a metadata key for role with given *uuid*.
+   Sets a metadata key for dtrace with given *uuid*.
 
    **Related permissions**
 
-   roles -> UUID -> edit
+   dtrace -> UUID -> edit
 
+.. http:delete:: /dtrace/(uuid:dtrace)/metadata/...
 
-.. http:delete:: /roles/(uuid:role)/metadata/...
-
-   Removes a key from the metadata for role with given *uuid*.
+   Removes a metadata key for dtrace with given *uuid*.
 
    **Related permissions**
 
-   roles -> UUID -> edit
+   dtrace -> UUID -> edit

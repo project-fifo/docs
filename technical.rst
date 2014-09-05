@@ -15,3 +15,8 @@ Technical
    technical/api/cloud.rst
    technical/api/hypervisors.rst
    technical/api/vms.rst
+   technical/api/networks.rst
+   technical/api/ipranges.rst
+   technical/api/datasets.rst
+   technical/api/packages.rst
+   technical/api/dtrace.rst

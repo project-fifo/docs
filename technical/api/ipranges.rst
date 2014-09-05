@@ -1,35 +1,34 @@
 .. Project-FiFo documentation master file, created by
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
-*******************
-API - Organizations
-*******************
+**************
+API - IPranges
+**************
 
-.. http:get:: /orgs
+.. http:get:: /ipranges
 
-   Lists all organizations.
-
-   **Related permissions**
-
-   cloud -> orgs -> list 
-
-
-.. http:post:: /orgs
-
-   Creates a new organization.
+   Lists all ipranges.
 
    **Related permissions**
 
-   cloud -> orgs -> create
+   cloud -> ipranges -> list
 
+.. http:post:: /ipranges
 
-.. http:get:: /orgs/(uuid:org)
-
-   Returns organization with given *uuid*.
+   Creates/Updates an iprange.
 
    **Related permissions**
 
-   orgs -> UUID -> get
+   cloud -> ipranges -> create  
+
+
+.. http:get:: /ipranges/(uuid:iprange)
+
+   Returns iprange details for iprange with given *uuid*.
+
+   **Related permissions**
+
+   ipranges -> NAME -> get
 
    **Example request**:
 
@@ -49,12 +48,20 @@ API - Organizations
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      {
+     {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "keys": {"key-id": "ssh-rsa ..."},
-      "triggers": {},
+      "name": "admin",
+      
+      "network": "",
+      "netmask": "",
+      "gateway": "",
+      "tag": "",
+      "vlan": "",
+
+      "free": [],
+      "used": [],
       "metadata": {}
-      }
+     }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :resheader content-type: the returned datatype, usually ``application/json``
@@ -65,57 +72,44 @@ API - Organizations
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+.. http:post:: /ipranges/(uuid:iprange)
 
-.. http:delete:: /orgs/(uuid:orgs)
-
-   Deletes organization with given *uuid*.
-
-   **Related permissions**
-
-   orgs -> UUID -> delete
-      
-
-.. http:get:: /orgs/(uuid:org)/triggers
-
-   Lists the organizations triggers.
+   Obtains an IP.
 
    **Related permissions**
 
-   orgs -> ID -> get
 
+.. http:delete:: /ipranges/(uuid:iprange)
 
-.. http:put:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
-
-   Adds a new trigger to org with given *uuid*.
+   Deletes iprange with given *uuid*.
 
    **Related permissions**
 
-   * orgs -> UUID -> edit
-   * roles -> ROLE -> grant
+   ipranges -> NAME -> delete
 
 
-.. http:delete:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
+.. http:delete:: /ipranges/(uuid:iprange)/<ip>
 
-   Deletes a trigger from organization with given *uuid*.
-
-   **Related permissions**
-
-   orgs -> UUID -> edit
-
-
-.. http:put:: /orgs/(uuid:org)/metadata[/...]
-
-   Sets a metadata key for organization with given *uuid*.
+   Releases <IP> fron iprange with given *uuid*.
 
    **Related permissions**
 
-   orgs -> UUID -> edit
+   ipranges -> UUID -> edit
 
 
-.. http:delete:: /orgs/(uuid:org)/metadata/...
+.. http:put:: /ipranges/(uuid:iprange)/metadata[/...]
 
-   Removes a key from the metadata for organization with given *uuid*.
+   Sets a metadata key for iprange with given *uuid*.
 
    **Related permissions**
 
-   orgs -> UUID -> edit
+   ipranges -> UUID -> edit
+
+
+.. http:delete:: /ipranges/(uuid:iprange)/metadata/...
+
+   Removes a metadata key for iprange with given *uuid*.
+
+   **Related permissions**
+
+   ipranges -> UUID -> edit

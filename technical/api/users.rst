@@ -38,6 +38,7 @@ API - Users
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
@@ -46,6 +47,7 @@ API - Users
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
@@ -65,6 +67,7 @@ API - Users
 
    :status 200: the session information is returned
    :status 404: the session was not found
+   :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
    :>json string uuid: UUID of the user that was logged in
@@ -74,7 +77,7 @@ API - Users
    :>json array orgs: list of org-uuid the user is member of
    :>json array permissions: list of permissions this user has
    :>json object keys: SSH public keys registered for this user
-   :>json yubikeys keys: YubiKey Id's for this user
+   :>json array yubikeys: YubiKey Id's for this user
    :>json object metadata: metadata assosiated with the user
 
 

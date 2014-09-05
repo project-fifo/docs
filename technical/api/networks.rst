@@ -1,35 +1,34 @@
 .. Project-FiFo documentation master file, created by
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
-*******************
-API - Organizations
-*******************
+**************
+API - Networks
+**************
 
-.. http:get:: /orgs
+.. http:get:: /networks
 
-   Lists all organizations.
-
-   **Related permissions**
-
-   cloud -> orgs -> list 
-
-
-.. http:post:: /orgs
-
-   Creates a new organization.
+   Lists all networks.
 
    **Related permissions**
 
-   cloud -> orgs -> create
+   cloud -> networks -> list
 
+.. http:post:: /networks
 
-.. http:get:: /orgs/(uuid:org)
-
-   Returns organization with given *uuid*.
+   Create a new network.
 
    **Related permissions**
 
-   orgs -> UUID -> get
+   cloud -> networks -> create  
+
+
+.. http:get:: /networks/(uuid:network)
+
+   Returns network details for network with given *uuid*.
+
+   **Related permissions**
+
+   networks -> UUID -> get
 
    **Example request**:
 
@@ -49,12 +48,12 @@ API - Organizations
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      {
+     {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "keys": {"key-id": "ssh-rsa ..."},
-      "triggers": {},
+      "name": "admin",
+      "iprages": [],
       "metadata": {}
-      }
+     }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :resheader content-type: the returned datatype, usually ``application/json``
@@ -65,57 +64,45 @@ API - Organizations
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+.. http:delete:: /networks/(uuid:network)
 
-.. http:delete:: /orgs/(uuid:orgs)
-
-   Deletes organization with given *uuid*.
-
-   **Related permissions**
-
-   orgs -> UUID -> delete
-      
-
-.. http:get:: /orgs/(uuid:org)/triggers
-
-   Lists the organizations triggers.
+   Deletes network with given *uuid*.
 
    **Related permissions**
 
-   orgs -> ID -> get
+   networks -> UUID -> delete
 
 
-.. http:put:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
+.. http:put:: /networks/(uuid:network)/ipranges/<iprange>
 
-   Adds a new trigger to org with given *uuid*.
-
-   **Related permissions**
-
-   * orgs -> UUID -> edit
-   * roles -> ROLE -> grant
-
-
-.. http:delete:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
-
-   Deletes a trigger from organization with given *uuid*.
+   Adds an <iprange> for network with given *uuid*.
 
    **Related permissions**
 
-   orgs -> UUID -> edit
+   networks -> UUID -> edit
 
 
-.. http:put:: /orgs/(uuid:org)/metadata[/...]
+.. http:delete:: /networks/(uuid:network)/ipranges/<iprange>
 
-   Sets a metadata key for organization with given *uuid*.
-
-   **Related permissions**
-
-   orgs -> UUID -> edit
-
-
-.. http:delete:: /orgs/(uuid:org)/metadata/...
-
-   Removes a key from the metadata for organization with given *uuid*.
+   Removes an <iprange> from for network with given *uuid*.
 
    **Related permissions**
 
-   orgs -> UUID -> edit
+   networks -> UUID -> edit
+
+.. http:put:: /networks/(uuid:network)/metadata[/...]
+
+   Sets a metadata key for network with given *uuid*.
+
+   **Related permissions**
+
+   networks -> UUID -> edit
+
+
+.. http:delete:: /networks/(uuid:network)/metadata/...
+
+   Removes a metadata key for network with given *uuid*.
+
+   **Related permissions**
+
+   networks -> UUID -> edit

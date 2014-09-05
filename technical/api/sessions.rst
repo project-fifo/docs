@@ -21,7 +21,7 @@ API - Sessions
 	  host: cloud.project-fifo.net
 	  accept: applicaiton/json
 	  content-type: application/json
-
+     
 	  {
 	   "user": "admin",
 	   "password": "admin"
@@ -80,6 +80,7 @@ API - Sessions
 
 	  DELETE /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16 HTTP/1.1
 	  host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 

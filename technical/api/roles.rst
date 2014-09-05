@@ -65,6 +65,10 @@ API - Roles
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+   :>json string uuid: UUID of the role
+   :>json string name: name of the role
+   :>json array permissions: list of permissions that are associated with that role
+   :>json object metadata: metadata associated with that role
 
 .. http:delete:: /roles/(uuid:roles)
 

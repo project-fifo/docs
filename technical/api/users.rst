@@ -78,7 +78,7 @@ API - Users
    :>json array permissions: list of permissions this user has
    :>json object keys: SSH public keys registered for this user
    :>json array yubikeys: YubiKey Id's for this user
-   :>json object metadata: metadata assosiated with the user
+   :>json object metadata: metadata associated with the user
 
 
 .. http:put:: /users/(uuid:user)

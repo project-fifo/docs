@@ -65,6 +65,11 @@ API - Organizations
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+   :>json string uuid: UUID of the user that was logged in
+   :>json object keys: SSH public keys registered for that organization
+   :>json object triggers: list of the organization's troggers
+   :>json object metadata: metadata associated with that organization
+
 
 .. http:delete:: /orgs/(uuid:orgs)
 
@@ -77,7 +82,7 @@ API - Organizations
 
 .. http:get:: /orgs/(uuid:org)/triggers
 
-   Lists the organizations triggers.
+   Lists the organization's triggers.
 
    **Related permissions**
 

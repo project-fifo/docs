@@ -60,13 +60,13 @@ API - VMs
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "alias": "",
-      "owner": "",
+      "alias": "fifp",
+      "owner": "739faa0d-d098-496c-a87b-dc95520f8d12",
 
-      "dataset": "",
-      "package": "",
-      "hypervisor": "",
-      "network_map": {},
+      "dataset": "e50552e8-e617-4ed3-98a6-ff5641f426f3",
+      "package": "e1618837-be96-4e10-8c5f-41c223607c65",
+      "hypervisor": "e57992d1-f4bc-4795-8582-5cb982a8b3ad",
+      "network_map": {"192.168.0.8": "daf72785-000b-4abb-8f30-d862405d3bb2"},
 
       "config": {},
       "info": {},
@@ -76,7 +76,7 @@ API - VMs
 
       "logs": [],
       "groupings": [],
-      "state": "",
+      "state": "running",
 
       "metadata": {}
      }

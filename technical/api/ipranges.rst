@@ -19,7 +19,7 @@ API - IPranges
 
    **Related permissions**
 
-   cloud -> ipranges -> create  
+   cloud -> ipranges -> create
 
 
 .. http:get:: /ipranges/(uuid:iprange)
@@ -51,15 +51,15 @@ API - IPranges
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
       "name": "admin",
-      
-      "network": "",
-      "netmask": "",
-      "gateway": "",
-      "tag": "",
-      "vlan": "",
 
-      "free": [],
-      "used": [],
+      "network": "739faa0d-d098-496c-a87b-dc95520f8d12",
+      "netmask": "255.255.255.0",
+      "gateway": "192.168.0.1",
+      "tag": "admin",
+      "vlan": 0,
+
+      "free": ["192.168.0.10", "192.168.0.11", "192.168.0.12", "192.168.0.13"],
+      "used": ["192.168.0.9", "192.168.0.8"],
       "metadata": {}
      }
 

@@ -1,8 +1,9 @@
 .. Project-FiFo documentation master file, created by
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
+*************
 API - General
-#############
+*************
 
 .. http:get:: /cloud/connection
 
@@ -27,7 +28,7 @@ API - General
 	  {
 	   "howl": 1,
  	   "snarl": 1,
- 	   "sniffle":1
+ 	   "sniffle": 1
 	  }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``

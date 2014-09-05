@@ -11,7 +11,7 @@ API - Hypervisors
 
    **Related permissions**
 
-   cloud -> hypervisors -> list 
+   cloud -> hypervisors -> list
 
 
 .. http:get:: /hypervisors/(uuid:hypervisor)
@@ -43,19 +43,19 @@ API - Hypervisors
      {
       "characteristics": {},
       "etherstubs": [],
-      "host": "",
+      "host": "192.168.37.9",
       "metadata": {},
-      "alias": "",
+      "alias": "hv1",
       "networks": [],
       "path": [],
       "pools": {},
-      "port": 0,
+      "port": 4200,
       "resources": {},
       "services": {},
       "sysinfo": {},
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "version": "",
-      "virtualisation": []
+      "version": "0.6.0",
+      "virtualisation": ["zone", "kvm"]
      }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
@@ -95,11 +95,11 @@ API - Hypervisors
    hypervisors -> UUID -> edit
 
 .. note::
-   
+
    Characteristics are used to describe capabilities of the hypervisor for the selection process.
 
 .. http:put:: /hypervisors/(uuid:hypervisor)/characteristics[/...]
-   
+
    Sets a characteristics key for hypervisor with given *uuid*.
 
    **Related permissions**
@@ -108,7 +108,7 @@ API - Hypervisors
    hypervisors -> UUID -> edit
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/characteristics/...
-   
+
    Removes a characteristics key for hypervisor with given *uuid*.
 
    **Related permissions**

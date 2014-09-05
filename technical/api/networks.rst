@@ -50,8 +50,8 @@ API - Networks
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "name": "admin",
-      "iprages": [],
+      "name": "Intranet",
+      "iprages": ["daf72785-000b-4abb-8f30-d862405d3bb2", "e1618837-be96-4e10-8c5f-41c223607c65"],
       "metadata": {}
      }
 

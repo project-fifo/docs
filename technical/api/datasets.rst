@@ -49,22 +49,21 @@ API - Datasets
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "type": "",
-      "status": "",
-      "imported": "",
+      "type": "kvm",
+      "status": "imported",
+      "imported": 1,
       "requirements": [],
       "metadata": {},
-
       "description": "",
-      "disk_driver": "",
+      "disk_driver": "virtio",
       "homepage": "",
-      "image_size": "",
-      "name": "",
-      "networks": "",
-      "nic_driver": "",
-      "os": "",
-      "users": "",
-      "version": ""
+      "image_size": 12345,
+      "name": "example",
+      "networks": {"net0":"public"},
+      "nic_driver": "virtio",
+      "os": "linux",
+      "users": ["root", "admin"],
+      "version": "0.1.0"
      }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``

@@ -51,7 +51,7 @@ API - Roles
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "name": "admin",
+      "name": "Administrators",
       "permissions": [["..."]],
       "metadata": {}
      }
@@ -73,8 +73,8 @@ API - Roles
    **Related permissions**
 
    roles -> ID -> delete
-      
 
+   
 .. http:get:: /roles/(uuid:role)/permissions
 
    Lists permissions for role with given *uuid*.

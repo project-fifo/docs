@@ -49,9 +49,9 @@ API - DTrace
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "name": "admin",
-      "script": "",
-      "config": {},
+      "name": "zfs reads",
+      "script": "/*some dtrace here/*",
+      "config": {"start": 0, "end": 64, "step":2},
       "metadata": {}
      }
 

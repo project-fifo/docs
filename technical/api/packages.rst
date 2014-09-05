@@ -49,17 +49,16 @@ API - Packages
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "name": "admin",
-      "roles": [],
+      "name": "small",
 
-      "blocksizte": "",
-      "compression": "",
-      "cup_cap": "",
-      "cpu_shares": "",
-      "max_swap": "",
-      "quota": "",
-      "ram": "",
-      "zfs_io_priorety": "",
+      "blocksizte": 4098,
+      "compression": "none",
+      "cup_cap": 100,
+      "cpu_shares": 100,
+      "max_swap": 1024,
+      "quota": 40,
+      "ram": 1024,
+      "zfs_io_priorety": 100,
 
       "requirements": [],
 

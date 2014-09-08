@@ -11,7 +11,7 @@ API - VMs
 
    **Related permissions**
 
-   cloud -> cms -> list
+    cloud -> cms -> list
 
 
 .. http:post:: /vms
@@ -20,7 +20,7 @@ API - VMs
 
    **Related permissions**
 
-   cloud -> vms -> create
+    cloud -> vms -> create
 
 
 .. http:put:: /vms/dry_run
@@ -29,7 +29,7 @@ API - VMs
 
    **Related permissions**
 
-   cloud -> vms -> create
+    cloud -> vms -> create
 
 
 .. http:get:: /vms/(uuid:vm)
@@ -38,11 +38,11 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> get
+    vms -> UUID -> get
 
    **Example request**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
@@ -51,7 +51,7 @@ API - VMs
 
    **Example response**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -82,6 +82,7 @@ API - VMs
      }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
@@ -118,14 +119,14 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> state
+    vms -> UUID -> state
 
 
    Updates the config/package for VM with given *uuid*.
      
    **Related permissions**
      
-   vms -> UUID -> edit
+    vms -> UUID -> edit
 
 
 .. http:delete:: /vms/(uuid:vm)
@@ -134,13 +135,13 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> delete
+    vms -> UUID -> delete
 
    Deletes VM with given *uuid* from hypervisor.
 
    **Related permissions**
 
-   vms -> UUID -> delete
+    vms -> UUID -> delete
 
 
 .. http:put:: /vms/(uuid:vm)/owner
@@ -149,8 +150,8 @@ API - VMs
 
    **Related permissions**
 
-   * vms -> UUID -> edit
-   * orgs -> UUID -> edit
+    * vms -> UUID -> edit
+    * orgs -> UUID -> edit
 
 
 .. http:post:: /vms/(uuid:vm)/nics
@@ -159,7 +160,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> edit
+    vms -> UUID -> edit
 
 
 .. http:put:: /vms/(uuid:vm)/nics/<mac>
@@ -168,7 +169,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> edit
+    vms -> UUID -> edit
 
 
 .. http:delete:: /vms/(uuid:vm)/nics/<mac>
@@ -177,7 +178,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> edit
+    vms -> UUID -> edit
 
 
 .. http:get:: /vms/(uuid:vm)/snapshots
@@ -186,7 +187,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> get
+    vms -> UUID -> get
 
 
 .. http:post:: /vms/(uuid:vm)/snapshots
@@ -195,7 +196,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> snapshot
+    vms -> UUID -> snapshot
 
 
 .. http:get:: /vms/(uuid:vm)/snapshots/(id:snapshot)
@@ -204,7 +205,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> snapshot
+    vms -> UUID -> snapshot
 
 
 .. http:put:: /vms/(uuid:vm)/snapshots/(id:snapshot)
@@ -213,7 +214,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> rollback
+    vms -> UUID -> rollback
 
 
 .. http:delete:: /vms/(uuid:vm)/snapshots/(id:snapshot)
@@ -222,7 +223,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> snapshot_delete
+    vms -> UUID -> snapshot_delete
 
 .. http:get:: /vms/(uuid:vm)/backups
 
@@ -230,7 +231,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> get
+    vms -> UUID -> get
 
 
 .. http:post:: /vms/(uuid:vm)/backups
@@ -239,7 +240,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> snapshot
+    vms -> UUID -> snapshot
 
 
 .. http:get:: /vms/(uuid:vm)/backups/(id:backup)
@@ -248,7 +249,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> snapshot
+    vms -> UUID -> snapshot
 
 
 .. http:put:: /vms/(uuid:vm)/backups/(id:backup)
@@ -257,7 +258,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> rollback
+    vms -> UUID -> rollback
 
 
 .. http:delete:: /vms/(uuid:vm)/backups/(id:backup)
@@ -266,7 +267,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> snapshot_delete
+    vms -> UUID -> snapshot_delete
 
 .. http:put:: /vms/(uuid:vm)/metadata[/...]
 
@@ -274,7 +275,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> edit
+    vms -> UUID -> edit
 
 
 .. http:delete:: /vms/(uuid:vm)/metadata/...
@@ -283,7 +284,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> edit
+    vms -> UUID -> edit
 
 
 .. http:get:: /vms/(uuid:vm)/services
@@ -292,7 +293,7 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> get
+    vms -> UUID -> get
 
 .. http:put:: /vms/(uuid:vm)/services
 
@@ -300,4 +301,4 @@ API - VMs
 
    **Related permissions**
 
-   vms -> UUID -> edit
+    vms -> UUID -> edit

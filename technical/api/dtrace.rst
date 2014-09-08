@@ -11,7 +11,7 @@ API - DTrace
 
    **Related permissions**
 
-   cloud -> dtrace -> list
+      cloud -> dtrace -> list
 
 .. http:post:: /dtrace
 
@@ -19,7 +19,7 @@ API - DTrace
 
    **Related permissions**
 
-   cloud -> dtrace -> create
+      cloud -> dtrace -> create
 
 .. http:get:: /dtrace/(uuid:dtrace)
 
@@ -27,36 +27,37 @@ API - DTrace
 
    **Related permissions**
 
-   dtrace -> UUID -> get
+      dtrace -> UUID -> get
 
    **Example request**:
 
-   .. sourcecode:: http
+      .. sourcecode:: http
 
-     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-     host: cloud.project-fifo.net
-     accept: applicaiton/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-
-   **Example response**:
-
-   .. sourcecode:: http
-
-     HTTP/1.1 200 OK
-     vary: Accept
-     content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-
-     {
-      "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "name": "zfs reads",
-      "script": "/*some dtrace here/*",
-      "config": {"start": 0, "end": 64, "step":2},
-      "metadata": {}
-     }
+       GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+       accept: applicaiton/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+  
+     **Example response**:
+  
+      .. sourcecode:: http
+  
+       HTTP/1.1 200 OK
+       vary: Accept
+       content-type: application/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+  
+       {
+        "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+        "name": "zfs reads",
+        "script": "/*some dtrace here/*",
+        "config": {"start": 0, "end": 64, "step":2},
+        "metadata": {}
+       }
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
@@ -77,7 +78,7 @@ API - DTrace
 
    **Related permissions**
 
-   dtrace -> UUID -> edit
+      dtrace -> UUID -> edit
 
 .. http:delete:: /dtrace/(uuid:dtrace)
 
@@ -85,7 +86,7 @@ API - DTrace
 
    **Related permissions**
 
-   dtrace -> UUID -> delete
+      dtrace -> UUID -> delete
 
 .. http:put:: /dtrace/(uuid:dtrace)/metadata[/...]
 
@@ -93,7 +94,7 @@ API - DTrace
 
    **Related permissions**
 
-   dtrace -> UUID -> edit
+      dtrace -> UUID -> edit
 
 .. http:delete:: /dtrace/(uuid:dtrace)/metadata/...
 
@@ -101,4 +102,4 @@ API - DTrace
 
    **Related permissions**
 
-   dtrace -> UUID -> edit
+      dtrace -> UUID -> edit

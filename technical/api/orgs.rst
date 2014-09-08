@@ -11,7 +11,7 @@ API - Organizations
 
    **Related permissions**
 
-   cloud -> orgs -> list 
+      cloud -> orgs -> list 
 
 
 .. http:post:: /orgs
@@ -20,7 +20,7 @@ API - Organizations
 
    **Related permissions**
 
-   cloud -> orgs -> create
+      cloud -> orgs -> create
 
 
 .. http:get:: /orgs/(uuid:org)
@@ -29,34 +29,35 @@ API - Organizations
 
    **Related permissions**
 
-   orgs -> UUID -> get
+      orgs -> UUID -> get
 
    **Example request**:
 
-   .. sourcecode:: http
-
-     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-     host: cloud.project-fifo.net
-     accept: applicaiton/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+      .. sourcecode:: http
+  
+       GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+       accept: applicaiton/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-   .. sourcecode:: http
+     .. sourcecode:: http
 
-     HTTP/1.1 200 OK
-     vary: Accept
-     content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+      HTTP/1.1 200 OK
+      vary: Accept
+      content-type: application/json
+      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      {
-      "name": "Project-FiFo",
-      "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "triggers": {},
-      "metadata": {}
-      }
+       {
+       "name": "Project-FiFo",
+       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+       "triggers": {},
+       "metadata": {}
+       }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
@@ -77,7 +78,7 @@ API - Organizations
 
    **Related permissions**
 
-   orgs -> UUID -> delete
+      orgs -> UUID -> delete
 
 
 .. http:get:: /orgs/(uuid:org)/triggers
@@ -86,7 +87,7 @@ API - Organizations
 
    **Related permissions**
 
-   orgs -> ID -> get
+      orgs -> ID -> get
 
 
 .. http:put:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
@@ -95,8 +96,8 @@ API - Organizations
 
    **Related permissions**
 
-   * orgs -> UUID -> edit
-   * roles -> ROLE -> grant
+      * orgs -> UUID -> edit
+      * roles -> ROLE -> grant
 
 
 .. http:delete:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
@@ -105,7 +106,7 @@ API - Organizations
 
    **Related permissions**
 
-   orgs -> UUID -> edit
+      orgs -> UUID -> edit
 
 
 .. http:put:: /orgs/(uuid:org)/metadata[/...]
@@ -114,7 +115,7 @@ API - Organizations
 
    **Related permissions**
 
-   orgs -> UUID -> edit
+      orgs -> UUID -> edit
 
 
 .. http:delete:: /orgs/(uuid:org)/metadata/...
@@ -123,4 +124,4 @@ API - Organizations
 
    **Related permissions**
 
-   orgs -> UUID -> edit
+     orgs -> UUID -> edit

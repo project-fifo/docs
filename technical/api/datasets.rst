@@ -11,7 +11,7 @@ API - Datasets
 
    **Related permissions**
 
-   cloud -> datasets -> list
+      cloud -> datasets -> list
 
 .. http:post:: /datasets
 
@@ -19,7 +19,7 @@ API - Datasets
 
    **Related permissions**
 
-   cloud -> datasets -> import
+    cloud -> datasets -> import
 
 .. http:get:: /datasets/(uuid:dataset)
 
@@ -27,46 +27,47 @@ API - Datasets
 
    **Related permissions**
 
-   datasets -> UUID -> get
+      datasets -> UUID -> get
 
    **Example request**:
 
-   .. sourcecode:: http
-
-     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-     host: cloud.project-fifo.net
-     accept: applicaiton/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+      .. sourcecode:: http
+  
+       GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+       accept: applicaiton/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-   .. sourcecode:: http
-
-     HTTP/1.1 200 OK
-     vary: Accept
-     content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-
-     {
-      "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "type": "kvm",
-      "status": "imported",
-      "imported": 1,
-      "requirements": [],
-      "metadata": {},
-      "description": "",
-      "disk_driver": "virtio",
-      "homepage": "",
-      "image_size": 12345,
-      "name": "example",
-      "networks": {"net0":"public"},
-      "nic_driver": "virtio",
-      "os": "linux",
-      "users": ["root", "admin"],
-      "version": "0.1.0"
-     }
+      .. sourcecode:: http
+  
+       HTTP/1.1 200 OK
+       vary: Accept
+       content-type: application/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+  
+       {
+        "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+        "type": "kvm",
+        "status": "imported",
+        "imported": 1,
+        "requirements": [],
+        "metadata": {},
+        "description": "",
+        "disk_driver": "virtio",
+        "homepage": "",
+        "image_size": 12345,
+        "name": "example",
+        "networks": {"net0":"public"},
+        "nic_driver": "virtio",
+        "os": "linux",
+        "users": ["root", "admin"],
+        "version": "0.1.0"
+       }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
@@ -98,7 +99,7 @@ API - Datasets
 
    **Related permissions**
 
-   datasets -> UUID -> edit
+      datasets -> UUID -> edit
 
 .. http:post:: /datasets/(uuid:dataset)
 
@@ -106,7 +107,7 @@ API - Datasets
 
    **Related permissions**
 
-   datasets -> UUID -> create
+      datasets -> UUID -> create
 
 .. http:delete:: /datasets/(uuid:dataset)
 
@@ -114,7 +115,7 @@ API - Datasets
 
    **Related permissions**
 
-   datasets -> UUID -> delete
+      datasets -> UUID -> delete
 
 .. http:get:: /datasets/(uuid:dataset)/dataset.gz
 
@@ -122,7 +123,7 @@ API - Datasets
 
    **Related permissions**
 
-   datasets -> UUID -> export
+      datasets -> UUID -> export
 
 .. http:put:: /datasets/(uuid:dataset)/dataset.gz
 
@@ -130,7 +131,7 @@ API - Datasets
 
    **Related permissions**
 
-   datasets -> UUID -> create
+      datasets -> UUID -> create
 
 .. http:put:: /datasets/(uuid:dataset)/metadata[/...]
 
@@ -138,7 +139,7 @@ API - Datasets
 
    **Related permissions**
 
-   datasets -> UUID -> edit
+      datasets -> UUID -> edit
 
 
 .. http:delete:: /datasets/(uuid:dataset)/metadata/...
@@ -147,4 +148,4 @@ API - Datasets
 
    **Related permissions**
 
-   datasets -> UUID -> edit
+      datasets -> UUID -> edit

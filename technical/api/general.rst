@@ -11,7 +11,7 @@ API - General
 
    **Example request**:
 
-   .. sourcecode:: http
+   	.. sourcecode:: http
 
 	  GET /cloud/connection HTTP/1.1
 	  host: cloud.project-fifo.net
@@ -19,7 +19,7 @@ API - General
 
    **Example response**:
 
-   .. sourcecode:: http
+   	.. sourcecode:: http
 
 	  HTTP/1.1 200 OK
 	  vary: Accept
@@ -49,7 +49,7 @@ API - General
 
    **Example request**:
 
-   .. sourcecode:: http
+   	.. sourcecode:: http
 
 	  GET /cloud HTTP/1.1
 	  host: cloud.project-fifo.net
@@ -57,7 +57,7 @@ API - General
 
    **Example response**:
 
-   .. sourcecode:: http
+   	.. sourcecode:: http
 
 	  HTTP/1.1 200 OK
 	  vary: Accept

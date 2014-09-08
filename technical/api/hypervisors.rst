@@ -11,7 +11,7 @@ API - Hypervisors
 
    **Related permissions**
 
-   cloud -> hypervisors -> list
+      cloud -> hypervisors -> list
 
 
 .. http:get:: /hypervisors/(uuid:hypervisor)
@@ -20,45 +20,46 @@ API - Hypervisors
 
    **Related permissions**
 
-   hypervisors -> UUID -> get
+      hypervisors -> UUID -> get
 
    **Example request**:
 
-   .. sourcecode:: http
+      .. sourcecode:: http
 
-     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-     host: cloud.project-fifo.net
-     accept: applicaiton/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+       GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+       accept: applicaiton/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-   .. sourcecode:: http
-
-     HTTP/1.1 200 OK
-     vary: Accept
-     content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-
-     {
-      "characteristics": {},
-      "etherstubs": [],
-      "host": "192.168.37.9",
-      "metadata": {},
-      "alias": "hv1",
-      "networks": [],
-      "path": [],
-      "pools": {},
-      "port": 4200,
-      "resources": {},
-      "services": {},
-      "sysinfo": {},
-      "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "version": "0.6.0",
-      "virtualisation": ["zone", "kvm"]
-     }
+      .. sourcecode:: http
+  
+       HTTP/1.1 200 OK
+       vary: Accept
+       content-type: application/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+  
+       {
+        "characteristics": {},
+        "etherstubs": [],
+        "host": "192.168.37.9",
+        "metadata": {},
+        "alias": "hv1",
+        "networks": [],
+        "path": [],
+        "pools": {},
+        "port": 4200,
+        "resources": {},
+        "services": {},
+        "sysinfo": {},
+        "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+        "version": "0.6.0",
+        "virtualisation": ["zone", "kvm"]
+       }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
@@ -89,7 +90,7 @@ API - Hypervisors
 
    **Related permissions**
 
-   hypervisors -> UUID -> edit
+     hypervisors -> UUID -> edit
 
 
 .. http:put:: /hypervisors/(uuid:hypervisor)/metadata[/...]
@@ -98,7 +99,7 @@ API - Hypervisors
 
    **Related permissions**
 
-   hypervisors -> UUID -> edit
+      hypervisors -> UUID -> edit
 
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/...
@@ -107,7 +108,7 @@ API - Hypervisors
 
    **Related permissions**
 
-   hypervisors -> UUID -> edit
+      hypervisors -> UUID -> edit
 
 .. note::
 
@@ -119,8 +120,7 @@ API - Hypervisors
 
    **Related permissions**
 
-
-   hypervisors -> UUID -> edit
+      hypervisors -> UUID -> edit
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/characteristics/...
 
@@ -128,7 +128,7 @@ API - Hypervisors
 
    **Related permissions**
 
-   hypervisors -> UUID -> edit
+      hypervisors -> UUID -> edit
 
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/...
@@ -137,4 +137,4 @@ API - Hypervisors
 
    **Related permissions**
 
-   hypervisors -> UUID -> edit
+      hypervisors -> UUID -> edit

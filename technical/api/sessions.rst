@@ -11,7 +11,7 @@ API - Sessions
 
    **Related permissions**
 
-   *not needed*
+    *not needed*
 
    **Example request**:
 
@@ -29,13 +29,14 @@ API - Sessions
 
    **Example response**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
 	  HTTP/1.1 302 Found
 	  location: /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader content-type: datatype used in the body, usually ``application/json``
+   :resqeader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
@@ -56,7 +57,7 @@ API - Sessions
 
    **Related permissions**
 
-   *not needed*
+    *not needed*
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :resheader content-type: the returned datatype, usually ``application/json``
@@ -70,13 +71,13 @@ API - Sessions
 
    **Related permissions**:
 
-     * Only available for current session
+    * Only available for current session
 
 .. http:delete:: /sessions/(uuid:session)
 
    Deletes the session with the given `uuid`, logging it out.
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
 	  DELETE /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16 HTTP/1.1
 	  host: cloud.project-fifo.net
@@ -84,7 +85,7 @@ API - Sessions
 
    **Example response**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
 	  HTTP/1.1 204 No Content
 

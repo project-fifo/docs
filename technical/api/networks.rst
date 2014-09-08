@@ -11,7 +11,7 @@ API - Networks
 
    **Related permissions**
 
-   cloud -> networks -> list
+     cloud -> networks -> list
 
 .. http:post:: /networks
 
@@ -19,7 +19,7 @@ API - Networks
 
    **Related permissions**
 
-   cloud -> networks -> create  
+      cloud -> networks -> create  
 
 
 .. http:get:: /networks/(uuid:network)
@@ -28,11 +28,11 @@ API - Networks
 
    **Related permissions**
 
-   networks -> UUID -> get
+      networks -> UUID -> get
 
    **Example request**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
@@ -41,7 +41,7 @@ API - Networks
 
    **Example response**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -56,6 +56,7 @@ API - Networks
      }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
@@ -77,7 +78,7 @@ API - Networks
 
    **Related permissions**
 
-   networks -> UUID -> delete
+      networks -> UUID -> delete
 
 
 .. http:put:: /networks/(uuid:network)/ipranges/<iprange>
@@ -86,7 +87,7 @@ API - Networks
 
    **Related permissions**
 
-   networks -> UUID -> edit
+      networks -> UUID -> edit
 
 
 .. http:delete:: /networks/(uuid:network)/ipranges/<iprange>
@@ -95,7 +96,7 @@ API - Networks
 
    **Related permissions**
 
-   networks -> UUID -> edit
+      networks -> UUID -> edit
 
 .. http:put:: /networks/(uuid:network)/metadata[/...]
 
@@ -103,7 +104,7 @@ API - Networks
 
    **Related permissions**
 
-   networks -> UUID -> edit
+      networks -> UUID -> edit
 
 
 .. http:delete:: /networks/(uuid:network)/metadata/...
@@ -112,4 +113,4 @@ API - Networks
 
    **Related permissions**
 
-   networks -> UUID -> edit
+      networks -> UUID -> edit

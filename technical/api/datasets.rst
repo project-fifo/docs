@@ -77,20 +77,20 @@ API - Datasets
 
    :>json string UUID: UUID of the dataset
    :>json string type: type of the dataset
-   :>json string status: status of the dataset
-   :>json integer imported:
-   :>json array requirements:
+   :>json string status: import status of the dataset (pending / importing / imported / failed)
+   :>json integer imported: percentage of dataset imported (0 .. 1)
+   :>json array requirements: requirements for the dataset
    :>json object metadata: metadate associated witht he dataset
-   :>json string description:
-   :>json string disk_driver:
-   :>json string homepage:
-   :>json integer image_size:
-   :>json string name:
-   :>json object networks:
-   :>json string nic_driver:
-   :>json string os:
-   :>json array users:
-   :>json string version:
+   :>json string description: description of the dater set
+   :>json string disk_driver: disk driver to use for kvms
+   :>json string homepage: homepage of the dataset
+   :>json integer image_size: size of the image
+   :>json string name: name of the dataset
+   :>json object networks: networks/interfaces the dataset requires
+   :>json string nic_driver: nic driver to use for kvms
+   :>json string os: dataset OS
+   :>json array users: users provided by the dataset
+   :>json string version: version # of the dataset
 
 .. http:put:: /datasets/(uuid:dataset)
 

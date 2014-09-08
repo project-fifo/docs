@@ -72,14 +72,14 @@ API - IPranges
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
-   :>json string UUID: UUID of the IPrange(s ???)
-   :>json string name: name of the ???
+   :>json string UUID: UUID of the IPrange
+   :>json string name: name of the IPrange
    
-   :>json string network:
-   :>json string netmask: 
-   :>json string gateway:
-   :>json string tag:
-   :>json integer vlan:
+   :>json string network: network using the IPrange 
+   :>json string netmask: netmask of the network using the IPrange
+   :>json string gateway: gateway of the network using the IPrange
+   :>json string tag: network tag
+   :>json integer vlan: vlan of the network using the IPrange
 
    :>json array free: list of free IPs
    :>json array used: list of used IPs

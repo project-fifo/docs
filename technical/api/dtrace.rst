@@ -67,8 +67,8 @@ API - DTrace
 
    :>json string UUID: UUID of DTrace
    :>json string name: name of DTrace
-   :>json string script:
-   :>json object config:
+   :>json string script: DTrace scirpt
+   :>json object config: DTrace config
    :>json object metadata: metadata associated with DTrace
 
 .. http:put:: /dtrace/(uuid:dtrace)

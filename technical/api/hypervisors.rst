@@ -67,21 +67,21 @@ API - Hypervisors
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
-   :>json object characteristics:
-   :>json array etherstubs:
+   :>json object characteristics: list of hypervisor characteristics
+   :>json array etherstubs: list of etherstubs on the hypervisor
    :>json string host: host's IP adress
    :>json object metadata: metadata associated with the hypervisor
    :>json string alias: alias of the hypervisor
-   :>json array networks:
-   :>json array path:
-   :>json object pools:
-   :>json integer port:
-   :>json object resources:
-   :>json object services:
-   :>json object sysinfo:
+   :>json array networks: list of networks known to the hypervisor
+   :>json array path: path describing the position in the hypervisor graph
+   :>json object pools: information about the hosts zpools
+   :>json integer port: port number chunter is listening on
+   :>json object resources: resources available to the hypervisor
+   :>json object services: services and their status on the hypervisor
+   :>json object sysinfo: system information about the hypervisor (corresponds to svcs)
    :>json string UUID: UUID of the hypervisor
    :>json string version: Version # of FiFo running on the hypervisor
-   :>json array virtualisation: 
+   :>json array virtualisation: available virtualisation technologies on the hypervisor
 
 .. http:put:: /hypervisors/(uuid:hypervisor)/config
 

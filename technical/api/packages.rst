@@ -77,14 +77,14 @@ API - Packages
    :>json string UUID: UUID of the package
    :>json string name: name of the package
 
-   :>json integer blicksize: blocksize of the package:
-   :>json string compression:
-   :>json integer cpu_cap:
-   :>json integer cpu_shares:
-   :>json integer max_swap:
-   :>json integer quota:
-   :>json integer ram:
-   :>json integer zfs_io_priority:
+   :>json integer blicksize: blocksize of the package
+   :>json string compression: compression used for zfs dataset
+   :>json integer cpu_cap: CPU Cap *(optional)*
+   :>json integer cpu_shares: CPU Shares *(optional)*
+   :>json integer max_swap: max swap
+   :>json integer quota: size of the zfs dataset
+   :>json integer ram: ram available to the package
+   :>json integer zfs_io_priority: ZFS IO priority
 
    :>json array requirements:
 

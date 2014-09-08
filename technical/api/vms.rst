@@ -94,20 +94,20 @@ API - VMs
    :>json string alias: alias of the VM
    :>json string owner: owner of the VM
 
-   :>json string dataset: dataset associated with the VM
-   :>json string package: package associated with the VM
+   :>json string dataset: dataset the VM is based on
+   :>json string package: package of the VM
    :>json string hypervisor: hypervisor the VM runs on
    :>json object network_map: network map of the VM
 
-   :>json object config: config of the VM
+   :>json object config: information about VM's config
    :>json object info: information about the VM
-   :>json object services: services associated with the VM
+   :>json object services: services running on the VM
    :>json object backups: backups of the VM
    :>json object snapshots: snapshots of the VM
 
-   :>json array logs:
-   :>json array groupings:
-   :>json string state:
+   :>json array logs: VM's logs
+   :>json array groupings: cluster the VM is part of
+   :>json string state: 'power' state of the VM
 
    :>json object metadata: matadate associated with the VM
 

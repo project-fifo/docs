@@ -60,7 +60,7 @@ API - VMs
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "alias": "fifp",
+      "alias": "fifo",
       "owner": "739faa0d-d098-496c-a87b-dc95520f8d12",
 
       "dataset": "e50552e8-e617-4ed3-98a6-ff5641f426f3",
@@ -89,6 +89,27 @@ API - VMs
    :status 403: user is not authoriyed
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
+
+   :>json string uuid: UUID of the VM
+   :>json string alias: alias of the VM
+   :>json string owner: owner of the VM
+
+   :>json string dataset: dataset associated with the VM
+   :>json string package: package associated with the VM
+   :>json string hypervisor: hypervisor the VM runs on
+   :>json object network_map: network map of the VM
+
+   :>json object config: config of the VM
+   :>json object info: information about the VM
+   :>json object services: services associated with the VM
+   :>json object backups: backups of the VM
+   :>json object snapshots: snapshots of the VM
+
+   :>json array logs:
+   :>json array groupings:
+   :>json string state:
+
+   :>json object metadata: matadate associated with the VM
 
 
 .. http:put:: /vms/(uuid:vm)

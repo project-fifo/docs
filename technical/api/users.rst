@@ -70,14 +70,14 @@ API - Users
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
-   :>json string uuid: UUID of the user that was logged in
-   :>json string name: name of the user that was logged in
-   :>json array roles: list of role-UUIDs the user is member of
-   :>json string org: UUID of the currently active org of the user
+   :>json string uuid: UUID of the user that is logged in
+   :>json string name: name of the user that is logged in
+   :>json array roles: list of role-UUIDs the user is a member of
+   :>json string org: UUID of the currently active organization of the user
    :>json array orgs: list of org-uuid the user is member of
-   :>json array permissions: list of permissions this user has
-   :>json object keys: SSH public keys registered for this user
-   :>json array yubikeys: YubiKey Id's for this user
+   :>json array permissions: list of permissions the user is granted
+   :>json object keys: SSH public keys registered for the user
+   :>json array yubikeys: YubiKey ID's for the user
    :>json object metadata: metadata associated with the user
 
 

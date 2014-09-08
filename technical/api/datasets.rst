@@ -75,6 +75,23 @@ API - Datasets
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+   :>json string UUID: UUID of the dataset
+   :>json string type: type of the dataset
+   :>json string status: status of the dataset
+   :>json integer imported:
+   :>json array requirements:
+   :>json object metadata: metadate associated witht he dataset
+   :>json string description:
+   :>json string disk_driver:
+   :>json string homepage:
+   :>json integer image_size:
+   :>json string name:
+   :>json object networks:
+   :>json string nic_driver:
+   :>json string os:
+   :>json array users:
+   :>json string version:
+
 .. http:put:: /datasets/(uuid:dataset)
 
    Cahnges parameters of dataset with given *uuid*.

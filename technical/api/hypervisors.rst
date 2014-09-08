@@ -67,20 +67,21 @@ API - Hypervisors
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
-   :>json string uuid: UUID of the hypervisor
-   :>json object characteristics: lists the characteristics of that hypervisor
-   :>json string host: ???
-   :>json object metadata: metadata associated with the user
-   :>json string alias: ???
+   :>json object characteristics:
+   :>json array etherstubs:
+   :>json string host: host's IP adress
+   :>json object metadata: metadata associated with the hypervisor
+   :>json string alias: alias of the hypervisor
    :>json array networks:
    :>json array path:
    :>json object pools:
-   :>json string port:
+   :>json integer port:
    :>json object resources:
-   :>json array services:
-   :>json array sysinfo:
-   :>json string version:
-   :>json array virtualization:
+   :>json object services:
+   :>json object sysinfo:
+   :>json string UUID: UUID of the hypervisor
+   :>json string version: Version # of FiFo running on the hypervisor
+   :>json array virtualisation: 
 
 .. http:put:: /hypervisors/(uuid:hypervisor)/config
 

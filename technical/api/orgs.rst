@@ -50,7 +50,7 @@ API - Organizations
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       {
-	  "name": "Project-FiFo",
+	    "name": "Project-FiFo",
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
       "triggers": {},
       "metadata": {}
@@ -65,10 +65,10 @@ API - Organizations
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
-   :>json string uuid: UUID of the user that was logged in
-   :>json object keys: SSH public keys registered for that organization
-   :>json object triggers: list of the organization's troggers
-   :>json object metadata: metadata associated with that organization
+   :>json string name: name of the organization
+   :>json string uuid: UUID of the organization
+   :>json object triggers: list of the organization's triggers
+   :>json object metadata: metadata associated with the organization
 
 
 .. http:delete:: /orgs/(uuid:orgs)

@@ -64,6 +64,13 @@ API - Networks
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+
+   :>json string UUID: UUID of the network
+   :>json string name: name of the network
+   :>json array ipranges: IP ranges for the network
+   :>json object metadata: metadata associated with the network
+
+
 .. http:delete:: /networks/(uuid:network)
 
    Deletes network with given *uuid*.

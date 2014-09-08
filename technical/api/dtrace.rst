@@ -65,6 +65,12 @@ API - DTrace
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+   :>json string UUID: UUID of DTrace
+   :>json string name: name of DTrace
+   :>json string script:
+   :>json object config:
+   :>json object metadata: metadata associated with DTrace
+
 .. http:put:: /dtrace/(uuid:dtrace)
 
    Edits dtrace script with given *uuid*.

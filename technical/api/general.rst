@@ -103,4 +103,4 @@ API - General
    :status 503: one or more subsystems could not be reached
    :>json array warnings: a possibly empty lists of warnings about bad system state
    :>json object metrics: an objects containing various system metrics
-   :>json object versions: an object containing the verions of the system components
+   :>json object versions: an object containing the versions of the system components

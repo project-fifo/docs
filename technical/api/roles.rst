@@ -67,8 +67,8 @@ API - Roles
 
    :>json string uuid: UUID of the role
    :>json string name: name of the role
-   :>json array permissions: list of permissions that are associated with that role
-   :>json object metadata: metadata associated with that role
+   :>json array permissions: list of permissions that are associated with the role
+   :>json object metadata: metadata associated with the role
 
 .. http:delete:: /roles/(uuid:roles)
 

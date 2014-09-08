@@ -53,12 +53,12 @@ API - Packages
 
       "blocksizte": 4098,
       "compression": "none",
-      "cup_cap": 100,
+      "cpu_cap": 100,
       "cpu_shares": 100,
       "max_swap": 1024,
       "quota": 40,
       "ram": 1024,
-      "zfs_io_priorety": 100,
+      "zfs_io_priority": 100,
 
       "requirements": [],
 
@@ -73,6 +73,22 @@ API - Packages
    :status 403: user is not authoriyed
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
+
+   :>json string UUID: UUID of the package
+   :>json string name: name of the package
+
+   :>json integer blicksize: blocksize of the package:
+   :>json string compression:
+   :>json integer cpu_cap:
+   :>json integer cpu_shares:
+   :>json integer max_swap:
+   :>json integer quota:
+   :>json integer ram:
+   :>json integer zfs_io_priority:
+
+   :>json array requirements:
+
+   :>json object metadata: metadata associated with the package
 
 .. http:delete:: /packages/(uuid:package)
 

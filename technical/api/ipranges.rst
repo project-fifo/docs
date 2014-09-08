@@ -72,6 +72,20 @@ API - IPranges
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
+   :>json string UUID: UUID of the IPrange(s ???)
+   :>json string name: name of the ???
+   
+   :>json string network:
+   :>json string netmask: 
+   :>json string gateway:
+   :>json string tag:
+   :>json integer vlan:
+
+   :>json array free: list of free IPs
+   :>json array used: list of used IPs
+   :>json object metadata: metadata associated witht the IPrange
+
+
 .. http:post:: /ipranges/(uuid:iprange)
 
    Obtains an IP.

@@ -11,8 +11,39 @@ API - Organizations
 
    **Related permissions**
 
-      cloud -> orgs -> list 
+      cloud -> orgs -> list
 
+   **Example request**:
+
+      .. sourcecode:: http
+  
+        GET /orgs HTTP/1.1
+        host: cloud.project-fifo.net
+        accept: applicaiton/json
+        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 200 OK
+       vary: Accept
+       content-type: application/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+  
+       ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
+
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader x-full-list: true - to get a full list instead of UUIDs
+   :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/orgs/(uuid:org)`
+   :resheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+   
+   :status 200: the orgs list is returned
+   :status 403: user is not authoriyed
+   :status 503: one or more subsystems could not be reached
 
 .. http:post:: /orgs
 
@@ -35,7 +66,7 @@ API - Organizations
 
       .. sourcecode:: http
   
-       GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       GET /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
        host: cloud.project-fifo.net
        accept: applicaiton/json
        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -61,9 +92,9 @@ API - Organizations
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 200: the session information is returned
+   :status 200: the organization's information is returned
    :status 403: user is not authoriyed
-   :status 404: the session was not found
+   :status 404: the organization was not found
    :status 503: one or more subsystems could not be reached
 
    :>json string name: name of the organization

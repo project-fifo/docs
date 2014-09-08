@@ -13,6 +13,38 @@ API - Hypervisors
 
       cloud -> hypervisors -> list
 
+   **Example request**:
+
+      .. sourcecode:: http
+  
+        GET /hypervisors HTTP/1.1
+        host: cloud.project-fifo.net
+        accept: applicaiton/json
+        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 200 OK
+       vary: Accept
+       content-type: application/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+  
+       ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
+
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader x-full-list: true - to get a full list instead of UUIDs
+   :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/hypervisors/(uuid:hypervisor)`
+   :resheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+   
+   :status 200: the organization list is returned
+   :status 403: user is not authoriyed
+   :status 503: one or more subsystems could not be reached
+
 
 .. http:get:: /hypervisors/(uuid:hypervisor)
 
@@ -26,7 +58,7 @@ API - Hypervisors
 
       .. sourcecode:: http
 
-       GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       GET /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
        host: cloud.project-fifo.net
        accept: applicaiton/json
        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -63,9 +95,9 @@ API - Hypervisors
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 200: the session information is returned
+   :status 200: the hypervisoer information is returned
    :status 403: user is not authoriyed
-   :status 404: the session was not found
+   :status 404: the hypervisor was not found
    :status 503: one or more subsystems could not be reached
 
    :>json object characteristics: list of hypervisor characteristics

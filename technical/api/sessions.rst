@@ -29,14 +29,14 @@ API - Sessions
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
-	  HTTP/1.1 302 Found
-	  location: /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16
+      HTTP/1.1 302 Found
+      location: /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader content-type: datatype used in the body, usually ``application/json``
-   :resqeader x-snarl-token: the snarl token for this session
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 

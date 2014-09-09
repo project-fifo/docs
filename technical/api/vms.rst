@@ -169,6 +169,27 @@ API - VMs
 
     vms -> UUID -> delete
 
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the VM was successfully deleted
+   :status 404: the VM was not found
+   :status 503: one or more subsystems could not be reached
+
+
    Deletes VM with given *uuid* from hypervisor.
 
    **Related permissions**

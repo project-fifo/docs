@@ -45,7 +45,6 @@ API - Hypervisors
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
-
 .. http:get:: /hypervisors/(uuid:hypervisor)
 
    Returns hypervisor details for hypervisor with given *uuid*.
@@ -116,6 +115,35 @@ API - Hypervisors
    :>json string version: Version # of FiFo running on the hypervisor
    :>json array virtualisation: available virtualisation technologies on the hypervisor
 
+.. http:delete:: /hypervisors/(uuid:hypervisor)
+
+    Deletes hypervisor with given *uuid*.
+
+    **Related permissions**
+
+    hypervisors -> UUID -> delete
+
+       **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the hypervisor was successfully deleted
+   :status 404: the hypervisor was not found
+   :status 503: one or more subsystems could not be reached
+
+
 .. http:put:: /hypervisors/(uuid:hypervisor)/config
 
    Sets hypervisor config for hypervisor with given *uuid*.
@@ -134,13 +162,16 @@ API - Hypervisors
       hypervisors -> UUID -> edit
 
 
-.. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/...
+.. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/... 
 
    Removes a key from the metadata for hypervisor with given *uuid*.
 
    **Related permissions**
 
       hypervisors -> UUID -> edit
+
+      
+
 
 .. note::
 

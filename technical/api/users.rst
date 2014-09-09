@@ -142,14 +142,14 @@ API - Users
   
        HTTP/1.1 204 No Content
 
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 204: the session was successfully deleted
-   :status 404: the session was not found
+   :status 204: the user was successfully deleted
+   :status 404: the user was not found
    :status 503: one or more subsystems could not be reached
 
       
-
 .. http:get:: /users/(uuid:user)/permissions
 
    Lists permissions for user with given *uuid*.

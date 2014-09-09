@@ -11,8 +11,39 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> list 
+      users -> ID -> list 
 
+   **Example request**:
+
+      .. sourcecode:: http
+  
+        GET /users HTTP/1.1
+        host: cloud.project-fifo.net
+        accept: applicaiton/json
+        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 200 OK
+       vary: Accept
+       content-type: application/json
+       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+  
+       ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
+
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader x-full-list: true - to get a full list instead of UUIDs
+   :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/users/(uuid:user)`
+   :resheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+   
+   :status 200: the user list is returned
+   :status 403: user is not authoriyed
+   :status 503: one or more subsystems could not be reached
 
 .. http:post:: /users
 
@@ -20,7 +51,7 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> create
+      users -> ID -> create
 
 
 .. http:get:: /users/(uuid:user)
@@ -29,11 +60,11 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> get
+      users -> ID -> get
 
    **Example request**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
@@ -42,7 +73,7 @@ API - Users
 
    **Example response**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -65,19 +96,19 @@ API - Users
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 200: the session information is returned
-   :status 404: the session was not found
+   :status 200: the user information is returned
+   :status 404: the user was not found
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
-   :>json string uuid: UUID of the user that was logged in
-   :>json string name: name of the user that was logged in
-   :>json array roles: list of role-UUIDs the user is member of
-   :>json string org: UUID of the currently active org of the user
+   :>json string uuid: UUID of the user that is logged in
+   :>json string name: name of the user that is logged in
+   :>json array roles: list of role-UUIDs the user is a member of
+   :>json string org: UUID of the currently active organization of the user
    :>json array orgs: list of org-uuid the user is member of
-   :>json array permissions: list of permissions this user has
-   :>json object keys: SSH public keys registered for this user
-   :>json array yubikeys: YubiKey Id's for this user
+   :>json array permissions: list of permissions the user is granted
+   :>json object keys: SSH public keys registered for the user
+   :>json array yubikeys: YubiKey ID's for the user
    :>json object metadata: metadata associated with the user
 
 
@@ -87,7 +118,7 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> passwd
+      users -> ID -> passwd
 
 
 .. http:delete:: /users/(uuid:user)
@@ -96,20 +127,20 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> delete
+    users -> ID -> delete
 
    **Example request**:
 
-   .. sourcecode:: http
-
-     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-     host: cloud.project-fifo.net
+      .. sourcecode:: http
+  
+       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
 
    **Example response**:
 
-   .. sourcecode:: http
-
-     HTTP/1.1 204 No Content
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
 
    :resheader x-snarl-token: the snarl token for this session
 
@@ -125,7 +156,7 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> get
+     users -> ID -> get
 
 
 .. http:put:: /users/(uuid:user)/permissions/<permission>
@@ -134,8 +165,8 @@ API - Users
 
    **Related permissions**
 
-   * users -> ID -> grant
-   * permissions -> PERMISSIONS -> grant
+     * users -> ID -> grant
+     * permissions -> PERMISSIONS -> grant
 
 
 
@@ -145,8 +176,8 @@ API - Users
 
    **Related permissions**
 
-   * users -> ID -> revoke
-   * permissions -> PERMISSION -> revoke
+      * users -> ID -> revoke
+      * permissions -> PERMISSION -> revoke
 
 
 .. http:get:: /users/(uuid:user)/roles
@@ -155,7 +186,7 @@ API - Users
 
    **Related permissions**
 
-   users -> ID -> get
+      users -> ID -> get
 
 
 .. http:put:: /users/(uuid:user)/roles/(uuid:role)
@@ -164,8 +195,8 @@ API - Users
 
    **Related permissions**
 
-   * users -> ID -> join
-   * roles -> ID -> join
+      * users -> ID -> join
+      * roles -> ID -> join
 
 
 .. http:delete:: /users/(uuid:user)/roles/(uuid:role) 
@@ -174,8 +205,8 @@ API - Users
 
    **Related permissions**
 
-    * users -> UUID -> edit
-    * roles -> ID -> edit
+      * users -> UUID -> edit
+      * roles -> ID -> edit
 
 
 .. http:get:: /users/(uuid:user)/keys
@@ -184,7 +215,7 @@ API - Users
 
    **Related permissions**
 
-   users -> UUID -> get
+      users -> UUID -> get
 
 
 .. http:put:: /users/(uuid:user)/keys
@@ -193,7 +224,7 @@ API - Users
 
    **Related permissions**
 
-   users -> UUID -> edit
+      users -> UUID -> edit
 
 
 .. http:delete:: /users/(uuid:user)/keys/(uuid:key)
@@ -202,7 +233,7 @@ API - Users
 
    **Related permissions**
 
-   users -> UUID -> edit
+      users -> UUID -> edit
 
 
 .. http:get:: /users/(uuid:user)/yubikeys
@@ -211,7 +242,7 @@ API - Users
 
    **Related permissions**
 
-   users -> UUID -> get
+      users -> UUID -> get
 
 
 .. http:put:: /users/(uuid:user)/yubikeys
@@ -220,7 +251,7 @@ API - Users
 
    **Related permissions**
 
-   users -> UUID -> edit 
+     users -> UUID -> edit 
 
 
 .. http:delete:: /users/(uuid:user)/yubikeys/(uuid:key)
@@ -229,7 +260,7 @@ API - Users
 
    **Related permissions**
 
-   users -> UUID -> edit
+      users -> UUID -> edit
 
 
 .. http:get:: /users/(uuid:user)/orgs
@@ -238,7 +269,7 @@ API - Users
 
    *Related permissions**
 
-   users -> ID -> get
+      users -> ID -> get
 
 
 .. http:put:: /users/<(uuid:user)>/orgs/(uuid:org)
@@ -247,8 +278,8 @@ API - Users
 
    **Related permissions**
 
-   * users -> ID -> join
-   * roles -> ID join
+      * users -> ID -> join
+      * roles -> ID join
 
 
 .. http:put:: /users/(uuid:user)/metadata[/...]
@@ -257,7 +288,7 @@ API - Users
 
    **Related permissions**
 
-   users -> UUID -> edit
+      users -> UUID -> edit
 
 
 .. http:delete:: /users/(uuid:user)/metadata/...
@@ -266,7 +297,7 @@ API - Users
 
    **Related permissions**
 
-   users -> UUID -> edit
+      users -> UUID -> edit
 
 
 

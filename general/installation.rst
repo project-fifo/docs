@@ -24,7 +24,7 @@ From the *GZ (Global Zone)* we install the base dataset we are going to use for 
 .. code-block:: bash
 
    imgadm update
-   imgadm import dc0688b2-c677-11e3-90ac-13373101c543
+   imgadm import d34c301e-10c3-11e4-9b79-5f67ca448df0
 
 
 If installed successfully you should see:

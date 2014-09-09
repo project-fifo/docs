@@ -123,18 +123,18 @@ API - Hypervisors
 
     hypervisors -> UUID -> delete
 
-       **Example request**:
+    **Example request**:
 
       .. sourcecode:: http
   
-       DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+        DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+        host: cloud.project-fifo.net
 
-   **Example response**:
+    **Example response**:
 
       .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+        HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -164,13 +164,12 @@ API - Hypervisors
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/... 
 
-   Removes a key from the metadata for hypervisor with given *uuid*.
+    Removes a key from the metadata for hypervisor with given *uuid*.
 
    **Related permissions**
 
       hypervisors -> UUID -> edit
 
-      
 
 
 .. note::

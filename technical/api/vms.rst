@@ -163,7 +163,7 @@ API - VMs
 
 .. http:delete:: /vms/(uuid:vm)
 
-   Deletes VM with given *uuid*.
+   Deletes VM with given *uuid* from hypervisor.
 
    **Related permissions**
 
@@ -185,16 +185,9 @@ API - VMs
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 204: the VM was successfully deleted
+   :status 204: the VM was successfully deleted from the hypervisor
    :status 404: the VM was not found
    :status 503: one or more subsystems could not be reached
-
-
-   Deletes VM with given *uuid* from hypervisor.
-
-   **Related permissions**
-
-    vms -> UUID -> delete
 
 
 .. http:put:: /vms/(uuid:vm)/owner
@@ -232,6 +225,26 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/nics/<mac> HTTP/1.1
+       host: cloud.project-fifo.net
+
+    **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the nic was successfully deleted from VM
+   :status 404: the nic was not found on the VM
+   :status 503: one or more subsystems could not be reached
 
 
 .. http:get:: /vms/(uuid:vm)/snapshots
@@ -286,6 +299,26 @@ API - VMs
 
     vms -> UUID -> get
 
+    **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the snapshot was successfully deleted from the VM
+   :status 404: the snapshot was not found on the VM
+   :status 503: one or more subsystems could not be reached
+
 
 .. http:post:: /vms/(uuid:vm)/backups
 
@@ -322,6 +355,26 @@ API - VMs
 
     vms -> UUID -> snapshot_delete
 
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/backups/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the backup was successfully deleted from the VM
+   :status 404: the backup was not found on the VM
+   :status 503: one or more subsystems could not be reached
+
 .. http:put:: /vms/(uuid:vm)/metadata[/...]
 
    Sets a metadata key for VM with given *uuid*.
@@ -338,6 +391,26 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(paths:metadata) HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the snapshot was successfully deleted from the VM
+   :status 404: the snapshot was not found on the VM
+   :status 503: one or more subsystems could not be reached
 
 
 .. http:get:: /vms/(uuid:vm)/services

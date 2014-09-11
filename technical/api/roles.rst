@@ -160,6 +160,26 @@ API - Roles
       * users -> ID -> grant
       * permissions -> PERMISSIONS -> revoke
 
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /roles/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions/roles/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/... HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the permission was successfully revoked from the role
+   :status 404: the permission was not found for that role
+   :status 503: one or more subsystems could not be reached
+
 
 .. http:put:: /roles/(uuid:role)/metadata[/...]
 
@@ -177,3 +197,24 @@ API - Roles
    **Related permissions**
 
       roles -> UUID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /roles/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the metadata key was successfully deleted from that role
+   :status 404: the metadata key was not found for that role
+   :status 503: one or more subsystems could not be reached
+

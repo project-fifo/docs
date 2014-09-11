@@ -150,14 +150,34 @@ API - Organizations
       * orgs -> UUID -> edit
       * roles -> ROLE -> grant
 
-
-.. http:delete:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
+.. http:delete:: /orgs/(uuid:org)/triggers/(uuid:trigger)
 
    Deletes a trigger from organization with given *uuid*.
 
    **Related permissions**
 
       orgs -> UUID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/triggers/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the trigger was successfully deleted from the organization
+   :status 404: the trigger was not found for that organization
+   :status 503: one or more subsystems could not be reached
+
 
 
 .. http:put:: /orgs/(uuid:org)/metadata[/...]
@@ -176,3 +196,23 @@ API - Organizations
    **Related permissions**
 
      orgs -> UUID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the metadata key was successfully deleted from the organization
+   :status 404: the metadata key was was not found for that organization
+   :status 503: one or more subsystems could not be reached

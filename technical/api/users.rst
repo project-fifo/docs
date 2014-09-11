@@ -169,7 +169,6 @@ API - Users
      * permissions -> PERMISSIONS -> grant
 
 
-
 .. http:delete:: /users/(uuid:user)/permissions/<permission>
 
    Revokes <permission> for user with given *uuid*.
@@ -178,6 +177,26 @@ API - Users
 
       * users -> ID -> revoke
       * permissions -> PERMISSION -> revoke
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions/users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/... HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the permission was successfully revoked from the user
+   :status 404: the permission was not found for that user
+   :status 503: one or more subsystems could not be reached
 
 
 .. http:get:: /users/(uuid:user)/roles
@@ -201,12 +220,32 @@ API - Users
 
 .. http:delete:: /users/(uuid:user)/roles/(uuid:role) 
 
-   Deletes user with given *uuid* from role with given *uuid*.
+   Deletes role with given *uuid* from user with given *uuid*.
 
    **Related permissions**
 
       * users -> UUID -> edit
       * roles -> ID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/roles/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the role was successfully deleted for the user
+   :status 404: the role was not found for the user
+   :status 503: one or more subsystems could not be reached
 
 
 .. http:get:: /users/(uuid:user)/keys
@@ -235,6 +274,26 @@ API - Users
 
       users -> UUID -> edit
 
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the key was successfully deleted from the user
+   :status 404: the key was not found for the user
+   :status 503: one or more subsystems could not be reached
+
 
 .. http:get:: /users/(uuid:user)/yubikeys
 
@@ -261,6 +320,26 @@ API - Users
    **Related permissions**
 
       users -> UUID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/yubikeys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the key was successfully deleted from the user
+   :status 404: the key was not found for the user
+   :status 503: one or more subsystems could not be reached
 
 
 .. http:get:: /users/(uuid:user)/orgs
@@ -298,6 +377,26 @@ API - Users
    **Related permissions**
 
       users -> UUID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the metadata key was successfully deleted from the user
+   :status 404: the metadata key was not found for the user
+   :status 503: one or more subsystems could not be reached
 
 
 

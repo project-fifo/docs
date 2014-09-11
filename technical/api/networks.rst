@@ -150,6 +150,26 @@ API - Networks
 
       networks -> UUID -> edit
 
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /networks/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/ipranges/<iprange> HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the IPrange was successfully removed from the network
+   :status 404: the IPrange was not found
+   :status 503: one or more subsystems could not be reached
+
 .. http:put:: /networks/(uuid:network)/metadata[/...]
 
    Sets a metadata key for network with given *uuid*.
@@ -166,3 +186,23 @@ API - Networks
    **Related permissions**
 
       networks -> UUID -> edit
+
+   **Example request**:
+
+      .. sourcecode:: http
+  
+       DELETE /networks/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
+       host: cloud.project-fifo.net
+
+   **Example response**:
+
+      .. sourcecode:: http
+  
+       HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the metadata key was successfully deleted from the network
+   :status 404: the metadata key  was not found
+   :status 503: one or more subsystems could not be reached

@@ -58,9 +58,9 @@ API - DTrace
 
       cloud -> dtrace -> create
 
-   .. todo::
+.. todo::
 
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -131,9 +131,9 @@ API - DTrace
 
       dtrace -> UUID -> edit
 
-   .. todo::
+.. todo::
 
-    Example Requests & Responses still missing.
+ Example Requests & Responses still missing.
 
 
 
@@ -181,9 +181,9 @@ API - DTrace
 
       dtrace -> UUID -> edit
 
-   .. todo::
+.. todo::
 
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 

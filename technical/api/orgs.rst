@@ -59,9 +59,9 @@ API - Organizations
 
       cloud -> orgs -> create
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -215,9 +215,9 @@ API - Organizations
       * orgs -> UUID -> edit
       * roles -> ROLE -> grant
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 

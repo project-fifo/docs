@@ -58,9 +58,9 @@ API - Datasets
 
     cloud -> datasets -> import
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -152,9 +152,9 @@ API - Datasets
 
       datasets -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -169,9 +169,9 @@ API - Datasets
 
       datasets -> UUID -> create
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -222,9 +222,9 @@ API - Datasets
 
       datasets -> UUID -> export
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -240,9 +240,36 @@ API - Datasets
 
       datasets -> UUID -> create
 
-    .. todo::
-    
-      Example Requests & Responses still missing.
+   **Example request**:
+
+    .. sourcecode:: http
+
+     GET /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/dataset.gz HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: application/x-gzip
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+    .. sourcecode:: http
+
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/x-gzip
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     
+      ... binary data ...
+
+   :reqheader accept: the accepted encoding, valid is ``application/x-gzip``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader content-type: the returned datatype, usually ``application/x-gzip``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the organization's triggers are returned
+   :status 404: the triggers were not found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
 
 
 
@@ -259,9 +286,9 @@ API - Datasets
 
       datasets -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 

@@ -59,9 +59,9 @@ API - Networks
 
       cloud -> networks -> create
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -168,9 +168,9 @@ API - Networks
 
       networks -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -221,9 +221,9 @@ API - Networks
 
       networks -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 

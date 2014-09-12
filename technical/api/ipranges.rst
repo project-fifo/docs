@@ -59,9 +59,9 @@ API - IPranges
 
       cloud -> ipranges -> create
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -146,9 +146,9 @@ API - IPranges
 
       *not needed*
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -229,9 +229,9 @@ API - IPranges
 
       ipranges -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 

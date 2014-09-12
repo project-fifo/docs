@@ -45,6 +45,8 @@ API - Networks
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -62,6 +64,8 @@ API - Networks
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -118,6 +122,8 @@ API - Networks
    :>json array ipranges: IP ranges for the network
    :>json object metadata: metadata associated with the network
 
+____
+
 
 
 
@@ -152,6 +158,8 @@ API - Networks
    :status 204: the network was successfully deleted
    :status 404: the network was not found
    :status 503: one or more subsystems could not be reached
+
+____
    
 
 
@@ -171,6 +179,8 @@ API - Networks
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -207,6 +217,8 @@ API - Networks
    :status 404: the IPrange was not found
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -224,6 +236,8 @@ API - Networks
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -258,3 +272,5 @@ API - Networks
    :status 204: the metadata key was successfully deleted from the network
    :status 404: the metadata key  was not found
    :status 503: one or more subsystems could not be reached
+
+____

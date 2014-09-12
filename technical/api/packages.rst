@@ -45,6 +45,8 @@ API - Packages
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -61,6 +63,8 @@ API - Packages
 .. todo::
 
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -137,6 +141,8 @@ API - Packages
 
    :>json object metadata: metadata associated with the package
 
+____
+
 
 
 
@@ -171,6 +177,8 @@ API - Packages
    :status 404: the package was not found
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -188,6 +196,8 @@ API - Packages
 .. todo::
 
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -222,3 +232,5 @@ API - Packages
    :status 204: the metadata key was successfully deleted from the package
    :status 404: the metadata key was not found
    :status 503: one or more subsystems could not be reached
+
+____

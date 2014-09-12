@@ -50,6 +50,8 @@ API - Sessions
    :<json string password: password to log in with
    :<json string otp: YubiKey OTP *(optional)*
 
+____
+
 
 .. http:get:: /sessions/(uuid:session)
 
@@ -73,11 +75,15 @@ API - Sessions
 
     * Only available for current session
 
+____
+
 .. http:delete:: /sessions/(uuid:session)
 
    Deletes the session with the given `uuid`, logging it out.
 
     .. sourcecode:: http
+
+   **Example request**:
 
 	  DELETE /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16 HTTP/1.1
 	  host: cloud.project-fifo.net
@@ -95,5 +101,7 @@ API - Sessions
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
-				   **Example request**:
+				   
+
+____
 

@@ -39,6 +39,10 @@ API - General
    :>json integer sniffle: number of connected sniffle servers
    :>json integer snarl: number of connected snarl servers
 
+____
+
+
+
 .. http:get:: /cloud
 
    Retrives the general cloud status.
@@ -104,3 +108,5 @@ API - General
    :>json array warnings: a possibly empty lists of warnings about bad system state
    :>json object metrics: an objects containing various system metrics
    :>json object versions: an object containing the versions of the system components
+
+____

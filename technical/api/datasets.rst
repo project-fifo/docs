@@ -45,6 +45,8 @@ API - Datasets
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -61,6 +63,8 @@ API - Datasets
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -139,6 +143,8 @@ API - Datasets
    :>json array users: users provided by the dataset
    :>json string version: version # of the dataset
 
+____
+
 
 
 
@@ -156,6 +162,8 @@ API - Datasets
     
   Example Requests & Responses still missing.
 
+____
+
 
 
 
@@ -172,6 +180,8 @@ API - Datasets
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -207,6 +217,8 @@ API - Datasets
    :status 404: the dataset was not found
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -225,6 +237,8 @@ API - Datasets
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -270,6 +284,8 @@ API - Datasets
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -289,6 +305,8 @@ API - Datasets
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -324,3 +342,5 @@ API - Datasets
    :status 204: the metadata key was successfully deleted from the dataset
    :status 404: the metadata key was not found
    :status 503: one or more subsystems could not be reached
+
+____

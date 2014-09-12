@@ -45,6 +45,8 @@ API - Users
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -63,6 +65,8 @@ API - Users
 .. todo::
 
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -130,6 +134,8 @@ API - Users
    :>json array yubikeys: YubiKey ID's for the user
    :>json object metadata: metadata associated with the user
 
+____
+
 
 
 
@@ -148,6 +154,8 @@ API - Users
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -183,6 +191,8 @@ API - Users
    :status 204: the user was successfully deleted
    :status 404: the user was not found
    :status 503: one or more subsystems could not be reached
+
+____
 
 
 
@@ -231,6 +241,8 @@ API - Users
    :status 503: one or more subsystems could not be reached
 
    :>json array permissions: list of permissions the user is granted
+
+____
  
 
 
@@ -253,6 +265,8 @@ API - Users
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -290,6 +304,8 @@ API - Users
    :status 404: the permission was not found for that user
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -323,7 +339,7 @@ API - Users
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      []
+      [91740c18-3a33-11e4-b9cf-13aca1131ce1]
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -336,6 +352,8 @@ API - Users
    :status 503: one or more subsystems could not be reached
 
    :>json array roles: list of roles the user is part of
+
+____
       
 
 
@@ -356,6 +374,8 @@ API - Users
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 .. http:delete:: /users/(uuid:user)/roles/(uuid:role) 
@@ -386,6 +406,8 @@ API - Users
    :status 204: the role was successfully deleted for the user
    :status 404: the role was not found for the user
    :status 503: one or more subsystems could not be reached
+
+____
 
 
 
@@ -437,6 +459,8 @@ API - Users
 
    :>json object keys: list of keys the user has access to
 
+____
+
 
 
 
@@ -457,6 +481,8 @@ API - Users
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -492,6 +518,8 @@ API - Users
    :status 204: the key was successfully deleted from the user
    :status 404: the key was not found for the user
    :status 503: one or more subsystems could not be reached
+
+____
 
 
 
@@ -540,6 +568,8 @@ API - Users
 
    :>json array yobikeys: list of yubikeys the user has access to
 
+____
+
 
 
 
@@ -559,6 +589,8 @@ API - Users
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -595,6 +627,8 @@ API - Users
    :status 404: the key was not found for the user
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -628,7 +662,7 @@ API - Users
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      []
+      [916a16ae-3a33-11e4-9d26-1ffeeda8b532]
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -641,6 +675,8 @@ API - Users
    :status 503: one or more subsystems could not be reached
 
    :>json array orgs: list of organizations the user is a part of
+
+____
 
 
 
@@ -664,6 +700,8 @@ API - Users
     
   Example Requests & Responses still missing.
 
+____
+
 
 
 
@@ -682,6 +720,8 @@ API - Users
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -717,5 +757,6 @@ API - Users
    :status 404: the metadata key was not found for the user
    :status 503: one or more subsystems could not be reached
 
+____
 
 

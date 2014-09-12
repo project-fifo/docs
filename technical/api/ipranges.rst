@@ -45,6 +45,8 @@ API - IPranges
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -62,6 +64,8 @@ API - IPranges
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -133,6 +137,8 @@ API - IPranges
    :>json array used: list of used IPs
    :>json object metadata: metadata associated witht the IPrange
 
+____
+
 
 
 
@@ -149,6 +155,8 @@ API - IPranges
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -183,6 +191,8 @@ API - IPranges
    :status 404: the IPrange was not found
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -216,6 +226,8 @@ API - IPranges
    :status 404: the IP was not found
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -232,6 +244,8 @@ API - IPranges
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -265,3 +279,5 @@ API - IPranges
    :status 204: the metadata key was successfully deleted from the IPrange
    :status 404: the metadata key was not found
    :status 503: one or more subsystems could not be reached
+
+____

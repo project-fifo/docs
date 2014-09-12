@@ -45,6 +45,8 @@ API - DTrace
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -61,6 +63,8 @@ API - DTrace
 .. todo::
 
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -118,6 +122,8 @@ API - DTrace
    :>json object config: DTrace config
    :>json object metadata: metadata associated with DTrace
 
+____
+
 
 
 
@@ -134,6 +140,8 @@ API - DTrace
 .. todo::
 
  Example Requests & Responses still missing.
+
+____
 
 
 
@@ -168,6 +176,8 @@ API - DTrace
    :status 404: the DTrace was not found
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -184,6 +194,8 @@ API - DTrace
 .. todo::
 
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -217,3 +229,5 @@ API - DTrace
   :status 204: the metadata key was successfully deleted from DTrace
   :status 404: the metadata key was not found
   :status 503: one or more subsystems could not be reached
+
+____

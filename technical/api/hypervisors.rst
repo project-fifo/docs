@@ -45,6 +45,8 @@ API - Hypervisors
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -121,6 +123,8 @@ API - Hypervisors
    :>json string version: Version # of FiFo running on the hypervisor
    :>json array virtualisation: available virtualisation technologies on the hypervisor
 
+____
+
 
 
 
@@ -156,6 +160,8 @@ API - Hypervisors
    :status 404: the hypervisor was not found
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -170,6 +176,8 @@ API - Hypervisors
    **Related permissions**
 
      hypervisors -> UUID -> edit
+
+____
 
 
 
@@ -189,6 +197,8 @@ API - Hypervisors
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -225,15 +235,15 @@ API - Hypervisors
    :status 404: the metadata key was not found
    :status 503: one or more subsystems could not be reached
 
+____
 
 
 
 
 
 
-.. note::
 
-   Characteristics are used to describe capabilities of the hypervisor for the selection process.
+
 
 .. http:put:: /hypervisors/(uuid:hypervisor)/characteristics[/...]
 
@@ -243,10 +253,15 @@ API - Hypervisors
 
       hypervisors -> UUID -> edit
 
+.. note::
+
+  Characteristics are used to describe capabilities of the hypervisor for the selection process.
+
 .. todo::
     
   Example Requests & Responses still missing.
 
+____
 
 
 
@@ -280,6 +295,8 @@ API - Hypervisors
    :status 204: the characteristic was successfully removed from the hypervisor
    :status 404: the characteristic was not found
    :status 503: one or more subsystems could not be reached
+
+____
 
 
 
@@ -315,5 +332,7 @@ API - Hypervisors
    :status 204: the hypervisor was successfully deleted
    :status 404: the hypervisor was not found
    :status 503: one or more subsystems could not be reached
+
+____
 
 

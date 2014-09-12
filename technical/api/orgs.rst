@@ -45,6 +45,8 @@ API - Organizations
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -62,6 +64,8 @@ API - Organizations
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -118,6 +122,8 @@ API - Organizations
    :>json object triggers: list of the organization's triggers
    :>json object metadata: metadata associated with the organization
 
+____
+
 
 
 
@@ -152,6 +158,8 @@ API - Organizations
    :status 204: the organization was successfully deleted
    :status 404: the organization was not found
    :status 503: one or more subsystems could not be reached
+
+____
 
 
 
@@ -200,6 +208,8 @@ API - Organizations
 
    :>json array permissions: list of triggers for the organization
 
+____
+
 
 
 
@@ -218,6 +228,8 @@ API - Organizations
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -253,6 +265,8 @@ API - Organizations
    :status 404: the trigger was not found for that organization
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -272,6 +286,8 @@ API - Organizations
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -307,3 +323,5 @@ API - Organizations
    :status 204: the metadata key was successfully deleted from the organization
    :status 404: the metadata key was was not found for that organization
    :status 503: one or more subsystems could not be reached
+
+____

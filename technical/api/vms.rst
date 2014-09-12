@@ -45,6 +45,8 @@ API - VMs
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -63,6 +65,8 @@ API - VMs
     
   Example Requests & Responses still missing.
 
+____
+
 
 
 
@@ -80,6 +84,8 @@ API - VMs
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -168,6 +174,8 @@ API - VMs
 
    :>json object metadata: matadate associated with the VM
 
+____
+
 
 
 
@@ -192,6 +200,8 @@ API - VMs
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -227,6 +237,8 @@ API - VMs
    :status 404: the VM was not found
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -246,6 +258,8 @@ API - VMs
     
   Example Requests & Responses still missing.
 
+____
+
 
 
 
@@ -264,6 +278,8 @@ API - VMs
     
   Example Requests & Responses still missing.
 
+____
+
 
 
 
@@ -281,6 +297,8 @@ API - VMs
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -315,6 +333,8 @@ API - VMs
    :status 204: the nic was successfully deleted from VM
    :status 404: the nic was not found on the VM
    :status 503: one or more subsystems could not be reached
+
+____
 
 
 
@@ -368,6 +388,8 @@ API - VMs
 
   Response as object has to be checked. If incorrect :json ... backup has to be eddited accordingly.
 
+____
+
 
 
 
@@ -386,6 +408,8 @@ API - VMs
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -442,6 +466,8 @@ API - VMs
 
   * data has to be added for :>json object snapshot
 
+____
+
 
 
 
@@ -463,6 +489,8 @@ API - VMs
     
   Example Requests & Responses still missing.
 
+____
+
 
 
 
@@ -482,6 +510,8 @@ API - VMs
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -533,6 +563,8 @@ API - VMs
 .. todo::
 
  Response as object has to be checked. If incorrect :json ... backup has to be eddited accordingly.
+
+____
 
 
 
@@ -601,6 +633,8 @@ API - VMs
 
   * data has to be added for :>json object backup
 
+____
+
 
 
 
@@ -619,6 +653,8 @@ API - VMs
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -656,6 +692,8 @@ API - VMs
    :status 404: the backup was not found on the VM
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -674,6 +712,8 @@ API - VMs
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -709,6 +749,8 @@ API - VMs
    :status 204: the snapshot was successfully deleted from the VM
    :status 404: the snapshot was not found on the VM
    :status 503: one or more subsystems could not be reached
+
+____
 
 
 
@@ -763,6 +805,8 @@ API - VMs
 
   * data has to be added for :json object services
 
+____
+
 
 
 
@@ -780,3 +824,5 @@ API - VMs
 .. todo::
     
   Example Requests & Responses still missing.
+
+____

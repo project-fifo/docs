@@ -45,6 +45,8 @@ API - Roles
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -62,6 +64,8 @@ API - Roles
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -118,6 +122,8 @@ API - Roles
    :>json array permissions: list of permissions that are associated with the role
    :>json object metadata: metadata associated with the role
 
+____
+
 
 
 
@@ -151,6 +157,8 @@ API - Roles
    :status 204: the role was successfully deleted
    :status 404: the role was not found
    :status 503: one or more subsystems could not be reached
+
+____
 
 
    
@@ -200,6 +208,8 @@ API - Roles
 
    :>json array permissions: list of permissions the role is granted
 
+____
+
 
 
 
@@ -219,6 +229,8 @@ API - Roles
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -256,6 +268,8 @@ API - Roles
    :status 404: the permission was not found for that role
    :status 503: one or more subsystems could not be reached
 
+____
+
 
 
 
@@ -274,6 +288,8 @@ API - Roles
 .. todo::
     
   Example Requests & Responses still missing.
+
+____
 
 
 
@@ -309,4 +325,6 @@ API - Roles
    :status 204: the metadata key was successfully deleted from that role
    :status 404: the metadata key was not found for that role
    :status 503: one or more subsystems could not be reached
+
+____
 

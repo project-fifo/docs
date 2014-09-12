@@ -101,7 +101,3 @@ ____
    :status 404: the session was not found
    :status 503: one or more subsystems could not be reached
 
-				   
-
-____
-

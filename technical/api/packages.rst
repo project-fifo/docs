@@ -233,4 +233,3 @@ ____
    :status 404: the metadata key was not found
    :status 503: one or more subsystems could not be reached
 
-____

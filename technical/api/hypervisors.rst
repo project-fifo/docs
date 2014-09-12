@@ -333,6 +333,5 @@ ____
    :status 404: the hypervisor was not found
    :status 503: one or more subsystems could not be reached
 
-____
 
 

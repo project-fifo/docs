@@ -324,4 +324,3 @@ ____
    :status 404: the metadata key was was not found for that organization
    :status 503: one or more subsystems could not be reached
 
-____

@@ -81,9 +81,9 @@ ____
 
    Deletes the session with the given `uuid`, logging it out.
 
-    .. sourcecode:: http
-
    **Example request**:
+
+    .. sourcecode:: http
 
 	  DELETE /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16 HTTP/1.1
 	  host: cloud.project-fifo.net

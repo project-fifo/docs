@@ -331,9 +331,42 @@ API - VMs
 
     vms -> UUID -> get
 
+   **Example request**:
+
+    .. sourcecode:: http
+
+     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+    .. sourcecode:: http
+
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+      {}
+
     .. todo::
-    
-      Example Requests & Responses still missing.
+
+      Response as object has to be checked. If incorrect :json ... snapshot has to be eddited accordingly.
+     
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the VM'S snapshots are returned
+   :status 404: the snapshots were not found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json object snapshots: list of snapshots of the VM
 
 
 
@@ -370,9 +403,38 @@ API - VMs
 
     vms -> UUID -> snapshot
 
-    .. todo::
-    
-      Example Requests & Responses still missing.
+   **Example request**:
+
+    .. sourcecode:: http
+
+     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+    .. sourcecode:: http
+
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+      {}
+     
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the VM's snapshots are returned
+   :status 404: the snapshot was not found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json object snapshot: list of snapshot IDs
 
 
 

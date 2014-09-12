@@ -171,6 +171,39 @@ API - Roles
     
       Example Requests & Responses still missing.
 
+   **Example request**:
+
+    .. sourcecode:: http
+
+     GET /roles/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+    .. sourcecode:: http
+
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+      [["..."]]
+     
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the role's permissions are returned
+   :status 404: the permissions was not found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json array permissions: list of permissions the role is granted
+
 
 
 

@@ -48,8 +48,8 @@ UI Related
 If you have UI related problems please try first to clear the cookies for the fifo page.
 
 
-General Checks:
----------------
+General Checks
+--------------
 
 - **FiFo zone is running**
 
@@ -179,8 +179,8 @@ ____
 ____
 
  
-Problems with the API:
------------------------
+Problems with the API
+---------------------
 
 - **Manually try to login**
 
@@ -308,8 +308,8 @@ ____
 
 ____
 
-VMs / Hypervisors / etc:
-------------------------
+VMs / Hypervisors / etc
+-----------------------
 
 - **List hypervisors**
 

@@ -29,7 +29,7 @@ sys.path.insert(0, os.path.abspath('./_extensions/'))
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 # extensions = ['sphinxcontrib.httpdomain', 'sphinxcontrib.erlangdomain']
-extensions = ['httpdomain', 'erlangdomain']
+extensions = ['httpdomain', 'erlangdomain', 'sphinx.ext.todo']
 
 http_index_shortname = 'api/0.1.0'
 

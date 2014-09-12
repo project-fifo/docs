@@ -45,6 +45,12 @@ API - Hypervisors
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
 .. http:get:: /hypervisors/(uuid:hypervisor)
 
    Returns hypervisor details for hypervisor with given *uuid*.
@@ -115,6 +121,13 @@ API - Hypervisors
    :>json string version: Version # of FiFo running on the hypervisor
    :>json array virtualisation: available virtualisation technologies on the hypervisor
 
+
+
+
+
+
+
+
 .. http:delete:: /hypervisors/(uuid:hypervisor)
 
     Deletes hypervisor with given *uuid*.
@@ -144,6 +157,12 @@ API - Hypervisors
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:put:: /hypervisors/(uuid:hypervisor)/config
 
    Sets hypervisor config for hypervisor with given *uuid*.
@@ -151,6 +170,12 @@ API - Hypervisors
    **Related permissions**
 
      hypervisors -> UUID -> edit
+
+
+
+
+
+
 
 
 .. http:put:: /hypervisors/(uuid:hypervisor)/metadata[/...]
@@ -161,6 +186,16 @@ API - Hypervisors
 
       hypervisors -> UUID -> edit
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/... 
 
@@ -169,6 +204,30 @@ API - Hypervisors
    **Related permissions**
 
       hypervisors -> UUID -> edit
+
+    **Example request**:
+
+      .. sourcecode:: http
+  
+        DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
+        host: cloud.project-fifo.net
+
+    **Example response**:
+
+      .. sourcecode:: http
+  
+        HTTP/1.1 204 No Content
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the metadata key was successfully deleted from the hypervisor
+   :status 404: the metadata key was not found
+   :status 503: one or more subsystems could not be reached
+
+
+
+
 
 
 
@@ -184,6 +243,16 @@ API - Hypervisors
 
       hypervisors -> UUID -> edit
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
 .. http:delete:: /hypervisors/(uuid:hypervisor)/characteristics/...
 
    Removes a characteristics key for hypervisor with given *uuid*.
@@ -192,11 +261,22 @@ API - Hypervisors
 
       hypervisors -> UUID -> edit
 
+    **Example request**:
 
-.. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/...
+      .. sourcecode:: http
+  
+        DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/characteristics/... HTTP/1.1
+        host: cloud.project-fifo.net
 
-   Removes a key from the metadata for hypervisor with given *uuid*.
+    **Example response**:
 
-   **Related permissions**
+      .. sourcecode:: http
+  
+        HTTP/1.1 204 No Content
 
-      hypervisors -> UUID -> edit
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: the characteristic was successfully removed from the hypervisor
+   :status 404: the characteristic was not found
+   :status 503: one or more subsystems could not be reached

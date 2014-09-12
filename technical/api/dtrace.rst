@@ -46,9 +46,9 @@ API - DTrace
    :status 503: one or more subsystems could not be reached
 
 
-..todo::
 
-  Example Requests & Responses still missing.
+
+
 
 .. http:post:: /dtrace
 
@@ -57,6 +57,15 @@ API - DTrace
    **Related permissions**
 
       cloud -> dtrace -> create
+
+   .. todo::
+
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 .. http:get:: /dtrace/(uuid:dtrace)
 
@@ -109,9 +118,10 @@ API - DTrace
    :>json object config: DTrace config
    :>json object metadata: metadata associated with DTrace
 
-.. todo::
 
-  Example Requests & Responses still missing.
+
+
+
 
 .. http:put:: /dtrace/(uuid:dtrace)
 
@@ -120,6 +130,15 @@ API - DTrace
    **Related permissions**
 
       dtrace -> UUID -> edit
+
+   .. todo::
+
+    Example Requests & Responses still missing.
+
+
+
+
+
 
 .. http:delete:: /dtrace/(uuid:dtrace)
 
@@ -149,9 +168,10 @@ API - DTrace
    :status 404: the DTrace was not found
    :status 503: one or more subsystems could not be reached
 
-.. todo::
 
-  Example Requests & Responses still missing.
+
+
+
 
 .. http:put:: /dtrace/(uuid:dtrace)/metadata[/...]
 
@@ -160,6 +180,15 @@ API - DTrace
    **Related permissions**
 
       dtrace -> UUID -> edit
+
+   .. todo::
+
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 .. http:delete:: /dtrace/(uuid:dtrace)/metadata/...
 

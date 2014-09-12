@@ -45,6 +45,12 @@ API - Roles
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
 .. http:post:: /roles
 
    Creates a new role.
@@ -52,6 +58,16 @@ API - Roles
    **Related permissions**
 
       cloud -> roles -> create
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:get:: /roles/(uuid:role)
@@ -102,6 +118,12 @@ API - Roles
    :>json array permissions: list of permissions that are associated with the role
    :>json object metadata: metadata associated with the role
 
+
+
+
+
+
+
 .. http:delete:: /roles/(uuid:roles)
 
    Deletes role with given *uuid*.
@@ -132,6 +154,11 @@ API - Roles
 
 
    
+
+
+
+
+
 .. http:get:: /roles/(uuid:role)/permissions
 
    Lists permissions for role with given *uuid*.
@@ -139,6 +166,16 @@ API - Roles
    **Related permissions**
 
       roles -> ID -> get
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:put:: /roles/(uuid:role)/permissions/<permission>
@@ -149,6 +186,16 @@ API - Roles
 
       * roles -> ID -> grant
       * permissions -> PERMISSION -> grant
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /roles/(uuid:role)/permissions/<permission>
@@ -181,6 +228,12 @@ API - Roles
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:put:: /roles/(uuid:role)/metadata[/...]
 
    Sets a metadata key for role with given *uuid*.
@@ -188,6 +241,16 @@ API - Roles
    **Related permissions**
 
       roles -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /roles/(uuid:role)/metadata/...

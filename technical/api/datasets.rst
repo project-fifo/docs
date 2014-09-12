@@ -45,6 +45,11 @@ API - Datasets
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
 .. http:post:: /datasets
 
    Imports a dataset from dsapi endpoint.
@@ -52,6 +57,15 @@ API - Datasets
    **Related permissions**
 
     cloud -> datasets -> import
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 .. http:get:: /datasets/(uuid:dataset)
 
@@ -125,6 +139,11 @@ API - Datasets
    :>json array users: users provided by the dataset
    :>json string version: version # of the dataset
 
+
+
+
+
+
 .. http:put:: /datasets/(uuid:dataset)
 
    Cahnges parameters of dataset with given *uuid*.
@@ -133,6 +152,15 @@ API - Datasets
 
       datasets -> UUID -> edit
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 .. http:post:: /datasets/(uuid:dataset)
 
    Imports a manifest for dataset with given *uuid*.
@@ -140,6 +168,16 @@ API - Datasets
    **Related permissions**
 
       datasets -> UUID -> create
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 .. http:delete:: /datasets/(uuid:dataset)
 
@@ -170,6 +208,12 @@ API - Datasets
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:get:: /datasets/(uuid:dataset)/dataset.gz
 
    Exports *zvol* for dataset with given *uuid*.
@@ -177,6 +221,16 @@ API - Datasets
    **Related permissions**
 
       datasets -> UUID -> export
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 .. http:put:: /datasets/(uuid:dataset)/dataset.gz
 
@@ -186,6 +240,17 @@ API - Datasets
 
       datasets -> UUID -> create
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
+
 .. http:put:: /datasets/(uuid:dataset)/metadata[/...]
 
    Sets a metadata key for dataset with given *uuid*.
@@ -193,6 +258,16 @@ API - Datasets
    **Related permissions**
 
       datasets -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /datasets/(uuid:dataset)/metadata/...

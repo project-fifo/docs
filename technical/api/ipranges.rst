@@ -45,6 +45,12 @@ API - IPranges
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
 .. http:post:: /ipranges
 
    Creates/Updates an iprange.
@@ -52,6 +58,15 @@ API - IPranges
    **Related permissions**
 
       cloud -> ipranges -> create
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:get:: /ipranges/(uuid:iprange)
@@ -119,11 +134,25 @@ API - IPranges
    :>json object metadata: metadata associated witht the IPrange
 
 
+
+
+
+
 .. http:post:: /ipranges/(uuid:iprange)
 
    Obtains an IP.
 
    **Related permissions**
+
+      *not needed*
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
 
 
 .. http:delete:: /ipranges/(uuid:iprange)
@@ -155,6 +184,10 @@ API - IPranges
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
 .. http:delete:: /ipranges/(uuid:iprange)/<ip>
 
    Releases <IP> from iprange with given *uuid*.
@@ -184,6 +217,10 @@ API - IPranges
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
 .. http:put:: /ipranges/(uuid:iprange)/metadata[/...]
 
    Sets a metadata key for iprange with given *uuid*.
@@ -191,6 +228,14 @@ API - IPranges
    **Related permissions**
 
       ipranges -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
 
 
 .. http:delete:: /ipranges/(uuid:iprange)/metadata/...

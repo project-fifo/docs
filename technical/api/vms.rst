@@ -46,6 +46,11 @@ API - VMs
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
 .. http:post:: /vms
 
    Creates a new VM.
@@ -53,6 +58,15 @@ API - VMs
    **Related permissions**
 
     cloud -> vms -> create
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:put:: /vms/dry_run
@@ -62,6 +76,16 @@ API - VMs
    **Related permissions**
 
     cloud -> vms -> create
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:get:: /vms/(uuid:vm)
@@ -145,6 +169,11 @@ API - VMs
    :>json object metadata: matadate associated with the VM
 
 
+
+
+
+
+
 .. http:put:: /vms/(uuid:vm)
 
    Initiates a VM state change for VM with given *uuid*.
@@ -159,6 +188,15 @@ API - VMs
    **Related permissions**
      
     vms -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:delete:: /vms/(uuid:vm)
@@ -190,6 +228,11 @@ API - VMs
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
 .. http:put:: /vms/(uuid:vm)/owner
 
    Changes the owner of VM with given *uuid*.
@@ -198,6 +241,15 @@ API - VMs
 
     * vms -> UUID -> edit
     * orgs -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:post:: /vms/(uuid:vm)/nics
@@ -208,6 +260,15 @@ API - VMs
 
     vms -> UUID -> edit
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 .. http:put:: /vms/(uuid:vm)/nics/<mac>
 
@@ -216,6 +277,15 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:delete:: /vms/(uuid:vm)/nics/<mac>
@@ -247,6 +317,12 @@ API - VMs
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:get:: /vms/(uuid:vm)/snapshots
 
    Lists all snapshots of VM with given *uuid*.
@@ -254,6 +330,16 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> get
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:post:: /vms/(uuid:vm)/snapshots
@@ -264,6 +350,17 @@ API - VMs
 
     vms -> UUID -> snapshot
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
+
 
 .. http:get:: /vms/(uuid:vm)/snapshots/(id:snapshot)
 
@@ -272,6 +369,17 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> snapshot
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
 
 
 .. http:put:: /vms/(uuid:vm)/snapshots/(id:snapshot)
@@ -282,6 +390,17 @@ API - VMs
 
     vms -> UUID -> rollback
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
+
 
 .. http:delete:: /vms/(uuid:vm)/snapshots/(id:snapshot)
 
@@ -290,6 +409,17 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> snapshot_delete
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
 
 .. http:get:: /vms/(uuid:vm)/backups
 
@@ -320,6 +450,13 @@ API - VMs
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
+
 .. http:post:: /vms/(uuid:vm)/backups
 
    Creates a new backup of VM with given *uuid*.
@@ -327,6 +464,16 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> snapshot
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:get:: /vms/(uuid:vm)/backups/(id:backup)
@@ -337,6 +484,17 @@ API - VMs
 
     vms -> UUID -> snapshot
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
+
 
 .. http:put:: /vms/(uuid:vm)/backups/(id:backup)
 
@@ -345,6 +503,17 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> rollback
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
 
 
 .. http:delete:: /vms/(uuid:vm)/backups/(id:backup)
@@ -375,6 +544,13 @@ API - VMs
    :status 404: the backup was not found on the VM
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
+
 .. http:put:: /vms/(uuid:vm)/metadata[/...]
 
    Sets a metadata key for VM with given *uuid*.
@@ -382,6 +558,16 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /vms/(uuid:vm)/metadata/...
@@ -413,6 +599,12 @@ API - VMs
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:get:: /vms/(uuid:vm)/services
 
    Lists the services of a zone.
@@ -421,6 +613,16 @@ API - VMs
 
     vms -> UUID -> get
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
 .. http:put:: /vms/(uuid:vm)/services
 
    Changes state of a service on VM with given *uuid*.
@@ -428,3 +630,7 @@ API - VMs
    **Related permissions**
 
     vms -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.

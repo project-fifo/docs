@@ -45,6 +45,12 @@ API - Organizations
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
 .. http:post:: /orgs
 
    Creates a new organization.
@@ -52,6 +58,16 @@ API - Organizations
    **Related permissions**
 
       cloud -> orgs -> create
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:get:: /orgs/(uuid:org)
@@ -103,6 +119,12 @@ API - Organizations
    :>json object metadata: metadata associated with the organization
 
 
+
+
+
+
+
+
 .. http:delete:: /orgs/(uuid:orgs)
 
    Deletes organization with given *uuid*.
@@ -132,6 +154,12 @@ API - Organizations
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:get:: /orgs/(uuid:org)/triggers
 
    Lists the organization's triggers.
@@ -139,6 +167,15 @@ API - Organizations
    **Related permissions**
 
       orgs -> ID -> get
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:put:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
@@ -149,6 +186,16 @@ API - Organizations
 
       * orgs -> UUID -> edit
       * roles -> ROLE -> grant
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 .. http:delete:: /orgs/(uuid:org)/triggers/(uuid:trigger)
 
@@ -180,6 +227,12 @@ API - Organizations
 
 
 
+
+
+
+
+
+
 .. http:put:: /orgs/(uuid:org)/metadata[/...]
 
    Sets a metadata key for organization with given *uuid*.
@@ -187,6 +240,16 @@ API - Organizations
    **Related permissions**
 
       orgs -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /orgs/(uuid:org)/metadata/...

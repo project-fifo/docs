@@ -45,6 +45,13 @@ API - Users
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
+
 .. http:post:: /users
 
    Creates a new user.
@@ -52,6 +59,16 @@ API - Users
    **Related permissions**
 
       users -> ID -> create
+
+    .. todo::
+
+      Example Requests & Responses still missing.
+
+
+
+
+
+      
 
 
 .. http:get:: /users/(uuid:user)
@@ -112,6 +129,12 @@ API - Users
    :>json object metadata: metadata associated with the user
 
 
+
+
+
+
+
+
 .. http:put:: /users/(uuid:user)
 
    Changes password for user with given *uuid*.
@@ -119,6 +142,16 @@ API - Users
    **Related permissions**
 
       users -> ID -> passwd
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /users/(uuid:user)
@@ -149,6 +182,12 @@ API - Users
    :status 404: the user was not found
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
       
 .. http:get:: /users/(uuid:user)/permissions
 
@@ -157,6 +196,16 @@ API - Users
    **Related permissions**
 
      users -> ID -> get
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:put:: /users/(uuid:user)/permissions/<permission>
@@ -167,6 +216,16 @@ API - Users
 
      * users -> ID -> grant
      * permissions -> PERMISSIONS -> grant
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /users/(uuid:user)/permissions/<permission>
@@ -199,6 +258,12 @@ API - Users
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:get:: /users/(uuid:user)/roles
 
    Lists roles for user with given *uuid*.
@@ -206,6 +271,17 @@ API - Users
    **Related permissions**
 
       users -> ID -> get
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
 
 
 .. http:put:: /users/(uuid:user)/roles/(uuid:role)
@@ -216,6 +292,10 @@ API - Users
 
       * users -> ID -> join
       * roles -> ID -> join
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
 
 
 .. http:delete:: /users/(uuid:user)/roles/(uuid:role) 
@@ -248,6 +328,12 @@ API - Users
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:get:: /users/(uuid:user)/keys
 
    Lists all install keys for user with given *uuid*.
@@ -255,6 +341,16 @@ API - Users
    **Related permissions**
 
       users -> UUID -> get
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:put:: /users/(uuid:user)/keys
@@ -264,6 +360,16 @@ API - Users
    **Related permissions**
 
       users -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /users/(uuid:user)/keys/(uuid:key)
@@ -295,6 +401,12 @@ API - Users
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:get:: /users/(uuid:user)/yubikeys
 
    Lists all install keys for user with given *uuid*.
@@ -302,6 +414,16 @@ API - Users
    **Related permissions**
 
       users -> UUID -> get
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:put:: /users/(uuid:user)/yubikeys
@@ -311,6 +433,16 @@ API - Users
    **Related permissions**
 
      users -> UUID -> edit 
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /users/(uuid:user)/yubikeys/(uuid:key)
@@ -342,6 +474,12 @@ API - Users
    :status 503: one or more subsystems could not be reached
 
 
+
+
+
+
+
+
 .. http:get:: /users/(uuid:user)/orgs
 
    Lists all user orgs.
@@ -349,6 +487,16 @@ API - Users
    *Related permissions**
 
       users -> ID -> get
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:put:: /users/<(uuid:user)>/orgs/(uuid:org)
@@ -360,6 +508,16 @@ API - Users
       * users -> ID -> join
       * roles -> ID join
 
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
+
 
 .. http:put:: /users/(uuid:user)/metadata[/...]
 
@@ -368,6 +526,15 @@ API - Users
    **Related permissions**
 
       users -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:delete:: /users/(uuid:user)/metadata/...

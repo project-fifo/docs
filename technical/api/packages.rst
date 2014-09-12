@@ -45,6 +45,11 @@ API - Packages
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
 .. http:post:: /packages
 
    Creates/Updates a package.
@@ -52,6 +57,15 @@ API - Packages
    **Related permissions**
 
       -> packages -> create
+
+   .. todo::
+
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 .. http:get:: /packages/(uuid:package)
 
@@ -123,6 +137,12 @@ API - Packages
 
    :>json object metadata: metadata associated with the package
 
+
+
+
+
+
+
 .. http:delete:: /packages/(uuid:package)
 
    Deletes package with given *uuid*.
@@ -153,6 +173,10 @@ API - Packages
 
 
 
+
+
+
+
 .. http:put:: /packages/(uuid:package)/metadata[/...]
 
    Sets a metadata key for package with given *uuid*.
@@ -160,6 +184,15 @@ API - Packages
    **Related permissions**
 
      packages -> UUID -> edit
+
+   .. todo::
+
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:delete:: /packages/(uuid:package)/metadata/...

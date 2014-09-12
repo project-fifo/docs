@@ -45,13 +45,28 @@ API - Networks
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
 .. http:post:: /networks
 
    Create a new network.
 
    **Related permissions**
 
-      cloud -> networks -> create  
+      cloud -> networks -> create
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:get:: /networks/(uuid:network)
@@ -104,6 +119,12 @@ API - Networks
    :>json object metadata: metadata associated with the network
 
 
+
+
+
+
+
+
 .. http:delete:: /networks/(uuid:network)
 
    Deletes network with given *uuid*.
@@ -133,6 +154,12 @@ API - Networks
    :status 503: one or more subsystems could not be reached
    
 
+
+
+
+
+
+
 .. http:put:: /networks/(uuid:network)/ipranges/<iprange>
 
    Adds an <iprange> for network with given *uuid*.
@@ -140,6 +167,16 @@ API - Networks
    **Related permissions**
 
       networks -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
+
 
 
 .. http:delete:: /networks/(uuid:network)/ipranges/<iprange>
@@ -170,6 +207,12 @@ API - Networks
    :status 404: the IPrange was not found
    :status 503: one or more subsystems could not be reached
 
+
+
+
+
+
+
 .. http:put:: /networks/(uuid:network)/metadata[/...]
 
    Sets a metadata key for network with given *uuid*.
@@ -177,6 +220,15 @@ API - Networks
    **Related permissions**
 
       networks -> UUID -> edit
+
+    .. todo::
+    
+      Example Requests & Responses still missing.
+
+
+
+
+
 
 
 .. http:delete:: /networks/(uuid:network)/metadata/...

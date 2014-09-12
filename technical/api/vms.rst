@@ -59,9 +59,9 @@ API - VMs
 
     cloud -> vms -> create
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -77,9 +77,9 @@ API - VMs
 
     cloud -> vms -> create
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -189,9 +189,9 @@ API - VMs
      
     vms -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -242,9 +242,9 @@ API - VMs
     * vms -> UUID -> edit
     * orgs -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -260,9 +260,9 @@ API - VMs
 
     vms -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -278,9 +278,9 @@ API - VMs
 
     vms -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -335,7 +335,7 @@ API - VMs
 
     .. sourcecode:: http
 
-     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots HTTP/1.1
+     GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -351,10 +351,6 @@ API - VMs
 
       {}
 
-    .. todo::
-
-      Response as object has to be checked. If incorrect :json ... snapshot has to be eddited accordingly.
-     
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -362,11 +358,15 @@ API - VMs
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the VM'S snapshots are returned
-   :status 404: the snapshots were not found
+   :status 404: no snapshots were found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
    :>json object snapshots: list of snapshots of the VM
+
+.. todo::
+
+  Response as object has to be checked. If incorrect :json ... backup has to be eddited accordingly.
 
 
 
@@ -383,9 +383,9 @@ API - VMs
 
     vms -> UUID -> snapshot
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -407,7 +407,7 @@ API - VMs
 
     .. sourcecode:: http
 
-     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/917c56d4-3a33-11e4-84fa-0be1f7e1f583 HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -422,19 +422,26 @@ API - VMs
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       {}
-     
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 200: the VM's snapshots are returned
+   :status 200: information about the snapshot is returned
    :status 404: the snapshot was not found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :>json object snapshot: list of snapshot IDs
+   :>json object snapshot: data still missing
+
+
+.. todo:: 
+
+  * Response as object has to be checked. If incorrect :>json ... snapshot has to be eddited accordingly.
+
+  * data has to be added for :>json object snapshot
+
 
 
 
@@ -452,9 +459,9 @@ API - VMs
 
     vms -> UUID -> rollback
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -472,9 +479,9 @@ API - VMs
 
     vms -> UUID -> snapshot_delete
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -491,25 +498,41 @@ API - VMs
 
     vms -> UUID -> get
 
-    **Example request**:
+   **Example request**:
 
-      .. sourcecode:: http
-  
-       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+    .. sourcecode:: http
+
+     GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/backups HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
-  
-       HTTP/1.1 204 No Content
+    .. sourcecode:: http
 
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+      {}
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
+   :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 204: the snapshot was successfully deleted from the VM
-   :status 404: the snapshot was not found on the VM
+   :status 200: the VM's backups are returned
+   :status 404: no backups were found
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
+
+   :>json object backups: list of backups of the VM
+
+.. todo::
+
+ Response as object has to be checked. If incorrect :json ... backup has to be eddited accordingly.
 
 
 
@@ -527,15 +550,9 @@ API - VMs
 
     vms -> UUID -> snapshot
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
-
-
-
-
-
-
+  Example Requests & Responses still missing.
 
 
 .. http:get:: /vms/(uuid:vm)/backups/(id:backup)
@@ -546,10 +563,43 @@ API - VMs
 
     vms -> UUID -> snapshot
 
-    .. todo::
-    
-      Example Requests & Responses still missing.
+   **Example request**:
 
+    .. sourcecode:: http
+
+     GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/backup/917cc81c-3a33-11e4-91be-d75626cf1357 HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+    .. sourcecode:: http
+
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+      {}
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: information about the backup is returned
+   :status 404: the backup was not found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json object backup: data still missing
+
+.. todo::
+
+  * Response as object has to be checked. If incorrect :>json ... backup has to be eddited accordingly.
+
+  * data has to be added for :>json object backup
 
 
 
@@ -566,9 +616,9 @@ API - VMs
 
     vms -> UUID -> rollback
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -621,9 +671,9 @@ API - VMs
 
     vms -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -675,9 +725,43 @@ API - VMs
 
     vms -> UUID -> get
 
-    .. todo::
-    
-      Example Requests & Responses still missing.
+   **Example request**:
+
+    .. sourcecode:: http
+
+     GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/services HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   **Example response**:
+
+    .. sourcecode:: http
+
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+      {}
+
+  :reqheader accept: the accepted encoding, valid is ``application/json``
+  :reqheader x-snarl-token: the snarl token for this session
+  :resheader content-type: the returned datatype, usually ``application/json``
+  :resheader x-snarl-token: the snarl token for this session
+
+  :status 200: the VM's services are returned
+  :status 404: no services were found
+  :status 403: user is not authorized
+  :status 503: one or more subsystems could not be reached
+
+  :>json object services: 
+
+.. todo::
+
+  * Response as object has to be checked. If incorrect :json ... services has to be eddited accordingly.
+
+  * data has to be added for :json object services
 
 
 
@@ -693,6 +777,6 @@ API - VMs
 
     vms -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.

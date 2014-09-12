@@ -269,9 +269,9 @@ API - Organizations
 
       orgs -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 

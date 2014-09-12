@@ -60,9 +60,9 @@ API - Users
 
       users -> ID -> create
 
-    .. todo::
+.. todo::
 
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -145,9 +145,9 @@ API - Users
 
       users -> ID -> passwd
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -250,9 +250,9 @@ API - Users
      * users -> ID -> grant
      * permissions -> PERMISSIONS -> grant
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -330,8 +330,8 @@ API - Users
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 200: the information about user's roles is returned
-   :status 404: the permission was not found
+   :status 200: user's roles are returned
+   :status 404: no roles were found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
@@ -353,9 +353,9 @@ API - Users
       * users -> ID -> join
       * roles -> ID -> join
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 .. http:delete:: /users/(uuid:user)/roles/(uuid:role) 
@@ -454,9 +454,9 @@ API - Users
 
       users -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -534,7 +534,7 @@ API - Users
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user's yubikeys are returned
-   :status 404: the yubikeys were not found
+   :status 404: no yubikeys were found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
@@ -556,9 +556,9 @@ API - Users
 
      users -> UUID -> edit 
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -635,12 +635,12 @@ API - Users
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 200: the user's yubikeys are returned
-   :status 404: the yubikeys were not found
+   :status 200: the user's organizations are returned
+   :status 404: no organizations were not found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :>json array yobikeys: list of organizations the user is a part of
+   :>json array orgs: list of organizations the user is a part of
 
 
 
@@ -660,9 +660,9 @@ API - Users
       * users -> ID -> join
       * roles -> ID join
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -679,9 +679,9 @@ API - Users
 
       users -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 

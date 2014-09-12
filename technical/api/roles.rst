@@ -59,9 +59,9 @@ API - Roles
 
       cloud -> roles -> create
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -167,10 +167,6 @@ API - Roles
 
       roles -> ID -> get
 
-    .. todo::
-    
-      Example Requests & Responses still missing.
-
    **Example request**:
 
     .. sourcecode:: http
@@ -198,7 +194,7 @@ API - Roles
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the role's permissions are returned
-   :status 404: the permissions was not found
+   :status 404: no permissions were found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
@@ -220,9 +216,9 @@ API - Roles
       * roles -> ID -> grant
       * permissions -> PERMISSION -> grant
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 
@@ -275,9 +271,9 @@ API - Roles
 
       roles -> UUID -> edit
 
-    .. todo::
+.. todo::
     
-      Example Requests & Responses still missing.
+  Example Requests & Responses still missing.
 
 
 

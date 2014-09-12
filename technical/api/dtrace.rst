@@ -45,6 +45,11 @@ API - DTrace
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+
+.. Attention::
+
+  Example Requests & Responses still missing.
+
 .. http:post:: /dtrace
 
    Creates a dtrace script.
@@ -104,6 +109,10 @@ API - DTrace
    :>json object config: DTrace config
    :>json object metadata: metadata associated with DTrace
 
+.. Attention::
+
+  Example Requests & Responses still missing.
+
 .. http:put:: /dtrace/(uuid:dtrace)
 
    Edits dtrace script with given *uuid*.
@@ -140,6 +149,9 @@ API - DTrace
    :status 404: the DTrace was not found
    :status 503: one or more subsystems could not be reached
 
+.. Attention::
+
+  Example Requests & Responses still missing.
 
 .. http:put:: /dtrace/(uuid:dtrace)/metadata[/...]
 

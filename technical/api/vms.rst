@@ -215,15 +215,41 @@ ____
 
     vms -> UUID -> state
 
+    .. warning there are two examples for get requests since this endpoint can take different data and act differntly
+
+
+    PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab HTTP/1.1
+    Accept: application/json
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    Content-Type: application/json
+
+    {"action":"stop"}
+
+
+    PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab HTTP/1.1
+    Accept: application/json
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    Content-Type: application/json
+
+    {
+     "config":{"alias":"alias","hostname":"base64","resolvers":["8.8.8.8","8.8.4.4"]},
+     "package":"356574be-28ba-4e11-8073-166b3ea278a0"
+    }
+
+
+    HTTP/1.1 204 No Content
+    Content-Type: application/json
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    vary: accept
 
    Updates the config/package for VM with given *uuid*.
-     
+
    **Related permissions**
-     
+
     vms -> UUID -> edit
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -245,14 +271,14 @@ ____
    **Example request**:
 
       .. sourcecode:: http
-  
+
        DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
        host: cloud.project-fifo.net
 
    **Example response**:
 
       .. sourcecode:: http
-  
+
        HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
@@ -279,8 +305,20 @@ ____
     * vms -> UUID -> edit
     * orgs -> UUID -> edit
 
+   PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/owner HTTP/1.1
+   accept: application/json
+   origin: http://192.168.221.201
+   x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+   content-type: application/json
+
+   {"org":"63952b63-a42f-4649-8cbb-c951724faf2b"}
+
+
+   HTTP/1.1 204 No Content
+   vary: accept
+
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -299,8 +337,20 @@ ____
 
     vms -> UUID -> edit
 
+    POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics HTTP/1.1
+    Accept: application/json, text/plain, */*
+    Content-Type: application/json;charset=UTF-8
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+
+    {"network":"a3850354-d356-4bb7-a9ae-a41387702ad"5}
+
+    HTTP/1.1 303 See Other
+    Content-Type: application/json
+    vary: accept
+    location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
+
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -311,7 +361,7 @@ ____
 
 
 
-.. http:put:: /vms/(uuid:vm)/nics/<mac>
+.. http:put:: /vms/(uuid:vm)/nics/(mac: nic)
 
    Sets an interface for VM with given *uuid* as the primary interface.
 
@@ -319,8 +369,18 @@ ____
 
     vms -> UUID -> edit
 
+   PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics/d2:1f:b4:36:47:e2 HTTP/1.1
+   Accept: application/json
+   x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+
+   {"primary":true}
+
+   HTTP/1.1 204 No Content
+   vary: accept
+
+
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -331,7 +391,7 @@ ____
 
 
 
-.. http:delete:: /vms/(uuid:vm)/nics/<mac>
+.. http:delete:: /vms/(uuid:vm)/nics/(mac: nic)
 
    Removes a nic from the VM with given *uuid*.
 
@@ -342,8 +402,8 @@ ____
    **Example request**:
 
       .. sourcecode:: http
-  
-       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/nics/<mac> HTTP/1.1
+
+       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/nics/(mac: nic) HTTP/1.1
        host: cloud.project-fifo.net
 
     **Example response**:
@@ -536,7 +596,7 @@ ____
 
       .. sourcecode:: http
   
-       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/9157369c-3a33-11e4-bdc5-63dd38248522/<mac> HTTP/1.1
+       DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/9157369c-3a33-11e4-bdc5-63dd38248522 HTTP/1.1
        host: cloud.project-fifo.net
 
     **Example response**:
@@ -623,6 +683,17 @@ ____
 
     vms -> UUID -> snapshot
 
+    POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups HTTP/1.1
+    Accept: application/json
+    Content-Type: application/json
+
+    {"comment":"initial"}
+
+    HTTP/1.1 303 See Other
+    Content-Type: application/json
+    vary: accept
+    location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b
+
 .. todo::
     
   Example Requests & Responses still missing.
@@ -654,7 +725,7 @@ ____
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      {}
+     {"comment":"initial","pending":true,"timestamp":1410571703253652,"uuid":"e7ae7ad3-686e-4eef-8478-c289b254824b"}
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -691,8 +762,21 @@ ____
 
     vms -> UUID -> rollback
 
+  PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b HTTP/1.1
+  Accept: application/json
+  x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+  Content-Type: application/json
+
+  {"action":"rollback"}
+
+  HTTP/1.1 204 No Content
+  Content-Type: application/json
+  x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+  vary: accept
+
+
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -716,14 +800,14 @@ ____
    **Example request**:
 
       .. sourcecode:: http
-  
+
        DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/backups/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
        host: cloud.project-fifo.net
 
    **Example response**:
 
       .. sourcecode:: http
-  
+
        HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
@@ -750,8 +834,21 @@ ____
 
     vms -> UUID -> edit
 
+    PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
+    Accept: application/json
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    Content-Type: application/json
+
+    {"notes":[{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
+
+
+    HTTP/1.1 204 No Content
+    Content-Type: application/json
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    vary: accept
+
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -862,7 +959,19 @@ ____
 
     vms -> UUID -> edit
 
+    PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/services HTTP/1.1
+    Accept: application/json, text/plain, */*
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    Content-Type: application/json;charset=UTF-8
+
+    {"action":"disable", "service":"svc:/system/svc/restarter:default"}
+
+    HTTP/1.1 204 No Content
+    Content-Type: application/json
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    vary: accept
+
 .. todo::
-    
+
   Example Requests & Responses still missing.
 

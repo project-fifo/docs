@@ -4,13 +4,15 @@
 Installation
 ############
 
-.. warning::
+.. attention::
 
-   Please be aware that this guide covers the installation of a **single** *FiFo Zone*, while this is supported and might be acceptable for a private 'for fun' server. A production environment should consist of **at least 5 physically separated** zones!. 
+   Please be aware that this guide covers the installation of a **single** *FiFo Zone*. While this is supported and might be acceptable for a private server a production environment should consist of **at least 5 physically separated** zones! 
 
 .. seealso::
 
   Details on how to set up clustering can be found in the `Clustering <clustering.html>`_ section.
+
+____
 
 
 
@@ -18,7 +20,7 @@ Creating the Zone
 -----------------
 
 
-From the *GZ (Global Zone)* we install the base dataset we are going to use for our *FiFo Zone* and confirm it is installed:
+From the *GZ (Global Zone)* we install the base dataset which we will use for our *FiFo Zone*. Than we have to confirm it is installed:
 
 
 .. code-block:: bash
@@ -62,13 +64,15 @@ Sample contents of ``setupfifo.json``
    }
 
 
-Next we create our *FiFo JSON* payload file and save it in case we need to reinstall again at a later stage.
+Next we create our *FiFo JSON* payload file and save it in case we need to reinstall at a later stage.
 
 .. code-block:: bash
 
    cd /opt
    vi setupfifo.json
    vmadm create -f setupfifo.json
+
+____
 
 
 
@@ -91,11 +95,16 @@ We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *Fi
   - To install the release version use `VERSION=rel`
   - To install the current development version use `VERSION=dev`
 
+____
+
 
 Configuration
 -------------
 
-If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new ``*.conf.example`` files are added. The generated files contain some defaults. However is it advised to take some time to configure `Wiggle <../wiggle/configuration.html>`_, `Sniffle <../sniffle/configuration.html>`_, `Snarl <../snarl/configuration.html>`_ and `Howl <../howl/configuration.html>`_.
+If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new ``*.conf.example`` files will be added. 
+The generated files contain some defaults. However is it advised to take some time to configure `Wiggle <../wiggle/configuration.html>`_, `Sniffle <../sniffle/configuration.html>`_, `Snarl <../snarl/configuration.html>`_ and `Howl <../howl/configuration.html>`_.
+
+____
 
 
 Startup
@@ -111,11 +120,13 @@ Startup
    svcadm enable nginx
    svcs epmd snarl sniffle howl wiggle nginx
 
+____
+
 
 Initial administrative tasks
 ----------------------------
 
-The last step is to create an admin user with full permissions so we can login. The important part is to ensure that a permission called ``...`` is added, which assigns "ALL usage rights" to your admin user.
+The last step is to create an *admin user* granted unrestricted permissions so we can login. It is important to ensure that a permission called ``...`` is added, which assigns "ALL usage rights" to your admin user.
 
 .. code-block:: bash
 

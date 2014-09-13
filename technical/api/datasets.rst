@@ -234,26 +234,6 @@ ____
 
       datasets -> UUID -> export
 
-.. todo::
-    
-  Example Requests & Responses still missing.
-
-____
-
-
-
-
-
-
-
-.. http:put:: /datasets/(uuid:dataset)/dataset.gz
-
-   Imports *zvol* for dataset with given *uuid*.
-
-   **Related permissions**
-
-      datasets -> UUID -> create
-
    **Example request**:
 
     .. sourcecode:: http
@@ -283,6 +263,26 @@ ____
    :status 404: the triggers were not found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
+
+____
+
+
+
+
+
+
+
+.. http:put:: /datasets/(uuid:dataset)/dataset.gz
+
+   Imports *zvol* for dataset with given *uuid*.
+
+   **Related permissions**
+
+      datasets -> UUID -> create
+
+.. todo::
+    
+  Example Requests & Responses still missing.
 
 ____
 

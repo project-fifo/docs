@@ -8,18 +8,16 @@ Upgrading
 General instructions
 ####################
 
-These instructions cover steps that will initiate the update. Please be aware that depending on your update path additional steps might be required. The version specific section covers the steps required to go from one version to another. While you're on release following these on a version update is enough. Things are a bit more complicated when living on the bleeding edge (aka dev). In general you should check here on every update since required steps for a version upgrade will slowly grow during the development process.
+These instructions cover steps that will initiate the update. Please be aware that depending on your update path additional steps might be required. The version specific section covers the steps required to go from one version to another. While you're on release following these steps on a version update is enough. Things are a bit more complicated when living on the bleeding edge (aka dev). In general you should check here on every update since required steps for a version upgrade will slowly grow during the development process.
 
 .. warning::
 
    It is highly advised to make a snapshot of the *FiFo Zone* before updating. While the procedure should be safe it is always better to stay on the side of caution.
 
-
-
 Zone
 ****
 
-To upgrade the components in a zone it's necessary to install the new packages and restart the services. In addition to this there are sometimes additional steps needed depending on the update.
+To upgrade the components in a zone it is necessary to install the new packages and restart the services. In addition to this there are sometimes additional steps needed depending on the update.
 
 .. code-block:: bash
 
@@ -34,43 +32,51 @@ To upgrade the components in a zone it's necessary to install the new packages a
 Hypervisors
 ***********
 
-There are two ways to update the server on the hypervisor one is to connect to the hypervisor and run:
+.. note::
+ 
+ There are two ways to update the server on the hypervisor.
 
-.. code-block:: bash
+1. Connect to the hypervisor and run:
+
+ .. code-block:: bash
 
    /opt/chunter/bin/update
 
-It's always good to confirm `Chunter <../chunter.html>`_ is running:
+ It's always good to confirm `Chunter <../chunter.html>`_ is running:
 
-.. code-block:: bash
+ .. code-block:: bash
 
    svcs chunter
    STATE          STIME    FMRI
    online         21:16:28 svc:/network/chunter:default
 
-An alternative is to use ``fifoadm`` to update a hypervisor by running:
+2. Use ``fifoadm`` to update a hypervisor by running:
 
-.. code-block:: bash
+ .. code-block:: bash
 
    fifoadm hypervisors update
 
-this will trigger all hypervisors to update.
+ This will trigger all hypervisors to update.
+
+____
 
 0.6.0
 *****
 
-Version 0.6.0 of FiFo introduces a feature that allows to have multiple parallel authentication realms inside of `Snarl <../snarl.html>`_. To support this the former global information into a realm can be archived by running the DB update command:
+Version 0.6.0 of FiFo introduces a feature that allows for multiple parallel authentication realms inside of `Snarl <../snarl.html>`_. To support this the former global information into a realm can be archived by running the DB update command:
 
 .. warning::
 
-   It is critical that **ALL** services are running and connected during this update otherwise data loss can occur!
+ It is critical that **ALL** services are running and connected during this update otherwise data loss can occur!
 
 .. code-block:: bash
 
-   snarl-admin db update default
+ snarl-admin db update default
 
 
-This will place all users, roles and organizations into the ``default`` realm. Another realm can be chosen but it will require configuring the remaining *FiFo* services.
+This will place all users, roles and organizations into the ``default`` realm. Another realm can be chosen but it will require configuration of the remaining *FiFo* services.
+
+____
 
 0.4.4
 *****
@@ -79,19 +85,25 @@ With 0.4.4 there is a considerable update to the database. Therefore additional 
 
 .. warning::
 
-   It is critical that **ALL** services are running and connected during this update otherwise data loss can occur!
+ It is critical that **ALL** services are running and connected during this update otherwise data loss can occur!
 
 .. code-block:: bash
 
-   sniffle-admin db update
-   snarl-admin db update
+ sniffle-admin db update
+ snarl-admin db update
 
-This changes also affect the AAE code. Therefore when AAE is enabled the old AAE data needs to be deleted. This has no impact on the system itself. The services should be disabled when the AAE data is deleted:
+These changes also affect the AAE code. Therefore when AAE is enabled the old AAE data needs to be deleted. This has no impact on the system itself. 
+
+.. note::
+
+  The services should be disabled when the AAE data is deleted!
 
 .. code-block:: bash
+ 
+ rm -r /var/db/sniffle/anti_entropy
+ rm -r /var/db/snarl/anti_entropy
 
-   rm -r /var/db/sniffle/anti_entropy
-   rm -r /var/db/snarl/anti_entropy
+____
 
 0.4.3
 *****
@@ -100,7 +112,7 @@ This version introduces a new system for config files. The aim is to make *FiFo*
 
 .. attention::
 
-   The old files will conflict with the existing ones so it is important to transfer the changes form the old files and adjust them accordingly in the new files then **delete** the old files.
+   Old files will conflict with the existing ones so it is important to transfer the changes form the old files and adjust them accordingly in the new files and then **delete** the old files.
 
 * `Chunter <../chunter.html>`_
 

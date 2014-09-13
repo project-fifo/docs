@@ -10,10 +10,10 @@ Permissions
 
 .. note::
 
-   Permissions can be given to both users and roles, however it best practice to concentrate on using roles to organize permissions.
+ Permissions can be given to both users and roles. However it best practice to concentrate on using roles to organize permissions.
 
 
-*FiFo*'s permission system uses a nested tree to represent its permissions going from the general to the specific. Generally the second level is the UUID of the element with the exception of the ``cloud`` tree.
+*FiFo's* permission system uses a nested tree to represent its permissions going from the general to the specific. Generally the second level is the UUID of the element with the exception of the ``cloud`` tree.
 
   ::
 
@@ -53,17 +53,19 @@ So the ``cloud`` tree can be interpreted like this:
 In the specific examples ``<UUID>`` is treated as a placeholder for a element or of cause can be ``_`` for all elements.
 
 .. seealso::
-  For the specific permissions on `users <../snarl/permissions.html#users>`_, `roles <../snarl/permissions.html#roles>`_ and `organisations <../snarl/permissions.html#organisations>`_ please see the `Snarl Permissions <../snarl/permissions.html>`_ section. For `VMs <../sniffle/permissions.html#vms>`_, `hypervisors <../sniffle/permissions.html#hypervisors>`_, `datasets <../sniffle/permissions.html#datasets>`_, `dtrace <../sniffle/permissions.html#dtrace>`_, `ipranges <../sniffle/permissions.html#ipranges>`_, `networks <../sniffle/permissions.html#networks>`_ and `packages <../sniffle/permissions.html#packages>`_ see the `Sniffle Permissions <../sniffle/permissions.html>`_ section. For `channels <../howls/permissions.html#channels>`_ see the `Howl Permissions <../howl/permissions.html>`_ section.
+  For the specific permissions on `users <../snarl/permissions.html#users>`_, `roles <../snarl/permissions.html#roles>`_ and `Organizations <../snarl/permissions.html#Organizations>`_ please see the `Snarl Permissions <../snarl/permissions.html>`_ section. For `VMs <../sniffle/permissions.html#vms>`_, `hypervisors <../sniffle/permissions.html#hypervisors>`_, `datasets <../sniffle/permissions.html#datasets>`_, `dtrace <../sniffle/permissions.html#dtrace>`_, `ipranges <../sniffle/permissions.html#ipranges>`_, `networks <../sniffle/permissions.html#networks>`_ and `packages <../sniffle/permissions.html#packages>`_ see the `Sniffle Permissions <../sniffle/permissions.html>`_ section. For `channels <../howls/permissions.html#channels>`_ see the `Howl Permissions <../howl/permissions.html>`_ section.
 
-Organisations
+____
+
+Organizations
 =============
 
-*FiFo* abstracts the concept of an *Organisation* (Customer, Client) away from the user. This means one *Organisation* can have multiple users, and a *User* (for example an admin user) can belong to multiple *Organisations*. However, belonging to an *Organisation* does not grant a *User* any permissions, this is handled by assigning *Roles*. A *User* can select one of the *Organisations* he belongs to *active* meaning he acts for the *Organisation* and triggers certain events.
+*FiFo* abstracts the concept of an *Organization* (Customer, Client) away from the user. This means one *Organization* can have multiple users, and a *User* (for example an admin user) can belong to multiple *Organizations*. However, belonging to an *Organization* does not grant a *User* any permissions, this is handled by assigning *Roles*. A *User* can select one of the *Organizations* he belongs to *active* meaning he acts for the *Organization* and triggers certain events.
 
 Triggers
 --------
 
-*Triggers* are where *Organisation* get their power from. They are miniature scripts that get executed when certain events occur.
+*Triggers* are where *Organization* get their power from. They are miniature scripts that get executed when certain events occur.
 
 Trigger events
 ``````````````
@@ -109,10 +111,12 @@ join_role
         the uuid of the *Role* to join.
 
 join_org
-    Joins a new *User* to a *Organisation*. This should not be used for vm or dataset events.
+    Joins a new *User* to a *Organization*. This should not be used for vm or dataset events.
 
     target
-        the uuid of the *Organisation* to join.
+        the uuid of the *Organization* to join.
+
+____
 
 Example
 =======
@@ -123,7 +127,7 @@ This is an example for a general Users roles that covers the basic permissions r
 
 .. warning::
 
-   Please note the ``channels->_->join`` permission. This permission exists to work around limitations in the way howl checks permissions. However channels are read only and require knowledge about the VMs UUID to join. This can be skipped but will not allow to see metrics for VMs that permissions are received via Organisation grant triggers.
+   Please note the ``channels->_->join`` permission. This permission exists to work around limitations in the way howl checks permissions. However channels are read only and require knowledge about the VMs UUID to join. This can be skipped but will not allow to see metrics for VMs that permissions are received via Organization grant triggers.
 
 
 .. code-block:: bash
@@ -156,14 +160,13 @@ This is an example for a general Users roles that covers the basic permissions r
    This is meant to be used in connection with the <a href="/general/rightmanagement.html#org-example">Example Org</a> to give users the right to create VMs. Otherwise the following permission needs to be added to grant all users permission to create VMs: ``cloud->vms->create``.
 
 
-Organisation
+Organization
 ------------
 
-Here is a set of rules that represents a good default organisation with three associated roles. This is meant to be used in combination with a general User Role.
+Here is a set of rules that represents a good default Organization with three associated roles. This is meant to be used in combination with a general User Role.
 
 Admins
 ``````
-
 
 Administrative users that have full power over resources of the Organistation.
 
@@ -196,7 +199,7 @@ Triggers
 
 
 Users
-`````
+````` 
 
 Normal users can see, start, restart and stop VMs but are not allowed to create or delete them.
 

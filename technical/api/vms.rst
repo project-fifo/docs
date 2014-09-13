@@ -48,11 +48,6 @@ API - VMs
 ____
 
 
-
-
-
-
-
 .. http:post:: /vms
 
    Creates a new VM.
@@ -61,29 +56,41 @@ ____
 
     cloud -> vms -> create
 
-    POST /api/0.1.0/vms HTTP/1.1
-    Accept: application/json
-    Content-Type: application/json
-    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+   **Example Request**
 
-    {"package":"aa77ce44-cdb6-4e59-8f64-97f65b7eba2d","dataset":"d34c301e-10c3-11e4-9b79-5f67ca448df0","config":{"networks":{"net0":"a3850354-d356-4bb7-a9ae-a41387702ad5"},"metadata":{},"alias":"base64","hostname":"base64","requirements":[],"autoboot":true}}
+      .. sourcecode:: http
+    
+        POST /api/0.1.0/vms HTTP/1.1
+        Accept: application/json
+        Content-Type: application/json
+        x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
 
-    HTTP/1.1 303 See Other
-    Content-Type: application/json
-    vary: accept
-    location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
+        {
+         "package": "aa77ce44-cdb6-4e59-8f64-97f65b7eba2d",
+         "dataset": "d34c301e-10c3-11e4-9b79-5f67ca448df0",
+         "config": 
+         {
+         "networks":{"net0":"a3850354-d356-4bb7-a9ae-a41387702ad5"}, 
+         "metadata":  {}, 
+         "alias": "base64", 
+         "hostname":  "base64", 
+         "requirements":  [], 
+         "autoboot":  true
+         }      
+        }
+  
+   **Example Response**
 
+      .. sourcecode:: http
 
-.. todo::
+        HTTP/1.1 303 See Other
+        Content-Type: application/json
+        vary: accept
+        location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
-  Example Requests & Responses still missing.
+      This will redirect to :http:get:`/vms/(uuid:vm)`
 
 ____
-
-
-
-
-
 
 
 .. http:put:: /vms/dry_run
@@ -111,12 +118,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /vms/(uuid:vm)
@@ -202,11 +203,6 @@ ____
 ____
 
 
-
-
-
-
-
 .. http:put:: /vms/(uuid:vm)
 
    Initiates a VM state change for VM with given *uuid*.
@@ -227,11 +223,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:delete:: /vms/(uuid:vm)
@@ -265,11 +256,6 @@ ____
 ____
 
 
-
-
-
-
-
 .. http:put:: /vms/(uuid:vm)/owner
 
    Changes the owner of VM with given *uuid*.
@@ -284,11 +270,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:post:: /vms/(uuid:vm)/nics
@@ -306,11 +287,6 @@ ____
 ____
 
 
-
-
-
-
-
 .. http:put:: /vms/(uuid:vm)/nics/<mac>
 
    Sets an interface for VM with given *uuid* as the primary interface.
@@ -324,11 +300,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:delete:: /vms/(uuid:vm)/nics/<mac>
@@ -360,12 +331,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /vms/(uuid:vm)/snapshots
@@ -416,12 +381,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:post:: /vms/(uuid:vm)/snapshots
 
    Creates a new snapshot of VM with given *uuid*.
@@ -435,13 +394,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
-
 
 
 .. http:get:: /vms/(uuid:vm)/snapshots/(id:snapshot)
@@ -494,14 +446,6 @@ ____
 ____
 
 
-
-
-
-
-
-
-
-
 .. http:put:: /vms/(uuid:vm)/snapshots/(id:snapshot)
 
    Rolls back to snapshot with given *ID* of VM with given *uuid*.
@@ -515,13 +459,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
-
 
 
 .. http:delete:: /vms/(uuid:vm)/snapshots/(id:snapshot)
@@ -553,12 +490,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /vms/(uuid:vm)/backups
@@ -606,13 +537,6 @@ ____
  Response as object has to be checked. If incorrect :json ... backup has to be eddited accordingly.
 
 ____
-
-
-
-
-
-
-
 
 
 .. http:post:: /vms/(uuid:vm)/backups
@@ -677,12 +601,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:put:: /vms/(uuid:vm)/backups/(id:backup)
 
    Restores backup with given *ID* of VM with given *uuid*.
@@ -696,13 +614,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
-
 
 
 .. http:delete:: /vms/(uuid:vm)/backups/(id:backup)
@@ -736,12 +647,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:put:: /vms/(uuid:vm)/metadata[/...]
 
    Sets a metadata key for VM with given *uuid*.
@@ -755,12 +660,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /vms/(uuid:vm)/metadata/...
@@ -792,12 +691,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /vms/(uuid:vm)/services
@@ -847,11 +740,6 @@ ____
   * data has to be added for :json object services
 
 ____
-
-
-
-
-
 
 
 .. http:put:: /vms/(uuid:vm)/services

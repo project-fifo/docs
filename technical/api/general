@@ -43,32 +43,31 @@ API - General
 
 ____
 
-
 .. http:get:: /cloud
 
-   Retrieve the general cloud status.
+	Retrieve the general cloud status.
 
-   **Related permissions**
+	**Related permissions**
 
 		cloud -> cloud -> status
 
-   **Example resquest**:
+	**Example resquest**:
 
-   .. sourcecode:: http
+	.. sourcecode:: http
 
      GET /cloud HTTP/1.1
-     host: cloud.project-fifo.net
-     accept: applicaiton/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+	 host: cloud.project-fifo.net
+	 accept: applicaiton/json
+	 x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
    .. sourcecode:: http
 
-     HTTP/1.1 200 OK
-     vary: Accept
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-     content-type: application/json
+	 HTTP/1.1 200 OK
+	 vary: Accept
+	 x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+	 content-type: application/json
 
       {
         "warnings": [],

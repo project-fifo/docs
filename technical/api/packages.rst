@@ -48,10 +48,6 @@ API - Packages
 ____
 
 
-
-
-
-
 .. http:post:: /packages
 
    Creates/Updates a package.
@@ -65,10 +61,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
 
 
 .. http:get:: /packages/(uuid:package)
@@ -144,11 +136,6 @@ ____
 ____
 
 
-
-
-
-
-
 .. http:delete:: /packages/(uuid:package)
 
    Deletes package with given *uuid*.
@@ -180,11 +167,6 @@ ____
 ____
 
 
-
-
-
-
-
 .. http:put:: /packages/(uuid:package)/metadata[/...]
 
    Sets a metadata key for package with given *uuid*.
@@ -198,11 +180,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:delete:: /packages/(uuid:package)/metadata/...

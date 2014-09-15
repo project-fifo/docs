@@ -48,10 +48,6 @@ API - Datasets
 ____
 
 
-
-
-
-
 .. http:post:: /datasets
 
    Imports a dataset from dsapi endpoint.
@@ -65,10 +61,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
 
 
 .. http:get:: /datasets/(uuid:dataset)
@@ -145,11 +137,6 @@ ____
 
 ____
 
-
-
-
-
-
 .. http:put:: /datasets/(uuid:dataset)
 
    Cahnges parameters of dataset with given *uuid*.
@@ -165,10 +152,6 @@ ____
 ____
 
 
-
-
-
-
 .. http:post:: /datasets/(uuid:dataset)
 
    Imports a manifest for dataset with given *uuid*.
@@ -182,11 +165,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:delete:: /datasets/(uuid:dataset)
@@ -218,12 +196,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /datasets/(uuid:dataset)/dataset.gz
@@ -267,11 +239,6 @@ ____
 ____
 
 
-
-
-
-
-
 .. http:put:: /datasets/(uuid:dataset)/dataset.gz
 
    Imports *zvol* for dataset with given *uuid*.
@@ -287,13 +254,6 @@ ____
 ____
 
 
-
-
-
-
-
-
-
 .. http:put:: /datasets/(uuid:dataset)/metadata[/...]
 
    Sets a metadata key for dataset with given *uuid*.
@@ -307,12 +267,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /datasets/(uuid:dataset)/metadata/...

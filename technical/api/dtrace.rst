@@ -48,10 +48,6 @@ API - DTrace
 ____
 
 
-
-
-
-
 .. http:post:: /dtrace
 
    Creates a dtrace script.
@@ -65,10 +61,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
 
 
 .. http:get:: /dtrace/(uuid:dtrace)
@@ -125,10 +117,6 @@ ____
 ____
 
 
-
-
-
-
 .. http:put:: /dtrace/(uuid:dtrace)
 
    Edits dtrace script with given *uuid*.
@@ -142,10 +130,6 @@ ____
  Example Requests & Responses still missing.
 
 ____
-
-
-
-
 
 
 .. http:delete:: /dtrace/(uuid:dtrace)
@@ -179,10 +163,6 @@ ____
 ____
 
 
-
-
-
-
 .. http:put:: /dtrace/(uuid:dtrace)/metadata[/...]
 
    Sets a metadata key for dtrace with given *uuid*.
@@ -196,10 +176,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
 
 
 .. http:delete:: /dtrace/(uuid:dtrace)/metadata/...

@@ -48,11 +48,6 @@ API - Organizations
 ____
 
 
-
-
-
-
-
 .. http:post:: /orgs
 
    Creates a new organization.
@@ -66,12 +61,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /orgs/(uuid:org)
@@ -125,12 +114,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:delete:: /orgs/(uuid:orgs)
 
    Deletes organization with given *uuid*.
@@ -160,12 +143,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /orgs/(uuid:org)/triggers
@@ -211,11 +188,6 @@ ____
 ____
 
 
-
-
-
-
-
 .. http:put:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
 
    Adds a new trigger to org with given *uuid*.
@@ -230,11 +202,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:delete:: /orgs/(uuid:org)/triggers/(uuid:trigger)
@@ -268,13 +235,6 @@ ____
 ____
 
 
-
-
-
-
-
-
-
 .. http:put:: /orgs/(uuid:org)/metadata[/...]
 
    Sets a metadata key for organization with given *uuid*.
@@ -288,12 +248,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /orgs/(uuid:org)/metadata/...

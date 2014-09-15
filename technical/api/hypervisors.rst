@@ -48,11 +48,6 @@ API - Hypervisors
 ____
 
 
-
-
-
-
-
 .. http:get:: /hypervisors/(uuid:hypervisor)
 
    Returns hypervisor details for hypervisor with given *uuid*.
@@ -126,12 +121,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:delete:: /hypervisors/(uuid:hypervisor)
 
     Deletes hypervisor with given *uuid*.
@@ -163,12 +152,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:put:: /hypervisors/(uuid:hypervisor)/config
 
    Sets hypervisor config for hypervisor with given *uuid*.
@@ -178,12 +161,6 @@ ____
      hypervisors -> UUID -> edit
 
 ____
-
-
-
-
-
-
 
 
 .. http:put:: /hypervisors/(uuid:hypervisor)/metadata[/...]
@@ -199,12 +176,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/... 
@@ -238,13 +209,6 @@ ____
 ____
 
 
-
-
-
-
-
-
-
 .. http:put:: /hypervisors/(uuid:hypervisor)/characteristics[/...]
 
    Sets a characteristics key for hypervisor with given *uuid*.
@@ -262,10 +226,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
 
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/characteristics/...
@@ -297,12 +257,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/...

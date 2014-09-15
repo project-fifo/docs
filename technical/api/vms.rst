@@ -59,7 +59,7 @@ ____
    **Example Request**
 
    .. sourcecode:: http
-    
+
      POST /api/0.1.0/vms HTTP/1.1
      Accept: application/json
      Content-Type: application/json
@@ -68,27 +68,46 @@ ____
       {
        "package": "aa77ce44-cdb6-4e59-8f64-97f65b7eba2d",
        "dataset": "d34c301e-10c3-11e4-9b79-5f67ca448df0",
-       "config": 
+       "config":
        {
-        "networks":  {"net0":"a3850354-d356-4bb7-a9ae-a41387702ad5"}, 
-        "metadata":  {}, 
-        "alias": "base64", 
-        "hostname":  "base64", 
-        "requirements":  [], 
+        "networks":  {"net0":"a3850354-d356-4bb7-a9ae-a41387702ad5"},
+        "metadata":  {},
+        "alias": "base64",
+        "hostname":  "base64",
+        "requirements":  [],
         "autoboot":  true
-       }      
+       }
       }
-  
+
    **Example Response**
 
    .. sourcecode:: http
 
      HTTP/1.1 303 See Other
-     Content-Type: application/json
      vary: accept
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
-    This will redirect to :http:get:`/vms/(uuid:vm)`
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)` request
+
+   :status 303: redirect to the corresponding :http:get:`/vms/(uuid:vm)` request
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json string package: package UUID
+   :<json string dataset: dataset UUID
+   :<json object config: information about VM's config
+
+   :<json object networks: network UUID
+   :<json object metadata: matadata associated with the VM
+   :<json string alias: the VM's alias
+   :<json string hostname: the VM's hostname
+   :<json array requirements: additional requirements for VM deployment
+   :<json boolean autoboot: gives information about VM's autoboot status
+
+
 
 ____
 
@@ -101,11 +120,11 @@ ____
 
     cloud -> vms -> create
 
-   **Example response**
+   **Example request**
 
    .. sourcecode:: http
 
-     POST /api/0.1.0/vms/dry_run HTTP/1.1
+     PUT /api/0.1.0/vms/dry_run HTTP/1.1
      Accept: application/json
      Content-Type: application/json
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
@@ -113,7 +132,7 @@ ____
      {
       "package":  "aa77ce44-cdb6-4e59-8f64-97f65b7eba2d",
       "dataset":  "d34c301e-10c3-11e4-9b79-5f67ca448df0",
-      "config": 
+      "config":
         {
          "networks": {"net0":"a3850354-d356-4bb7-a9ae-a41387702ad5"},
          "metadata": {},
@@ -129,9 +148,28 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 201 Created
-     Content-Type: application/json
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 201: confirms valid VM spec
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json string package: package UUID
+   :<json string dataset: dataset UUID
+   :<json object config: information about VM's config
+
+   :<json object networks: network UUID
+   :<json object metadata: matadate associated with the VM
+   :<json string alias: the VM's alias
+   :<json string hostname: the VM's hostname
+   :<json array requirements: additional requirements for VM deployment
+   :<json boolean autoboot: gives information about VM's autoboot status
 
 ____
 
@@ -185,7 +223,6 @@ ____
       "metadata": {}
      }
 
-   :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
@@ -196,8 +233,8 @@ ____
    :status 503: one or more subsystems could not be reached
 
    :>json string uuid: UUID of the VM
-   :>json string alias: alias of the VM
-   :>json string owner: owner of the VM
+   :>json string alias: the VM's alias
+   :>json string owner: the VM's owner
 
    :>json string dataset: dataset the VM is based on
    :>json string package: package of the VM
@@ -228,7 +265,7 @@ ____
     vms -> UUID -> state
 
    Updates the config/package for VM with given *uuid*.
-   
+
    **Related permissions**
 
     vms -> UUID -> edit
@@ -270,9 +307,27 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     Content-Type: application/json
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json object action: package UUID
+   :<json object config: information about VM's config
+
+   :<json string dataset: dataset UUID
+   :<json string alias: the VM's alias
+   :<json string hostname: the VM's hostname
+   :<json array resolvers: list of VM's resolvers 
+   :<json object package: package UUID
 
 ____
 
@@ -288,7 +343,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-   
+
      DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
 
@@ -323,7 +378,6 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/owner HTTP/1.1
      accept: application/json
-     origin: http://192.168.221.201
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      content-type: application/json
 
@@ -334,9 +388,20 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
 
+   :status 204: no content
+   :status 404: VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json object org: UUID of the organization
 
 ____
 
@@ -365,13 +430,22 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 303 See Other
-     Content-Type: application/json
      vary: accept
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
-   This will redirect to :http:get:`/vms/(uuid:vm)`
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+   :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)` request
 
+   :status 303: redirect to the corresponding :http:get:`/vms/(uuid:vm)` request
+   :status 404: VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
 
+   :<json object network: network UUID
 
 ____
 
@@ -390,6 +464,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics/d2:1f:b4:36:47:e2 HTTP/1.1
      Accept: application/json
+     Content-Type: application/json
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
 
      {"primary":  true}
@@ -399,8 +474,19 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: the VM/nic could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json object primary: declares if a nic is primary or not
 
 ____
 
@@ -418,13 +504,15 @@ ____
    .. sourcecode:: http
 
      DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/nics/d2:1f:b4:36:47:e2 HTTP/1.1
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      host: cloud.project-fifo.net
 
     **Example response**:
 
     .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -471,7 +559,7 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the VM'S snapshots are returned
-   :status 404: no snapshots were found
+   :status 404: the VM could not be found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
@@ -492,6 +580,39 @@ ____
 
     vms -> UUID -> snapshot
 
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots HTTP/1.1
+      Accept: application/json
+      Content-Type: application/json
+      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+      {"comment": "a snapshot"}
+
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 303 See Other
+      vary: accept
+      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/baff8394-08cc-4612-826e-717e75321650
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+   :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)/snapshots/(id:snapshot)` request
+
+   :status 303: redirect to the corresponding :http:get:`/vms/(uuid:vm)/snapshots/(id:snapshot)` request
+   :status 404: the VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json string comment: comment for the snapshot
 
 ____
 
@@ -554,6 +675,29 @@ ____
 
     vms -> UUID -> rollback
 
+    PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/baff8394-08cc-4612-826e-717e75321650 HTTP/1.1
+    Accept: application/json
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    Content-Type: application/json
+
+    {"action":"rollback"}
+
+    HTTP/1.1 204 No Content
+    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+    vary: accept
+
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: the VM/snapshot could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json object action: action that is requested
+
+
 
 ____
 
@@ -569,14 +713,14 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/9157369c-3a33-11e4-bdc5-63dd38248522 HTTP/1.1
      host: cloud.project-fifo.net
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
@@ -651,19 +795,32 @@ ____
      POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups HTTP/1.1
      Accept: application/json
      Content-Type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      {"comment":  "initial"}
 
    **Example response**:
 
    .. sourcecode:: http
-   
+
      HTTP/1.1 303 See Other
-     Content-Type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
      vary: accept
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+   :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)/backups/(id:backup)` request
    
-   This will redirect to :http:get:`/vms/(uuid:vm)/backups/(id:backup)`
+   :status 303: redirect to the corresponding :http:get:`/vms/(uuid:vm)/backups/(id:backup)` request
+   :status 404: the backups were not found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json string comment: comment for the backup
+
 
 
 
@@ -730,7 +887,7 @@ ____
     vms -> UUID -> rollback
 
    **Example request**:
-   
+
    .. sourcecode:: http
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b HTTP/1.1
@@ -745,9 +902,19 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     Content-Type: application/json
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
+
+   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: the backups were not found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json object action: action that is requested
 
 ____
 
@@ -807,10 +974,20 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     Content-Type: application/json
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
+   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: the VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string <key>: values to store under this key
 
 ____
 
@@ -826,14 +1003,14 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(paths:metadata) HTTP/1.1
      host: cloud.project-fifo.net
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
@@ -884,7 +1061,7 @@ ____
   :status 403: user is not authorized
   :status 503: one or more subsystems could not be reached
 
-  :>json object services: 
+  :>json object services: services!
 
 .. todo::
 
@@ -913,7 +1090,7 @@ ____
      Content-Type: application/json;charset=UTF-8
 
      {
-       "action": "disable", 
+       "action": "disable",
        "service": "svc:/system/svc/restarter:default"
      }
 
@@ -922,8 +1099,26 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     Content-Type: application/json
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
+
+   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: the VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json object action: action that is requested
+   :<json object service: 
+
+   .. todo::
+
+    Description for :<json object service has to be added
+
+
 
 

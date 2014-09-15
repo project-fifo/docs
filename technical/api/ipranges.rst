@@ -48,11 +48,6 @@ API - IPranges
 ____
 
 
-
-
-
-
-
 .. http:post:: /ipranges
 
    Creates/Updates an iprange.
@@ -66,11 +61,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:get:: /ipranges/(uuid:iprange)
@@ -140,10 +130,6 @@ ____
 ____
 
 
-
-
-
-
 .. http:post:: /ipranges/(uuid:iprange)
 
    Obtains an IP.
@@ -157,10 +143,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
 
 
 .. http:delete:: /ipranges/(uuid:iprange)
@@ -194,10 +176,6 @@ ____
 ____
 
 
-
-
-
-
 .. http:delete:: /ipranges/(uuid:iprange)/<ip>
 
    Releases <IP> from iprange with given *uuid*.
@@ -229,10 +207,6 @@ ____
 ____
 
 
-
-
-
-
 .. http:put:: /ipranges/(uuid:iprange)/metadata[/...]
 
    Sets a metadata key for iprange with given *uuid*.
@@ -246,10 +220,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
 
 
 .. http:delete:: /ipranges/(uuid:iprange)/metadata/...

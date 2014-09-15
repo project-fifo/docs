@@ -48,11 +48,6 @@ API - Networks
 ____
 
 
-
-
-
-
-
 .. http:post:: /networks
 
    Create a new network.
@@ -66,11 +61,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:get:: /networks/(uuid:network)
@@ -125,12 +115,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:delete:: /networks/(uuid:network)
 
    Deletes network with given *uuid*.
@@ -162,12 +146,6 @@ ____
 ____
    
 
-
-
-
-
-
-
 .. http:put:: /networks/(uuid:network)/ipranges/<iprange>
 
    Adds an <iprange> for network with given *uuid*.
@@ -181,12 +159,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /networks/(uuid:network)/ipranges/<iprange>
@@ -220,11 +192,6 @@ ____
 ____
 
 
-
-
-
-
-
 .. http:put:: /networks/(uuid:network)/metadata[/...]
 
    Sets a metadata key for network with given *uuid*.
@@ -238,11 +205,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:delete:: /networks/(uuid:network)/metadata/...

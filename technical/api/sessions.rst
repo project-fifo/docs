@@ -83,18 +83,20 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
-	  DELETE /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16 HTTP/1.1
-	  host: cloud.project-fifo.net
+     DELETE /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16 HTTP/1.1
+     host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
-	  HTTP/1.1 204 No Content
-
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+   
+   :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
 
    :status 204: the session was successfully deleted

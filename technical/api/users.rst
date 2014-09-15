@@ -48,12 +48,6 @@ API - Users
 ____
 
 
-
-
-
-
-
-
 .. http:post:: /users
 
    Creates a new user.
@@ -67,12 +61,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /users/(uuid:user)
@@ -137,12 +125,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:put:: /users/(uuid:user)
 
    Changes password for user with given *uuid*.
@@ -156,12 +138,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /users/(uuid:user)
@@ -193,12 +169,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
       
 .. http:get:: /users/(uuid:user)/permissions
@@ -245,14 +215,6 @@ ____
 ____
  
 
-
-
-
-
-
-
-
-
 .. http:put:: /users/(uuid:user)/permissions/<permission>
 
    Grants <permission> to user with given *uuid*.
@@ -267,12 +229,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /users/(uuid:user)/permissions/<permission>
@@ -305,12 +261,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /users/(uuid:user)/roles
@@ -355,12 +305,6 @@ ____
 
 ____
       
-
-
-
-
-
-
 
 .. http:put:: /users/(uuid:user)/roles/(uuid:role)
 
@@ -410,14 +354,6 @@ ____
 ____
 
 
-
-
-
-
-
-
-
-
 .. http:get:: /users/(uuid:user)/keys
 
    Lists all install keys for user with given *uuid*.
@@ -462,14 +398,6 @@ ____
 ____
 
 
-
-
-
-
-
-
-
-
 .. http:put:: /users/(uuid:user)/keys
 
    Adds a new SSH key to user with given *uuid*.
@@ -483,12 +411,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /users/(uuid:user)/keys/(uuid:key)
@@ -520,12 +442,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /users/(uuid:user)/yubikeys
@@ -571,13 +487,6 @@ ____
 ____
 
 
-
-
-
-
-
-
-
 .. http:put:: /users/(uuid:user)/yubikeys
 
    Adds a new SSH key to user with given *uuid*.
@@ -591,12 +500,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
-
 
 
 .. http:delete:: /users/(uuid:user)/yubikeys/(uuid:key)
@@ -628,12 +531,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-
-
-
-
-
-
 
 
 .. http:get:: /users/(uuid:user)/orgs
@@ -679,14 +576,6 @@ ____
 ____
 
 
-
-
-
-
-
-
-
-
 .. http:put:: /users/<(uuid:user)>/orgs/(uuid:org)
 
    Joins user with given *uuuid* to org with given *uuid* (optionally sets it to active).
@@ -703,12 +592,6 @@ ____
 ____
 
 
-
-
-
-
-
-
 .. http:put:: /users/(uuid:user)/metadata[/...]
 
    Sets a metadata key for user with given *uuid*.
@@ -722,11 +605,6 @@ ____
   Example Requests & Responses still missing.
 
 ____
-
-
-
-
-
 
 
 .. http:delete:: /users/(uuid:user)/metadata/...
@@ -756,5 +634,6 @@ ____
    :status 204: the metadata key was successfully deleted from the user
    :status 404: the metadata key was not found for the user
    :status 503: one or more subsystems could not be reached
+
 
 

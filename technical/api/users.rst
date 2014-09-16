@@ -252,7 +252,7 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
   
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16

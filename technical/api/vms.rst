@@ -184,7 +184,7 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
@@ -193,35 +193,35 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-     {
-      "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-      "alias": "fifo",
-      "owner": "739faa0d-d098-496c-a87b-dc95520f8d12",
+      {
+       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+       "alias": "fifo",
+       "owner": "739faa0d-d098-496c-a87b-dc95520f8d12",
 
-      "dataset": "e50552e8-e617-4ed3-98a6-ff5641f426f3",
-      "package": "e1618837-be96-4e10-8c5f-41c223607c65",
-      "hypervisor": "e57992d1-f4bc-4795-8582-5cb982a8b3ad",
-      "network_map": {"192.168.0.8": "daf72785-000b-4abb-8f30-d862405d3bb2"},
+       "dataset": "e50552e8-e617-4ed3-98a6-ff5641f426f3",
+       "package": "e1618837-be96-4e10-8c5f-41c223607c65",
+       "hypervisor": "e57992d1-f4bc-4795-8582-5cb982a8b3ad",
+       "network_map": {"192.168.0.8": "daf72785-000b-4abb-8f30-d862405d3bb2"},
 
-      "config": {},
-      "info": {},
-      "services": {},
-      "backups": {},
-      "snapshots": {},
+       "config": {},
+       "info": {},
+       "services": {},
+       "backups": {},
+       "snapshots": {},
 
-      "logs": [],
-      "groupings": [],
-      "state": "running",
+       "logs": [],
+       "groupings": [],
+       "state": "running",
 
-      "metadata": {}
-     }
+       "metadata": {}
+      }
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader content-type: the returned datatype, usually ``application/json``
@@ -507,9 +507,9 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      host: cloud.project-fifo.net
 
-    **Example response**:
+   **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 204 No Content
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
@@ -584,10 +584,10 @@ ____
 
    .. sourcecode:: http
 
-      POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots HTTP/1.1
-      Accept: application/json
-      Content-Type: application/json
-      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots HTTP/1.1
+     Accept: application/json
+     Content-Type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       {"comment": "a snapshot"}
 
@@ -596,10 +596,10 @@ ____
 
    .. sourcecode:: http
 
-      HTTP/1.1 303 See Other
-      vary: accept
-      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/baff8394-08cc-4612-826e-717e75321650
+     HTTP/1.1 303 See Other
+     vary: accept
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/baff8394-08cc-4612-826e-717e75321650
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -658,12 +658,6 @@ ____
    :>json object snapshot: data still missing
 
 
-.. todo:: 
-
-  * Response as object has to be checked. If incorrect :>json ... snapshot has to be eddited accordingly.
-
-  * data has to be added for :>json object snapshot
-
 ____
 
 
@@ -673,18 +667,26 @@ ____
 
    **Related permissions**
 
-    vms -> UUID -> rollback
+     vms -> UUID -> rollback
 
-    PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/baff8394-08cc-4612-826e-717e75321650 HTTP/1.1
-    Accept: application/json
-    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
-    Content-Type: application/json
+   **Example request**:
 
-    {"action":"rollback"}
+   .. sourcecode:: http
 
-    HTTP/1.1 204 No Content
-    x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
-    vary: accept
+     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/ HTTP/1.1
+     Accept: application/json
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Content-Type: application/json
+
+      {"action":"rollback"}
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     vary: accept
 
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
@@ -936,7 +938,7 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 204 No Content
 

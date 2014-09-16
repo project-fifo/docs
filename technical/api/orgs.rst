@@ -15,23 +15,23 @@ API - Organizations
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-        GET /orgs HTTP/1.1
-        host: cloud.project-fifo.net
-        accept: applicaiton/json
-        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     GET /orgs HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 200 OK
-       vary: Accept
-       content-type: application/json
-       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
   
-       ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
+     ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
@@ -73,28 +73,28 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       GET /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
-       accept: applicaiton/json
-       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     GET /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-     .. sourcecode:: http
+   .. sourcecode:: http
 
-      HTTP/1.1 200 OK
-      vary: Accept
-      content-type: application/json
-      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-       {
-       "name": "Project-FiFo",
-       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-       "triggers": {},
-       "metadata": {}
-       }
+     {
+     "name": "Project-FiFo",
+     "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+     "triggers": {},
+     "metadata": {}
+     }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -124,16 +124,16 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -155,7 +155,7 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      GET /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/triggers HTTP/1.1
      host: cloud.project-fifo.net
@@ -164,7 +164,7 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -214,16 +214,16 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/triggers/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/triggers/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -260,16 +260,16 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
+     host: cloud.project-fifo.net
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session

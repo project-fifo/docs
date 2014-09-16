@@ -15,23 +15,23 @@ API - DTrace
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-        GET /dtrace HTTP/1.1
-        host: cloud.project-fifo.net
-        accept: applicaiton/json
-        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     GET /dtrace HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 200 OK
-       vary: Accept
-       content-type: application/json
-       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
   
-       ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
+     ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
@@ -73,16 +73,16 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
 
-       GET /dtrace/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
-       accept: applicaiton/json
-       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     GET /dtrace/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
   
-     **Example response**:
+   **Example response**:
   
-      .. sourcecode:: http
+   .. sourcecode:: http
   
        HTTP/1.1 200 OK
        vary: Accept
@@ -142,16 +142,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /dtrace/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /dtrace/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -184,25 +186,27 @@ ____
 
    **Related permissions**
 
-      dtrace -> UUID -> edit
+     dtrace -> UUID -> edit
 
-  **Example request**:
+   **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /dtrace/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /dtrace/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-  :reqheader x-snarl-token: the snarl token for this session
-  :resheader x-snarl-token: the snarl token for this session
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
 
-  :status 204: the metadata key was successfully deleted from DTrace
-  :status 404: the metadata key was not found
-  :status 503: one or more subsystems could not be reached
+   :status 204: the metadata key was successfully deleted from DTrace
+   :status 404: the metadata key was not found
+   :status 503: one or more subsystems could not be reached
 

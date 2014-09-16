@@ -173,9 +173,38 @@ ____
 
       dtrace -> UUID -> edit
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
+
+     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
+     Accept: application/json
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Content-Type: application/json
+
+     {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     vary: accept
+
+   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: the VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string <key>: values to store under this key
+
+
 
 ____
 

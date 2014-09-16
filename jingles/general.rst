@@ -25,7 +25,7 @@ Enter your valid credentials and click the "**Ok**" button to authenticate and l
 Dashboard
 #########
 
-.. image:: /_static/images/jingles/dashboard.jpg
+.. image:: /_static/images/jingles/dashboard.png
 
 The *Dashboard* is designed to give you a "*10,000 foot view*" or single pane of glass into your operational cloud. In future versions of *FiFo* this page may have additional dials and graphs for things such as average CPU usage and disk IO across your cloud as well as the possibility to show that a virtual machine is currently being heavily zfs io throttled or that it's nearing its memory RSS limits.
 

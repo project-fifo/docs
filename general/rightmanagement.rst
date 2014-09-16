@@ -15,29 +15,29 @@ Permissions
 
 *FiFo's* permission system uses a nested tree to represent its permissions going from the general to the specific. Generally the second level is the UUID of the element with the exception of the ``cloud`` tree.
 
-  ::
-
-   --vms
-   |   |
-   |   `vm1
-   |   |    |
-   |   |    `get
-   |   |    |
-   |   |    `stop
-   |   |
-   |   `vm2
+ ::
+    
+   .--vms--.
    |       |
-   |       `_
+   |       `vm1---.
+   |       |      |
+   |       |      `get
+   |       |      |
+   |       |      `stop
+   |       |
+   |       `vm2
+   |          |
+   |          `-
    |
    `--users
-   |   |
-   |   `_
-   |       |
-   |       `get
+   |      |
+   |      `---.
+   |          |
+   |          `get
    |
    `--roles
-   |   |
-   |   `...
+   |      |
+   |      `...
 
 
 For simplicity permissions are represented by the path of the permission joined by ``->``. There are two special permissions, ``...`` which represents the "everything below this level" and ``_`` to everything at this level.
@@ -231,7 +231,7 @@ Triggers
 
 
 RO
-``
+`
 
 Read Only users that can see VMs but are not allowed to work with them.
 

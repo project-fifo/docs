@@ -15,23 +15,23 @@ API - Users
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-        GET /users HTTP/1.1
-        host: cloud.project-fifo.net
-        accept: applicaiton/json
-        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     GET /users HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 200 OK
-       vary: Accept
-       content-type: application/json
-       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
   
-       ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
+     ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
@@ -73,7 +73,7 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
@@ -82,7 +82,7 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -150,16 +150,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -181,7 +183,7 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions HTTP/1.1
      host: cloud.project-fifo.net
@@ -190,7 +192,7 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -242,16 +244,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions/users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/... HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions/users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/... HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+    .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -273,7 +277,7 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/roles HTTP/1.1
      host: cloud.project-fifo.net
@@ -282,7 +286,7 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -333,16 +337,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/roles/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/roles/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -364,7 +370,7 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys HTTP/1.1
      host: cloud.project-fifo.net
@@ -373,7 +379,7 @@ ____
    
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -423,16 +429,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -454,7 +462,7 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/yubikeys HTTP/1.1
      host: cloud.project-fifo.net
@@ -463,7 +471,7 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -512,16 +520,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/yubikeys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/yubikeys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+      host: cloud.project-fifo.net
+      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -543,7 +553,7 @@ ____
 
    **Example request**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/orgs HTTP/1.1
      host: cloud.project-fifo.net
@@ -552,7 +562,7 @@ ____
 
    **Example response**:
 
-    .. sourcecode:: http
+   .. sourcecode:: http
 
      HTTP/1.1 200 OK
      vary: Accept
@@ -617,16 +627,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session

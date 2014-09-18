@@ -5,6 +5,14 @@
 User Management
 ***************
 
+To get to *Fifo's* user management section: 
+
+1. Click **More** on the home screen and than select **Configuration**.
+
+2. Than select *+Users and Roles**
+
+.. image:: /_static/images/jingles/users_getto.png
+
 Users
 #####
 

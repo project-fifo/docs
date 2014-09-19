@@ -32,22 +32,22 @@ When used together with `LeoFS <https://leofs.org>`_ or other S3 compatible syst
     Size of the chunks for uploading to the S3 storage.
 
 `parallel_uploads`
-    Initial number of paralel uploads to S3.
+    Initial number of parallel uploads to S3.
 
 `max_paralell_uploads`
-    Maximal number of paralel uploads to S3.
+    Maximal number of parallel uploads to S3.
 
 `preload`
-    Number of chunks to prefreth when downloading from S3.
+    Number of chunks to prefetch when downloading from S3.
 
 `s3_download_chunk_size`
-    Size of the chunks for downloading fomr the S3 storage.
+    Size of the chunks for downloading from the S3 storage.
 
 `paralell_downloads`
-    Initial number of paralel downloads from S3.
+    Initial number of parallel downloads from S3.
 
 `max_paralell_downloads`
-    Maximal number of paralel downloads from S3.
+    Maximal number of parallel downloads from S3.
 
 Intervals
 *********
@@ -66,7 +66,7 @@ Chunter allows the users to configure various intervals that get a balance betwe
     Generally the more often this happen the lower are the chances a state is misrepresented but the higher is the load on the system. This operation is fairly inexpensive.
 
 `zpool_interval`
-    The interval in which the zpool is checked for degrated disks. This is a more expensive opperation so it should not be executed not too frequently. Generaly an interval of 15s means that in a worst case a degraded pool stays undetected for 15s.
+    The interval in which the zpool is checked for degraded disks. This is a more expensive operation so it should not be executed not too frequently. Generally an interval of 15s means that in a worst case a degraded pool stays undetected for 15s.
 
 `arc_interval`
     The interval in which the systems ARC status is checked. This is purely informational and slowly changing a higher interval is usually not a issue.

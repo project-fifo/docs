@@ -8,7 +8,7 @@ Configuration
 Configuration file
 ##################
 
-`Snarl's <../snarl.html>`_ configuration file is located in ``/opt/local/fifo-snarl/etc/snarl.conf``. It is automatically generated on the first install and will not be overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/snarl/etc/snarl.conf.example``.
+`Snarl's <../snarl.html>`_ configuration file is located in ``/opt/local/fifo-snarl/etc/snarl.conf``. It is automatically generated on the first install and will not be overwritten on updates. Nonetheless the newest version of the file is always located in ``/opt/local/snarl/etc/snarl.conf.example``.
 
 The configuration file is documented in-line but we'll go over some more interesting settings here.
 
@@ -41,7 +41,7 @@ Database
 Multi DC support
 ****************
 
-The mutli DC support in FiFo is based in `Snarl <../snarl.html>`_. It works by synchronizing user data between all data-centers. Synchronization happens on a point to point system meaning that each `Snarl <../snarl.html>`_ instance in ``DC1`` synchronizes with one system in ``DC2``.
+The multi DC support in FiFo is based in `Snarl <../snarl.html>`_. It works by synchronizing user data between all data-centers. Synchronization happens on a point to point system meaning that each `Snarl <../snarl.html>`_ instance in ``DC1`` synchronizes with one system in ``DC2``.
 
 By default the synchronization subsystem is disabled. It needs to be enabled and configured in order to properly propagate data.
 

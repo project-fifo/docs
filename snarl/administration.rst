@@ -5,7 +5,7 @@
 Administration
 **************
 
-The `Snarl <../snarl.html>`_ admin command is ``/opt/local/fifo-snarl/bin/snarl-admin`` but many commands can also be accessed via ``fifoadm`` command. Please keep in mind that ``fifoadm`` is not designed as a every day command but only as a last fallback when commands are not available through the API.
+The `Snarl <../snarl.html>`_ admin command is ``/opt/local/fifo-snarl/bin/snarl-admin`` but many commands can also be accessed via ``fifoadm`` command. Please keep in mind that ``fifoadm`` is not designed as a every day command but only as a last fall-back when commands are not available through the API.
 
 General Management
 ##################
@@ -67,7 +67,7 @@ snarl-admin member-status
 
 
 snarl-admin ring-status
-    Gives an extended report on the ring including handoffs and downed nodes.
+    Gives an extended report on the ring including hand-offs and downed nodes.
 
     ::
 
@@ -84,7 +84,7 @@ snarl-admin ring-status
 
 
 snarl-admin status
-    A simple command that returns the overall cluster status. It returns a propper return code and is useful for scripted rolling updates.
+    A simple command that returns the overall cluster status. It returns a proper return code and is useful for scripted rolling updates.
 
 snarl-admin aae-status
     Gives a detailed status on the AAE status of the system.
@@ -92,10 +92,10 @@ snarl-admin aae-status
 Log Files
 #########
 
-*FiFo* uses extensive logging to make debugging issue and understanding behaviour. The log files are located in ``/var/log/snarl/``. There are multiple log files with various severities.
+*FiFo* uses extensive logging to make debugging issue and understanding behavior. The log files are located in ``/var/log/snarl/``. There are multiple log files with various severities.
 
 debug.log
-    By default the debug log is disabled, it is very verbose and should not be enabled in production systems to enable it uncomment the followig line in the ``snarl.conf``
+    By default the debug log is disabled, it is very verbose and should not be enabled in production systems to enable it uncomment the following line in the ``snarl.conf``
 
     ::
 
@@ -106,7 +106,7 @@ console.log
     This file contains logs of the level info and above, usually all interesting logs can be found here.
 
 error.log
-    This files contains errors, it usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavuiour so sporadic entries might just be fine.
+    This files contains errors, it usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavior so sporadic entries might just be fine.
 
 General tasks
 #############
@@ -115,7 +115,7 @@ snarl-admin ``users|role`` add ``<realm>`` ``<name>``
     Adds a user or role, especially helpful when no users exist yet.
 
 snarl-admin ``users|role`` grant ``<realm>`` ``<name>`` ``<permission>`` ``[<permission>]``
-    Grants a user or role permissions. A permission can have multiple epements so: ``snarl-admin users grant user some special permissions`` would grant ``some->special->permissions`` to ``user``. ``...`` and ``_`` are special cases and not taken as strings but as the wildcards for the permission section where ``_`` means this level matches and ``...`` means evertying below this level matches.
+    Grants a user or role permissions. A permission can have multiple elements so: ``snarl-admin users grant user some special permissions`` would grant ``some->special->permissions`` to ``user``. ``...`` and ``_`` are special cases and not taken as strings but as the wildcards for the permission section where ``_`` means this level matches and ``...`` means everything below this level matches.
 
 snarl-admin ``users`` passwd ``<realm>`` ``<username>`` ``<password>``
     Changes the password for a user.

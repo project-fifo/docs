@@ -10,16 +10,16 @@ Configuration file
 
 `Sniffle <../sniffle.html>`_'s configuration file is located in ``/opt/local/fifo-sniffle/etc/sniffle.conf``. It is automatically generated on the first install and not overwritten on updates. Nonetheless the newst version of the file is always located in ``/opt/local/fifo-sniffle/etc/sniffle.conf.example``.
 
-The configuration file is documented inline but we'll go over go over some more interesting settings here.
+The configuration file is documented in-line but we'll go over go over some more interesting settings here.
 
 Active Anti Entropy (AAE)
 *************************
 
-AAE is riak's mechanism of background synchronization of systems to ensure a higher data consistency. It was ported to *FiFo* in order to offer incrased stability in multi node setups. AAE increases the required resources conciderably and does not have much use with a single system so it is **disabled by default**.
+AAE is riak's mechanism of background synchronization of systems to ensure a higher data consistency. It was ported to *FiFo* in order to offer increased stability in multi node setups. AAE increases the required resources considerably and does not have much use with a single system so it is **disabled by default**.
 
 .. Attention::
 
-  When having more then one system it is strongly recommanded to enable AAE! It is possible to selectively enable and disable for different subsystems. Generally it is OK keep it disabled for ``images`` since data does not chagne, all other systems should be switched on.
+  When having more then one system it is strongly recommended to enable AAE! It is possible to selectively enable and disable for different subsystems. Generally it is OK keep it disabled for ``images`` since data does not change, all other systems should be switched on.
 
 ::
 
@@ -37,7 +37,7 @@ AAE is riak's mechanism of background synchronization of systems to ensure a hig
 Database
 ********
 
-*FiFo* uses *LevelDB* as its backend database. LevelDB has many different tuneables some of the more important ones are.
+*FiFo* uses *LevelDB* as its back-end database. LevelDB has many different tune-ables some of the more important ones are.
 
 
 ring_size
@@ -77,13 +77,13 @@ Shows a list of all settings in the global configuration.
 Sniffle-admin config set ``<key>`` ``<value>``
 **********************************************
 
-Sets a global config value please see the followign sections for valid settings.
+Sets a global config value please see the following sections for valid settings.
 
 storage.general.backend
     The backend used to store images, this can either be ``internal`` or ``s3``. This needs to be set to ``s3`` to enable backups, ``internal`` only supports storing datasets / images.
 
 storage.s3.host
-    The host for the S3 this needs to be a domainname to propperly work, the domainname either needs to resolve or be in the ``/etc/hosts``.
+    The host for the S3 this needs to be a domain name to properly work, the domain name either needs to resolve or be in the ``/etc/hosts``.
 
 storage.s3.port
     The port for the S3's HTTPS interface, please note that HTTP is not supported.
@@ -101,4 +101,4 @@ storage.s3.image_bucket
     The bucket used for datasets/images.
 
 storage.s3.snapshot_bucket
-    The bucket used for backups, the bakups are stored in the format ``<vm uuid>/<backup uuid>``.
+    The bucket used for backups, the backups are stored in the format ``<vm uuid>/<backup uuid>``.

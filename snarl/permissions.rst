@@ -11,7 +11,7 @@ Users
 User permissions start with ``users->`` followed by the UUID of the user. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->users->list``
-    Allows to list users, the ``get`` permission on each user determins which users are seen during the list.
+    Allows to list users, the ``get`` permission on each user determines which users are seen during the list.
 
 ``cloud->users->create``
     Allows the to create new users.
@@ -46,7 +46,7 @@ Roles
 Role permissions start with ``roles->`` followed by the UUID of the role. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->roles->list``
-    Allows to list roles, the ``get`` permission on each role determins which users are seen during the list.
+    Allows to list roles, the ``get`` permission on each role determines which users are seen during the list.
 
 ``cloud->roles->create``
     Allows the to create new roles.
@@ -70,7 +70,7 @@ Role permissions start with ``roles->`` followed by the UUID of the role. In add
     Allows to have a user join the role.
 
 ``roles-><UUID>->leave``
-    Allows to removea user from the role.
+    Allows to remove a user from the role.
 
 Organisations
 #############
@@ -78,7 +78,7 @@ Organisations
 Role Permissions start with ``orgs->`` followed by the UUID of the organisation. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->orgs->list``
-    Allows to list organisations, the ``get`` permission on each organisation determins which users are seen during the list.
+    Allows to list organisations, the ``get`` permission on each organisation determines which users are seen during the list.
 
 ``cloud->orgs->create``
     Allows the to create new organisations.

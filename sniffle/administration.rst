@@ -5,9 +5,9 @@
 Administration
 **************
 
-The `Sniffle <../sniffle.html>`_ admin command is ``sniffle-admin`` but many commands can also be accessed via ``fifoadm`` command. Please keep in mind that ``fifoadm`` is not designed as an every day command but only as a last fallback when commands are not available through the API.
+The `Sniffle <../sniffle.html>`_ admin command is ``sniffle-admin`` but many commands can also be accessed via ``fifoadm`` command. Please keep in mind that ``fifoadm`` is not designed as an every day command but only as a last fall-back when commands are not available through the API.
 
-General managemnet
+General management
 ##################
 
 `Sniffle <../sniffle.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. `Sniffle <../sniffle.html>`_ can be enabled, disabled and restarted via: ``svcadm enable sniffle``, ``svcadm disable sniffle`` and ``svcadm restart sniffle``
@@ -29,7 +29,7 @@ Updating
 2. Updating the config
 **********************
 
-After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
+After the newest package is installed the config file should be checked for changes and edited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
 .. code-block:: bash
 
@@ -67,7 +67,7 @@ sniffle-admin member-status
     +--------+----------+---------+-----------+-----------------------+
 
 sniffle-admin ring-status
-    Gives a extended report on the ring, including handoffs and downed nodes.
+    Gives a extended report on the ring, including hand-offs and downed nodes.
 
     +-------------------------------------------------------------------+
     |Claimant                                                           |
@@ -92,7 +92,7 @@ sniffle-admin ring-status
     +-------------------------------------------------------------------+
 
 sniffle-admin status
-    A simple command that returns the overall cluster status, it returns a propper return code and is useful for scripted rolling updates.
+    A simple command that returns the overall cluster status, it returns a proper return code and is useful for scripted rolling updates.
 
 
 sniffle-admin aae-status
@@ -101,11 +101,11 @@ sniffle-admin aae-status
 Log Files
 #########
 
-*FiFo* uses extensive logging to make debugging issue and understanding behaviour. The log files are located in ``/var/log/sniffle/``. There are multiple log files with various severities.
+*FiFo* uses extensive logging to make debugging issue and understanding behavior. The log files are located in ``/var/log/sniffle/``. There are multiple log files with various severities.
 
 
 debug.log
-    By default the debug log is disabled, it is very verbose and should not be enabled in production systems. To enable it uncomment the followig line in the ``sniffle.conf``
+    By default the debug log is disabled, it is very verbose and should not be enabled in production systems. To enable it uncomment the following line in the ``sniffle.conf``
 
     ::
 
@@ -115,13 +115,13 @@ console.log
     This file contains logs of the level info and above, usually all interesting logs can be found here.
 
 error.log
-    This files contains errors, it usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavuiour so sporadic entries might just be fine.
+    This files contains errors, it usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavior so sporadic entries might just be fine.
 
 General tasks
 #############
 
 sniffle-admin hypervisors <subcommand>
-    * list - lists all avaiable hypervisors
+    * list - lists all available hypervisors
     * delete ``<uuid>`` - removes a hypervisor
 
 sniffle-admin vms

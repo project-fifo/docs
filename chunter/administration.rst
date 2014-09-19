@@ -5,10 +5,10 @@
 Administration
 **************
 
-General managemnet
+General management
 ##################
 
-`Chunter <../chunter.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. Chunter can be enabled, disabled and restaerted via: ``svcadm enable chunter``, ``svcadm disable chunter`` and ``svcadm restart chunter``
+`Chunter <../chunter.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. Chunter can be enabled, disabled and restarted via: ``svcadm enable chunter``, ``svcadm disable chunter`` and ``svcadm restart chunter``
 
 Updating
 ********
@@ -35,7 +35,7 @@ After the newest package is installed the config file should be checked for chan
 Restarting the service
 **********************
 
-Chunter can be restarte by running ``svcadm restart chunter``.
+Chunter can be restarted by running ``svcadm restart chunter``.
 
 Manually created VM's
 *********************

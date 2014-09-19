@@ -92,9 +92,9 @@ With 0.4.4 there is a considerable update to the database. Therefore additional 
  sniffle-admin db update
  snarl-admin db update
 
-These changes also affect the AAE code. Therefore when AAE is enabled the old AAE data needs to be deleted. This has no impact on the system itself. 
+These changes also affect the *AAE code*. Therefore when AAE is enabled the old AAE data needs to be deleted. This has no impact on the system itself. 
 
-.. note::
+.. attention::
 
   The services should be disabled when the AAE data is deleted!
 
@@ -112,29 +112,35 @@ This version introduces a new system for config files. The aim is to make *FiFo*
 
 .. attention::
 
-   Old files will conflict with the existing ones so it is important to transfer the changes form the old files and adjust them accordingly in the new files and then **delete** the old files.
+ Old files will conflict with the existing ones so **it is important to transfer the changes form the old files, adjust them accordingly in the new files and then delete the old files**.
 
-* `Chunter <../chunter.html>`_
+`Chunter <../chunter.html>`_
+++++++++++++++++++++++++++++
 
-    The old files are ``/opt/chunter/etc/sys.config`` and ``/opt/chunter/etc/app.config`` which are replaced by ``/opt/chunter/etc/chunter.conf``
+The old files are ``/opt/chunter/etc/sys.config`` and ``/opt/chunter/etc/app.config`` which are replaced by ``/opt/chunter/etc/chunter.conf``
 
-* `Sniffle <../sniffle.html>`_
+`Sniffle <../sniffle.html>`_
+++++++++++++++++++++++++++++
 
-    The old files are ``/opt/local/fifo-sniffle/etc/sys.config`` and ``/opt/local/fifo-sniffle/etc/app.config`` which are replaced by ``/opt/local/fifo-sniffle/etc/sniffle.conf``
+The old files are ``/opt/local/fifo-sniffle/etc/sys.config`` and ``/opt/local/fifo-sniffle/etc/app.config`` which are replaced by ``/opt/local/fifo-sniffle/etc/sniffle.conf``
 
-* `Snarl <../snarl.html>`_
+`Snarl <../snarl.html>`_
+++++++++++++++++++++++++
 
-    The old files are ``/opt/local/fifo-snarl/etc/sys.config`` and ``/opt/local/fifo-snarl/etc/app.config`` which are replaced by ``/opt/local/fifo-snarl/etc/snarl.conf``
+The old files are ``/opt/local/fifo-snarl/etc/sys.config`` and ``/opt/local/fifo-snarl/etc/app.config`` which are replaced by ``/opt/local/fifo-snarl/etc/snarl.conf``
 
-* `Howl <../howl.html>`_
+`Howl <../howl.html>`_
+++++++++++++++++++++++
 
-    The old files are ``/opt/local/fifo-howl/etc/sys.config`` and ``/opt/local/fifo-howl/etc/app.config`` which are replaced by ``/opt/local/fifo-howl/etc/howl.conf``
+The old files are ``/opt/local/fifo-howl/etc/sys.config`` and ``/opt/local/fifo-howl/etc/app.config`` which are replaced by ``/opt/local/fifo-howl/etc/howl.conf``
 
-* `Wiggle <../wiggle.html>`_
+`Wiggle <../wiggle.html>`_
+++++++++++++++++++++++++++
+ 
+The old files are ``/opt/local/fifo-wiggle/etc/sys.config`` and ``/opt/local/fifo-wiggle/etc/app.config`` which are replaced by ``/opt/local/fifo-wiggle/etc/wiggle.conf``
 
-    The old files are ``/opt/local/fifo-wiggle/etc/sys.config`` and ``/opt/local/fifo-wiggle/etc/app.config`` which are replaced by ``/opt/local/fifo-wiggle/etc/wiggle.conf``
 
+`Jingles <../jingles.html>`_
+++++++++++++++++++++++++++++
 
-* `Jingles <../jingles.html>`_
-
-    The location of the `Jingles <../jingles.html>`_ has changed. Therefore the nginx config has to be changed or the new templated has to be used. Details can be found in the message printed during installation.
+**The location of the `Jingles <../jingles.html>`_ has changed.** Therefore the nginx config has to be changed or the new templated has to be used. *Details can be found in the message printed during installation*.

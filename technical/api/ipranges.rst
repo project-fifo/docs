@@ -15,23 +15,23 @@ API - IPranges
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-        GET /ipranges HTTP/1.1
-        host: cloud.project-fifo.net
-        accept: applicaiton/json
-        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     GET /ipranges HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 200 OK
-       vary: Accept
-       content-type: application/json
-       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
   
-       ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
+     ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
@@ -73,36 +73,36 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
 
-       GET /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
-       accept: applicaiton/json
-       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     GET /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: applicaiton/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 200 OK
-       vary: Accept
-       content-type: application/json
-       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
   
-       {
-        "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
-        "name": "admin",
+     {
+      "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
+      "name": "admin",
   
-        "network": "739faa0d-d098-496c-a87b-dc95520f8d12",
-        "netmask": "255.255.255.0",
-        "gateway": "192.168.0.1",
-        "tag": "admin",
-        "vlan": 0,
+      "network": "739faa0d-d098-496c-a87b-dc95520f8d12",
+      "netmask": "255.255.255.0",
+      "gateway": "192.168.0.1",
+      "tag": "admin",
+      "vlan": 0,
   
-        "free": ["192.168.0.10", "192.168.0.11", "192.168.0.12", "192.168.0.13"],
-        "used": ["192.168.0.9", "192.168.0.8"],
-        "metadata": {}
-       }
+      "free": ["192.168.0.10", "192.168.0.11", "192.168.0.12", "192.168.0.13"],
+      "used": ["192.168.0.9", "192.168.0.8"],
+      "metadata": {}
+     }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -155,16 +155,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -186,16 +188,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/<ip> HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/<ip> HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -215,9 +219,40 @@ ____
 
       ipranges -> UUID -> edit
 
-.. todo::
-    
-  Example Requests & Responses still missing.
+   **Example request**:
+
+   .. sourcecode:: http
+
+     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
+     Accept: application/json
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Content-Type: application/json
+
+     {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     vary: accept
+
+   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: the VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string <key>: values to store under this key
+
+
+
+
 
 ____
 
@@ -232,16 +267,18 @@ ____
 
    **Example request**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
-       host: cloud.project-fifo.net
+     DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
+     host: cloud.project-fifo.net
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
 
-      .. sourcecode:: http
+   .. sourcecode:: http
   
-       HTTP/1.1 204 No Content
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session

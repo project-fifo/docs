@@ -12,7 +12,7 @@ Datasets
 Dataset Permissions start with ``datasets->`` followed by the UUID of the dataset. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->datasets->list``
-    Allows to list datasets, the ``get`` permission on each dataset determins which users are seen during the list.
+    Allows to list datasets, the ``get`` permission on each dataset determines which users are seen during the list.
 
 ``cloud->datasets->create``
     Allows the to create new datasets.
@@ -32,7 +32,7 @@ D-Trace
 D-Trace Permissions start with ``dtraces->`` followed by the UUID of the dtrace. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->dtraces->list``
-    Allows to list dtraces, the ``get`` permission on each dtrace determins which users are seen during the list.
+    Allows to list dtraces, the ``get`` permission on each dtrace determines which users are seen during the list.
 
 ``cloud->dtraces->create``
     Allows the to create new dtraces.
@@ -55,7 +55,7 @@ Hypervisors
 Hypervisor Permissions start with ``hypervisors->`` followed by the UUID of the hypervisor. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->hypervisors->list``
-        Allows to list hypervisors, the ``get`` permission on each hypervisor determins which users are seen during the list.
+        Allows to list hypervisors, the ``get`` permission on each hypervisor determines which users are seen during the list.
 
 ``cloud->hypervisors->create``
     Allows the to create new hypervisors.
@@ -78,7 +78,7 @@ IP-Ranges
 IP-Range Permissions start with ``ipranges->`` followed by the UUID of the iprange. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->ipranges->list``
-    Allows to list ipranges, the ``get`` permission on each iprange determins which users are seen during the list.
+    Allows to list ipranges, the ``get`` permission on each iprange determines which users are seen during the list.
 
 ``cloud->ipranges->create``
 Allows the to create new ipranges.
@@ -98,7 +98,7 @@ Networks
 Network Permissions start with ``networks->`` followed by the UUID of the network. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->networks->list``
-    Allows to list networks, the ``get`` permission on each network determins which users are seen during the list.
+    Allows to list networks, the ``get`` permission on each network determines which users are seen during the list.
 
 ``cloud->networks->create``
     Allows the to create new networks.
@@ -118,7 +118,7 @@ Packages
 Package Permissions start with ``packages->`` followed by the UUID of the package. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->packages->list``
-    Allows to list packages, the ``get`` permission on each package determins which users are seen during the list.
+    Allows to list packages, the ``get`` permission on each package determines which users are seen during the list.
 
 ``cloud->packages->create``
 Allows the to create new packages.
@@ -138,7 +138,7 @@ VMs
 VMs Permissions start with ``vms->`` followed by the UUID of the VM. In addition to user specific permissions the following ``cloud`` global permission exist.
 
 ``cloud->packages->list``
-    Allows to list packages, the ``get`` permission on each package determins which vm are seen during the list.
+    Allows to list packages, the ``get`` permission on each package determines which vm are seen during the list.
 
 ``cloud->packages->create``
     Allows the to create new Vm.
@@ -162,7 +162,7 @@ VMs Permissions start with ``vms->`` followed by the UUID of the VM. In addition
     Allows to reboot the VM.
 
 ``vms-><UUID>->console``
-    Allows acces to the VMs Console or VNC, also implies full access to all SSH users.
+    Allows access to the VMs Console or VNC, also implies full access to all SSH users.
 
 ``vms-><UUID>->ssh-><USER>``
     Allows the the access to SSH into the given user (i.e. ``<USER>`` could be ``root``)

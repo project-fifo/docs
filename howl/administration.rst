@@ -7,10 +7,10 @@ Administration
 
 The `Howl <../howl.html>`_ admin command is ``howl-admin``.
 
-General managemnet
+General management
 ##################
 
-`Howl <../howl.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. `Howl <../howl.html>`_ can be enabled, disabled and restaerted via: ``svcadm enable howl``, ``svcadm disable howl`` and ``svcadm restart howl``
+`Howl <../howl.html>`_ uses the SMF to manage it's running state so it is restarted in the case of crashes and booted accordingly on system start. `Howl <../howl.html>`_ can be enabled, disabled and restarted via: ``svcadm enable howl``, ``svcadm disable howl`` and ``svcadm restart howl``
 
 Updating
 ********
@@ -28,7 +28,7 @@ Updating
 2. Updating the config
 **********************
 
-After the newest package is installed the config file should be checked for changes and eddited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
+After the newest package is installed the config file should be checked for changes and edited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
 .. code-block:: bash
 
@@ -67,7 +67,7 @@ howl-admin member-status
 
 
 howl-admin ring-status
-    Gives a extended report on the ring. Including handoffs and downed nodes.
+    Gives a extended report on the ring. Including hand-offs and downed nodes.
 
     ::
 
@@ -76,7 +76,7 @@ howl-admin ring-status
        Status:     up
        Ring Ready: true
 
-       ============================== Ownership Handoff ==============================
+       ============================== Ownership Hand-off ==============================
        No pending changes.
 
        ============================== Unreachable Nodes ==============================
@@ -93,7 +93,7 @@ howl-admin aae-status
 Log Files
 #########
 
-*FiFo* uses extensive logging to make debugging issue and understanding behaviour. The log files are located in ``/var/log/howl/``. There are multiple log files with various severities.
+*FiFo* uses extensive logging to make debugging issue and understanding behavior. The log files are located in ``/var/log/howl/``. There are multiple log files with various severities.
 
 
 debug.log
@@ -108,4 +108,4 @@ console.log
     This file contains logs of the level info and above. Usually all interesting logs can be found here.
 
 error.log
-    This files contains errors. It usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavuiour so sporadic entries might just be fine.
+    This files contains errors. It usually should be mostly empty but please keep in mind that failing is not a uncommon practice to deal with unexpected behavior so sporadic entries might just be fine.

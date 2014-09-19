@@ -11,7 +11,7 @@ To install `Chunter <../chunter.html>`_ we do the following:
 
 .. note::
 
-  - To install the relase version use *VERSION=rel*
+  - To install the release version use *VERSION=rel*
   - To install the development version use *VERSION=dev*
 
 
@@ -41,4 +41,4 @@ If the service is running you should see:
 
 Once the service is running *FiFo* will auto-discover the node and after about a minute the *SmartOS Node* will appear in the *FiFo* web browser to be managed.
 
-`Chunter <../chunter.html>`_ will try to guess the systems IP. It will look for a ``fifo0`` vnic. If this doesn't exist it will take the IP of the ``admin`` nic. If Chunter registered with a wrong IP the correct IP can be changed in the config file. After changing the IP address in the config the hypervisor need to be reregistered. This can be done by `removing it <../sniffle/administration.html>`_ and restarting Chunter ``svcadm restart chunter``).
+`Chunter <../chunter.html>`_ will try to guess the systems IP. It will look for a ``fifo0`` vnic. If this doesn't exist it will take the IP of the ``admin`` nic. If Chunter registered with a wrong IP the correct IP can be changed in the config file. After changing the IP address in the config the hypervisor need to be re-registered. This can be done by `removing it <../sniffle/administration.html>`_ and restarting Chunter ``svcadm restart chunter``).

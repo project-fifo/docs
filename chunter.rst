@@ -4,7 +4,7 @@
 Chunter
 #######
 
-Chunter is Project FiFo's hypervisor interaction service. Chunter runs on each hypervisor controlled by Project-FiFo. Chunter interacts with SmartOS to create, update, and destroy vms. Chunter also collects vm and performace data to report back to Howl.
+Chunter is Project FiFo's hypervisor interaction service. Chunter runs on each hypervisor controlled by Project-FiFo. Chunter interacts with SmartOS to create, update, and destroy vms. Chunter also collects vm and performance data to report back to Howl.
 
 
 *Chunter Section Topics:*

@@ -9,7 +9,7 @@ To get to *Fifo's* user management section:
 
 1. Click **More** on the home screen and than select **Configuration**.
 
-2. Than select *+Users and Roles**
+2. On the next page select **Users and Roles**
 
 .. image:: /_static/images/jingles/users_getto.png
 
@@ -32,9 +32,9 @@ Clicking on the hyperlinked user's name will take you to that user's detail page
 Creation - Users
 ****************
 
-To create a user click on the |add user| button.
+To create a user click on the |new user| button.
 
-.. |add user| image:: /_static/images/jingles/users-add.png
+.. |new user| image:: /_static/images/jingles/users-new.png
 
 This will take you to the new user creation page as shown below.
 

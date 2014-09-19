@@ -938,7 +938,7 @@ ____
 
    **Example response**:
 
-   .. sourcecode:: http
+    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
 

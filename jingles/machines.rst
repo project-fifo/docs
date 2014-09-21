@@ -12,19 +12,15 @@ List
 
 The **Machines** tab is the central area within the UI where new virtual machines are created and where most of the actions related to existing virtual machines are performed.
 
-1. Column Selector : Click the column selector and check the columns you would like to display.
-
-.. image:: /_static/images/jingles/machines02.png
-
-2. The filter entry area |filter entry area| is designed to selectively filter the machines that are displayed in your list by your filter criteria. The filter is designed to remember what you have typed and will continue filtering by your custom criteria even if you leave and return to the machines tab.
+1. The filter entry area |filter entry area| is designed to selectively filter the machines that are displayed in your list by your filter criteria. The filter is designed to remember what you have typed and will continue filtering by your custom criteria even if you leave and return to the machines tab.
 
 .. |filter entry area| image:: /_static/images/jingles/machines03.png
 
-3. Clicking on the |new machine button| will launch a new UI page which contains options relevant to new vm creation.
+2. Clicking on the |new machine button| will launch a new UI page which contains options relevant to new vm creation.
 
 .. |new machine button| image:: /_static/images/jingles/machines04.png
 
-4. The **Action Icons** are used to perform specific actions on machines directly from list view list.
+3. The **Action Icons** are used to perform specific actions on machines directly from list view list.
 
   1. |button 1| Launch zone/kvm console.
   2. |button 2| Power on a machine.

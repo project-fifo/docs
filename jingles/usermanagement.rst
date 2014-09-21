@@ -16,6 +16,10 @@ To get to *Fifo's* user management section:
 Users
 #####
 
+.. todo::
+
+	YubiKeys - Users & Organizations - Users subsection needs to be added.
+
 List View - Users
 *****************
 
@@ -65,8 +69,8 @@ Permissions - Users
 
 It is beyond the scope of this section to explain the permission system in necessary depth. For further information please consult the `Permissions <https://project-fifo.net/display/PF/Permissions>`_ wiki article.
 
-.. note::
-	The `Permissions <https://project-fifo.net/display/PF/Permissions>`_ wiki article is not filled with content yet.
+.. todo::
+	The `Permissions <https://project-fifo.net/display/PF/Permissions>`_ wiki article is still empty so far.
 
 Roles - Users
 *************
@@ -82,10 +86,12 @@ SSH Keys - Users
 
 .. attention::
 
-	SSH keys need to have the form 'ssh-rsa key-data key-id', other key, while valid will be refused.
+	SSH keys need to have the form 'ssh-rsa key-data key-id', keys with another format - while valid - will be refused.
 
 
 You can add your own ssh public key to your user profile by simply pasting in your key and clicking the save button. This will be used when the user creates a new machine and *FiFo* will automatically add the users key to the machines authorized_keys file. You should than be able to authenticate your ssh session without requiring password entry.
+
+____
 
 Roles
 #####
@@ -102,7 +108,9 @@ To edit an existing role simply click on the roles name hyperlink. This will tak
 Creation - Roles
 ****************
 
-To add a new role click on the add role button.
+To add a new role click on the |new roles| button.
+
+.. |new roles| image:: /_static/images/jingles/roles_new.png
 
 .. image:: /_static/images/jingles/roles02.png
 
@@ -127,6 +135,8 @@ It is beyond the scope of this section to explain the permission system in neces
 
 .. note::
 	The `Permissions <https://project-fifo.net/display/PF/Permissions>`_ wiki article is not filled with content yet.
+
+____
 
 Orgs
 ####

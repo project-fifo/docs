@@ -12,7 +12,7 @@ List
 
 The **Machines** tab is the central area within the UI where new virtual machines are created and where most of the actions related to existing virtual machines are performed.
 
-1. The filter entry area |filter entry area| is designed to selectively filter the machines that are displayed in your list by your filter criteria. The filter is designed to remember what you have typed and will continue filtering by your custom criteria even if you leave and return to the machines tab.
+1. The filter entry area |filter entry area| is designed to selectively filter the machines that are displayed in your list by your filter criteria. The filter is designed to remember the criteria you have filtered byand will continue filtering by those criteria even if you leave and return to the machines tab.
 
 .. |filter entry area| image:: /_static/images/jingles/machines03.png
 
@@ -28,6 +28,8 @@ The **Machines** tab is the central area within the UI where new virtual machine
   .. |button 1| image:: /_static/images/jingles/machines-kvm.png
   .. |button 2| image:: /_static/images/jingles/machines-zone.png
 
+____
+
 Create
 ######
 
@@ -41,9 +43,11 @@ Create
 
 .. image:: /_static/images/jingles/machines06.png
 
-6. Click the **Create** button to start machine creation.
+6. Click the |button 3| button to start machine creation.
 
+.. |button 3| image:: /_static/images/jingles/machines_new.png
 
+____
 
 Details
 #######
@@ -71,16 +75,22 @@ Details
 3. Machine sub tabs contain sub sections relevant to your machine, we will explore each one in more detail below.
 4. Sub tab display area will show you information related to the sub tab you have selected.
 5. The default "details" tab includes a color selector which will mark your vm a certain color in the "machine list" view page. This is useful for easily and quickly identifying certain machines in the list or for grouping certain types of machines by colors.
-6. Clicking on the "blue" edit configuration icon will expand a section which will allow you to change certain machine fields.
+6. Clicking on the |button configuration| configuration icon will expand a section which will allow you to change certain machine fields.
+
+.. |button configuration| image::  /_static/images/jingles/machines-configuration.png
+
+____
 
 |picture|
 
-     - **Describe** An internal own use field that can be enabled as one of the columns in machine list view.
-     - **Alias** Change the alias of the machine.
-     - **Hostname** Change the hostname of the machine.
-     - **Resolvers** Change the resolvers of the machine.
+ - **Describe**: An internal own use field that can be enabled as one of the columns in machine list view.
+ - **Alias**: Change the alias of the machine.
+ - **Hostname**: Change the hostname of the machine.
+ - **Resolvers**: Change the resolvers of the machine.
 
 .. |picture| image:: /_static/images/jingles/machines-conf.png
+
+____
 
 
 Machine Performance TAB

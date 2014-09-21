@@ -11,7 +11,7 @@ With the help of **Stacks** and **Clusters** it is possible to 'define' the desi
 
 The above view shows an overview of the Stacks and Clusters known to FiFo. They can be deleted with the little |trash| button at the end of each row. New Stacks or Clusters can be added using the **New Cluster** or **New Stack** button.
 
-.. |trash| image:: /_static/images/jingles/machines-destroy.png
+.. |trash| image:: /_static/images/jingles/groupings-destroy.png
 
 Clusters
 ########

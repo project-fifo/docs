@@ -16,7 +16,7 @@ The **Machines** tab is the central area within the UI where new virtual machine
 
 .. |filter entry area| image:: /_static/images/jingles/machines03.png
 
-2. Clicking on the |new machine button| will launch a new UI page which contains options relevant to new vm creation.
+2. Clicking on the |new machine button| will launch a new UI page which contains options relevant to new VM creation.
 
 .. |new machine button| image:: /_static/images/jingles/machines04.png
 
@@ -43,9 +43,9 @@ Create
 
 .. image:: /_static/images/jingles/machines06.png
 
-6. Click the |button 3| button to start machine creation.
+6. Click the |create button| button to start machine creation.
 
-.. |button 3| image:: /_static/images/jingles/machines_new.png
+.. |create button| image:: /_static/images/jingles/create.png
 
 ____
 
@@ -74,7 +74,7 @@ Details
 
 3. Machine sub tabs contain sub sections relevant to your machine, we will explore each one in more detail below.
 4. Sub tab display area will show you information related to the sub tab you have selected.
-5. The default "details" tab includes a color selector which will mark your vm a certain color in the "machine list" view page. This is useful for easily and quickly identifying certain machines in the list or for grouping certain types of machines by colors.
+5. The default "details" tab includes a color selector which will mark your VM a certain color in the "machine list" view page. This is useful for easily and quickly identifying certain machines in the list or for grouping certain types of machines by colors.
 6. Clicking on the |button configuration| configuration icon will expand a section which will allow you to change certain machine fields.
 
 .. |button configuration| image::  /_static/images/jingles/machines-configuration.png
@@ -132,7 +132,10 @@ Resize
 
 .. image:: /_static/images/jingles/machines10.png
 
-The **Resize** tab is used to upgrade or downgrade your vm by associating it with a different package. The cpu share, cpu cap, ram and disk size will be changed when a package is changed. To do this simply select a new package in the **Change to** area and click the **Change** button to apply the change. The change will be applied in real time if the machine is a smartmachine / zone based machine. If the machine is KVM based it will require a shutdown and startup for the changes to take effect.
+The **Resize** tab is used to upgrade or downgrade your VM by associating it with a different package. The CPU share, CPU cap, ram and disk size will be changed when a package is changed. To do this simply select a new package in the **Change to** area and select an option in the |selection panel| selection panel. Than press the |change button| to apply the change. The change will be applied in real time if the machine is a smartmachine / zone based machine. If the machine is KVM based it will require a shutdown and startup for the changes to take effect.
+
+.. |selection panel| image:: /_static/images/jingles/machines-selection.png
+.. |change button| image:: /_static/images/jingles/machines-change.png
 
 
 History

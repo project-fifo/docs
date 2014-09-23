@@ -13,12 +13,16 @@ The above view shows an overview of the Stacks and Clusters known to FiFo. They 
 
 .. |trash| image:: /_static/images/jingles/groupings-destroy.png
 
+____
+
 Clusters
 ########
 
 A **Cluster** is a collection of VMs. A Cluster guarantees that the VMs do not share the same physical hardware - thus increasing fault tolerance throughout the cluster. A **Cluster** can only be placed / assigned to a VM in the process of creatin that machine. After VM creation the **Cluster** can no longer guarantee placement. 
 
 A VM can be removed from a **Cluster** at any point in time. Viewing a **Cluster** will show all the assigned VMs and **Stacks** it is a part of.
+
+____
 
 Stacks
 ######

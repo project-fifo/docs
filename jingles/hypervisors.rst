@@ -21,6 +21,8 @@ The hypervisors section shows a list of all compute nodes / servers under **FiFo
 - **Networks** The available networks configured on that compute node.
 - **Capabilities** Shows if the node is capable of zone and KVM virtualization.
 
+____
+
 Details
 #######
 
@@ -47,12 +49,16 @@ The individual tabs relating to the hypervisor (`Performance`_ | `Characteristic
 
 	"4." is still missing.
 
+____
+
 Performance
 ***********
 
 .. image:: /_static/images/jingles/hypervisors03.png
 
 The hypervisor **Performance** tab currently only contains a CPU load graph, but this will be expanded upon in future versions to include other metrics such as ram, disk, network utilisation.
+
+____
 
 Characteristics
 ***************
@@ -65,8 +71,8 @@ To create or work with **Characteristics**:
 2. Enter some metadata for your specific key.
 3. if you would like to delete a key and associated metadata, simply click the |delete button| button.
 
-.. |add button| image:: /_static/images/jingles/hypervisors-new.png
-.. |delete button| image:: /_static/images/jingles/hypervisors-destroy.png
+.. |add button| image:: /_static/images/jingles/add-button.png
+.. |delete button| image:: /_static/images/jingles/delete-button.png
 
 The **Characteristic** "metadata" is a powerful addition to *FiFo* when used in conjunction with package rules and the inherent intelligence of *FiFo*'s auto provisioning algorithm. For example you could create a package "X" that says when provisioning a VM with this package only provision on:
 

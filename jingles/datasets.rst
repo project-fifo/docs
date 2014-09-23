@@ -23,6 +23,7 @@ To delete a dataset and remove it from the repository click on the |delete butto
 
 .. |delete button| image:: /_static/images/jingles/datasets-destroy.png
 
+____
 
 Remote Datasets
 ###############
@@ -37,6 +38,8 @@ The remote datasets tab is where you choose which external datasets you would li
 Should you wish to change the remote repository source this can be configured by editing the `configuration file <configuration.html>`_.
 
 .. |import button| image:: /_static/images/jingles/datasets-import.png
+
+____
 
 Details
 #######

@@ -5,6 +5,14 @@
 Networking
 **********
 
+To get to *Fifo's* network management section: 
+
+1. Click **More** on the home screen and than select **Configuration**.
+
+2. On the next page select **Networking**
+
+.. image:: /_static/images/jingles/networks_getto.png
+
 Networks
 ########
 

@@ -46,7 +46,7 @@ This will take you to the new user creation page as shown below.
 
 Enter a username for your new user. Please note that usernames are case sensitive. Enter a password for your new user by typing in the password twice. Only if the two passwords are identical the |create button| button will appear. To complete user creation click on the |create button| button.
 
-.. |create button| image:: /_static/images/jingles/users-create.png
+.. |create button| image:: /_static/images/jingles/create.png
 
 Details - Users
 ***************
@@ -118,7 +118,7 @@ To add a new role click on the |new roles| button.
 
 Enter a name for your new role and click on the |create button2| button.
 
-.. |create button2| image:: /_static/images/jingles/users-create.png
+.. |create button2| image:: /_static/images/jingles/create.png
 
 Details - Roles
 ***************

@@ -24,12 +24,13 @@ The hypervisors section shows a list of all compute nodes / servers under **FiFo
 Details
 #######
 
-.. image:: /_static/images/jingles/hypervisors02.jpg
+.. image:: /_static/images/jingles/hypervisors02.png
 
 The hypervisor details page shows information and contains sections related to an individual hypervisor.
 
 1. The name of the hypervisor/compute node. If hostname is not set the mac address of the admin interface will be used as name.
 The individual tabs relating to the hypervisor (`Performance`_ | `Characteristics`_) are explained in more detail below.
+
 2. The details tab contains a plethora of information relating to the hypervisor / compute node
 
   - **Information** Includes SmartOS version of node and the "zpool" type.
@@ -42,17 +43,30 @@ The individual tabs relating to the hypervisor (`Performance`_ | `Characteristic
 
 .. image:: /_static/images/jingles/hypervisors-disks.png
 
+.. todo::
+
+	"4." is still missing.
+
 Performance
 ***********
 
-.. image:: /_static/images/jingles/hypervisors03.jpg
+.. image:: /_static/images/jingles/hypervisors03.png
 
 The hypervisor **Performance** tab currently only contains a CPU load graph, but this will be expanded upon in future versions to include other metrics such as ram, disk, network utilisation.
 
 Characteristics
 ***************
 
-.. image:: /_static/images/jingles/hypervisors04.jpg
+.. image:: /_static/images/jingles/hypervisors04.png
+
+To create or work with **Characteristics**:
+
+1. Click the |add button| button. Enter a key name for the new characteristic in the popup dialogue then click ok.
+2. Enter some metadata for your specific key.
+3. if you would like to delete a key and associated metadata, simply click the |delete button| button.
+
+.. |add button| image:: /_static/images/jingles/hypervisors-new.png
+.. |delete button| image:: /_static/images/jingles/hypervisors-destroy.png
 
 The **Characteristic** "metadata" is a powerful addition to *FiFo* when used in conjunction with package rules and the inherent intelligence of *FiFo*'s auto provisioning algorithm. For example you could create a package "X" that says when provisioning a VM with this package only provision on:
 
@@ -69,8 +83,4 @@ This is an awesome capability ensuring that if a certain package is used it will
 	
 	...and more... your imagination is the only limit.
 
-To create or work with **Characteristics**:
 
-1. Click the **+** add button. Enter a key name for the new characteristic in the popup dialogue then click ok.
-2. Enter some metadata for your specific key.
-3. if you would like to delete a key and associated metadata, simply click the **-** delete button.

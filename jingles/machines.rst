@@ -116,7 +116,10 @@ Snapshots
 
 .. image:: /_static/images/jingles/machines09.png
 
-The **Snapshots** tab lets you create snapshots and roll back to previous snapshots. The rollback icon will only be visible if the machine is in a *stopped* state and is not *lock protected*.  To create a snapshot simply click the **Snapshot** button and enter a name/comment for your snapshot in the snapshot popup window. Click the **OK** button to create the machine. 
+The **Snapshots** tab lets you create snapshots and roll back to previous snapshots. The rollback icon will only be visible if the machine is in a *stopped* state and is not *lock protected*.  To create a snapshot simply click the |snapshot button| button and enter a name/comment for your snapshot in the snapshot popup window. Click the |ok button| button to create the machine. 
+
+.. |snapshot button| image:: /_static/images/jingles/machines-snapshot.png
+.. |ok button| image:: /_static/images/jingles/machines-snapshot-ok.png
 
 .. Attention::
     When rolling back to a snapshot all snapshots that were created after the rollback date will be destroyed. To delete a specific snapshot click on the |trash| icon next to the snapshot.
@@ -145,4 +148,6 @@ Notes
 
 .. image:: /_static/images/jingles/machines12.png
 
-In the **Note** tab you to record notes or details related to the machine. This can be any information that you deem useful and would like to remember. To create a note simply click on the **+** button and type your note into the popup dialogue and then click ok to create the note. Each individual note is time stamped so you know when it was created. To delete a note, simply click on the **X** icon in the top right hand corner of the note.
+In the **Note** tab you to record notes or details related to the machine. This can be any information that you deem useful and would like to remember. To create a note simply click on the **+** button and type your note into the popup dialogue and then click ok to create the note. Each individual note is time stamped so you know when it was created. To delete a note, simply click on the |delete note button| icon in the top right hand corner of the note.
+
+.. |delete note button| image:: /_static/images/jingles/machines-notes-destroy.png

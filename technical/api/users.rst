@@ -11,12 +11,12 @@ API - Users
 
    **Related permissions**
 
-      users -> ID -> list 
+      users -> ID -> list
 
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /users HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -25,12 +25,12 @@ API - Users
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
@@ -40,7 +40,7 @@ API - Users
    :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/users/(uuid:user)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the user list is returned
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
@@ -60,6 +60,19 @@ ____
 
   Example Requests & Responses still missing.
 
+  POST /api/0.1.0/users HTTP/1.1
+  Accept: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  Content-Type: application/json
+
+  {"user":"Example","password":"secret"}
+
+  HTTP/1.1 303 See Other
+  Content-Type: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  vary: accept
+  location: /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a
+  
 ____
 
 
@@ -134,8 +147,18 @@ ____
       users -> ID -> passwd
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
+
+  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a HTTP/1.1
+  Accept: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  Content-Type: application/json
+
+  {"password":"top secret"}
+
+  HTTP/1.1 204 No Content
+  x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
 ____
 
@@ -151,7 +174,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -159,7 +182,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -172,7 +195,7 @@ ____
 
 ____
 
-      
+
 .. http:get:: /users/(uuid:user)/permissions
 
    Lists permissions for user with given *uuid*.
@@ -200,7 +223,7 @@ ____
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       [["..."]]
-     
+
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -215,7 +238,7 @@ ____
    :>json array permissions: list of permissions the user is granted
 
 ____
- 
+
 
 .. http:put:: /users/(uuid:user)/permissions/<permission>
 
@@ -227,9 +250,19 @@ ____
      * permissions -> PERMISSIONS -> grant
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
+  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/get HTTP/1.1
+Accept: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+Content-Type: application/json
+
+
+HTTP/1.1 201 Created
+Content-Type: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+vary: accept
 ____
 
 
@@ -245,7 +278,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions/users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/... HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -253,7 +286,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -308,7 +341,7 @@ ____
    :>json array roles: list of roles the user is part of
 
 ____
-      
+
 
 .. http:put:: /users/(uuid:user)/roles/(uuid:role)
 
@@ -320,13 +353,22 @@ ____
       * roles -> ID -> join
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
+  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/roles/094a757b-84cd-46df-92bb-279a943fa489 HTTP/1.1
+Accept: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+Content-Type: application/json
+
+HTTP/1.1 204 No Content
+Content-Type: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+vary: accept
 ____
 
 
-.. http:delete:: /users/(uuid:user)/roles/(uuid:role) 
+.. http:delete:: /users/(uuid:user)/roles/(uuid:role)
 
    Deletes role with given *uuid* from user with given *uuid*.
 
@@ -338,7 +380,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/roles/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -346,7 +388,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -376,7 +418,7 @@ ____
      host: cloud.project-fifo.net
      accept: applicaiton/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-   
+
    **Example response**:
 
    .. sourcecode:: http
@@ -413,9 +455,20 @@ ____
       users -> UUID -> edit
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
+  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/keys HTTP/1.1
+  Accept: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  Content-Type: application/json
+
+  {"test@testhost":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZyw2HsD2TBPpBcCJLge4Eu1N9IXHx0S9APSdC4GEre3h4huNT9LUA78oOB1LDIyqmwbHy5yqVVBht4awmcveaSsBIDEPBrU+ZrSeibg3ikQxBYA+7IG8gwvEqxI9EdbnF6eqstfiUIaLsLuUY2E2b2DGIohy/NIw0tccchLR0kHUGz4yjmMZg78X9ux2VqFhlTfj3xDsagxFjo90FQkrO32SLULFS9fG5Ki8vsvhfkhhtgct74i894lj4DRThqmvgygODXcyvi/wtixaqKqcn+Y1JCr5AsvXvYmWQzdRh9Rv77j0mleo0xqosqXIH1HqsM4CJmdYGCPU7JB6k0j/H test@testhost"}
+
+  HTTP/1.1 204 No Content
+Content-Type: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+vary: accept
 ____
 
 
@@ -430,7 +483,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -438,7 +491,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -501,11 +554,23 @@ ____
 
    **Related permissions**
 
-     users -> UUID -> edit 
+     users -> UUID -> edit
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
+
+
+  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/yubikeys HTTP/1.1
+  Accept: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  Content-Type: application/json
+
+  {"otp":"someyubikeyotp"}
+
+  HTTP/1.1 204 No Content
+  x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
 
 ____
 
@@ -521,7 +586,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/yubikeys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
       host: cloud.project-fifo.net
       x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -529,7 +594,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -596,8 +661,18 @@ ____
       * roles -> ID join
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
+
+  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/orgs/c1590249-1b2c-4440-952b-eef2ff83ed1f HTTP/1.1
+  Accept: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  Content-Type: application/json
+
+  HTTP/1.1 204 No Content
+  Content-Type: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  vary: accept
 
 ____
 
@@ -657,7 +732,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -665,7 +740,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -675,6 +750,3 @@ ____
    :status 204: the metadata key was successfully deleted from the user
    :status 404: the metadata key was not found for the user
    :status 503: one or more subsystems could not be reached
-
-
-

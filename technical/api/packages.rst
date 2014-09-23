@@ -16,7 +16,7 @@ API - Packages
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /packages HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -25,12 +25,12 @@ API - Packages
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
@@ -40,7 +40,7 @@ API - Packages
    :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/packages/(uuid:package)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the package list is returned
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
@@ -59,6 +59,20 @@ ____
 .. todo::
 
   Example Requests & Responses still missing.
+
+  POST /api/0.1.0/packages HTTP/1.1
+  Accept: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  Content-Type: application/json
+
+  {"name":"example","quota":10,"ram":1024,"cpu_cap":100,"requirements":[{"weight":"must","value":5,"attribute":"resources.free-memory","condition":">"}],"zfs_io_priority":100,"block_size":1024,"compression":"lz4"}
+Response Headersview source
+
+
+HTTP/1.1 303 See Other
+Content-Type: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+location: /api/0.1.0/packages/f00ebc46-9026-4a29-aa20-7b4873f5bc8a
 
 ____
 
@@ -101,9 +115,9 @@ ____
         "quota": 40,
         "ram": 1024,
         "zfs_io_priority": 100,
-  
+
         "requirements": [],
-  
+
         "metadata": {}
        }
 
@@ -147,14 +161,14 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /packages/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
@@ -222,7 +236,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /packages/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -230,7 +244,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -239,6 +253,5 @@ ____
 
    :status 204: the metadata key was successfully deleted from the package
    :status 404: the metadata key was not found
-   
-   :status 503: one or more subsystems could not be reached
 
+   :status 503: one or more subsystems could not be reached

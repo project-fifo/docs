@@ -16,7 +16,7 @@ API - Networks
    **Example request**:
 
    .. sourcecode:: http
-  
+
       GET /networks HTTP/1.1
       host: cloud.project-fifo.net
       accept: applicaiton/json
@@ -25,12 +25,12 @@ API - Networks
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
@@ -40,7 +40,7 @@ API - Networks
    :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/networks/(uuid:network)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the user list is returned
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
@@ -57,8 +57,20 @@ ____
       cloud -> networks -> create
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
+
+  POST /api/0.1.0/networks HTTP/1.1
+Accept: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+Content-Type: application/json
+
+{"name":"api"}
+
+HTTP/1.1 303 See Other
+Content-Type: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+location: /api/0.1.0/networks/7529ec47-c062-4c9a-a608-0b5b44b0cddc
 
 ____
 
@@ -126,7 +138,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /networks/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -134,7 +146,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -146,7 +158,7 @@ ____
    :status 503: one or more subsystems could not be reached
 
 ____
-   
+
 
 .. http:put:: /networks/(uuid:network)/ipranges/<iprange>
 
@@ -156,9 +168,20 @@ ____
 
       networks -> UUID -> edit
 
-.. todo::
-    
-  Example Requests & Responses still missing.
+   .. todo::
+
+      here
+
+PUT /api/0.1.0/networks/7529ec47-c062-4c9a-a608-0b5b44b0cddc/ipranges/a6775fc5-4174-47a4-be59-12e8089c5ef9 HTTP/1.1
+Accept: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+Content-Type: application/json
+
+<no content needed>
+
+HTTP/1.1 204 No Content
+Content-Type: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 
 ____
 
@@ -174,7 +197,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /networks/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/ipranges/<iprange> HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -182,7 +205,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -251,7 +274,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /networks/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -259,7 +282,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -269,4 +292,3 @@ ____
    :status 204: the metadata key was successfully deleted from the network
    :status 404: the metadata key  was not found
    :status 503: one or more subsystems could not be reached
-

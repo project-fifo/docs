@@ -87,6 +87,7 @@ ____
  - **Alias**: Change the alias of the machine.
  - **Hostname**: Change the hostname of the machine.
  - **Resolvers**: Change the resolvers of the machine.
+ - **Owner**: Change the owner of the machine.
 
 .. |picture| image:: /_static/images/jingles/machines-conf.png
 

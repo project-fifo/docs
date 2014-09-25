@@ -5,6 +5,14 @@
 D-Trace
 *******
 
+To get to *Fifo's* DTrace management section: 
+
+1. Click **More** on the home screen and than select **Configuration**.
+
+2. On the next page select **Networking**
+
+.. image:: /_static/images/jingles/dtraces_getto.png
+
 List
 ####
 
@@ -12,8 +20,12 @@ List
 
 This section lists all the currently known D-Trace scripts.
 
-	1. Deletes an existing D-Trace script.
-	2. Creates a new D-Trace script.
+1. By clicking the |new network| button you can create a new DTrace.
+2. By clicking the |delete network| button next to the DTrace you can delete an existing DTrace.
+
+.. |new network| image:: /_static/images/jingles/dtraces-new.png
+.. |delete network| image:: /_static/images/jingles/networks-delete.png
+
 
 Create
 ######
@@ -24,15 +36,14 @@ Create
 
 .. image:: /_static/images/jingles/dtraces02.png
 
-Adding a new script is rather simple, it is a plain D-Trace script however there is an exeptation, since the script runs on multiple servers and needs to be configurable. Varlables are encased in ``$`` signes, and can be choosen freely exept one special placeholder: ``$filter$`` is the filter created to match the system it is supposed to run on.
+Adding a new script is rather simple. It is a plain D-Trace script, however there is an exeptation since the script runs on multiple servers and needs to be configurable. Varlables are encased in ``$`` signes and can be choosen freely. The only exception is the special placeholder: ``$filter$``. It is the filter created to match the system it is supposed to run on.
 
+	1. Enter the name of the new script.
+	2. Enter the code of the script with the variables.
+	3. Enter variables needed ahead of time.
+	4. By clicking the |create button| button you can create the new DTrace.
 
-	1. The code of the script, with the variables.
-	2. The name the script is shown as.
-	3. The variables, they get automatically filled as you type them.
-	4. Allows for adding variables ahead of time.
-	5. Click to create.
-
+.. |create button| image:: /_static/images/jingles/create.png
 
 Details
 #######

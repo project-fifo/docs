@@ -42,7 +42,7 @@ API - Datasets
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the dataset list is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
 ____
@@ -56,10 +56,7 @@ ____
 
     cloud -> datasets -> import
 
-   .. todo::
-
-  Example Requests & Responses still missing.
-
+   **Example request**:
 
    .. sourcecode:: http
 
@@ -70,6 +67,7 @@ ____
 
       {"url": "https://datasets.at/datasets/21274016-2ad3-11e4-9673-e3abad521cc2"}
 
+   **Example response**:
 
    .. sourcecode:: http
 
@@ -77,6 +75,17 @@ ____
       content-type: application/json
       x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
       location: /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the dataset list is returned
+   :status 302: redirect to the session :http:get:`/datasets/(uuid:dataset)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
 ____
 
 
@@ -167,6 +176,7 @@ ____
   Example Requests & Responses still missing.
 
       PUT /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2 HTTP/1.1
+
 Accept: application/json
 x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 Content-Type: application/json

@@ -9,7 +9,7 @@ Login
 #####
 
 .. warning::
-     
+
      The OTP (One Time Password) field can be left empty unless a YubiKey was specifically added to the user. This is never the case for newly created users!
 
 .. image:: /_static/images/jingles/login.jpg
@@ -85,7 +85,7 @@ The *About Page* contains useful and relevant information such as package versio
  * github : The project's source code repository. https://github.com/project-fifo
  * irc : This launches an additional browser window that connects you to the #project-fifo official irc channel on freenode.
  * follow us : A link to follow the project's official twitter feed. @project_fifo
- 
+
 2. Versions : Shows the current versions of all the *FiFo* services and indicates whether new package updates are available.
 
 3. Messages : A message section that shows relevent or pertinent messages related to your installation.

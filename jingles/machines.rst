@@ -38,7 +38,12 @@ Create
 1. Choose the name or alias of your new machine.
 2. Choose the dataset that will be used for your new machine.
 3. Choose the package that will be used for your new machine.
-4. Choose the network/s your machine will be connected to. Please note: you will only be able to select more than 1 network if the package selected supports multiple networks.
+4. Choose the network/s your machine will be connected to.
+
+   .. hint::
+
+      You will only be able to select more than 1 network if the package selected supports multiple networks.
+
 5. Choose optional advanced paramaters if you require them.
 
 .. image:: /_static/images/jingles/machines06.png
@@ -64,7 +69,7 @@ Details
  - |button start|       Start the machine, only clickable if machine is in a stopped state.
  - |button restart|     Restart the machine, only clickable if machine is in a running state.
  - |button stop|        Stop the machine, only clickable if machine is in a running state.
- 
+
 .. |button destroy| image:: /_static/images/jingles/machines-destroy.png
 .. |button console| image:: /_static/images/jingles/machines-console.png
 .. |button lock| image:: /_static/images/jingles/machines-lock.png
@@ -117,7 +122,7 @@ Snapshots
 
 .. image:: /_static/images/jingles/machines09.png
 
-The **Snapshots** tab lets you create snapshots and roll back to previous snapshots. The rollback icon will only be visible if the machine is in a *stopped* state and is not *lock protected*.  To create a snapshot simply click the |snapshot button| button and enter a name/comment for your snapshot in the snapshot popup window. Click the |ok button| button to create the machine. 
+The **Snapshots** tab lets you create snapshots and roll back to previous snapshots. The rollback icon will only be visible if the machine is in a *stopped* state and is not *lock protected*.  To create a snapshot simply click the |snapshot button| button and enter a name/comment for your snapshot in the snapshot popup window. Click the |ok button| button to create the machine.
 
 .. |snapshot button| image:: /_static/images/jingles/machines-snapshot.png
 .. |ok button| image:: /_static/images/jingles/machines-snapshot-ok.png

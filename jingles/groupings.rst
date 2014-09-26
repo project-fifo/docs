@@ -37,4 +37,4 @@ Unlike a **Cluster** a **Stack** has **no** guarantees but offers a 'best effort
 	Only **Clusters** can belong to a **Stack**, VMs can't directly be placed in a **Stack**. However it is possible to make a **Cluster** with a single VM in it. This will also leave room for you to extend the future functionality of the **Cluster** when more VMs are thrown into the mix.
 
 .. note::
-	Since   **Stacks** do not have guarantees, you may add or remove **Clusters** at any time from a **Stack**.
+	Since **Stacks** do not have guarantees, you may add or remove **Clusters** at any time from a **Stack**.

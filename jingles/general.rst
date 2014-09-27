@@ -14,9 +14,11 @@ Login
 
 .. image:: /_static/images/jingles/login.jpg
 
-When you first connect to the web interface via a web browser you will be presented with a *login screen* as shown above.
+When you first connect to the web interface via a web browser you will be presented with a login screen as shown above.
 
-Enter your valid credentials and click the "**Ok**" button to authenticate and login to the web interface.
+Enter your valid credentials and click the |login| button to authenticate and login to the web interface.
+
+.. |login| image:: /_static/images/jingles/login.png
 
 .. note::
 
@@ -27,7 +29,11 @@ Dashboard
 
 .. image:: /_static/images/jingles/dashboard.png
 
-The *Dashboard* is designed to give you a "*10,000 foot view*" or single pane of glass into your operational cloud. In future versions of *FiFo* this page may have additional dials and graphs for things such as average CPU usage and disk IO across your cloud as well as the possibility to show that a virtual machine is currently being heavily zfs io throttled or that it's nearing its memory RSS limits.
+The Dashboard is designed to give you a "*10,000 foot view*" or single pane of glass into your operational cloud. In future versions of *FiFo* this page may have additional dials and graphs for things such as average CPU usage and disk IO across your cloud as well as the possibility to show that a virtual machine is currently being heavily zfs io throttled or that it's nearing its memory RSS limits.
+
+.. todo::
+
+	Reprhase the paragraph above.
 
 The status page is designed to show you an overview of your entire clouds status.
 

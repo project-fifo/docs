@@ -55,23 +55,39 @@ ____
    **Related permissions**
 
       users -> ID -> create
+  
+   **Example request**:
 
-.. todo::
+   .. sourcecode:: http
 
-  Example Requests & Responses still missing.
+     POST /api/0.1.0/users HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-  POST /api/0.1.0/users HTTP/1.1
-  Accept: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  Content-Type: application/json
+     {"user":"Example","password":"secret"}
 
-  {"user":"Example","password":"secret"}
+   **Example response**:
 
-  HTTP/1.1 303 See Other
-  Content-Type: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  vary: accept
-  location: /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a
+   .. sourcecode:: http
+
+     HTTP/1.1 303 See Other
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+     location: /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the dataset list is returned
+   :status 303: redirect to the session :http:get:`/users/(uuid:user)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string user: name of the new user
+   :>json string user: password for the new user
   
 ____
 
@@ -146,19 +162,33 @@ ____
 
       users -> ID -> passwd
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
-  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a HTTP/1.1
-  Accept: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  Content-Type: application/json
+     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-  {"password":"top secret"}
+     {"password":"top secret"}
 
-  HTTP/1.1 204 No Content
-  x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the user could not be found.
+   :status 503: one or more subsystems could not be reached
 
 ____
 
@@ -249,20 +279,34 @@ ____
      * users -> ID -> grant
      * permissions -> PERMISSIONS -> grant
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
-  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/get HTTP/1.1
-Accept: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-Content-Type: application/json
+     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/get HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 201 Created
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the user could not be found.
+   :status 503: one or more subsystems could not be reached
 
 
-HTTP/1.1 201 Created
-Content-Type: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-vary: accept
 ____
 
 
@@ -352,19 +396,32 @@ ____
       * users -> ID -> join
       * roles -> ID -> join
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
-  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/roles/094a757b-84cd-46df-92bb-279a943fa489 HTTP/1.1
-Accept: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-Content-Type: application/json
+     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/roles/094a757b-84cd-46df-92bb-279a943fa489 HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 
-HTTP/1.1 204 No Content
-Content-Type: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-vary: accept
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     Content-Type: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the user could not be found.
+   :status 503: one or more subsystems could not be reached
 ____
 
 
@@ -454,21 +511,39 @@ ____
 
       users -> UUID -> edit
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
-  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/keys HTTP/1.1
-  Accept: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  Content-Type: application/json
+     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/keys HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-  {"test@testhost":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZyw2HsD2TBPpBcCJLge4Eu1N9IXHx0S9APSdC4GEre3h4huNT9LUA78oOB1LDIyqmwbHy5yqVVBht4awmcveaSsBIDEPBrU+ZrSeibg3ikQxBYA+7IG8gwvEqxI9EdbnF6eqstfiUIaLsLuUY2E2b2DGIohy/NIw0tccchLR0kHUGz4yjmMZg78X9ux2VqFhlTfj3xDsagxFjo90FQkrO32SLULFS9fG5Ki8vsvhfkhhtgct74i894lj4DRThqmvgygODXcyvi/wtixaqKqcn+Y1JCr5AsvXvYmWQzdRh9Rv77j0mleo0xqosqXIH1HqsM4CJmdYGCPU7JB6k0j/H test@testhost"}
+     {
+     "test@testhost":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZyw2HsD2TBPpBcCJLge4Eu1N   9IXHx0S9APSdC4GEre3h4huNT9LUA78oOB1LDIyqmwbHy5yqVVBht4awmcveaSsBIDEPBrU+ZrSeibg3i   kQxBYA+7IG8gwvEqxI9EdbnF6eqstfiUIaLsLuUY2E2b2DGIohy/NIw0tccchLR0kHUGz4yjmMZg78X9ux2VqFhlTfj3xDsagxFjo90FQkrO32SLULFS9fG5Ki8vsvhfkhhtgct74i894lj4DRThqmvgygODXcyvi/wtixaqKqcn+Y1JCr5AsvXvYmWQzdRh9Rv77j0mleo0xqosqXIH1HqsM4CJmdYGCPU7JB6k0j/H test@testhost"
+     }
 
-  HTTP/1.1 204 No Content
-Content-Type: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-vary: accept
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     Content-Type: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the user could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string key: key that is to be added to the user
 ____
 
 
@@ -554,22 +629,35 @@ ____
 
    **Related permissions**
 
-     users -> UUID -> edit
+   **Exmaple request**:
 
-.. todo::
+   .. sourcecode:: http
 
-  Example Requests & Responses still missing.
+     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/yubikeys HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
+     {"otp":"someyubikeyotp"}
 
-  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/yubikeys HTTP/1.1
-  Accept: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  Content-Type: application/json
+   **Example response**:
 
-  {"otp":"someyubikeyotp"}
+   .. sourcecode:: http
 
-  HTTP/1.1 204 No Content
-  x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     HTTP/1.1 204 No Content
+     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the user could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string key: YUBIkey OTP that is to be added to the user
 
 
 ____
@@ -659,20 +747,31 @@ ____
 
       * users -> ID -> join
       * roles -> ID join
+   
+   **Example request**:
 
-.. todo::
+   .. sourcecode:: http
 
-  Example Requests & Responses still missing.
+     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/orgs/c1590249-1b2c-4440-952b-eef2ff83ed1f HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 
-  PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/orgs/c1590249-1b2c-4440-952b-eef2ff83ed1f HTTP/1.1
-  Accept: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  Content-Type: application/json
+   **Example response**:
 
-  HTTP/1.1 204 No Content
-  Content-Type: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  vary: accept
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the user could not be found.
+   :status 503: one or more subsystems could not be reached
 
 ____
 
@@ -715,8 +814,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
    :>json string <key>: values to store under this key
-
-
 
 ____
 

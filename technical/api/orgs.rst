@@ -47,7 +47,6 @@ API - Organizations
 
 ____
 
-
 .. http:post:: /orgs
 
    Creates a new organization.
@@ -55,22 +54,38 @@ ____
    **Related permissions**
 
       cloud -> orgs -> create
+   
+   **Example request**:
 
-.. todo::
+   .. sourcecode:: http
+  
+     POST /api/0.1.0/orgs HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-  Example Requests & Responses still missing.
+     {"name":"Test"}
 
-  POST /api/0.1.0/orgs HTTP/1.1
-  Accept: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  Content-Type: application/json
+   **Example respnonse**:
 
-  {"name":"Test"}
+   .. sourcecode:: http
 
-  HTTP/1.1 303 See Other
-  Content-Type: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  location: /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603
+     HTTP/1.1 303 See Other
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     location: /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the organization list is returned
+   :status 303: redirect to the session :http:get:`/orgs/(uuid:org)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string name: name of the organization
+
 ____
 
 
@@ -207,27 +222,42 @@ ____
 
       * orgs -> UUID -> edit
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
-  POST /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603/triggers/vm_create HTTP/1.1
-  Accept: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  Content-Type: application/json;charset=UTF-8
+     POST /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603/triggers/vm_create HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json;charset=UTF-8
 
-  {
-  "action": "role_grant",
-  "base": "vms",
-  "permission": ["get"],
-  "target": "094a757b-84cd-46df-92bb-279a943fa489"
-  }
+     {
+     "action": "role_grant",
+     "base": "vms",
+     "permission": ["get"],
+     "target": "094a757b-84cd-46df-92bb-279a943fa489"
+     }
 
-  HTTP/1.1 303 See Other
-  Content-Type: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  vary: accept
-  location: /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603
+   **Example response**::
+
+   .. sourcecode:: http
+
+     HTTP/1.1 303 See Other
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+     location: /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603
+
+   :status 204: no content
+   :status 303: redirect to the session :http:get:`/orgs/(uuid:org)`
+   :status 403: user is not authorized
+   :status 404: the organization/role could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string action: the action that is to be performed
+   :>json string base: 
+   :>json array permission: permission needed to perform the requested action
+   :>json string target: target of the request
+
 ____
 
 
@@ -300,10 +330,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
    :>json string <key>: values to store under this key
-
-
-
-
 
 ____
 

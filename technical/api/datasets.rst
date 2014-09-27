@@ -82,7 +82,7 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the dataset list is returned
-   :status 302: redirect to the session :http:get:`/datasets/(uuid:dataset)`
+   :status 303: redirect to the session :http:get:`/datasets/(uuid:dataset)`
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
@@ -171,22 +171,46 @@ ____
 
       datasets -> UUID -> edit
 
-   .. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
       PUT /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2 HTTP/1.1
+      Accept: application/json
+      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      Content-Type: application/json
 
-Accept: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-Content-Type: application/json
+      {
+      "networks": 
+       [{
+       "description":"public", 
+       "name":"net0"}, 
+       {"name":"net1",
+       "description":"internal"
+       }]
+      }
 
-{"networks": [{"description":"public", "name":"net0"}, {"name":"net1", "description":"internal"}]}
+   **Example response**:
 
-HTTP/1.1 204 No Content
-Content-Type: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-vary: accept
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No Content
+      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the dataset could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string networks: contains information about the network
+   :>json string descrition: contains a discription of the network
+   :>json string name: name of the network
 
 ____
 
@@ -199,21 +223,68 @@ ____
 
       datasets -> UUID -> create
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. note::
+      
+    Input is a DS manifest.
+
+   .. sourcecode:: http
 
       POST /api/0.1.0/datasets/d34c301e-10c3-11e4-9b79-5f67ca448df0 HTTP/1.1
       accept: application/json
       content-type: application/json
       x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 
-      {"uuid":"d34c301e-10c3-11e4-9b79-5f67ca448df0","name":"base64","version":"14.2.0","description":"A 64-bit SmartOS image with just essential packages installed. Ideal for users who are comfortable with setting up their own environment and tools.","os":"smartos","type":"zone-dataset","homepage":"http://wiki.joyent.com/jpc2/SmartMachine+Base","urn":"sdc:sdc:base64:14.2.0","published_at":"2014-07-21T10:43:17Z","created_at":"2014-07-21T10:43:17Z","creator_uuid":"00000000-0000-0000-0000-000000000000","creator_name":"sdc","vendor_uuid":"00000000-0000-0000-0000-000000000000","requirements":{"networks":[{"description":"public","name":"net0"}]},"files":[{"url":"http://datasets.at/datasets/d34c301e-10c3-11e4-9b79-5f67ca448df0/base64-14.2.0.zfs.gz","path":"base64-14.2.0.zfs.gz","md5":"a514917b3e6b8e18f8b21648a19876dc","sha1":"97b2eec4bf8e9ae8c4be43e32c8672be198278d6","size":116062401}]}
+      {
+      "uuid":"d34c301e-10c3-11e4-9b79-5f67ca448df0",
+      "name":"base64",
+      "version":"14.2.0",
+      "description":"A 64-bit SmartOS image with just essential packages installed. Ideal for users who are comfortable with setting up their own environment and tools.",
+      "os":"smartos",
+      "type":"zone-dataset",
+      "homepage":"http://wiki.joyent.com/jpc2/SmartMachine+Base",
+      "urn":"sdc:sdc:base64:14.2.0",
+      "published_at":"2014-07-21T10:43:17Z",
+      "created_at":"2014-07-21T10:43:17Z",
+      "creator_uuid":"00000000-0000-0000-0000-000000000000",
+      "creator_name":"sdc",
+      "vendor_uuid":"00000000-0000-0000-0000-000000000000",
+      "requirements":
+       {
+       "networks":
+        [{
+        "description":"public",
+        "name":"net0"
+        }]
+       },
+       "files":
+        [{
+        "url":"http://datasets.at/datasets/d34c301e-10c3-11e4-9b79-5f67ca448df0/base64-14.2.0.zfs.gz",
+        "path":"base64-14.2.0.zfs.gz",
+        "md5":"a514917b3e6b8e18f8b21648a19876dc",
+        "sha1":"97b2eec4bf8e9ae8c4be43e32c8672be198278d6","size":116062401
+        }]
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
 
       HTTP/1.1 303 See Other
-      content-type: application/json
       x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
       location: /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the dataset list is returned
+   :status 303: redirect to the session :http:get:`/datasets/(uuid:dataset)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
 
 ____
 

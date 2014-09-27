@@ -41,7 +41,7 @@ API - Sessions
 
    :status 302: redirect to the session :http:get:`/sessions/(uuid:session)`
    :status 400: body missing user or password field
-   :status 403: the provided information were not a balid login
+   :status 403: the provided information is invalid for login
    :status 449: the user requres MFA but no ``otp`` parameter was passed
    :status 503: one or more subsystems could not be reached
 

@@ -56,23 +56,35 @@ ____
 
       cloud -> roles -> create
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
-  POST /api/0.1.0/roles HTTP/1.1
-Accept: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-Content-Type: application/json
+     POST /api/0.1.0/roles HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-{"name":"Example"}
+     {"name":"Example"}
 
-HTTP/1.1 303 See Other
-Content-Type: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-vary: accept
-location: /api/0.1.0/roles/0d235d16-289a-480e-ab91-2f8c65dabf62
+    **Example response**:
 
+     HTTP/1.1 303 See Other
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+     location: /api/0.1.0/roles/0d235d16-289a-480e-ab91-2f8c65dabf62
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the dataset list is returned
+   :status 303: redirect to the session :http:get:`/roles/(uuid:role)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string name: name of the role
 ____
 
 
@@ -213,19 +225,33 @@ ____
       * roles -> ID -> grant
       * permissions -> PERMISSION -> grant
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
-  PUT /api/0.1.0/roles/0d235d16-289a-480e-ab91-2f8c65dabf62/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/edit HTTP/1.1
-  Accept: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  Content-Type: application/json
+     PUT /api/0.1.0/roles/0d235d16-289a-480e-ab91-2f8c65dabf62/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/edit HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-  HTTP/1.1 201 Created
-  Content-Type: application/json
-  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-  vary: accept
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 201 Created
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the role could not be found.
+   :status 503: one or more subsystems could not be reached
+
 ____
 
 

@@ -45,6 +45,8 @@ API - Hypervisors
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
+   :<json string uuid: UUID of the hypervisor
+
 ____
 
 
@@ -162,6 +164,10 @@ ____
 
      hypervisors -> UUID -> edit
 
+.. todo:: 
+
+ content still missing
+
 ____
 
 
@@ -198,7 +204,7 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
-   :status 404: the VM could not be found
+   :status 404: the hypervisor could not be found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
@@ -250,25 +256,37 @@ ____
 
       hypervisors -> UUID -> edit
 
-.. note::
+   **Example request**:
 
-  Characteristics are used to describe capabilities of the hypervisor for the selection process.
+   .. sourcecode:: http
 
-.. todo::
+     PUT /api/0.1.0/hypervisors/cae242d0-fb7a-4a37-82c7-dcc73ce0fa8d/characteristics HTTP/1.1
 
-  Example Requests & Responses still missing.
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-  PUT /api/0.1.0/hypervisors/cae242d0-fb7a-4a37-82c7-dcc73ce0fa8d/characteristics HTTP/1.1
-Accept: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-Content-Type: application/json
+      {"color": "blue"}
 
-{"color": "blue"}
+   **Example response**:
 
-HTTP/1.1 204 No Content
-Content-Type: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-vary: accept
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the hypervisor could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string color: characteristic given to the hypervisor
 
 ____
 

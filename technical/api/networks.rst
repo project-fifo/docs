@@ -56,21 +56,36 @@ ____
 
       cloud -> networks -> create
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
 
-  POST /api/0.1.0/networks HTTP/1.1
-Accept: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-Content-Type: application/json
+     POST /api/0.1.0/networks HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-{"name":"api"}
+     {"name":"api"}
 
-HTTP/1.1 303 See Other
-Content-Type: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-location: /api/0.1.0/networks/7529ec47-c062-4c9a-a608-0b5b44b0cddc
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 303 See Other
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     location: /api/0.1.0/networks/7529ec47-c062-4c9a-a608-0b5b44b0cddc
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the network list is returned
+   :status 303: redirect to the session :http:get:`/networks/(uuid:network)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string name: name of the network
 
 ____
 
@@ -167,21 +182,32 @@ ____
    **Related permissions**
 
       networks -> UUID -> edit
+   
+   **Example request**:
 
-   .. todo::
+   .. sourcecode:: http
 
-      here
+     PUT /api/0.1.0/networks/7529ec47-c062-4c9a-a608-0b5b44b0cddc/ipranges/a6775fc5-4174-47a4-be59-12e8089c5ef9 HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
 
-PUT /api/0.1.0/networks/7529ec47-c062-4c9a-a608-0b5b44b0cddc/ipranges/a6775fc5-4174-47a4-be59-12e8089c5ef9 HTTP/1.1
-Accept: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-Content-Type: application/json
+   **Example response**:
 
-<no content needed>
+   .. sourcecode:: http
 
-HTTP/1.1 204 No Content
-Content-Type: application/json
-x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     HTTP/1.1 204 No Content
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+
+   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 404: the network could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
 
 ____
 

@@ -47,7 +47,6 @@ API - Roles
 
 ____
 
-
 .. http:post:: /roles
 
    Creates a new role.
@@ -67,7 +66,9 @@ ____
 
      {"name":"Example"}
 
-    **Example response**:
+   **Example response**:
+
+   .. sourcecode:: http
 
      HTTP/1.1 303 See Other
      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
@@ -85,6 +86,7 @@ ____
    :status 503: one or more subsystems could not be reached
 
    :>json string name: name of the role
+
 ____
 
 
@@ -232,7 +234,6 @@ ____
      PUT /api/0.1.0/roles/0d235d16-289a-480e-ab91-2f8c65dabf62/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/edit HTTP/1.1
      Accept: application/json
      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-     Content-Type: application/json
 
    **Example response**:
 
@@ -244,7 +245,6 @@ ____
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
-   :reqheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
@@ -342,6 +342,7 @@ ____
    .. sourcecode:: http
 
      DELETE /roles/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      host: cloud.project-fifo.net
 
    **Example response**:
@@ -349,6 +350,7 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session

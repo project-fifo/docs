@@ -281,8 +281,8 @@ ____
 
    **Related permissions**
 
-     users -> ID -> grant
-     permissions -> PERMISSIONS -> grant
+     * users -> ID -> grant
+     * permissions -> PERMISSIONS -> grant
 
    **Example request**:
 
@@ -396,8 +396,8 @@ ____
 
    **Related permissions**
 
-     users -> ID -> join
-     roles -> ID -> join
+     * users -> ID -> join
+     * roles -> ID -> join
 
    **Example request**:
 

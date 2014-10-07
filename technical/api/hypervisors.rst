@@ -188,7 +188,13 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      Content-Type: application/json
 
-     {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
+     {
+      "notes":  
+       [{
+        "text":"yap",
+        "created_at":"2014-09-13T01:34:03.379Z"
+       }]
+     }
 
    **Example response**:
 
@@ -209,8 +215,6 @@ ____
    :status 503: one or more subsystems could not be reached
 
    :>json string <key>: values to store under this key
-
-
 
 ____
 
@@ -261,7 +265,6 @@ ____
    .. sourcecode:: http
 
      PUT /api/0.1.0/hypervisors/cae242d0-fb7a-4a37-82c7-dcc73ce0fa8d/characteristics HTTP/1.1
-
      Accept: application/json
      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      Content-Type: application/json

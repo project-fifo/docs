@@ -153,6 +153,7 @@ ____
    .. sourcecode:: http
 
      DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      host: cloud.project-fifo.net
 
    **Example response**:
@@ -160,6 +161,7 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -197,7 +199,7 @@ ____
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      {}
+      []
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -238,7 +240,7 @@ ____
      "target": "094a757b-84cd-46df-92bb-279a943fa489"
      }
 
-   **Example response**::
+   **Example response*:
 
    .. sourcecode:: http
 
@@ -246,6 +248,10 @@ ____
      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      vary: accept
      location: /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 303: redirect to the session :http:get:`/orgs/(uuid:org)`
@@ -274,6 +280,7 @@ ____
    .. sourcecode:: http
 
      DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/triggers/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      host: cloud.project-fifo.net
 
    **Example response**:
@@ -281,6 +288,7 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -309,7 +317,13 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      Content-Type: application/json
 
-     {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
+     {"notes":  
+      [{
+       "text":"yap",
+       "created_at":"2014-09-13T01:34:03.379Z"
+      }]
+     }
+
 
    **Example response**:
 
@@ -347,6 +361,7 @@ ____
    .. sourcecode:: http
 
      DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      host: cloud.project-fifo.net
 
    **Example response**:
@@ -354,6 +369,7 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session

@@ -65,7 +65,10 @@ ____
      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      Content-Type: application/json
 
-     {"user":"Example","password":"secret"}
+     {
+     "user":"Example",
+     "password":"secret"
+     }
 
    **Example response**:
 
@@ -81,13 +84,13 @@ ____
    :reqheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 200: the dataset list is returned
+   :status 200: the user list is returned
    :status 303: redirect to the session :http:get:`/users/(uuid:user)`
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
    :>json string user: name of the new user
-   :>json string user: password for the new user
+   :>json string password: password for the new user
   
 ____
 
@@ -190,6 +193,8 @@ ____
    :status 404: the user could not be found.
    :status 503: one or more subsystems could not be reached
 
+   :>json string password: password you want to set for the user
+
 ____
 
 
@@ -265,7 +270,7 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :>json array permissions: list of permissions the user is granted
+   :<json array permissions: list of permissions the user is granted
 
 ____
 
@@ -276,8 +281,8 @@ ____
 
    **Related permissions**
 
-     * users -> ID -> grant
-     * permissions -> PERMISSIONS -> grant
+     users -> ID -> grant
+     permissions -> PERMISSIONS -> grant
 
    **Example request**:
 
@@ -286,7 +291,6 @@ ____
      PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/get HTTP/1.1
      Accept: application/json
      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
-     Content-Type: application/json
 
    **Example response**:
 
@@ -298,10 +302,9 @@ ____
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
-   :reqheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 204: no content
+   :status 201: 
    :status 403: user is not authorized
    :status 404: the user could not be found.
    :status 503: one or more subsystems could not be reached
@@ -393,8 +396,8 @@ ____
 
    **Related permissions**
 
-      * users -> ID -> join
-      * roles -> ID -> join
+     users -> ID -> join
+     roles -> ID -> join
 
    **Example request**:
 
@@ -409,13 +412,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     Content-Type: application/json
      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
-   :reqheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content

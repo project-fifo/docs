@@ -4,7 +4,7 @@
 Problem Checklist
 ##################
 
-Since we often encounter the same kind of problems here is a checklist how to track them down most easiely.
+Since we often encounter the same kind of problems here is a checklist to help track them down easily.
 
 First some general information you'll need:
 

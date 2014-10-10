@@ -24,7 +24,7 @@ Create
 
 .. image:: /_static/images/jingles/dtraces02.png
 
-Adding a new script is rather simple, it is a plain D-Trace script however there is an exeptation, since the script runs on multiple servers and needs to be configurable. Varlables are encased in ``$`` signes, and can be choosen freely exept one special placeholder: ``$filter$`` is the filter created to match the system it is supposed to run on.
+Adding a new script is rather simple, it is a plain D-Trace script however there is an exception, since the script runs on multiple servers and needs to be configurable. Variables are encased in ``$`` signs, and can be chosen freely except one special placeholder: ``$filter$`` is the filter created to match the system it is supposed to run on.
 
 
 	1. The code of the script, with the variables.
@@ -39,13 +39,13 @@ Details
 
 .. image:: /_static/images/jingles/dtraces03.png
 
-The details view lets you see the script in it's raw form and the default for valiables it has. However it can not be changed.
+The details view lets you see the script in it's raw form and the default variables it has. However it can not be changed.
 
 .. image:: /_static/images/jingles/dtraces04.png
 
-This section allows you to run a dtraces script either against individual VM's or Servers. If a VM is selected there is no need to select the servers they are on, FiFo will calculate that automatically.
+This section allows you to run a D-Trace script either against individual VM's or Servers. If a VM is selected there is no need to select the servers they are on, FiFo will calculate that automatically.
 
 	1. The Server to run upon.
 	2. The VM's to run against.
-	3. This section will shouw a heatmap of the output.
+	3. This section will show a heatmap of the output.
 	4. The variables to run the script with, this can be adjusted to fit the current usecase.

@@ -11,7 +11,7 @@ Networks
 List
 ****
 
-Lists the Netowrks known to *FiFo*.
+Lists the Networks known to *FiFo*.
 
 .. image:: /_static/images/jingles/networks01.png
 

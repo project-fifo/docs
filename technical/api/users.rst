@@ -522,7 +522,7 @@ ____
      Content-Type: application/json
 
      {
-     "test@testhost":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZyw2HsD2TBPpBcCJLge4Eu1N   9IXHx0S9APSdC4GEre3h4huNT9LUA78oOB1LDIyqmwbHy5yqVVBht4awmcveaSsBIDEPBrU+ZrSeibg3i   kQxBYA+7IG8gwvEqxI9EdbnF6eqstfiUIaLsLuUY2E2b2DGIohy/NIw0tccchLR0kHUGz4yjmMZg78X9ux2VqFhlTfj3xDsagxFjo90FQkrO32SLULFS9fG5Ki8vsvhfkhhtgct74i894lj4DRThqmvgygODXcyvi/wtixaqKqcn+Y1JCr5AsvXvYmWQzdRh9Rv77j0mleo0xqosqXIH1HqsM4CJmdYGCPU7JB6k0j/H test@testhost"
+     "test@testhost":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDZyw2HsD2TBPpBcCJLge4Eu1N9IXHx0S9APSdC4GEre3h4huNT9LUA78oOB1LDIyqmwbHy5yqVVBht4awmcveaSsBIDEPBrU+ZrSeibg3ikQxBYA+7IG8gwvEqxI9EdbnF6eqstfiUIaLsLuUY2E2b2DGIohy/NIw0tccchLR0kHUGz4yjmMZg78X9ux2VqFhlTfj3xDsagxFjo90FQkrO32SLULFS9fG5Ki8vsvhfkhhtgct74i894lj4DRThqmvgygODXcyvi/wtixaqKqcn+Y1JCr5AsvXvYmWQzdRh9Rv77j0mleo0xqosqXIH1HqsM4CJmdYGCPU7JB6k0j/H test@testhost"
      }
 
    **Example response**:
@@ -540,11 +540,13 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
+   :status 400: the ssh key was badly formated
    :status 403: user is not authorized
    :status 404: the user could not be found.
    :status 503: one or more subsystems could not be reached
 
-   :>json string key: key that is to be added to the user
+   :>json string key: key that is to be added to the user, it needs to have the form 'ssh-rsa <key data> <id>'
+
 ____
 
 

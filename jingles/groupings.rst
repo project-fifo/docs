@@ -11,22 +11,30 @@ With the help of **Stacks** and **Clusters** it is possible to 'define' the desi
 
 The above view shows an overview of the Stacks and Clusters known to FiFo. They can be deleted with the little |trash| button at the end of each row. New Stacks or Clusters can be added using the **New Cluster** or **New Stack** button.
 
-.. |trash| image:: /_static/images/jingles/machines-destroy.png
+.. |trash| image:: /_static/images/jingles/groupings-destroy.png
+
+.. todo::
+
+   add 1 and 2 markers for new stack / new cluster
+
+____
 
 Clusters
 ########
 
-A **Cluster** is a collection of VMs. A Cluster guarantees that the VMs do not share the same physical hardware - thus increasing fault tolerance throughout the cluster. A **Cluster** can only be placed / assigned to a VM in the process of creatin that machine. After VM creation the **Cluster** can no longer guarantee placement. 
+A **Cluster** is a collection of VMs. A Cluster guarantees that the VMs do not share the same physical hardware - thus increasing fault tolerance throughout the cluster. A **Cluster** can only be placed / assigned to a VM in the process of creatin that machine. After VM creation the **Cluster** can no longer guarantee placement.
 
 A VM can be removed from a **Cluster** at any point in time. Viewing a **Cluster** will show all the assigned VMs and **Stacks** it is a part of.
+
+____
 
 Stacks
 ######
 
-Unlike a **Cluster** a **Stack** has **no** guarantees but offers a 'best effort' in placing VMs. A **Stack* is Built out of multiple *Clusters**. *FiFo* will try to place new VMs within a **Stack** (or therefore a **Cluster** within the **Stack**) and position it as close as possible to fellow VMs within the same **Stack**.
+Unlike a **Cluster** a **Stack** has **no** guarantees but offers a 'best effort' in placing VMs. A **Stack** is built out of multiple **Clusters**. *FiFo* will try to place new VMs within a **Stack** (or therefore a **Cluster** within the **Stack**) and position it as close as possible to fellow VMs within the same **Stack**.
 
 .. note::
-	Only **Clusters** can belong to a **Stack**, VMs can't directly be placed in a **Stack**. However it is fully possible to make a **Cluster** with a single VM in it. This will also leave room for you to extend the future functionality of the **Cluster** when more VMs are thrown into the mix.
+	Only **Clusters** can belong to a **Stack**, VMs can't directly be placed in a **Stack**. However it is possible to make a **Cluster** with a single VM in it. This will also leave room for you to extend the future functionality of the **Cluster** when more VMs are thrown into the mix.
 
 .. note::
-	Since **Clusters** do not have guarantees, you may add or remove them at any time from a **Stack/s**.
+	Since **Stacks** do not have guarantees, you may add or remove **Clusters** at any time from a **Stack**.

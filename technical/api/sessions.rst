@@ -37,12 +37,11 @@ API - Sessions
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader content-type: datatype used in the body, usually ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
-   :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
    :status 302: redirect to the session :http:get:`/sessions/(uuid:session)`
    :status 400: body missing user or password field
-   :status 403: the provided information were not a balid login
+   :status 403: the provided information is invalid for login
    :status 449: the user requres MFA but no ``otp`` parameter was passed
    :status 503: one or more subsystems could not be reached
 

@@ -16,7 +16,7 @@ API - Hypervisors
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /hypervisors HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -25,12 +25,12 @@ API - Hypervisors
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
@@ -40,10 +40,12 @@ API - Hypervisors
    :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/hypervisors/(uuid:hypervisor)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the organization list is returned
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
+
+   :<json string uuid: UUID of the hypervisor
 
 ____
 
@@ -68,12 +70,12 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      {
       "characteristics": {},
       "etherstubs": [],
@@ -132,7 +134,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -140,7 +142,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -162,6 +164,10 @@ ____
 
      hypervisors -> UUID -> edit
 
+.. todo:: 
+
+ content still missing
+
 ____
 
 
@@ -182,7 +188,13 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      Content-Type: application/json
 
-     {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
+     {
+      "notes":  
+       [{
+        "text":"yap",
+        "created_at":"2014-09-13T01:34:03.379Z"
+       }]
+     }
 
    **Example response**:
 
@@ -198,18 +210,16 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
-   :status 404: the VM could not be found
+   :status 404: the hypervisor could not be found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
    :>json string <key>: values to store under this key
 
-
-
 ____
 
 
-.. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/... 
+.. http:delete:: /hypervisors/(uuid:hypervisor)/metadata/...
 
     Removes a key from the metadata for hypervisor with given *uuid*.
 
@@ -220,7 +230,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -228,7 +238,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -250,13 +260,36 @@ ____
 
       hypervisors -> UUID -> edit
 
-.. note::
+   **Example request**:
 
-  Characteristics are used to describe capabilities of the hypervisor for the selection process.
+   .. sourcecode:: http
 
-.. todo::
-    
-  Example Requests & Responses still missing.
+     PUT /api/0.1.0/hypervisors/cae242d0-fb7a-4a37-82c7-dcc73ce0fa8d/characteristics HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
+
+      {"color": "blue"}
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the hypervisor could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string color: characteristic given to the hypervisor
 
 ____
 
@@ -272,7 +305,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/characteristics/... HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -280,7 +313,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -305,7 +338,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /hypervisors/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -313,7 +346,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -323,6 +356,3 @@ ____
    :status 204: the hypervisor was successfully deleted
    :status 404: the hypervisor was not found
    :status 503: one or more subsystems could not be reached
-
-
-

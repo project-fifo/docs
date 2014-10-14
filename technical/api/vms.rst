@@ -326,7 +326,7 @@ ____
    :<json string dataset: dataset UUID
    :<json string alias: the VM's alias
    :<json string hostname: the VM's hostname
-   :<json array resolvers: list of VM's resolvers 
+   :<json array resolvers: list of VM's resolvers
    :<json object package: package UUID
 
 ____
@@ -550,7 +550,12 @@ ____
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      {}
+     [{
+     "comment":"ex",
+     "state":"completed",
+     "timestamp":1411482795708708,
+     "uuid":"9fc74869-0d4b-48cb-85bb-054813ac18e8"
+     }]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
@@ -563,11 +568,10 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :>json object snapshots: list of snapshots of the VM
-
-.. todo::
-
-  Response as object has to be checked. If incorrect :json ... backup has to be eddited accordingly.
+   :<json string comment: comment for the snapshot
+   :<json string state: state of the snapshot (complete/incomplete)
+   :<json integer timestamp: timestamp of the snapshot
+   :<json string UUID: UUID of the snapshot
 
 ____
 
@@ -761,7 +765,18 @@ ____
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      {}
+      [{
+      "comment":"ex",
+      "files":["bd1d9ed0-00e8-483a-aae0-b9436c027e05/6e7da878-00ff-4edc-ad87-f51c0da16bbe"],
+      "local":true,
+      "pending":true,
+      "sha1":"49c74c48cedb8543b07b795d57797176deef5ed0",
+      "size":312442865,
+      "state":"completed",
+      "timestamp":1411482863814152,
+      "uuid":"6e7da878-00ff-4edc-ad87-f51c0da16bbe",
+      "xml":true
+      }]
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -773,11 +788,16 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :>json object backups: list of backups of the VM
-
-.. todo::
-
- Response as object has to be checked. If incorrect :json ... backup has to be eddited accordingly.
+   :<json string comment: comment for the backup
+   :<json array files: 
+   :<json string local: 
+   :<json string pending:
+   :<json string sha1:
+   :<json integer size: size of the backup
+   :<json state completed: state of the backup (complete/incomplete)
+   :<json integer timestamp: timestamp of the backup
+   :<json string UUID: UUID of the backup
+   :<json string xml: 
 
 ____
 
@@ -815,7 +835,7 @@ ____
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
    :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)/backups/(id:backup)` request
-   
+
    :status 303: redirect to the corresponding :http:get:`/vms/(uuid:vm)/backups/(id:backup)` request
    :status 404: the backups were not found
    :status 403: user is not authorized
@@ -823,7 +843,7 @@ ____
 
    :<json string comment: comment for the backup
 
-
+____
 
 
 .. http:get:: /vms/(uuid:vm)/backups/(id:backup)
@@ -853,10 +873,16 @@ ____
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      {
-      "comment":  "initial",
-      "pending":  true,
-      "timestamp":  1410571703253652,
-      "uuid": "e7ae7ad3-686e-4eef-8478-c289b254824b"
+     "comment":"ex",
+     "files":["bd1d9ed0-00e8-483a-aae0-b9436c027e05/6e7da878-00ff-4edc-ad87-f51c0da16bbe"],
+     "local":true,
+     "pending":true,
+     "sha1":"49c74c48cedb8543b07b795d57797176deef5ed0",
+     "size":312442865,
+     "state":"completed",
+     "timestamp":1411482863814152,
+     "uuid":"6e7da878-00ff-4edc-ad87-f51c0da16bbe",
+     "xml":true
      }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
@@ -869,13 +895,14 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :>json object backup: data still missing
-
-.. todo::
-
-  * Response as object has to be checked. If incorrect :>json ... backup has to be eddited accordingly.
-
-  * data has to be added for :>json object backup
+   :<json string comment: comment for the backup
+   :<json array files: 
+   :<json string local:
+   :<json string pending:
+   :<json string sha1:
+   :<json integer size: size of the backup
+   :<json string state: state of the backup (complete/incomplete)
+   :<json integer timestamp: timestamp for the backup
 
 ____
 
@@ -1051,7 +1078,11 @@ ____
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-      {}
+      {
+      "lrc:/etc/rc2_d/S99net_tune":"legacy_run",
+      "svc:/leofs/gateway:default":"maintenance",
+      "svc:/leofs/manager0:default":"online"
+      }
 
   :reqheader accept: the accepted encoding, valid is ``application/json``
   :reqheader x-snarl-token: the snarl token for this session
@@ -1064,12 +1095,6 @@ ____
   :status 503: one or more subsystems could not be reached
 
   :>json object services: services!
-
-.. todo::
-
-  * Response as object has to be checked. If incorrect :json ... services has to be eddited accordingly.
-
-  * data has to be added for :json object services
 
 ____
 
@@ -1114,13 +1139,5 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :<json object action: action that is requested
-   :<json object service: 
-
-   .. todo::
-
-    Description for :<json object service has to be added
-
-
-
-
+   :<json object action: action that is requested to be taken
+   :<json object service: the service to start/stop/clear

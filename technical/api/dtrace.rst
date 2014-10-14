@@ -16,7 +16,7 @@ API - DTrace
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /dtrace HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -25,12 +25,12 @@ API - DTrace
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
@@ -40,9 +40,9 @@ API - DTrace
    :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/dtrace/(uuid:dtrace)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the DTrace list is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
 ____
@@ -59,6 +59,23 @@ ____
 .. todo::
 
   Example Requests & Responses still missing.
+
+  POST /api/0.1.0/dtrace HTTP/1.1
+  Accept: application/json
+  x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+  Content-Type: application/json
+
+{
+"config": {"start":127, "end":0, "step":4}
+"name": "erlang function calls"
+"script": "erlang*:::global-function-entry\n$filter$\n{\n  self->t[copyinstr(arg1)] = vtimestamp;\n}\nerlang*:::function-return\n/self->t[copyinstr(arg1)]/\n{\n  @time[copyinstr(arg1)] = lquantize((vtimestamp - self->t[copyinstr(arg1)] ) / 1000, $start$, $end$, $step$);\n  self->t[copyinstr(arg1)] = 0;\n}"
+}
+
+HTTP/1.1 303 See Other
+Content-Type: application/json
+x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+vary: accept
+location: /api/0.1.0/dtrace/e864e552-0208-40f9-b05e-6de66f3b3579
 
 ____
 
@@ -79,16 +96,16 @@ ____
      host: cloud.project-fifo.net
      accept: applicaiton/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
    **Example response**:
-  
+
    .. sourcecode:: http
-  
+
        HTTP/1.1 200 OK
        vary: Accept
        content-type: application/json
        x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
        {
         "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
         "name": "zfs reads",
@@ -125,9 +142,9 @@ ____
 
       dtrace -> UUID -> edit
 
-.. todo::
+   .. warning::
 
- Example Requests & Responses still missing.
+      not currently supported
 
 ____
 
@@ -143,7 +160,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /dtrace/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -151,7 +168,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -220,7 +237,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /dtrace/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -228,7 +245,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -238,4 +255,3 @@ ____
    :status 204: the metadata key was successfully deleted from DTrace
    :status 404: the metadata key was not found
    :status 503: one or more subsystems could not be reached
-

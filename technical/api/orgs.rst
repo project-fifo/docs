@@ -54,11 +54,11 @@ ____
    **Related permissions**
 
       cloud -> orgs -> create
-   
+
    **Example request**:
 
    .. sourcecode:: http
-  
+
      POST /api/0.1.0/orgs HTTP/1.1
      Accept: application/json
      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
@@ -240,7 +240,7 @@ ____
      "target": "094a757b-84cd-46df-92bb-279a943fa489"
      }
 
-   **Example response*:
+   **Example response**:
 
    .. sourcecode:: http
 

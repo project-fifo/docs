@@ -65,7 +65,7 @@ ____
 
 - **All processes are running**
 
-    **Run location: GZ**
+    **Run location: FiFo Zone**
     Command (example):
 
     .. code-block:: bash

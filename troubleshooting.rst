@@ -58,7 +58,7 @@ General Checks
 
     .. code-block:: bash
 
-        vmamd list | grep fifo
+        vmadm list | grep fifo
         cae70926-cdc8-430f-9138-e06ac596c3ad  OS    512      running           fifo
 
 ____

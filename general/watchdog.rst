@@ -4,12 +4,12 @@
 Watchdog
 ########
 
-Watchdog is introduced with FiFo **0.6.1** earlyer releases do not have support for it!
+Watchdog is introduced with FiFo **0.6.1** earlier releases do not have support for it!
 
 Architecture
 ------------
 
-Most of watchdog runs inside the cloud's network with the optional posibility the general architecture is as follows:
+Most of watchdog runs inside the cloud's network with the optional possibility the general architecture is as follows:
 
 .. image:: /_static/images/watchdog.png
 
@@ -67,11 +67,11 @@ You need to configure Sniffle, Snarl and Chunter (those are the currently suppor
    ##   - an IP/port pair, e.g. 127.0.0.1:10011
    log.watchdog.host.local = 10.20.30.40:4444
 
-If you have a newconfig those keys already exist, if not you can simply add them.
+If you have a new config those keys already exist, if not you can simply add them.
 
 ``log.watchdog.host.local`` needs to point to the IP of the server the ``fifo-watchdog`` package was installed.
 
-``log.watchdog.level`` should be set to error, highter log levels will be send to the local watchdog but the upstream system will reject them.
+``log.watchdog.level`` should be set to error, higher log levels will be send to the local watchdog but the upstream system will reject them.
 
 ``log.watchdog.cluster`` should be a sensible name for your cluster helping you to identify it, a cluster in this sense is a fifo instance. This allows for example to have a production and a dev cluster.
 
@@ -79,7 +79,7 @@ If you have a newconfig those keys already exist, if not you can simply add them
 
 Upstream
 ````````
-Sending errors and alerts upstream requires a API token, as of now the upstream watchdog service is still in alpha and is on a invite only basis. That said if you're interested please contact us on IRC, Twitter or the mailinglist and we see if we can get you an account.
+Sending errors and alerts upstream requires a API token, as of now the upstream watchdog service is still in alpha and is on a invite only basis. That said if you're interested please contact us on IRC, Twitter or the mailing list and we see if we can get you an account.
 
 
 To setup the the upstream system it is required to adjust (or uncomment) two settings in the ``watchdog.conf`` (from the ``fifo-watchdog`` package):
@@ -101,4 +101,4 @@ To setup the the upstream system it is required to adjust (or uncomment) two set
 
 ``upstream`` is the upstream endpoint, usually this does not need to be changed just uncommented.
 
-``authtoken`` this is the auth token you recived or got from the watchdog-ui.
+``authtoken`` this is the auth token you received or got from the watchdog-ui.

@@ -22,7 +22,7 @@ Decide what host you want to run the local watchdog service on and install it fr
 
 .. code-block:: bash
 
-   pkgin fifo-watchdog
+   pkgin in fifo-watchdog
 
 
 

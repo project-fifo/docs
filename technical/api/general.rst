@@ -15,7 +15,7 @@ API - General
 
    GET /cloud/connection HTTP/1.1
    host: cloud.project-fifo.net
-   accept: applicaiton/json
+   accept: application/json
 
   **Example response**:
 
@@ -58,7 +58,7 @@ ____
 
      GET /cloud HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:

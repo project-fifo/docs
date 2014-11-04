@@ -11,7 +11,7 @@ Installation
 
 .. warning::
 
-   FiFo does not run well inside virtualized environments such as VMWare or virtualbox, their virtualized networking can interfeer with FiFo's auto discovery.
+   FiFo does not run well inside virtualized environments such as VMWare or virtualbox, their virtualized networking can interfere with FiFo's auto discovery.
 
 
 .. seealso::
@@ -158,3 +158,20 @@ If you want to add a default user role execute the following commands to assign 
 
 
 That's it. You can now log out of your *FiFo Zone* and back into the *Global Zone* and continue with installing the *Chunter* service (`directions here <../chunter/installation.html>`_).
+
+LeoFS
+-----
+
+.. warning::
+
+   S3 does require a host name or FQDN to work, ip addresses are not working to access the store. Both a DNS server and entries in ``/etc/hosts`` work.
+
+ProjectFiFo provides packages for LeoFS in it's repository, ``leo_manager``, ``leo_storage`` and ``leo_gateway``. Here the ``leo_manager`` package is used for both the **master** and **slave** manager!
+
+For details on how to set up LeoFS see the official `LeoFS manual <http://leo-project.net/leofs/docs/configuration_1.html>`_
+
+Once LeoFS is configured the ``init-leofs`` command can be used from ``sniffle-admin`` to set up the required, users, buckets and endpoints.
+
+.. code-block:: bash
+
+   sniffle-admin init-leofs leo.fifo.net

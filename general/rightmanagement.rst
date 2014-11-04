@@ -168,7 +168,7 @@ Here is a set of rules that represents a good default Organization with three as
 Admins
 ``````
 
-Administrative users that have full power over resources of the Organistation.
+Administrative users that have full power over resources of the Organisation.
 
 Basic permissions
 '''''''''''''''''

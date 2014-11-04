@@ -14,7 +14,7 @@ ____
 Stateless
 +++++++++
 
-Maintaining availability in stateless applications is pretty simple, it's 'the cloud way': you can fire up multiple instances and since they don't need to share state a failing instance can simply be replaced by a new one or discarded alltogether.
+Maintaining availability in stateless applications is pretty simple, it's 'the cloud way': you can fire up multiple instances and since they don't need to share state a failing instance can simply be replaced by a new one or discarded altogether.
 
 The following components are stateless:
 
@@ -47,7 +47,7 @@ ____
 `Chunter <../chunter.html>`_
 ****************************
 
-`Chunter <../chunter.html>`_ is a special case since it is directly tied to a hardware node which makes high availibility irrelevant.
+`Chunter <../chunter.html>`_ is a special case since it is directly tied to a hardware node which makes high availability irrelevant.
 
 ____
 
@@ -59,7 +59,7 @@ Changing the cluster
 	If the cluster is set up before the system goes into production there is not much to worry about. However there are situations where it is required to extend or shrink the cluster during production. Generally there is nothing that prevents extending or shrinking a cluster during production but it requires the user to perform an additional step.
 
 .. warning:: 
-	To prevent interruptions it is nessessary to disable the ``mdns`` on the nodes that you want to add or remove. Otherwise other services will think these nodes are valid parts of the cluster and therefore try to access them. To disable ``mdns`` the configuration option ``mdns.server = disabled`` needs to be added to the  `Sniffle Configuration File <../sniffle/configuration.html#mdns>`_, `Snarl Configuration File <../Snarl/configuration.html#mdns>`_ or `Howl Configuration File <../howl/configuration.html#mdns>`_ depending on the service added or removed. This should be done before the services are first started or removed / leaves.
+	To prevent interruptions it is necessary to disable the ``mdns`` on the nodes that you want to add or remove. Otherwise other services will think these nodes are valid parts of the cluster and therefore try to access them. To disable ``mdns`` the configuration option ``mdns.server = disabled`` needs to be added to the  `Sniffle Configuration File <../sniffle/configuration.html#mdns>`_, `Snarl Configuration File <../Snarl/configuration.html#mdns>`_ or `Howl Configuration File <../howl/configuration.html#mdns>`_ depending on the service added or removed. This should be done before the services are first started or removed / leaves.
 
 In the following section the existing server will be named ``sniffle@10.0.0.1`` and the new server will be named ``sniffle@10.0.0.2``. If multiple servers exist it does not matter which one is picked. Also keep in mind that for working with a `Howl <../howl.html>`_ or `Snarl <../snarl.html>`_ cluster the section before the ``@`` needs to be replaced with ``howl`` or ``snarl`` respectively.
 

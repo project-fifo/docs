@@ -8,21 +8,21 @@ Release Notes
 0.6.0
 #####
 
-* Moved all datastrucutres to CRDT's
+* Moved all data-structures to CRDT's
 
-  * This will bring a huge improvment in stability and the capability to deal with network failures and partitions. As part of this also the conversion to JSON for the API was pushed away from the core components towards the API endpoints.
+  * This will bring a huge improvement in stability and the capability to deal with network failures and partitions. As part of this also the conversion to JSON for the API was pushed away from the core components towards the API endpoints.
 
 * Supporting multiple realms for Snarl
 
-  * This allows to use the same Snarl for multiple useses.
+  * This allows to use the same Snarl for multiple uses.
 
 * Metric support for Snarl sending data to `DalmatierDB <https://dalmatiner.io>`_
-* Added EQC (Erlang Quick Check) tests for datatypes and some components.
+* Added EQC (Erlang Quick Check) tests for data types and some components.
 * Logging of VM creation is vastly improved to allow better determination of problems.
 * Improvements of the cold migration workflow in the UI.
 * Numerous UI and UX improvements
-* Fixes of edgecasees and minor bugs
-* Updated the documentation to use sphynx and `Read the docs <http://readthedocs.org>`_
+* Fixes of edge-cases and minor bugs
+* Updated the documentation to use sphinx and `Read the docs <http://readthedocs.org>`_
 * Updated to the latest riak_core
 * Updated to cowboy and ranch 1.0.0
 
@@ -39,9 +39,9 @@ ____
   * Hypervisor topology - describing the layout of the cloud to *FiFo*.
 
 * Caching for `Wiggle <../wiggle.html>`_.
-* Dataset upload over the *Fifo* commandline client.
+* Dataset upload over the *Fifo* command-line client.
 * Dry run VM creation to ensure validity of Package/Dataset/Network combination prior to VM creation.
-* Minor bug fixes and improvments.
+* Minor bug fixes and improvements.
 
 ____
 
@@ -61,7 +61,7 @@ ____
 0.4.3
 #####
 
-This is so farthe far biggest release of *Project-FiFo*: aside from the usual improvements and fixes we've added a good number of new and exciting features!
+This is so far the far biggest release of *Project-FiFo*: aside from the usual improvements and fixes we've added a good number of new and exciting features!
 
 .. attention::
 
@@ -151,7 +151,7 @@ Services
 Hypervisor updates
 ++++++++++++++++++
 
-`Sniffle <../sniffle.html>`_ now contains code to trigger `Chunter <../chunter.html>`_ updates. This simplifies the management of large amounts of hypervisors since it requires just one command to update all of them instead of doing it on each seperately. It still is possible to trigger single hypervisors either locally or from *FiFo* directly.
+`Sniffle <../sniffle.html>`_ now contains code to trigger `Chunter <../chunter.html>`_ updates. This simplifies the management of large amounts of hypervisors since it requires just one command to update all of them instead of doing it on each separately. It still is possible to trigger single hypervisors either locally or from *FiFo* directly.
 
 The related commands in the FiFo Zone are: ``fifoadm hypervisors update`` and ``fifoadm hypervisors update <hypervisor>``.
 

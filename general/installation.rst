@@ -11,7 +11,7 @@ Installation
 
 .. warning::
 
-   FiFo does not run well inside virtualized environments such as VMWare or virtualbox, their virtualized networking can interfeer with FiFo's auto discovery.
+   FiFo does not run well inside virtualized environments such as VMWare or virtualbox, their virtualized networking can interfere with FiFo's auto discovery.
 
 
 .. seealso::
@@ -164,9 +164,9 @@ LeoFS
 
 .. warning::
 
-   S3 does require a host name or FQDN to work, ip addresses are not wokring to access the store. Both a DNS server and entries in ``/etc/hosts`` work.
+   S3 does require a host name or FQDN to work, ip addresses are not working to access the store. Both a DNS server and entries in ``/etc/hosts`` work.
 
-ProjectFiFo provides packages for LeoFS in it's repositiory, ``leo_manager``, ``leo_storage`` and ``leo_gateway``. Here the ``leo_manager`` pacakage is used for both the **master** and **slave** manager!
+ProjectFiFo provides packages for LeoFS in it's repository, ``leo_manager``, ``leo_storage`` and ``leo_gateway``. Here the ``leo_manager`` package is used for both the **master** and **slave** manager!
 
 For details on how to set up LeoFS see the official `LeoFS manual <http://leo-project.net/leofs/docs/configuration_1.html>`_
 

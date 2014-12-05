@@ -35,8 +35,8 @@ Details
 .. image:: /_static/images/jingles/networks03.png
 
 1. Select an iprange to add to the network.
-2. Delete an iprange form a network.
-3. Deletes the entire iprange.
+2. Delete an iprange from a network.
+3. Delete the entire iprange.
 
 IP-Ranges
 #########
@@ -44,14 +44,14 @@ IP-Ranges
 List
 ****
 
-*FiFo* manages all IP provisioning. It stores a pool of IP addresses for each network you create. Upon machine creation *FiFo* assigns IP addresses and returns the IP addresses to the pool when a machine is destroyed. The address assignment works in conjunction with the security features built into *SmartOS* to ensure that only the IP address handed out can be used on the specific network you deploy on. This ensures a good neighbour policy; it prevents malicious users of machines from spoofing IP addresses and interfering with the traffic of other machines.
+*FiFo* manages all IP provisioning. It stores a pool of IP addresses for each network you create. Upon machine creation *FiFo* assigns IP addresses, when a machine is destroyed it returns the IP addresses to the pool. The address assignment works in conjunction with the security features built into *SmartOS* to ensure that only the IP address handed out can be used on the specific network you deploy on. This ensures a good neighbour policy; it prevents malicious users of machines from spoofing IP addresses and interfering with the traffic of other machines.
 
 .. image:: /_static/images/jingles/ipranges01.png
 
 The default network list view shows the networks that are currently configured and columns with information specific to each network:
 
 - **Name**: You can chose any name you like.
-- **Tag**: The network **Tag** must be a real network tag that aexists on at least one hypervosir/compute node.
+- **Tag**: The network **Tag** must be a real network tag that exists on at least one hypervisor/compute node.
 - **Network**: The network address of your network.
 - **Netmask**: The subnet mask of your network.
 - **Gateway**: The network gateway.

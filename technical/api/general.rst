@@ -5,6 +5,13 @@
 API - General
 *************
 
+.. note::
+
+   The base path of all PI calls is: ``/api/<version>`` where ``<version>`` is
+   currently ``0.1.0`` but might change on a later date if breaking changes are
+   introduced.
+
+
 .. http:get:: /cloud/connection
 
   Returns the connection status.

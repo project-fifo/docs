@@ -19,7 +19,7 @@ API - Roles
   
      GET /roles HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -37,7 +37,7 @@ API - Roles
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader x-full-list: true - to get a full list instead of UUIDs
-   :reqheader x-full-fields: fields to include in the full list - please see: :http:get:`/roles/(uuid:role)`
+   :reqheader x-full-list-fields: fields to include in the full list - please see: :http:get:`/roles/(uuid:role)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
    

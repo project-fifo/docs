@@ -102,3 +102,8 @@ To setup the the upstream system it is required to adjust (or uncomment) two set
 ``upstream`` is the upstream endpoint, usually this does not need to be changed just uncommented.
 
 ``authtoken`` this is the auth token you received or got from the watchdog-ui.
+
+Upstream
+--------
+
+There is a `upstream service <https://watchdog.project-fifo.net>`_ for watchdog, it is currently in testing please ask Licenser on our IRC channel if you're want access.

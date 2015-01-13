@@ -5,6 +5,25 @@
 Release Notes
 *************
 
+0.6.1
+#####
+
+* In zone API via `zfifo </zfifo.html>`_.
+* Support for LX branded zones.
+* Snapshots that were deleted on the hypervisor are now cleaned up.
+* Introducing `FiFo-Watchdog <https://watchdog.project-fifo.net>`_.
+* Better code for updating config files.
+* Improved lookup code using secodary indexes.
+* Accounting for Snarl.
+* Metric support for Sniffle sending data to `DalmatierDB <https://dalmatiner.io>`_
+* Better Sniffle monitoring.
+* Improved image downloading and disabling it for internal storage.
+* Added cluster and stack configs.
+* Fixes for resizing.
+* New zdoor tool.
+
+____
+
 0.6.0
 #####
 

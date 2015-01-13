@@ -92,7 +92,7 @@ We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *Fi
    VERSION=rel
    echo "http://release.project-fifo.net/pkg/${VERSION}/" >>/opt/local/etc/pkgin/repositories.conf
    pkgin -fy up
-   pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles
+   pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles fifo-watchdog
    cp /opt/local/fifo-jingles/config/nginx.conf /opt/local/etc/nginx/nginx.conf
 
 .. note::
@@ -122,6 +122,7 @@ Startup
    svcadm enable sniffle
    svcadm enable howl
    svcadm enable wiggle
+   svcadm enable watchdog
    svcadm enable nginx
    svcs epmd snarl sniffle howl wiggle nginx
 

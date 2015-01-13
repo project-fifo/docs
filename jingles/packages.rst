@@ -5,10 +5,20 @@
 Packages
 ********
 
+To get to *Fifo's* package management section: 
+
+1. Click **More** on the home screen and than select **Configuration**.
+
+2. On the next page select **Packages**
+
+.. image:: /_static/images/jingles/packages_getto.png
+
+____
+
 List
 ####
 
-.. image:: /_static/images/jingles/packages01.jpg
+.. image:: /_static/images/jingles/packages01.png
 
 The packages list page gives you an overview of existing packages and is the place where you create additional packages.
 
@@ -20,29 +30,37 @@ The packages list page gives you an overview of existing packages and is the pla
 
 Clicking on the package name / hyperlink will bring up the package details page.
 
-.. image:: /_static/images/jingles/packages02.jpg
+.. image:: /_static/images/jingles/packages02.png
+
+____
 
 Creation
 ########
 
-Clicking on the **Add Package** button will take you to the package creation page as shown below:
+Clicking on the |new package| button will take you to the package creation page as shown below:
 
-.. image:: /_static/images/jingles/packages03.jpg
-
+.. image:: /_static/images/jingles/packages03.png
 
 1. Enter the name of the package.
 2. Fill in cpu, ram and disk to be used for the package.
 3. Create optional package rules if you require them. example:
-    .. image:: /_static/images/jingles/packages04.jpg
 
-    In the above example we are essentially saying that the **"uuid"** of the hypervisor must equal "**ee1c3236-a2b1-43fa-ac52-8d6d9c7a3dc3**". The result of choosing this package when creating a machine will ensure that the vm/machine only gets created on the hypervisor / compute node you specified.
+|example|
 
-4. Click on the **+** plus button to create additional package rules.
+In the above example we are essentially saying that the **"uuid"** of the hypervisor must equal "**ee1c3236-a2b1-43fa-ac52-8d6d9c7a3dc3**". The result of choosing this package when creating a machine will ensure that the vm/machine only gets created on the hypervisor / compute node you specified.
+
+4. Click on the |add button| button to create additional package rules.
 
 .. note::
 	There are many additional keys and attributes you can use when creating package rules and they are outlined in more detail below.
 
-		`Package rules`_ : `weight`_ `|` `condition`_ `|` `attribute`_ `|` `value`_ 
+		`Package rules`_ : `weight`_ `|` `condition`_ `|` `attribute`_ `|` `value`_
+
+.. |new package| image:: /_static/images/jingles/packages-new.png
+
+.. |example| image:: /_static/images/jingles/packages04.jpg
+
+.. |add button| image:: /_static/images/jingles/add-button.png
 
 
 Package rules
@@ -94,6 +112,8 @@ usable attributes
 - ``uuid`` - uuid of the hypervisor
 - ``alias`` - hypervisor name, e.g. `"00-0c-29-18-ec-10"` or `"compute-node-2"`
 - ``virtualisation`` - node virtualisation type capability e.g. `"zone"` or `"kvm"`
+
+____
 
 Details
 #######

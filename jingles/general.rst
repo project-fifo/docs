@@ -9,14 +9,16 @@ Login
 #####
 
 .. warning::
-     
+
      The OTP (One Time Password) field can be left empty unless a YubiKey was specifically added to the user. This is never the case for newly created users!
 
 .. image:: /_static/images/jingles/login.jpg
 
-When you first connect to the web interface via a web browser you will be presented with a *login screen* as shown above.
+When you first connect to the web interface via a web browser you will be presented with a login screen as shown above.
 
-Enter your valid credentials and click the "**Ok**" button to authenticate and login to the web interface.
+Enter your valid credentials and click the |login| button to authenticate and login to the web interface.
+
+.. |login| image:: /_static/images/jingles/login.png
 
 .. note::
 
@@ -27,7 +29,11 @@ Dashboard
 
 .. image:: /_static/images/jingles/dashboard.png
 
-The *Dashboard* is designed to give you a "*10,000 foot view*" or single pane of glass into your operational cloud. In future versions of *FiFo* this page may have additional dials and graphs for things such as average CPU usage and disk IO across your cloud as well as the possibility to show that a virtual machine is currently being heavily zfs io throttled or that it's nearing its memory RSS limits.
+The Dashboard is designed to give you a "*10,000 foot view*" or single pane of glass into your operational cloud. In future versions of *FiFo* this page may have additional dials and graphs for things such as average CPU usage and disk IO across your cloud as well as the possibility to show that a virtual machine is currently being heavily zfs io throttled or that it's nearing its memory RSS limits.
+
+.. todo::
+
+	Reprhase the paragraph above.
 
 The status page is designed to show you an overview of your entire clouds status.
 
@@ -85,7 +91,7 @@ The *About Page* contains useful and relevant information such as package versio
  * github : The project's source code repository. https://github.com/project-fifo
  * irc : This launches an additional browser window that connects you to the #project-fifo official irc channel on freenode.
  * follow us : A link to follow the project's official twitter feed. @project_fifo
- 
+
 2. Versions : Shows the current versions of all the *FiFo* services and indicates whether new package updates are available.
 
 3. Messages : A message section that shows relevent or pertinent messages related to your installation.

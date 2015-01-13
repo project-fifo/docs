@@ -16,6 +16,10 @@ To get to *Fifo's* user management section:
 Users
 #####
 
+.. todo::
+
+	YubiKeys - Users & Organizations - Users subsection needs to be added.
+
 List View - Users
 *****************
 
@@ -40,7 +44,9 @@ This will take you to the new user creation page as shown below.
 
 .. image:: /_static/images/jingles/users02.png
 
-Enter a username for your new user. Please note that usernames are case sensitive. Enter a password for your new user by typing in the password twice. Only if the two passwords are identical the "create" button will appear. To complete user creation click on the "create" button.
+Enter a username for your new user. Please note that usernames are case sensitive. Enter a password for your new user by typing in the password twice. Only if the two passwords are identical the |create button| button will appear. To complete user creation click on the |create button| button.
+
+.. |create button| image:: /_static/images/jingles/create.png
 
 Details - Users
 ***************
@@ -51,8 +57,16 @@ Clicking on an individual hyperlinked user name will take you to that user's det
 
 1. The name of the users you are working on.
 2. Tab sectioned relating to the user. (Explained in further detail below).
-3. The user details tab shows you the uuid of the user and allows you to change that user's password.
+3. The user details tab shows you the uuid of the user, allows you to change that user's password, and select the active organisation he is working for.
 4. Clicking on the |trash icon| will launch a popup dialogue that will ask for you to confirm user deletion.
+
+.. todo::
+
+   Split out 3. into 3 sections:
+
+   1. Information (name/uuid)
+   2. Active organisation
+   3. Password fields & change  button
 
 .. |trash icon| image:: /_static/images/jingles/users-delete.png
 
@@ -63,10 +77,8 @@ Permissions - Users
 
 *FiFo* includes a very powerful fine grained permission system that lets you tailor specific permissions for specific users or roles. This allows you to control what areas within the "User Interface" users can see and what actions they are permitted to perform on different objects such as machines, datasets, packages etc.
 
-It is beyond the scope of this section to explain the permission system in necessary depth. For further information please consult the `Permissions <https://project-fifo.net/display/PF/Permissions>`_ wiki article.
+It is beyond the scope of this section to explain the permission system in necessary depth. For further information please consult the `Rights Management <../general/rightmanagement.html>`_ section.
 
-.. note::
-	The `Permissions <https://project-fifo.net/display/PF/Permissions>`_ wiki article is not filled with content yet.
 
 Roles - Users
 *************
@@ -82,10 +94,11 @@ SSH Keys - Users
 
 .. attention::
 
-	SSH keys need to have the form 'ssh-rsa key-data key-id', other key, while valid will be refused.
-
+	SSH keys need to have the form 'ssh-rsa ``key-data`` ``key-id``', keys with another format - while valid - will be refused.
 
 You can add your own ssh public key to your user profile by simply pasting in your key and clicking the save button. This will be used when the user creates a new machine and *FiFo* will automatically add the users key to the machines authorized_keys file. You should than be able to authenticate your ssh session without requiring password entry.
+
+____
 
 Roles
 #####
@@ -102,11 +115,15 @@ To edit an existing role simply click on the roles name hyperlink. This will tak
 Creation - Roles
 ****************
 
-To add a new role click on the add role button.
+To add a new role click on the |new roles| button.
+
+.. |new roles| image:: /_static/images/jingles/roles_new.png
 
 .. image:: /_static/images/jingles/roles02.png
 
-Enter a name for your new role and click on the create button.
+Enter a name for your new role and click on the |create button2| button.
+
+.. |create button2| image:: /_static/images/jingles/create.png
 
 Details - Roles
 ***************
@@ -127,6 +144,8 @@ It is beyond the scope of this section to explain the permission system in neces
 
 .. note::
 	The `Permissions <https://project-fifo.net/display/PF/Permissions>`_ wiki article is not filled with content yet.
+
+____
 
 Orgs
 ####

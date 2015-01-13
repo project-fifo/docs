@@ -5,6 +5,25 @@
 Release Notes
 *************
 
+0.6.1
+#####
+
+* In zone API via `zfifo </general/zfifo.html>`_.
+* Support for LX branded zones.
+* Snapshots that were deleted on the hypervisor are now cleaned up.
+* Introducing `FiFo-Watchdog <https://watchdog.project-fifo.net>`_.
+* Better code for updating config files.
+* Improved lookup code using secodary indexes.
+* Accounting for Snarl.
+* Metric support for Sniffle sending data to `DalmatierDB <https://dalmatiner.io>`_
+* Better Sniffle monitoring.
+* Improved image downloading (Internal storage is now disabled).
+* Added cluster and stack configs.
+* Fixes for resizing.
+* New zdoor tool.
+
+____
+
 0.6.0
 #####
 
@@ -27,7 +46,6 @@ Release Notes
 * Updated to cowboy and ranch 1.0.0
 
 ____
-
 
 0.4.5
 #####
@@ -70,7 +88,6 @@ This is so far the far biggest release of *Project-FiFo*: aside from the usual i
   The reasoning behind this is simple: single node installations are usually done by people trying out FiFo for the first time, mostly without a firm gasp of what it is and what they are wanting to do with it. Those installations are usually the same across the board so having a default that 'fits all' is much easier. Also scaling up is easier then scaling down once the installation grows.
 
   If you are using *FiFo* in production it is more important then ever to plan ahead and understand the environment it will be running on to pick the optimal defaults for your purpose.
-
 
 Configuration
 *************

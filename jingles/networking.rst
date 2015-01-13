@@ -5,6 +5,16 @@
 Networking
 **********
 
+To get to *Fifo's* network management section: 
+
+1. Click **More** on the home screen and than select **Configuration**.
+
+2. On the next page select **Networking**
+
+.. image:: /_static/images/jingles/networks_getto.png
+
+____
+
 Networks
 ########
 
@@ -16,8 +26,11 @@ Lists the Networks known to *FiFo*.
 .. image:: /_static/images/jingles/networks01.png
 
 
-1. Allows deleting a Network.
-2. Adds a new Network.
+1. By clicking the |new network| button you can create a new network.
+2. By clicking the |delete network| button next to the network you can delete an existing network.
+
+.. |new network| image:: /_static/images/jingles/networks-new.png
+.. |delete network| image:: /_static/images/jingles/networks-delete.png
 
 Create
 ******
@@ -26,17 +39,24 @@ Creating a new Network is simple. There are not many changes to be made:
 
 .. image:: /_static/images/jingles/networks02.png
 
-1. The name of the network.
-2. Click to create a network.
+1. Enter the name of the network.
+2. To create a new network click the |create button| button.
+
+.. |create button| image:: /_static/images/jingles/create.png
 
 Details
 *******
 
 .. image:: /_static/images/jingles/networks03.png
 
-1. Select an iprange to add to the network.
-2. Delete an iprange form a network.
-3. Deletes the entire iprange.
+1. To add a new IPrange to the network select one from the selection panel: |selection panel|.
+2. By clicking *delete* next to the IPrange you can delete that IPrange from the network.
+3. By clicking the |trash icon| button you can delete the entire network.
+
+.. |selection panel| image:: /_static/images/jingles/iprange-selection.png
+.. |trash icon| image:: /_static/images/jingles/users-delete.png
+
+____
 
 IP-Ranges
 #########
@@ -79,4 +99,4 @@ When all required fields are filled in, the |create| button will appear.
 
 Click on the |create| button to save your new network: 
 
-.. |create| image:: /_static/images/jingles/ipranges-create.png
+.. |create| image:: /_static/images/jingles/create.png

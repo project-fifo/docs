@@ -8,7 +8,7 @@ Datasets
 Installed Datasets
 ##################
 
-.. image:: /_static/images/jingles/datasets01.jpg
+.. image:: /_static/images/jingles/datasets01.png
 
 
 *FiFo* incorporates its own internal dataset repository. It uses this repository to deploy datasets to individual *SmartOS* compute nodes that are under *FiFo's* management. *FiFo* is designed with no single point of failure in mind. By default the dataset storage database breaks each dataset into redundant shards and distributes it across your *FiFo* cluster (if setup in a clustered configuration). This means that datasets will always be available for provisioning.
@@ -19,21 +19,27 @@ The installed datasets tab shows you which datasets exist in the internal reposi
 
 .. image:: /_static/images/jingles/datasets02.jpg
 
-To delete a dataset and remove it from the repository click on the "**X**" delete icon next to the individual dataset.
+To delete a dataset and remove it from the repository click on the |delete button| icon next to the individual dataset.
 
+.. |delete button| image:: /_static/images/jingles/datasets-destroy.png
+
+____
 
 Remote Datasets
 ###############
 
-.. image:: /_static/images/jingles/datasets03.jpg
+.. image:: /_static/images/jingles/datasets03.png
 
 The remote datasets tab is where you choose which external datasets you would like to import into *FiFo's* internal dataset repository. By default *FiFo* is pre-configured to pull datasets from `datasetsat <http://www.datasets.at>`_ the community dataset repository which contains all the official *Joyent* datasets as well as community contributed datasets.
 
-	1. To "import" a dataset simply click on the import button. The importing dataset progress bar will then be visible in the "dataset installed" tab.
+	1. To "import" a dataset simply click on the |import button| button. The importing dataset progress bar will then be visible in the "dataset installed" tab.
 	2. Shows the external repository *FiFo* is currently associated with.
 
 Should you wish to change the remote repository source this can be configured by editing the `configuration file <configuration.html>`_.
 
+.. |import button| image:: /_static/images/jingles/datasets-import.png
+
+____
 
 Details
 #######
@@ -43,7 +49,10 @@ Details
 The dataset details allow edit some details of a dataset after it was imported.
 
 	1. The currently attached NIC's can be deleted one by one.
-	2. Allows adding a new required NIC.
-	3. Saves the changes.
+	2. By clicking the |add dataset| button you can add a new required NIC.
+	3. By clicking the |save dataset| button you save any changes made.
+
+.. |add dataset| image:: /_static/images/jingles/datasets-new.png
+.. |save dataset| image:: /_static/images/jingles/datasets-save.png
 
 

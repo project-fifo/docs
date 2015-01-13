@@ -16,7 +16,7 @@ API - Datasets
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /datasets HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -25,12 +25,12 @@ API - Datasets
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
@@ -40,9 +40,9 @@ API - Datasets
    :reqheader x-full-list-fields: fields to include in the full list - please see: :http:get:`/datasets/(uuid:dataset)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the dataset list is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
 ____
@@ -56,9 +56,35 @@ ____
 
     cloud -> datasets -> import
 
-.. todo::
-    
-  Example Requests & Responses still missing.
+   **Example request**:
+
+   .. sourcecode:: http
+
+      POST /api/0.1.0/datasets HTTP/1.1
+      accept: application/json
+      content-type: application/json
+      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+
+      {"url": "https://datasets.at/datasets/21274016-2ad3-11e4-9673-e3abad521cc2"}
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 303 See Other
+      content-type: application/json
+      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      location: /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the dataset list is returned
+   :status 303: redirect to the session :http:get:`/datasets/(uuid:dataset)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
 
 ____
 
@@ -74,7 +100,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -83,12 +109,12 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
       "type": "kvm",
@@ -145,9 +171,46 @@ ____
 
       datasets -> UUID -> edit
 
-.. todo::
-    
-  Example Requests & Responses still missing.
+   **Example request**:
+
+   .. sourcecode:: http
+
+      PUT /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2 HTTP/1.1
+      Accept: application/json
+      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      Content-Type: application/json
+
+      {
+      "networks": 
+       [{
+       "description":"public", 
+       "name":"net0"}, 
+       {"name":"net1",
+       "description":"internal"
+       }]
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No Content
+      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the dataset could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string networks: contains information about the network
+   :>json string descrition: contains a discription of the network
+   :>json string name: name of the network
 
 ____
 
@@ -160,9 +223,68 @@ ____
 
       datasets -> UUID -> create
 
-.. todo::
-    
-  Example Requests & Responses still missing.
+   **Example request**:
+
+   .. note::
+      
+    Input is a DS manifest.
+
+   .. sourcecode:: http
+
+      POST /api/0.1.0/datasets/d34c301e-10c3-11e4-9b79-5f67ca448df0 HTTP/1.1
+      accept: application/json
+      content-type: application/json
+      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+
+      {
+      "uuid":"d34c301e-10c3-11e4-9b79-5f67ca448df0",
+      "name":"base64",
+      "version":"14.2.0",
+      "description":"A 64-bit SmartOS image with just essential packages installed. Ideal for users who are comfortable with setting up their own environment and tools.",
+      "os":"smartos",
+      "type":"zone-dataset",
+      "homepage":"http://wiki.joyent.com/jpc2/SmartMachine+Base",
+      "urn":"sdc:sdc:base64:14.2.0",
+      "published_at":"2014-07-21T10:43:17Z",
+      "created_at":"2014-07-21T10:43:17Z",
+      "creator_uuid":"00000000-0000-0000-0000-000000000000",
+      "creator_name":"sdc",
+      "vendor_uuid":"00000000-0000-0000-0000-000000000000",
+      "requirements":
+       {
+       "networks":
+        [{
+        "description":"public",
+        "name":"net0"
+        }]
+       },
+       "files":
+        [{
+        "url":"http://datasets.at/datasets/d34c301e-10c3-11e4-9b79-5f67ca448df0/base64-14.2.0.zfs.gz",
+        "path":"base64-14.2.0.zfs.gz",
+        "md5":"a514917b3e6b8e18f8b21648a19876dc",
+        "sha1":"97b2eec4bf8e9ae8c4be43e32c8672be198278d6","size":116062401
+        }]
+      }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 303 See Other
+      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      location: /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the dataset list is returned
+   :status 303: redirect to the session :http:get:`/datasets/(uuid:dataset)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
 
 ____
 
@@ -178,7 +300,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -186,7 +308,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -225,7 +347,7 @@ ____
      vary: Accept
      content-type: application/x-gzip
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-     
+
       ... binary data ...
 
    :reqheader accept: the accepted encoding, valid is ``application/x-gzip``
@@ -250,7 +372,7 @@ ____
       datasets -> UUID -> create
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -311,7 +433,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -319,7 +441,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -329,4 +451,3 @@ ____
    :status 204: the metadata key was successfully deleted from the dataset
    :status 404: the metadata key was not found
    :status 503: one or more subsystems could not be reached
-

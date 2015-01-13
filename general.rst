@@ -9,8 +9,10 @@ General
    :glob:
 
    general/installation
+   general/watchdog
    general/clustering
    general/releasenotes
    general/upgrade
    general/rightmanagement
    general/singlezoneleofs
+   general/zfifo

@@ -16,7 +16,7 @@ API - Packages
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /packages HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -25,12 +25,12 @@ API - Packages
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
@@ -40,7 +40,7 @@ API - Packages
    :reqheader x-full-list-fields: fields to include in the full list - please see: :http:get:`/packages/(uuid:package)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the package list is returned
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
@@ -56,9 +56,61 @@ ____
 
       -> packages -> create
 
-.. todo::
+   **Example request**:
 
-  Example Requests & Responses still missing.
+   .. sourcecode:: http
+
+     POST /api/0.1.0/packages HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
+
+     {
+     "name":"example",
+     "quota":10,
+     "ram":1024,
+     "cpu_cap":100,
+     "requirements":
+      [{
+      "weight":"must",
+      "value":5,
+      "attribute":"resources.free-memory",
+      "condition":">"
+      }],
+     "zfs_io_priority":100,
+     "block_size":1024,
+     "compression":"lz4"}
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 303 See Other
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     location: /api/0.1.0/packages/f00ebc46-9026-4a29-aa20-7b4873f5bc8a
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the package list is returned
+   :status 303: redirect to the session :http:get:`/packages/(uuid:package)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string name: name of the package
+   :>json integer quota: size of the zfs dataset
+   :>json integer ram: ram available to the package
+   :>json integer cpu_cap: CPU Cap *(optional)*
+   :>json array requirements: requirements for the package
+   :>json string weight:
+   :>json integer value:
+   :>json string attribute:
+   :>json string condition:
+   :>json integer zfs_io_priority: ZFS IO priority
+   :>json integer blicksize: blocksize of the package
+   :>json string compression: compression used for zfs dataset
 
 ____
 
@@ -94,16 +146,16 @@ ____
         "name": "small",
 
         "blocksizte": 4098,
-       "compression": "none",
+        "compression": "none",
         "cpu_cap": 100,
         "cpu_shares": 100,
         "max_swap": 1024,
         "quota": 40,
         "ram": 1024,
         "zfs_io_priority": 100,
-  
+
         "requirements": [],
-  
+
         "metadata": {}
        }
 
@@ -147,14 +199,14 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /packages/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
 
    :reqheader x-snarl-token: the snarl token for this session
@@ -222,7 +274,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /packages/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
      host: cloud.project-fifo.net
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
@@ -230,7 +282,7 @@ ____
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
@@ -239,6 +291,5 @@ ____
 
    :status 204: the metadata key was successfully deleted from the package
    :status 404: the metadata key was not found
-   
-   :status 503: one or more subsystems could not be reached
 
+   :status 503: one or more subsystems could not be reached

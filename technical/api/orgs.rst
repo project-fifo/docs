@@ -16,7 +16,7 @@ API - Organizations
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /orgs HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -25,12 +25,12 @@ API - Organizations
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
@@ -40,13 +40,12 @@ API - Organizations
    :reqheader x-full-list-fields: fields to include in the full list - please see: :http:get:`/orgs/(uuid:org)`
    :resheader content-type: the returned datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the orgs list is returned
    :status 403: user is not authoriyed
    :status 503: one or more subsystems could not be reached
 
 ____
-
 
 .. http:post:: /orgs
 
@@ -56,9 +55,36 @@ ____
 
       cloud -> orgs -> create
 
-.. todo::
-    
-  Example Requests & Responses still missing.
+   **Example request**:
+
+   .. sourcecode:: http
+
+     POST /api/0.1.0/orgs HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json
+
+     {"name":"Test"}
+
+   **Example respnonse**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 303 See Other
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     location: /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the returned datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 200: the organization list is returned
+   :status 303: redirect to the session :http:get:`/orgs/(uuid:org)`
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :>json string name: name of the organization
 
 ____
 
@@ -74,7 +100,7 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      accept: applicaiton/json
@@ -125,15 +151,17 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      host: cloud.project-fifo.net
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -170,8 +198,8 @@ ____
      vary: Accept
      content-type: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-     
-      {}
+
+      []
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
@@ -188,18 +216,53 @@ ____
 ____
 
 
-.. http:put:: /orgs/(uuid:org)/triggers/(uuid:role)/<permission.../...>
+.. http:put:: /orgs/(uuid:org)/triggers/(uuid:role)/<trigger_type>
 
    Adds a new trigger to org with given *uuid*.
 
    **Related permissions**
 
       * orgs -> UUID -> edit
-      * roles -> ROLE -> grant
 
-.. todo::
-    
-  Example Requests & Responses still missing.
+   **Example request**:
+
+   .. sourcecode:: http
+
+     POST /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603/triggers/vm_create HTTP/1.1
+     Accept: application/json
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Content-Type: application/json;charset=UTF-8
+
+     {
+     "action": "role_grant",
+     "base": "vms",
+     "permission": ["get"],
+     "target": "094a757b-84cd-46df-92bb-279a943fa489"
+     }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 303 See Other
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     vary: accept
+     location: /api/0.1.0/orgs/72b3cdb0-7647-478b-906e-28a59f09c603
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 204: no content
+   :status 303: redirect to the session :http:get:`/orgs/(uuid:org)`
+   :status 403: user is not authorized
+   :status 404: the organization/role could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string action: the action that is to be performed
+   :>json string base: 
+   :>json array permission: permission needed to perform the requested action
+   :>json string target: target of the request
 
 ____
 
@@ -215,15 +278,17 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/triggers/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      host: cloud.project-fifo.net
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -252,7 +317,13 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      Content-Type: application/json
 
-     {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
+     {"notes":  
+      [{
+       "text":"yap",
+       "created_at":"2014-09-13T01:34:03.379Z"
+      }]
+     }
+
 
    **Example response**:
 
@@ -274,10 +345,6 @@ ____
 
    :>json string <key>: values to store under this key
 
-
-
-
-
 ____
 
 
@@ -292,15 +359,17 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      host: cloud.project-fifo.net
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 204 No Content
+     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
 
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
@@ -308,4 +377,3 @@ ____
    :status 204: the metadata key was successfully deleted from the organization
    :status 404: the metadata key was was not found for that organization
    :status 503: one or more subsystems could not be reached
-

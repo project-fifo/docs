@@ -15,7 +15,7 @@ Release Notes
 * Better code for updating config files.
 * Improved lookup code using secodary indexes.
 * Accounting for Snarl.
-* Metric support for Sniffle sending data to `DalmatierDB <https://dalmatiner.io>`_
+* Metric support for Sniffle sending data to `DalmatinerDB <https://dalmatiner.io>`_
 * Better Sniffle monitoring.
 * Improved image downloading (Internal storage is now disabled).
 * Added cluster and stack configs.

@@ -18,6 +18,8 @@ Installation
 
   Details on how to set up clustering can be found in the `Clustering <clustering.html>`_ section.
 
+The latest SmartOS version that is tested with FiFo is: **20150108T111855Z**
+
 ____
 
 

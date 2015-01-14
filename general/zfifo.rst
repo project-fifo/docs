@@ -14,4 +14,8 @@ For details on the usage plase see ``man zfifo`` after installing the package.
 Installation
 ````````````
 
-The installation is rather simple the ``zfifo`` package is available in the fifo package reposotory and can be installed via ``pkgin install zfifo``.
+The installation is rather simple the ``zfifo`` package is available in the fifo package reposotory and can be installed via ``pkgin install zfifo`` or:
+
+    pkg_add http://release.project-fifo.net/pkg/rel/zfifo
+
+(same goes for dev)

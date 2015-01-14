@@ -32,8 +32,8 @@ Service Configuration
 
 Internal
 ````````
-You need to configure Sniffle, Snarl and Chunter (those are the currently supported services) to send data to your local watchdog server adding something like this:
 
+You need to configure Sniffle, Snarl, Wiggle, Howl and Chunter to send data to your local watchdog server adding something like this:
 
 .. code-block:: ini
 
@@ -51,7 +51,7 @@ You need to configure Sniffle, Snarl and Chunter (those are the currently suppor
    ##
    ## Acceptable values:
    ##   - text
-   log.watchdog.service = chunter
+   log.watchdog.service = snarl
 
    ## the log level of the watchdog log
    ##

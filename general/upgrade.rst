@@ -60,6 +60,13 @@ Hypervisors
 
 ____
 
+0.6.1
+*****
+
+When updating the Snarl config fule (``/opt/local/fifo-snarl/etc/snarl.conf``) always includes the line ``folsom_ddb.ip = ...``, when DDB is not used to collect metrics on FiFo this line needs to be commented. Other services are not affected by this.
+
+____
+
 0.6.0
 *****
 

@@ -11,6 +11,15 @@ The commands that are available are liminted to interacting with the zones itsel
 
 For details on the usage plase see ``man zfifo`` after installing the package.
 
+Functionality
+`````````````
+
+* snapsnots: list and create
+* backups: list and create
+* metadata: get and set
+* cluster config: get and set
+* stack config: get and set
+
 Installation
 ````````````
 
@@ -19,3 +28,6 @@ The installation is rather simple the ``zfifo`` package is available in the fifo
     pkg_add http://release.project-fifo.net/pkg/rel/zfifo
 
 (same goes for dev)
+
+
+

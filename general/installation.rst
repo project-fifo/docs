@@ -18,7 +18,7 @@ Installation
 
   Details on how to set up clustering can be found in the `Clustering <clustering.html>`_ section.
 
-The latest SmartOS version that is tested with FiFo is **20150108T111855Z** a full list is available `here <https://github.com/project-fifo/chunter/blob/master/rel/pkg/install.sh#L5>`_.
+The latest SmartOS version that is tested with FiFo is **20150108T111855Z** (`USB <https://us-east.manta.joyent.com/Joyent_Dev/public/SmartOS/20150108T111855Z/smartos-20150108T111855Z-USB.img.bz2>`_, `ISO <https://us-east.manta.joyent.com/Joyent_Dev/public/SmartOS/20150108T111855Z/smartos-20150108T111855Z-USB.iso>`_, `VMWare <https://us-east.manta.joyent.com/Joyent_Dev/public/SmartOS/20150108T111855Z/smartos-20150108T111855Z-USB.vmwarevm.tar.bz2>`_, `TGZ <https://us-east.manta.joyent.com/Joyent_Dev/public/SmartOS/20150108T111855Z/smartos-20150108T111855Z-USB.tgz>`_) a full list is available `here <https://github.com/project-fifo/chunter/blob/master/rel/pkg/install.sh#L5>`_.
 
 ____
 

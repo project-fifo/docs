@@ -1,19 +1,6 @@
 .. Project-FiFo documentation master file, created by
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
-.. toctree::
-   :hidden:
-   :maxdepth: 3
-
-   general.rst
-   sniffle.rst
-   snarl.rst
-   howl.rst
-   wiggle.rst
-   chunter.rst
-   jingles.rst
-   technical.rst
-   troubleshooting.rst
 
 Welcome to Project-FiFo documentation!
 ======================================
@@ -41,4 +28,21 @@ Most of the folks who develop and use fifo hang out on Freenode IRC in the **#pr
 * `Google+ <https://plus.google.com/+ProjectfifoNetHome>`_
 * `FiFo on Github <https://github.com/project-fifo>`_
 
+Documentation
+-------------
 
+Further documentation can be found in the sections related to the part of the project or the general as a starting point of for non application specific topics.
+
+.. toctree::
+   :hidden:
+   :maxdepth: 3
+
+   general.rst
+   sniffle.rst
+   snarl.rst
+   howl.rst
+   wiggle.rst
+   chunter.rst
+   jingles.rst
+   technical.rst
+   troubleshooting.rst

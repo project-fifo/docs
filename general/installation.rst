@@ -171,7 +171,7 @@ LeoFS
 
 ProjectFiFo provides packages for LeoFS in it's repository, ``leo_manager``, ``leo_storage`` and ``leo_gateway``. Here the ``leo_manager`` package is used for both the **master** and **slave** manager!
 
-For details on how to set up LeoFS see the official `LeoFS manual <http://leo-project.net/leofs/docs/configuration_1.html>`_
+For details on how to set up LeoFS see the official `LeoFS manual <http://leo-project.net/leofs/docs/configuration/configuration.html>`_
 
 Once LeoFS is configured the ``init-leofs`` command can be used from ``sniffle-admin`` to set up the required, users, buckets and endpoints.
 

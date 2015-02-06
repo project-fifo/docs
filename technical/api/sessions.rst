@@ -17,11 +17,11 @@ API - Sessions
 
    .. sourcecode:: http
 
-	  POST /session HTTP/1.1
+	  POST /sessions HTTP/1.1
 	  host: cloud.project-fifo.net
 	  accept: applicaiton/json
 	  content-type: application/json
-     
+
 	  {
 	   "user": "admin",
 	   "password": "admin"

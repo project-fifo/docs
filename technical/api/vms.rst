@@ -1193,7 +1193,7 @@ ____
    :<json string direction: the direction of the rule, either ``inbound`` or ``outbound``.
    :<json string target: the target of the rule, currently only ``all`` is allowed.
    :<json string protocol: the protocol to match, either ``tcp`` or ``udp``.
-   :<jsonarr number ports: a list of one or more ports.
+   :<json [number,...] ports: a list of one or more ports.
 
 
 ____

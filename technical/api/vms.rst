@@ -1141,3 +1141,96 @@ ____
 
    :<json object action: action that is requested to be taken
    :<json object service: the service to start/stop/clear
+
+____
+
+
+.. http:post:: /vms/(uuid:vm)/fw_rules
+
+   Adds a firewall rule for a vm *uuid*.
+
+   **Related permissions**
+
+    vms -> UUID -> edit
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+     POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/fw_rules HTTP/1.1
+     Accept: application/json, text/plain, */*
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Content-Type: application/json;charset=UTF-8
+
+     {
+       "action": "allow",
+       "direction": "inbound",
+       "ports": [22],
+       "protocol": "tcp",
+       "target": "all"
+     }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 303 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     vary: accept
+     location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
+
+   :reqheader accept: the accepted encoding, alias is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 303: the changed vm
+   :status 404: the VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json object action: the action of the rule, either ``block`` or ``allow``.
+   :<json object direction: the direction of the rule, either ``inbound`` or ``outbound``.
+   :<json object target: the target of the rule, currently only ``all`` is allowed.
+   :<json object protocol: the protocol to match, either ``tcp`` or ``udp``.
+   :<json object ports: a list of one or more ports.
+
+
+                        ____
+
+
+.. http:delete:: /vms/(uuid:vm)/fw_rules/(id:rule)
+
+   Deletes a firewall rule for a given VM **uuid**, the rule id can be found in the ``id`` field of the rule.
+
+   **Related permissions**
+
+    vms -> UUID -> edit
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+     DELETE /api/0.1.0/delete/2ca285a3-05a8-4ca6-befd-78fa994929ab/fw_rules/39079269 HTTP/1.1
+     Accept: application/json, text/plain, */*
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Content-Type: application/json;charset=UTF-8
+
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     vary: accept
+
+   :reqheader accept: the accepted encoding, alias is ``application/json``
+   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader content-type: the provided datatype, usually ``application/json``
+   :resheader x-snarl-token: the snarl token for this session
+
+   :status 303: the changed vm
+   :status 404: the VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached

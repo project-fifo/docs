@@ -1199,9 +1199,9 @@ ____
 ____
 
 
-.. http:delete:: /vms/(uuid:vm)/fw_rules/(id:rule)
+.. http:delete:: /vms/(uuid:vm)/fw_rules/(int:rule_id)
 
-   Deletes a firewall rule for a given VM **uuid**, the rule id can be found in the ``id`` field of the rule.
+   Deletes a firewall rule for a given VM **uuid**, the rule id can be found in the `rule_id` field of the rule.
 
    **Related permissions**
 

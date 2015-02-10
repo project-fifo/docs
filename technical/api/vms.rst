@@ -1189,14 +1189,14 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :<json object action: the action of the rule, either ``block`` or ``allow``.
-   :<json object direction: the direction of the rule, either ``inbound`` or ``outbound``.
-   :<json object target: the target of the rule, currently only ``all`` is allowed.
-   :<json object protocol: the protocol to match, either ``tcp`` or ``udp``.
-   :<json object ports: a list of one or more ports.
+   :<json string action: the action of the rule, either ``block`` or ``allow``.
+   :<json string direction: the direction of the rule, either ``inbound`` or ``outbound``.
+   :<json string target: the target of the rule, currently only ``all`` is allowed.
+   :<json string protocol: the protocol to match, either ``tcp`` or ``udp``.
+   :<jsonarr number ports: a list of one or more ports.
 
 
-                        ____
+____
 
 
 .. http:delete:: /vms/(uuid:vm)/fw_rules/(id:rule)

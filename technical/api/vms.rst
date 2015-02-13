@@ -1230,7 +1230,7 @@ ____
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
 
-   :status 303: the changed vm
+   :status 204: no content
    :status 404: the VM could not be found
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached

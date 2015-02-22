@@ -1165,7 +1165,7 @@ ____
      {
        "action": "allow",
        "direction": "inbound",
-       "ports": [22],
+       "target": [22],
        "protocol": "tcp",
        "target": "all"
      }
@@ -1191,9 +1191,18 @@ ____
 
    :<json string action: the action of the rule, either ``block`` or ``allow``.
    :<json string direction: the direction of the rule, either ``inbound`` or ``outbound``.
-   :<json string target: the target of the rule, currently only ``all`` is allowed.
-   :<json string protocol: the protocol to match, either ``tcp`` or ``udp``.
-   :<json [number,...] ports: a list of one or more ports.
+   :<json object/string target: One of:
+
+                         * The *string* ``all`` for all targets.
+                         * An *object* with the key ``ip`` and the IP address in a *string* as value for a singel IP target.
+                         * An *object* with the key ``subnet`` with the base address of the subnet as *string*, and key ``mask`` with a *number* indicating the relevant bits as value for a subnet as target.
+
+   :<json string protocol: the protocol to match, either ``tcp``, ``udp`` or ``icmp``.
+   :<json object/array filter: One of:
+
+                            * A list of one or more ports for UDP and TCP.
+                            * The string ``all`` for UDP and TCP.
+                            * A lost of objects containing the key ``type`` and optionally ``code``, both with nubers as values for ICMP.
 
 
 ____

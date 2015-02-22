@@ -5,6 +5,14 @@
 LeoFS Single Zone Install
 #########################
 
+
+.. warning::
+
+   This setup is for experimentation only! It is **not** fit for production or even home use. It makes it impossible to update LeoFS without setting up everything from scratch!
+
+   For a smaller setup then a fullblown multi node LeoFS / FiFo use one FiFo zone and a second one for LeoFS with ``N=1`` and One manager running in the FiFo zone the other in the LeoFS zone. That way updating is as simple as adding packages!
+
+
 LeoFS is a highly scalable, fault-tolerant object storage for the Web. LeoFS supports a huge amount of various kinds of unstructured data such as photo, movie, document, log data and so on.
 
 In future versions of FiFo, LeoFS will be a mandatory requirement. Currently if you are using version 0.6.0 and are not using LeoFS, you are missing out on some incredible new features that 0.6.0 + LeoFS provides. Namely:
@@ -13,7 +21,7 @@ In future versions of FiFo, LeoFS will be a mandatory requirement. Currently if 
 * The ability to archive machines.
 * The ability to Freeze machines and re-deploy them to alternative nodes.
 * the ability to connect to your S3 storage with S3 compatible clients.
-  
+
 The below guide is for people who want to run FiFo + LeoFS in a **single zone setup** e.g. Home, Lab or non-mission critical environment. This setup provides **NO** fault tolerance or high availability. For production use, the recommended setup is a distributed LeoFS cluster - deployed on 5 separate servers across 5 different zones.
 
 DNS setup
@@ -34,10 +42,10 @@ Global zone manual DNS configuration
 Please follow the normal **chunter** install process outlined in the official install guide. (`directions here <../chunter/installation.html>`_). Once chunter is running on your server, you will need to confirm that the GZ can resolve the DNS entries for your LeoFS storage.
 
 If you dont have a local DNS server you should configure all your SmartOS Nodes to use the chunter provided SMF hosts service. This will ensure that the correct DNS entries are added to /etc/hosts file and will persist after server reboots. In the below step you will need to add your DNS entries to the ``/opt/chunter/etc/hosts`` file.
- 
+
 
 .. code-block:: bash
-  
+
   cp /opt/chunter/share/hosts.xml /opt/custom/smf/
   vi /opt/chunter/etc/hosts
   svccfg validate /opt/custom/smf/hosts.xml
@@ -240,7 +248,7 @@ We are almost done. All that is left, is to tell sniffle to use our S3 LeoFS sto
    sniffle-admin config set storage.s3.image_bucket fifo-images
    sniffle-admin config set storage.s3.general_bucket fifo
    sniffle-admin config set storage.s3.snapshot_bucket fifo-snapshots
-   
+
    sniffle-admin config show
 
 Last step is to add a FiFo user and password, then you are done.

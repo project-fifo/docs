@@ -19,7 +19,7 @@ API - VMs
 
      GET /vms HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -101,7 +101,7 @@ ____
    :<json object config: information about VM's config
 
    :<json object networks: network UUID
-   :<json object metadata: matadata associated with the VM
+   :<json object metadata: metadata associated with the VM
    :<json string alias: the VM's alias
    :<json string hostname: the VM's hostname
    :<json array requirements: additional requirements for VM deployment
@@ -165,7 +165,7 @@ ____
    :<json object config: information about VM's config
 
    :<json object networks: network UUID
-   :<json object metadata: matadate associated with the VM
+   :<json object metadata: metadata associated with the VM
    :<json string alias: the VM's alias
    :<json string hostname: the VM's hostname
    :<json array requirements: additional requirements for VM deployment
@@ -188,7 +188,7 @@ ____
 
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -251,7 +251,7 @@ ____
    :>json array groupings: cluster the VM is part of
    :>json string state: 'power' state of the VM
 
-   :>json object metadata: matadate associated with the VM
+   :>json object metadata: metadata associated with the VM
 
 ____
 
@@ -635,7 +635,7 @@ ____
 
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/917c56d4-3a33-11e4-84fa-0be1f7e1f583 HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -753,7 +753,7 @@ ____
 
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/backups HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -934,7 +934,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :resheader x-snarl-token: the snarl token for this session
 
@@ -1006,7 +1006,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
@@ -1129,7 +1129,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alias is ``application/json``
+   :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
@@ -1179,7 +1179,7 @@ ____
      vary: accept
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
-   :reqheader accept: the accepted encoding, alias is ``application/json``
+   :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session
@@ -1194,7 +1194,7 @@ ____
    :<json object/string target: One of:
 
                          * The *string* ``all`` for all targets.
-                         * An *object* with the key ``ip`` and the IP address in a *string* as value for a singel IP target.
+                         * An *object* with the key ``ip`` and the IP address in a *string* as value for a single IP target.
                          * An *object* with the key ``subnet`` with the base address of the subnet as *string*, and key ``mask`` with a *number* indicating the relevant bits as value for a subnet as target.
 
    :<json string protocol: the protocol to match, either ``tcp``, ``udp`` or ``icmp``.
@@ -1202,7 +1202,7 @@ ____
 
                             * A list of one or more ports for UDP and TCP.
                             * The string ``all`` for UDP and TCP.
-                            * A lost of objects containing the key ``type`` and optionally ``code``, both with nubers as values for ICMP.
+                            * A list of objects containing the key ``type`` and optionally ``code``, both with nubers as values for ICMP.
 
 
 ____
@@ -1234,7 +1234,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alias is ``application/json``
+   :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session

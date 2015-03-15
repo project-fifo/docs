@@ -8,13 +8,13 @@ Configuration
 Configuration file
 ##################
 
-`Chunter's <../chunter.html>`_ configuration file is located in `/opt/chunter/etc/chunter.conf`. It is automatically generated on the first install and will not be overwritten on updates. None the less the newst version of the file is always located in `/opt/chunter/etc/chunter.conf.example`.
+`Chunter's <../chunter.html>`_ configuration file is located in `/opt/chunter/etc/chunter.conf`. It is automatically generated on the first install and will not be overwritten on updates. None the less the newest version of the file is always located in `/opt/chunter/etc/chunter.conf.example`.
 
-In addition Chunter keeps a file `/opt/chunter/etc/hostid` that helps identifying the host throughout updates, hostname changes, and reinstallations.
+In addition Chunter keeps a file `/opt/chunter/etc/hostid` that helps identifying the host throughout updates, hostname changes, and re-installations.
 
-The configuration file is documented inline but we'll go over some more interesting settings here.
+The configuration file is documented in-line but we'll go over some more interesting settings here.
 
-Genereal
+General
 ********
 
 `ip`

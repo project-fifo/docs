@@ -89,12 +89,14 @@ Installing the services
 We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *FiFo* package repository and then installing the *FiFo* packages.
 
 .. code-block:: bash
+
    zlogin <fifo-vm-uuid>
 
 
 Wtih the 14.4.0 Joyent introduced signed packages. With version 0.6.2 FiFo has also started signing it's packages, to propperly install FiFo packages it is however required to install the `FiFo public key<https://project-fifo.net/fifo.gpg>`_ this can be done by the following commands. The key id is ``BB975564`` and the fingerprint is ``CE62 C662 67D5 9129 B291  62A0 ADDF 278A BB97 5564``
 
 .. code-block:: bash
+
    curl -O https://project-fifo.net/fifo.gpg
    gpg --primary-keyring /opt/local/etc/gnupg/pkgsrc.gpg --import < fifo.gpg
    gpg --keyring /opt/local/etc/gnupg/pkgsrc.gpg --fingerprint
@@ -102,6 +104,7 @@ Wtih the 14.4.0 Joyent introduced signed packages. With version 0.6.2 FiFo has a
 Now we can install the packages
 
 .. code-block:: bash
+
    VERSION=rel
    echo "http://release.project-fifo.net/pkg/${VERSION}/" >>/opt/local/etc/pkgin/repositories.conf
    pkgin -fy up

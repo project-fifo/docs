@@ -33,14 +33,14 @@ From the *GZ (Global Zone)* we install the base dataset which we will use for ou
 .. code-block:: bash
 
    imgadm update
-   imgadm import d34c301e-10c3-11e4-9b79-5f67ca448df0
+   imgadm import 5a4ba06a-c1bb-11e4-af0b-4be0ce4ce04c
 
 
 If installed successfully you should see:
 
 .. code-block:: bash
 
-   d34c301e-10c3-11e4-9b79-5f67ca448df0  base64        14.2.0    smartos  2014-07-21T10:43:17Z
+   5a4ba06a-c1bb-11e4-af0b-4be0ce4ce04c  minimal-64-lts  14.4.0     smartos  2015-03-03T15:38:34Z
 
 Sample contents of ``setupfifo.json``
 
@@ -50,7 +50,7 @@ Sample contents of ``setupfifo.json``
    {
     "autoboot": true,
     "brand": "joyent",
-    "image_uuid": "d34c301e-10c3-11e4-9b79-5f67ca448df0",
+    "image_uuid": "5a4ba06a-c1bb-11e4-af0b-4be0ce4ce04c",
     "max_physical_memory": 3072,
     "cpu_cap": 100,
     "alias": "fifo",
@@ -86,11 +86,22 @@ ____
 Installing the services
 -----------------------
 
-We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *FiFo* package repository and then installing the *FiFo* packages
+We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *FiFo* package repository and then installing the *FiFo* packages.
 
 .. code-block:: bash
-
    zlogin <fifo-vm-uuid>
+
+
+Wtih the 14.4.0 Joyent introduced signed packages. With version 0.6.2 FiFo has also started signing it's packages, to propperly install FiFo packages it is however required to install the `FiFo public key<https://project-fifo.net/fifo.gpg>`_ this can be done by the following commands. The key id is ``BB975564`` and the fingerprint is ``CE62 C662 67D5 9129 B291  62A0 ADDF 278A BB97 5564``
+
+.. code-block:: bash
+   curl -O https://project-fifo.net/fifo.gpg
+   gpg --primary-keyring /opt/local/etc/gnupg/pkgsrc.gpg --import < fifo.gpg
+   gpg --keyring /opt/local/etc/gnupg/pkgsrc.gpg --fingerprint
+
+Now we can install the packages
+
+.. code-block:: bash
    VERSION=rel
    echo "http://release.project-fifo.net/pkg/${VERSION}/" >>/opt/local/etc/pkgin/repositories.conf
    pkgin -fy up

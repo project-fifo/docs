@@ -93,7 +93,7 @@ We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *Fi
    zlogin <fifo-vm-uuid>
 
 
-Wtih the 14.4.0 Joyent introduced signed packages. With version 0.6.2 FiFo has also started signing it's packages, to propperly install FiFo packages it is however required to install the `FiFo public key<https://project-fifo.net/fifo.gpg>`_ this can be done by the following commands. The key id is ``BB975564`` and the fingerprint is ``CE62 C662 67D5 9129 B291  62A0 ADDF 278A BB97 5564``
+Wtih the 14.4.0 Joyent introduced signed packages. With version 0.6.2 FiFo has also started signing it's packages, to propperly install FiFo packages it is however required to install the `FiFo public key <https://project-fifo.net/fifo.gpg>`_ this can be done by the following commands. The key id is ``BB975564`` and the fingerprint is ``CE62 C662 67D5 9129 B291  62A0 ADDF 278A BB97 5564``
 
 .. code-block:: bash
 

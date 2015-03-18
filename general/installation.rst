@@ -154,13 +154,13 @@ ____
 Initial administrative tasks
 ----------------------------
 
-The last step is to create an *admin user* granted unrestricted permissions so we can login. It is important to ensure that a permission called ``...`` is added, which assigns "ALL usage rights" to your admin user.
+The last step is to create an *admin user* and ogranisation, this can be done with one simple command:
 
 .. code-block:: bash
 
-   fifoadm users add default admin
-   fifoadm users grant default admin ...
-   fifoadm users passwd default admin admin
+   # snarl-admin init <realm> <org> <user> <pass>
+   snarl-admin init default MyOrg admin admin
+
 
 
 If you want to add a default user role execute the following commands to assign basic permissions to the role so that users belonging to this role can create and manage their own vm's.
@@ -187,7 +187,7 @@ LeoFS
 
    S3 does require a host name or FQDN to work, ip addresses are not working to access the store. Both a DNS server and entries in ``/etc/hosts`` work.
 
-  `XIP.io <http://xip.io>`_ is a good alternative for test systems, it resolves hostnames in the form of: ``*.<io>.xip.io`` to ``<ip>`` so if the LeoIP is ``10.0.0.100`` using ``10.0.0.100.xip.io`` as a hostname for the storage server will work..
+`XIP.io <http://xip.io>`_ is a good alternative for test systems, it resolves hostnames in the form of: ``*.<io>.xip.io`` to ``<ip>`` so if the LeoIP is ``10.0.0.100`` using ``10.0.0.100.xip.io`` as a hostname for the storage server will work..
 
 ProjectFiFo provides packages for LeoFS in it's repository, ``leo_manager``, ``leo_storage`` and ``leo_gateway``. Here the ``leo_manager`` package is used for both the **master** and **slave** manager!
 

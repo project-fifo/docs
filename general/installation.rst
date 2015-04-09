@@ -6,7 +6,7 @@ Installation
 
 .. attention::
 
-   Please be aware that this guide covers the installation of a **single** *FiFo Zone*. While this is supported and might be acceptable for a private server a production environment should consist of **at least 5 physically separated** zones!
+   Please be aware that this guide covers the installation of a **single** *FiFo Zone*. While this is supported and might be acceptable for a private server, a production environment should consist of **at least 5 physically separated** zones!
 
 
 .. warning::

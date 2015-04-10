@@ -9,6 +9,7 @@ Technical
 
    technical/api/general.rst
    technical/api/sessions.rst
+   technical/api/oauth2.rst
    technical/api/users.rst
    technical/api/roles.rst
    technical/api/orgs.rst

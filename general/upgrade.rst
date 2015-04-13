@@ -22,11 +22,10 @@ To upgrade the components in a zone it is necessary to install the new packages 
 .. code-block:: bash
 
    pkgin -fy up
-   pkgin install fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles
+   pkgin install fifo-snarl fifo-sniffle fifo-howl fifo-jingles
    svcadm restart sniffle
    svcadm restart snarl
    svcadm restart howl
-   svcadm restart wiggle
 
 
 Hypervisors
@@ -57,6 +56,25 @@ Hypervisors
    fifoadm hypervisors update
 
  This will trigger all hypervisors to update.
+
+____
+
+0.6.2
+*****
+
+FiFo 0.6.2 combines the functionality that was formaly spread out between wiggle howl and nginx into howl, this means neither nginx nor wiggle are any longer needed. Before updating stop and remove those services.
+
+ .. code-block:: bash
+
+   svcadm disable wiggle
+   svcadm disable nginx
+   pkgin remove fifo-wiggle nginx
+
+If you already have howl isntalled you will need to grant the user additional permissions to be able to open reserved ports (http: 80, and https: 443) this can be done with the following command. New installations handle this grant as part of the installation routime.
+
+.. code-block:: bash
+
+   /usr/sbin/usermod -K defaultpriv=basic,net_privaddr howl
 
 ____
 

@@ -108,13 +108,7 @@ Now we can install the packages
    VERSION=rel
    echo "http://release.project-fifo.net/pkg/${VERSION}/" >>/opt/local/etc/pkgin/repositories.conf
    pkgin -fy up
-   pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles fifo-watchdog
-
-FiFo uses nginx as a proxy to serve jingles and combine the wiggle and howl endpoints into a single service, a nginx config file that provides all of this functionality is part of the jingles package and can simply be copied or adjusted for other needs:
-
-.. code-block:: bash
-
-   cp /opt/local/fifo-jingles/config/nginx.conf /opt/local/etc/nginx/nginx.conf
+   pkgin install fifo-snarl fifo-sniffle fifo-howl fifo-jingles fifo-watchdog
 
 .. note::
 
@@ -127,8 +121,8 @@ ____
 Configuration
 -------------
 
-If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new ``*.conf.example`` files will be added. 
-The generated files contain some defaults. However is it advised to take some time to configure `Wiggle <../wiggle/configuration.html>`_, `Sniffle <../sniffle/configuration.html>`_, `Snarl <../snarl/configuration.html>`_ and `Howl <../howl/configuration.html>`_.
+If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new ``*.conf.example`` files will be added.
+The generated files contain some defaults. However is it advised to take some time to configure `Sniffle <../sniffle/configuration.html>`_, `Snarl <../snarl/configuration.html>`_ and `Howl <../howl/configuration.html>`_.
 
 Ple
 ____
@@ -143,10 +137,8 @@ Startup
    svcadm enable snarl
    svcadm enable sniffle
    svcadm enable howl
-   svcadm enable wiggle
    svcadm enable watchdog
-   svcadm enable nginx
-   svcs epmd snarl sniffle howl wiggle nginx
+   svcs epmd snarl sniffle howl
 
 ____
 

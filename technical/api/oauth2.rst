@@ -48,6 +48,10 @@ ____
 
    Grants a `access token` or `authroization code` request and redirects on. On completion might redirect to :http:get:`/oauth2/2fa` to perform a second set of two factor autentication if required.
 
+   Handles the following parts of the RFC:
+    * `4.1.1 Authorization Code Grant / Authorization Request <https://tools.ietf.org/html/rfc6749#section-4.1.1>`_ - `code`
+    * `4.2.1 Implicit Grant / Authorization Request <https://tools.ietf.org/html/rfc6749#section-4.2.1>`_ - `token`
+
    **Version**
 
     *0.2.0*

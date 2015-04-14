@@ -14,5 +14,4 @@ General
    general/releasenotes
    general/upgrade
    general/rightmanagement
-   general/singlezoneleofs
    general/zfifo

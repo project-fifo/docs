@@ -65,7 +65,7 @@ First we need to change our ``imgadm`` repository and then import the LeoFS data
    imgadm sources -a http://datasets.at/
    imgadm sources -d https://images.joyent.com
    imgadm update
-   imgadm import 8124986e-618e-11e4-912e-afd574ea711e
+   imgadm import ccd69a86-ae83-11e4-813b-371265fbe00e
 
 Next we create a JSON payload file to create our zone.
 
@@ -81,7 +81,7 @@ Here is the JSON setting you will need for the ``newfifo.json`` file.
    {
     "autoboot": true,
     "brand": "joyent",
-    "image_uuid": "8124986e-618e-11e4-912e-afd574ea711e",
+    "image_uuid": "ccd69a86-ae83-11e4-813b-371265fbe00e",
     "max_physical_memory": 4096,
     "cpu_cap": 100,
     "alias": "Project-FiFo",

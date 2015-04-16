@@ -62,7 +62,7 @@ ____
 0.6.2
 *****
 
-FiFo 0.6.2 combines the functionality that was formaly spread out between wiggle howl and nginx into howl, this means neither nginx nor wiggle are any longer needed. Before updating stop and remove those services.
+FiFo 0.6.2 combines the functionality that was formally spread out between wiggle howl and nginx into howl, this means neither nginx nor wiggle are any longer needed. Before updating stop and remove those services.
 
  .. code-block:: bash
 
@@ -70,7 +70,7 @@ FiFo 0.6.2 combines the functionality that was formaly spread out between wiggle
    svcadm disable nginx
    pkgin remove fifo-wiggle nginx
 
-If you already have howl isntalled you will need to grant the user additional permissions to be able to open reserved ports (http: 80, and https: 443) this can be done with the following command. New installations handle this grant as part of the installation routime.
+If you already have howl installed you will need to grant the user additional permissions to be able to open reserved ports (http: 80, and https: 443) this can be done with the following command. New installations handle this grant as part of the installation routine.
 
 .. code-block:: bash
 

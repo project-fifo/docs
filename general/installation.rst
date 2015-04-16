@@ -105,7 +105,7 @@ Now we can install the packages
 
 .. code-block:: bash
 
-   VERSION=rel
+   VERSION= # one of 'rel' or 'dev'
    echo "http://release.project-fifo.net/pkg/${VERSION}/" >>/opt/local/etc/pkgin/repositories.conf
    pkgin -fy up
    pkgin install fifo-snarl fifo-sniffle fifo-howl fifo-jingles fifo-watchdog

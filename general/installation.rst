@@ -134,7 +134,7 @@ Startup
    svcadm enable wiggle
    svcadm enable watchdog
    svcadm enable nginx
-   svcs epmd snarl sniffle howl wiggle nginx
+   svcs epmd snarl sniffle howl wiggle nginx watchdog
 
 ____
 

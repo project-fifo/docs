@@ -140,7 +140,7 @@ Startup
    svcadm enable sniffle
    svcadm enable howl
    svcadm enable watchdog
-   svcs epmd snarl sniffle howl
+   svcs epmd snarl sniffle howl watchdog
 
 ____
 

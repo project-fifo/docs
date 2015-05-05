@@ -92,7 +92,8 @@ We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *Fi
 
    zlogin <fifo-vm-uuid>
    VERSION=rel
-   echo "http://release.project-fifo.net/pkg/${VERSION}/" >>/opt/local/etc/pkgin/repositories.conf
+   cp /opt/local/etc/pkgin/repositories.conf /opt/local/etc/pkgin/repositories.conf.original
+   echo "http://release.project-fifo.net/pkg/${VERSION}/" >/opt/local/etc/pkgin/repositories.conf
    pkgin -fy up
    pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles fifo-watchdog
 
@@ -106,6 +107,7 @@ FiFo uses nginx as a proxy to serve jingles and combine the wiggle and howl endp
 
   - To install the release version use `VERSION=rel`
   - To install the current development version use `VERSION=dev`
+  - The original repositories.conf file is backed up for you incase you need to revert. pkgin has a segfault bug triggered by two package repositories listed in that file.
 
 ____
 

@@ -106,7 +106,8 @@ Now we can install the packages
 .. code-block:: bash
 
    VERSION= # one of 'rel' or 'dev'
-   echo "http://release.project-fifo.net/pkg/${VERSION}/" >>/opt/local/etc/pkgin/repositories.conf
+   cp /opt/local/fifo-jingles/config/nginx.conf /opt/local/etc/nginx/nginx.conf
+   echo "http://release.project-fifo.net/pkg/${VERSION}/" >> /opt/local/etc/pkgin/repositories.conf
    pkgin -fy up
    pkgin install fifo-snarl fifo-sniffle fifo-howl fifo-jingles fifo-watchdog
 
@@ -114,6 +115,7 @@ Now we can install the packages
 
   - To install the release version use `VERSION=rel`
   - To install the current development version use `VERSION=dev`
+  - The original repositories.conf file is backed up for you incase you need to revert. pkgin has a segfault bug triggered by two package repositories listed in that file.
 
 ____
 

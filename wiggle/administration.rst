@@ -32,8 +32,8 @@ After the newest package is installed the config file should be checked for chan
 
 .. code-block:: bash
 
-   diff /opt/loca/fifo-wiggle/etc/wiggle.conf /opt/loca/fifo-wiggle/etc/wiggle.conf.example
-   vi /opt/loca/fifo-wiggle/etc/wiggle.conf
+   diff /opt/loca/fifo-wiggle/etc/wiggle.conf /opt/local/fifo-wiggle/etc/wiggle.conf.example
+   vi /opt/local/fifo-wiggle/etc/wiggle.conf
 
 
 3. Restarting the service

@@ -126,9 +126,6 @@ Configuration
 If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new ``*.conf.example`` files will be added.
 The generated files contain some defaults. However is it advised to take some time to configure `Sniffle <../sniffle/configuration.html>`_, `Snarl <../snarl/configuration.html>`_ and `Howl <../howl/configuration.html>`_.
 
-Ple
-____
-
 
 Startup
 -------

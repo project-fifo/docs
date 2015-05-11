@@ -1,6 +1,10 @@
 .. Project-FiFo documentation master file, created by
    Heinz N. Gies on Fri Aug 15 03:25:49 2014.
 
+.. warning::
+
+   This manual is for the **development** (aka beta) version of FiFo if you are not 100% certain that is what you want and are aware that things might not work please use the stable version (v: stable) in the lower left corner.
+
 Installation
 ############
 

@@ -93,7 +93,7 @@ We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *Fi
    zlogin <fifo-vm-uuid>
    VERSION=rel
    cp /opt/local/etc/pkgin/repositories.conf /opt/local/etc/pkgin/repositories.conf.original
-   echo "http://release.project-fifo.net/pkg/${VERSION}/" >/opt/local/etc/pkgin/repositories.conf
+   echo "http://release.project-fifo.net/pkg/${VERSION}/" >> /opt/local/etc/pkgin/repositories.conf
    pkgin -fy up
    pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles fifo-watchdog
 

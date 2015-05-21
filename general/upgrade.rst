@@ -32,8 +32,8 @@ Hypervisors
 ***********
 
 .. note::
- 
- There are two ways to update the server on the hypervisor.
+
+   There are two ways to update the server on the hypervisor.
 
 1. Connect to the hypervisor and run:
 
@@ -53,7 +53,7 @@ Hypervisors
 
  .. code-block:: bash
 
-   fifoadm hypervisors update
+    fifoadm hypervisors update
 
  This will trigger all hypervisors to update.
 
@@ -75,6 +75,14 @@ If you already have howl installed you will need to grant the user additional pe
 .. code-block:: bash
 
    /usr/sbin/usermod -K defaultpriv=basic,net_privaddr howl
+
+One more change is that with 0.6.2 we introduce OAuth2 as a authentication method. One change required for this is adding a defualt scope this can be done by the following commands:
+
+.. code-block:: bash
+
+   snarl-admin scope add default Everything "This allows everything"
+   snarl-admin scope grant default Everything ...
+   snarl-admin scope toggle default Everything
 
 ____
 
@@ -117,14 +125,14 @@ With 0.4.4 there is a considerable update to the database. Therefore additional 
  sniffle-admin db update
  snarl-admin db update
 
-These changes also affect the *AAE code*. Therefore when AAE is enabled the old AAE data needs to be deleted. This has no impact on the system itself. 
+These changes also affect the *AAE code*. Therefore when AAE is enabled the old AAE data needs to be deleted. This has no impact on the system itself.
 
 .. attention::
 
   The services should be disabled when the AAE data is deleted!
 
 .. code-block:: bash
- 
+
  rm -r /var/db/sniffle/anti_entropy
  rm -r /var/db/snarl/anti_entropy
 

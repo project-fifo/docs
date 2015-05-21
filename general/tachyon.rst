@@ -6,6 +6,16 @@ Tachyon
 
 Tachyon is a monitoring system for SmartOS (and in theory other Illumos/Solaris derivates) build to monitor large server farms and deal with the amount of data generated there. It does integrate with FiFo, however it is perfectly capable of running on it's own.
 
+Features
+--------
+
+* Minimal impact by using kstat directly.
+* Resillient to network or component failure.
+* Low and predictable space usage ~12bit / metric / second.
+* Fast query times (1 or 2 digest milliseconds).
+* High throughput and near linear scaling.
+* No modification of NGZ's required, new zones will automatically be picked up.
+
 Architecture
 ------------
 
@@ -15,7 +25,7 @@ Tachyon has a multi layered architecture that balanaces data correctness and ava
 
 * The `nsq <https://nsq.io>`_ message queue, it is used to allow buffering messages in the case of outages, while buffered messages will not be visible in the database they state can later be completed.
 * The `DalmaterDB <https://dalmatiner.io>`_ database, to handle the throughput and storage requirements.
-* The `Grapfana <http://grapfana.org>`_ dashboard, to visualize the metrics and create dashboards. (`plugin required!)
+* The `Grapfana <http://grapfana.org>`_ dashboard, to visualize the metrics and create dashboards. (plugin required!)
 
 At the lowest level the tachyon-meter, a slightly modified kstat, gatheres statistics directly from the knernel and send them to a nsqd process. kstat is a wonderful tool for that we easiely can collect hundres if not thousands of metrics from a system with virtually no (or minimal) impact to the system. Timestamps are generated locally (at send time) so a delayed delivery does not affect the precision, and it easiely can be correlated by other metrics generated on the system.
 
@@ -27,6 +37,11 @@ The data is persisted in DalmatinerDB and from there can be queried by FiFo the 
 Installation
 ------------
 
+
+Tachyon Meter
+`````````````
+The tachyon meter can be downloaded from http://release.project-fifo.net/chunter/dev/ and installed the same way as chunter. Ther is a config file in which the IP of the nsqd process has to be specified.
+
 NSQ
 ```
 
@@ -35,9 +50,29 @@ Installing NSQ in a zone is rather simple, Project-FiFo provides a SmartOS packa
 .. code-block:: bash
 
    pkg_add http://release.project-fifo.net/pkg/rel/nsq
-
+ 
 Another option is to install the nsqd in the GZ however that comes wiht it's own issues and at this point is not recommanded.
 
 
 Tachyon Aggregator
 ``````````````````
+
+.. note::
+   currently only in the dev repository.
+
+The aggregator can be installed out of the Project FiFo package repository, either via ``pkg_add`` or via pkgin install if the repository was added to the dependenceis. The package name is tahcyon-aggregator
+
+
+DalmatinerDB
+````````````
+
+Please follow the `official guide <https://docs.dalmatiner.io>`_.
+
+
+Grafana
+```````
+
+There is currently no SmartOS package for Grafna2, it requires manual complication, you can follow the installation guide. Since DalmatinerDB does not ship as a native datasourece we maintain a `fork <https://github.com/dalmatinerdb/grafana>`_.
+
+Once installed you can add DalmaterDB to the dependecnies, the default port of the Dalmaterin Frontend server is 8080.
+

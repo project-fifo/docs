@@ -60,7 +60,7 @@ ____
 Organizations
 =============
 
-*FiFo* abstracts the concept of an *Organization* (Customer, Client) away from the user. This means one *Organization* can have multiple users, and a *User* (for example an admin user) can belong to multiple *Organizations*. However, belonging to an *Organization* does not grant a *User* any permissions, this is handled by assigning *Roles*. A *User* can select one of the *Organizations* he belongs to *active* meaning he acts for the *Organization* and triggers certain events.
+*FiFo* abstracts the concept of an *Organization* (Customer, Client) away from the user. This means one *Organization* can have multiple users, and a *User* (for example an admin user) can belong to multiple *Organizations*. However, belonging to an *Organization* does not grant a *User* any permissions, this is handled by assigning *Roles*. A *User* can select one of the *Organizations* they belong to *active* meaning they act for the *Organization* and triggers certain events with their actions.
 
 Triggers
 --------

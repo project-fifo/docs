@@ -42,6 +42,13 @@ Tachyon Meter
 `````````````
 The tachyon meter can be downloaded from http://release.project-fifo.net/chunter/dev/ and installed the same way as chunter. Ther is a config file in which the IP of the nsqd process has to be specified.
 
+.. code-block:: bash
+
+   cd /opt
+   curl -O http://release.project-fifo.net/chunter/dev/tachyon-meter-latest.gz
+   gunzip tachyon-meter-latest.gz
+   sh tachyon-meter-latest
+
 NSQ
 ```
 

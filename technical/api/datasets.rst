@@ -149,7 +149,7 @@ ____
    :>json string status: import status of the dataset (pending / importing / imported / failed)
    :>json integer imported: percentage of dataset imported (0 .. 1)
    :>json array requirements: requirements for the dataset
-   :>json object metadata: metadate associated witht he dataset
+   :>json object metadata: metadate associated with the dataset
    :>json string description: description of the dater set
    :>json string disk_driver: disk driver to use for kvms
    :>json string homepage: homepage of the dataset

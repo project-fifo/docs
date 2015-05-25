@@ -19,7 +19,7 @@ API - Users
 
      GET /users HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -42,7 +42,7 @@ API - Users
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user list is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
 ____
@@ -109,7 +109,7 @@ ____
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -141,7 +141,7 @@ ____
 
    :status 200: the user information is returned
    :status 404: the user was not found
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
    :>json string uuid: UUID of the user that is logged in
@@ -245,7 +245,7 @@ ____
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -361,7 +361,7 @@ ____
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/roles HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -475,7 +475,7 @@ ____
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -598,7 +598,7 @@ ____
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/yubikeys HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -714,7 +714,7 @@ ____
 
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/orgs HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -807,7 +807,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader accept: the accepted encoding, alias is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session

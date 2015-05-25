@@ -5,25 +5,25 @@
 zfifo
 *****
 
-``zfifo`` is a command line tool that can be installed in a zone managed by fifo to control certain aspects from the zones. This allows to interact with fifo without the need to authenticate.
+``zfifo`` is a command line tool that can be installed within a zone managed by fifo and can be used to control certain aspects from within the zone. This facilitates interaction with fifo without the need to authenticate.
 
-The commands that are available are liminted to interacting with the zones itself and the related stack and or cluster.
+The "zfifo" commands are limited to interacting with the zone itself and the related stack and/or cluster.
 
-For details on the usage plase see ``man zfifo`` after installing the package.
+For further details on usage, please see ``man zfifo`` once the package has been installed.
 
 Functionality
 `````````````
 
-* snapsnots: list and create
-* backups: list and create
-* metadata: get and set
-* cluster config: get and set
-* stack config: get and set
+* **snapsnots** : list and create
+* **backups** : list and create
+* **metadata** : get and set
+* **cluster config** : get and set
+* **stack config** : get and set
 
 Installation
 ````````````
 
-The installation is rather simple the ``zfifo`` package is available in the fifo package reposotory and can be installed via ``pkgin install zfifo`` or:
+The installation is rather simple. The ``zfifo`` package is available in the fifo package repository and can be installed via ``pkgin install zfifo`` or:
 
     pkg_add http://release.project-fifo.net/pkg/rel/zfifo
 

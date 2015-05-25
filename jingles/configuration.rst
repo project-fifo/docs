@@ -9,4 +9,4 @@ The Jingles configuration file is stored in ``/opt/local/fifo-jingles/dist/scrip
 
 .. note::
 	
-	Please see the inline comments within the file on how to make setting changes.
+	Please see the in-line comments within the file on how to make setting changes.

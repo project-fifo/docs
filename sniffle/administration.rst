@@ -33,8 +33,8 @@ After the newest package is installed the config file should be checked for chan
 
 .. code-block:: bash
 
-   diff /opt/loca/fifo-sniffle/etc/sniffle.conf /opt/loca/fifo-sniffle/etc/sniffle.conf.example
-   vi /opt/loca/fifo-sniffle/etc/sniffle.conf
+   diff /opt/local/fifo-sniffle/etc/sniffle.conf /opt/local/fifo-sniffle/etc/sniffle.conf.example
+   vi /opt/local/fifo-sniffle/etc/sniffle.conf
 
 3. Restarting the service
 *************************

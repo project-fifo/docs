@@ -8,6 +8,6 @@ Configuration
 Configuration file
 ##################
 
-`Howl <../howl.html>`_'s configuration file is located in ``/opt/local/fifo-howl/etc/howl.conf`` it is automatically generated on the first install and not overwritten on updates. Nontheless the newest version of the file is always located in ``/opt/local/fifo-howl/etc/howl.conf.example``.
+`Howl <../howl.html>`_'s configuration file is located in ``/opt/local/fifo-howl/etc/howl.conf`` it is automatically generated on the first install and not overwritten on updates. Nonetheless the newest version of the file is always located in ``/opt/local/fifo-howl/etc/howl.conf.example``.
 
 Please also see the `Wiggle config section <../wiggle/configuration.html>`_ for HTTP related parameters.

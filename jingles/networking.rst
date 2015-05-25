@@ -64,7 +64,7 @@ IP-Ranges
 List
 ****
 
-*FiFo* manages all IP provisioning. It stores a pool of IP addresses for each network you create. Upon machine creation *FiFo* assigns IP addresses, when a machine is destroyed it returns the IP addresses to the pool. The address assignment works in conjunction with the security features built into *SmartOS* to ensure that only the IP address handed out can be used on the specific network you deploy on. This ensures a good neighbour policy; it prevents malicious users of machines from spoofing IP addresses and interfering with the traffic of other machines.
+*FiFo* manages all IP provisioning. It stores a pool of IP addresses for each network you create. Upon machine creation *FiFo* assigns IP addresses, when a machine is destroyed it returns the IP addresses to the pool. The address assignment works in conjunction with the security features built into *SmartOS* to ensure that only the IP address handed out can be used on the specific network you deploy on. This ensures a good neighbor policy; it prevents malicious users of machines from spoofing IP addresses and interfering with the traffic of other machines.
 
 .. image:: /_static/images/jingles/ipranges01.png
 

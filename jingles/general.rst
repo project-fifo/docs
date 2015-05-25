@@ -22,7 +22,7 @@ Enter your valid credentials and click the |login| button to authenticate and lo
 
 .. note::
 
-     The little green dot in the top right corner pointed to by the red arrow shows that the web interface is successfully communicating with and connected to the backend. Should the web interface not be connected to the backend the dot will change to red and show an error message.
+     The little green dot in the top right corner pointed to by the red arrow shows that the web interface is successfully communicating with and connected to the back-end. Should the web interface not be connected to the back-end the dot will change to red and show an error message.
 
 Dashboard
 #########
@@ -33,7 +33,7 @@ The Dashboard is designed to give you a "*10,000 foot view*" or single pane of g
 
 .. todo::
 
-	Reprhase the paragraph above.
+	Rephrase the paragraph above.
 
 The status page is designed to show you an overview of your entire clouds status.
 
@@ -94,4 +94,4 @@ The *About Page* contains useful and relevant information such as package versio
 
 2. Versions : Shows the current versions of all the *FiFo* services and indicates whether new package updates are available.
 
-3. Messages : A message section that shows relevent or pertinent messages related to your installation.
+3. Messages : A message section that shows relevant or pertinent messages related to your installation.

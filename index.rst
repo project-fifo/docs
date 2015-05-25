@@ -49,3 +49,4 @@ Further documentation can be found in the sections related to the part of the pr
    jingles.rst
    technical.rst
    troubleshooting.rst
+   doc-guide.rst

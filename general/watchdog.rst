@@ -4,7 +4,7 @@
 Watchdog
 ########
 
-Watchdog is introduced with FiFo **0.6.1** earlier releases do not have support for it!
+Watchdog was introduced with FiFo **0.6.1**. Earlier releases do not have support for it!
 
 Architecture
 ------------

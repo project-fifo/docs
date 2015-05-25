@@ -31,7 +31,7 @@ Creating the Zone
 -----------------
 
 
-From the *GZ (Global Zone)* we install the base dataset which we will use for our *FiFo Zone*. Than we have to confirm it is installed:
+From the *GZ (Global Zone)* we install the base dataset which we will use for our *FiFo Zone*. Then we have to confirm it is installed:
 
 
 .. code-block:: bash
@@ -75,7 +75,7 @@ Sample contents of ``setupfifo.json``
    }
 
 
-Next we create our *FiFo JSON* payload file and save it in case we need to reinstall at a later stage.
+Next we create our *FiFo JSON* payload file and save it in case we need to re-install at a later stage.
 
 .. code-block:: bash
 
@@ -90,12 +90,11 @@ ____
 Installing the services
 -----------------------
 
-We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *FiFo* package repository and then installing the *FiFo* packages.
+We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *FiFo* package repository. Then we install the *FiFo* packages.
 
 .. code-block:: bash
 
    zlogin <fifo-vm-uuid>
-
 
 With the 14.4.0 Joyent introduced signed packages. With version 0.6.2 FiFo has also started signing it's packages, to properly install FiFo packages it is however required to install the `FiFo public key <https://project-fifo.net/fifo.gpg>`_ this can be done by the following commands. The key id is ``BB975564`` and the fingerprint is ``CE62 C662 67D5 9129 B291  62A0 ADDF 278A BB97 5564``
 
@@ -119,7 +118,7 @@ Now we can install the packages
 
   - To install the release version use `VERSION=rel`
   - To install the current development version use `VERSION=dev`
-  - The original repositories.conf file is backed up for you incase you need to revert. pkgin has a segfault bug triggered by two package repositories listed in that file.
+  - The original repositories.conf file is backed up for you should you need to revert. pkgin has a segfault bug triggered by two package repositories listed in that file.
 
 ____
 
@@ -180,7 +179,7 @@ LeoFS
 
 .. warning::
 
-   S3 does require a host name or FQDN to work, ip addresses are not working to access the store. Both a DNS server and entries in ``/etc/hosts`` work.
+   S3 requires a host name or FQDN to work, ip addresses are not working to access the store. Both a DNS server and entries in ``/etc/hosts`` work.
 
 `XIP.io <http://xip.io>`_ is a good alternative for test systems, it resolves hostnames in the form of: ``*.<io>.xip.io`` to ``<ip>`` so if the LeoIP is ``10.0.0.100`` using ``10.0.0.100.xip.io`` as a hostname for the storage server will work..
 

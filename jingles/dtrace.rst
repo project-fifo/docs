@@ -36,7 +36,7 @@ Create
 
 .. image:: /_static/images/jingles/dtraces02.png
 
-Adding a new script is rather simple. It is a plain D-Trace script, however there is an exeptation since the script runs on multiple servers and needs to be configurable. Varlables are encased in ``$`` signes and can be choosen freely. The only exception is the special placeholder: ``$filter$``. It is the filter created to match the system it is supposed to run on.
+Adding a new script is rather simple. It is a plain D-Trace script, however there is an expectation since the script runs on multiple servers and needs to be configurable. Variables are encased in ``$`` signs and can be chosen freely. The only exception is the special placeholder: ``$filter$``. It is the filter created to match the system it is supposed to run on.
 
 	1. Enter the name of the new script.
 	2. Enter the code of the script with the variables.
@@ -59,4 +59,4 @@ This section allows you to run a D-Trace script either against individual VM's o
 	1. The Server to run upon.
 	2. The VM's to run against.
 	3. This section will show a heatmap of the output.
-	4. The variables to run the script with, this can be adjusted to fit the current usecase.
+	4. The variables to run the script with, this can be adjusted to fit the current use case.

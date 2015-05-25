@@ -41,7 +41,7 @@ API - General
   :reqheader accept: the accepted encoding, valid is ``application/json``
   :resheader content-type: the returned datatype, usually ``application/json``
 
-  :status 200: The system is opperational.
+  :status 200: The system is operational.
   :status 503: One or more subsystems could not be reached.
 
   :>json integer howl: number of connected howl servers
@@ -59,7 +59,7 @@ ____
 
 		cloud -> cloud -> status
 
-   **Example resquest**:
+   **Example request**:
 
    .. sourcecode:: http
 
@@ -114,8 +114,8 @@ ____
    :resheader x-snarl-token: snarl token for this session
    :resheader content-type: returned datatype, usually ``application/json``
    
-   :status 200: the system is opperational
-   :status 403: the logged in user lackes the needed permissions
+   :status 200: the system is operational
+   :status 403: the logged in user lacks the needed permissions
    :status 503: one or more subsystems could not be reached
 
    :>json array warnings: list containing bad system states
@@ -124,7 +124,7 @@ ____
    :>json integer roles: number of roles on the system
    :>json integer orgs: number of organization on the system
    :>json integer used: 
-   :>json integer total-memory: total memory availabe to the system
+   :>json integer total-memory: total memory available to the system
    :>json string storage:
    :>json integer size:
    :>json integer reserved-memory: 
@@ -136,7 +136,7 @@ ____
    :>json integer l1hits:
    :>json array hypervisors: the hypervisor's UUID
    :>json integer free memory:
-   :>json integer VMS: total amount of VMs avaliable
+   :>json integer VMS: total amount of VMs available
    
    :>json object versions: versions of the system components
    :>json string snarl: snarl version

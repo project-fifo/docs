@@ -19,7 +19,7 @@ API - Packages
 
      GET /packages HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -42,7 +42,7 @@ API - Packages
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the package list is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
 ____
@@ -129,7 +129,7 @@ ____
 
      GET /packages/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -165,14 +165,14 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the package information is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 404: the package was not found
    :status 503: one or more subsystems could not be reached
 
    :>json string UUID: UUID of the package
    :>json string name: name of the package
 
-   :>json integer blicksize: blocksize of the package
+   :>json integer blocksize: blocksize of the package
    :>json string compression: compression used for zfs dataset
    :>json integer cpu_cap: CPU Cap *(optional)*
    :>json integer cpu_shares: CPU Shares *(optional)*
@@ -246,7 +246,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader accept: the accepted encoding, alias is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session

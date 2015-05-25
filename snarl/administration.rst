@@ -5,7 +5,7 @@
 Administration
 **************
 
-The `Snarl <../snarl.html>`_ admin command is ``/opt/local/fifo-snarl/bin/snarl-admin`` but many commands can also be accessed via ``fifoadm`` command. Please keep in mind that ``fifoadm`` is not designed as a every day command but only as a last fall-back when commands are not available through the API.
+The `Snarl <../snarl.html>`_ admin command is ``/opt/local/fifo-snarl/bin/snarl-admin`` but many commands can also be accessed via ``fifoadm`` command. Please keep in mind that ``fifoadm`` is not designed as an every day command but only as a last fall-back when commands are not available through the API.
 
 General Management
 ##################
@@ -28,7 +28,7 @@ Updating
 2. Updating the config
 **********************
 
-After the newest package is installed the config file should be checked for changes and edited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
+After the newest package is installed, the config file should be checked for changes and edited if needed. The ``.example`` file will always contain the newest version of the config ``diff`` is a handy tool to see if some settings need to be added to the existing file.
 
 .. code-block:: bash
 

@@ -19,7 +19,7 @@ API - Datasets
 
      GET /datasets HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -103,7 +103,7 @@ ____
 
      GET /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -140,7 +140,7 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the dataset information is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 404: the dataset was not found
    :status 503: one or more subsystems could not be reached
 
@@ -149,7 +149,7 @@ ____
    :>json string status: import status of the dataset (pending / importing / imported / failed)
    :>json integer imported: percentage of dataset imported (0 .. 1)
    :>json array requirements: requirements for the dataset
-   :>json object metadata: metadate associated witht he dataset
+   :>json object metadata: metadata associated with he dataset
    :>json string description: description of the dater set
    :>json string disk_driver: disk driver to use for kvms
    :>json string homepage: homepage of the dataset
@@ -209,7 +209,7 @@ ____
    :status 503: one or more subsystems could not be reached
 
    :>json string networks: contains information about the network
-   :>json string descrition: contains a discription of the network
+   :>json string description: contains a description of the network
    :>json string name: name of the network
 
 ____
@@ -405,7 +405,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader accept: the accepted encoding, alias is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session

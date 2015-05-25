@@ -19,7 +19,7 @@ API - Sessions
 
 	  POST /sessions HTTP/1.1
 	  host: cloud.project-fifo.net
-	  accept: applicaiton/json
+	  accept: application/json
 	  content-type: application/json
 
 	  {
@@ -42,7 +42,7 @@ API - Sessions
    :status 302: redirect to the session :http:get:`/sessions/(uuid:session)`
    :status 400: body missing user or password field
    :status 403: the provided information is invalid for login
-   :status 449: the user requres MFA but no ``otp`` parameter was passed
+   :status 449: the user requires MFA but no ``otp`` parameter was passed
    :status 503: one or more subsystems could not be reached
 
    :<json string user: user to log in

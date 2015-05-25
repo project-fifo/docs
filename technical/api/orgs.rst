@@ -19,7 +19,7 @@ API - Organizations
 
      GET /orgs HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -42,7 +42,7 @@ API - Organizations
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the orgs list is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
 ____
@@ -103,7 +103,7 @@ ____
 
      GET /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -128,7 +128,7 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the organization's information is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 404: the organization was not found
    :status 503: one or more subsystems could not be reached
 
@@ -187,7 +187,7 @@ ____
 
      GET /orgs/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/triggers HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -333,7 +333,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader accept: the accepted encoding, alias is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session

@@ -19,7 +19,7 @@ API - IPranges
   
      GET /ipranges HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -42,7 +42,7 @@ API - IPranges
    :resheader x-snarl-token: the snarl token for this session
    
    :status 200: the IPrange list is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
 ____
@@ -77,7 +77,7 @@ ____
 
      GET /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -110,7 +110,7 @@ ____
    :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the IPrange information is returned
-   :status 403: user is not authoriyed
+   :status 403: user is not authorized
    :status 404: the IPrange was not found
    :status 503: one or more subsystems could not be reached
 
@@ -125,7 +125,7 @@ ____
 
    :>json array free: list of free IPs
    :>json array used: list of used IPs
-   :>json object metadata: metadata associated witht the IPrange
+   :>json object metadata: metadata associated with the IPrange
 
 ____
 
@@ -238,7 +238,7 @@ ____
      x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader accept: the accepted encoding, alis is ``application/json``
+   :reqheader accept: the accepted encoding, alias is ``application/json``
    :reqheader x-snarl-token: the snarl token for this session
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader x-snarl-token: the snarl token for this session

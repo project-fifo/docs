@@ -13,7 +13,7 @@ Release Notes
 * Snapshots that were deleted on the hypervisor are now cleaned up.
 * Introducing `FiFo-Watchdog <https://watchdog.project-fifo.net>`_.
 * Better code for updating config files.
-* Improved lookup code using secodary indexes.
+* Improved lookup code using secondary indexes.
 * Accounting for Snarl.
 * Metric support for Sniffle sending data to `DalmatinerDB <https://dalmatiner.io>`_
 * Better Sniffle monitoring.

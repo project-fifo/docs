@@ -12,7 +12,7 @@ List
 
 The **Machines** tab is the central area within the UI where new virtual machines are created and where most of the actions related to existing virtual machines are performed.
 
-1. The filter entry area |filter entry area| is designed to selectively filter the machines that are displayed in your list by your filter criteria. The filter is designed to remember the criteria you have filtered byand will continue filtering by those criteria even if you leave and return to the machines tab.
+1. The filter entry area |filter entry area| is designed to selectively filter the machines that are displayed in your list by your filter criteria. The filter is designed to remember the criteria you have filtered by and will continue filtering by those criteria even if you leave and return to the machines tab.
 
 .. |filter entry area| image:: /_static/images/jingles/machines03.png
 
@@ -44,7 +44,7 @@ Create
 
       You will only be able to select more than 1 network if the package selected supports multiple networks.
 
-5. Choose optional advanced paramaters if you require them.
+5. Choose optional advanced parameters if you require them.
 
 .. image:: /_static/images/jingles/machines06.png
 
@@ -59,7 +59,7 @@ Details
 
 .. image:: /_static/images/jingles/machines07.png
 
-1. Shows the current realtime state of the machine.
+1. Shows the current real-time state of the machine.
 
 2. These **Action Buttons** perform the following actions:
 

@@ -58,7 +58,7 @@ Clicking on an individual hyperlinked user name will take you to that user's det
 1. The name of the users you are working on.
 2. Tab sectioned relating to the user. (Explained in further detail below).
 3. The user details tab shows you the uuid of the user, allows you to change that user's password, and select the active organisation he is working for.
-4. Clicking on the |trash icon| will launch a popup dialogue that will ask for you to confirm user deletion.
+4. Clicking on the |trash icon| will launch a pop-up dialog that will ask for you to confirm user deletion.
 
 .. todo::
 

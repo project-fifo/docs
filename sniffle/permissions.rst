@@ -29,7 +29,7 @@ Dataset Permissions start with ``datasets->`` followed by the UUID of the datase
 D-Trace
 #######
 
-D-Trace Permissions start with ``dtraces->`` followed by the UUID of the dtrace. In addition to user specific permissions the following ``cloud`` global permission exist.
+D-Trace Permissions start with ``dtraces->`` followed by the UUID of the dtrace. In addition to user specific permissions the following ``cloud`` global permissions exist.
 
 ``cloud->dtraces->list``
     Allows to list dtraces, the ``get`` permission on each dtrace determines which users are seen during the list.
@@ -52,7 +52,7 @@ D-Trace Permissions start with ``dtraces->`` followed by the UUID of the dtrace.
 Hypervisors
 ###########
 
-Hypervisor Permissions start with ``hypervisors->`` followed by the UUID of the hypervisor. In addition to user specific permissions the following ``cloud`` global permission exist.
+Hypervisor Permissions start with ``hypervisors->`` followed by the UUID of the hypervisor. In addition to user specific permissions, the following ``cloud`` global permissions exist.
 
 ``cloud->hypervisors->list``
         Allows to list hypervisors, the ``get`` permission on each hypervisor determines which users are seen during the list.
@@ -75,7 +75,7 @@ Hypervisor Permissions start with ``hypervisors->`` followed by the UUID of the 
 IP-Ranges
 #########
 
-IP-Range Permissions start with ``ipranges->`` followed by the UUID of the iprange. In addition to user specific permissions the following ``cloud`` global permission exist.
+IP-Range Permissions start with ``ipranges->`` followed by the UUID of the iprange. In addition to user specific permissions, the following ``cloud`` global permissions exist.
 
 ``cloud->ipranges->list``
     Allows to list ipranges, the ``get`` permission on each iprange determines which users are seen during the list.
@@ -95,7 +95,7 @@ Allows the to create new ipranges.
 Networks
 ########
 
-Network Permissions start with ``networks->`` followed by the UUID of the network. In addition to user specific permissions the following ``cloud`` global permission exist.
+Network Permissions start with ``networks->`` followed by the UUID of the network. In addition to user specific permissions, the following ``cloud`` global permissions exist.
 
 ``cloud->networks->list``
     Allows to list networks, the ``get`` permission on each network determines which users are seen during the list.
@@ -115,7 +115,7 @@ Network Permissions start with ``networks->`` followed by the UUID of the networ
 Packages
 ########
 
-Package Permissions start with ``packages->`` followed by the UUID of the package. In addition to user specific permissions the following ``cloud`` global permission exist.
+Package Permissions start with ``packages->`` followed by the UUID of the package. In addition to user specific permissions, the following ``cloud`` global permissions exist.
 
 ``cloud->packages->list``
     Allows to list packages, the ``get`` permission on each package determines which users are seen during the list.
@@ -135,7 +135,7 @@ Allows the to create new packages.
 VMs
 ###
 
-VMs Permissions start with ``vms->`` followed by the UUID of the VM. In addition to user specific permissions the following ``cloud`` global permission exist.
+VMs Permissions start with ``vms->`` followed by the UUID of the VM. In addition to user specific permissions, the following ``cloud`` global permissions exist.
 
 ``cloud->packages->list``
     Allows to list packages, the ``get`` permission on each package determines which vm are seen during the list.

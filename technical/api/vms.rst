@@ -19,7 +19,7 @@ API - VMs
 
      GET /vms HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -101,7 +101,7 @@ ____
    :<json object config: information about VM's config
 
    :<json object networks: network UUID
-   :<json object metadata: matadata associated with the VM
+   :<json object metadata: metadata associated with the VM
    :<json string alias: the VM's alias
    :<json string hostname: the VM's hostname
    :<json array requirements: additional requirements for VM deployment
@@ -165,7 +165,7 @@ ____
    :<json object config: information about VM's config
 
    :<json object networks: network UUID
-   :<json object metadata: matadate associated with the VM
+   :<json object metadata: metadata associated with the VM
    :<json string alias: the VM's alias
    :<json string hostname: the VM's hostname
    :<json array requirements: additional requirements for VM deployment
@@ -188,7 +188,7 @@ ____
 
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -251,7 +251,7 @@ ____
    :>json array groupings: cluster the VM is part of
    :>json string state: 'power' state of the VM
 
-   :>json object metadata: matadate associated with the VM
+   :>json object metadata: metadata associated with the VM
 
 ____
 
@@ -635,7 +635,7 @@ ____
 
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/917c56d4-3a33-11e4-84fa-0be1f7e1f583 HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:
@@ -753,7 +753,7 @@ ____
 
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/backups HTTP/1.1
      host: cloud.project-fifo.net
-     accept: applicaiton/json
+     accept: application/json
      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    **Example response**:

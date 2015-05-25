@@ -14,14 +14,14 @@ ____
 Stateless
 +++++++++
 
-Maintaining availability in stateless applications is pretty simple, it's 'the cloud way': you can fire up multiple instances and since they don't need to share state a failing instance can simply be replaced by a new one or discarded altogether.
+Maintaining availability in stateless applications is pretty simple, it's 'the cloud way': you can fire up multiple instances and since they don't need to share state, a failing instance can simply be replaced by a new one or discarded altogether.
 
 The following components are stateless:
 
 - `Wiggle <../wiggle.html>`_
 - `Jingles <../jingles.html>`_
 
-To maintain availability you will have to spawn at least two of each and put them behind a load balancer. In the current version this task has to be performed by the user.
+To maintain availability, you will have to spawn at least two of each and put them behind a load balancer. In the current version this task has to be performed by the user.
 
 ____
 

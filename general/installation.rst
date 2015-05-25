@@ -27,7 +27,7 @@ Creating the Zone
 -----------------
 
 
-From the *GZ (Global Zone)* we install the base dataset which we will use for our *FiFo Zone*. Than we have to confirm it is installed:
+From the *GZ (Global Zone)* we install the base dataset which we will use for our *FiFo Zone*. Then we have to confirm it is installed:
 
 
 .. code-block:: bash
@@ -71,7 +71,7 @@ Sample contents of ``setupfifo.json``
    }
 
 
-Next we create our *FiFo JSON* payload file and save it in case we need to reinstall at a later stage.
+Next we create our *FiFo JSON* payload file and save it in case we need to re-install at a later stage.
 
 .. code-block:: bash
 
@@ -86,7 +86,7 @@ ____
 Installing the services
 -----------------------
 
-We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *FiFo* package repository and then installing the *FiFo* packages
+We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *FiFo* package repository. Then we install the *FiFo* packages.
 
 .. code-block:: bash
 
@@ -97,7 +97,7 @@ We now *zlogin* to our newly created *FiFo Zone* and proceed with adding the *Fi
    pkgin -fy up
    pkgin install nginx fifo-snarl fifo-sniffle fifo-howl fifo-wiggle fifo-jingles fifo-watchdog
 
-FiFo uses nginx as a proxy to serve jingles and combine the wiggle and howl endpoints into a single service, a nginx config file that provides all of this functionality is part of the jingles package and can simply be copied or adjusted for other needs:
+FiFo uses nginx as a proxy to serve jingles and combine the wiggle and howl endpoints into a single service. An pre-configured nginx config file that provides all of this functionality is included with the jingles package and can simply be copied or customized for your specific needs:
 
 .. code-block:: bash
 
@@ -107,7 +107,7 @@ FiFo uses nginx as a proxy to serve jingles and combine the wiggle and howl endp
 
   - To install the release version use `VERSION=rel`
   - To install the current development version use `VERSION=dev`
-  - The original repositories.conf file is backed up for you incase you need to revert. pkgin has a segfault bug triggered by two package repositories listed in that file.
+  - The original repositories.conf file is backed up for you should you need to revert. pkgin has a segfault bug triggered by two package repositories listed in that file.
 
 ____
 
@@ -115,8 +115,8 @@ ____
 Configuration
 -------------
 
-If this is a fresh installation the installer will create default configuration files for each service. When updating the configuration files do not get overwritten but new ``*.conf.example`` files will be added. 
-The generated files contain some defaults. However is it advised to take some time to configure `Wiggle <../wiggle/configuration.html>`_, `Sniffle <../sniffle/configuration.html>`_, `Snarl <../snarl/configuration.html>`_ and `Howl <../howl/configuration.html>`_.
+If this is a fresh installation the installer will create the default configuration files needed for each service. When an update is performed, the configuration files do not get overwritten but new example``*.conf.example`` configuration files will be added. 
+The generated files do contain default settings. However, is it advised that you take some time to further configure and customize `Wiggle <../wiggle/configuration.html>`_, `Sniffle <../sniffle/configuration.html>`_, `Snarl <../snarl/configuration.html>`_ and `Howl <../howl/configuration.html>`_.
 
 
 Startup
@@ -139,7 +139,7 @@ ____
 Initial administrative tasks
 ----------------------------
 
-The last step is to create an *admin user* granted unrestricted permissions so we can login. It is important to ensure that a permission called ``...`` is added, which assigns "ALL usage rights" to your admin user.
+The last step is to create an *admin user* and grant him/her unrestricted permissions so that you can login. It is important to ensure that a permission called ``...`` is added, which assigns "ALL usage rights" to your admin user.
 
 .. code-block:: bash
 
@@ -170,7 +170,7 @@ LeoFS
 
 .. warning::
 
-   S3 does require a host name or FQDN to work, ip addresses are not working to access the store. Both a DNS server and entries in ``/etc/hosts`` work.
+   S3 requires a host name or FQDN to work, ip addresses are not working to access the store. Both a DNS server and entries in ``/etc/hosts`` work.
 
   `XIP.io <http://xip.io>`_ is a good alternative for test systems, it resolves hostnames in the form of: ``*.<io>.xip.io`` to ``<ip>`` so if the LeoIP is ``10.0.0.100`` using ``10.0.0.100.xip.io`` as a hostname for the storage server will work..
 

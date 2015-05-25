@@ -14,16 +14,16 @@ For further details on usage, please see ``man zfifo`` once the package has been
 Functionality
 `````````````
 
-* snapsnots: list and create
-* backups: list and create
-* metadata: get and set
-* cluster config: get and set
-* stack config: get and set
+* **snapsnots** : list and create
+* **backups** : list and create
+* **metadata** : get and set
+* **cluster config** : get and set
+* **stack config** : get and set
 
 Installation
 ````````````
 
-The installation is rather simple the ``zfifo`` package is available in the fifo package repository and can be installed via ``pkgin install zfifo`` or:
+The installation is rather simple. The ``zfifo`` package is available in the fifo package repository and can be installed via ``pkgin install zfifo`` or:
 
     pkg_add http://release.project-fifo.net/pkg/rel/zfifo
 

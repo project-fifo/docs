@@ -83,6 +83,8 @@ There is currently no SmartOS package for Grafna2, it requires manual complicati
 
 Once installed you can add DalmaterDB to the dependecnies, the default port of the Dalmaterin Frontend server is 8080.
 
+For the time being a precompiled binary of grafana with our changes can be downloaded `here <http://release.project-fifo.net/chunter/rel/grafana-2.0.2.tgz>`_.
+
 Configuration
 -------------
 

@@ -47,6 +47,7 @@ Further documentation can be found in the sections related to the part of the pr
    wiggle.rst
    chunter.rst
    jingles.rst
+   leofs.rst
    technical.rst
    troubleshooting.rst
    doc-guide.rst

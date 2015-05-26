@@ -85,6 +85,7 @@ ____
 
         ps -afe | grep run_erl | grep -v grep
         root 48037 1 0 Dec 27 ? 0:00 /opt/chunter/erts-5.9.1/bin/run_erl -daemon /tmp/chunter /var/log/chunter exec 
+
 ____
 
 - **Chunter service is running**

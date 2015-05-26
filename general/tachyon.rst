@@ -83,3 +83,90 @@ There is currently no SmartOS package for Grafna2, it requires manual complicati
 
 Once installed you can add DalmaterDB to the dependecnies, the default port of the Dalmaterin Frontend server is 8080.
 
+Configuration
+-------------
+
+Tachyon Meter
+`````````````
+
+The file ``/opt/tachyon-meter/etc/tachyon.conf`` needs to be edited:
+
+.. code-block:: bash
+
+   # The NSQd host to send data to
+   host=192.168.1.41 # Needsto be changed to the IP of the zone hosting the NSQd deamon
+
+   # The port NSQd listens to HTTP messages
+   port=4151 # Does not need to be cahnged
+
+   # Tne NSQ topic to send to
+   topic=tachyon # Does not need to be changed
+
+   # The interval to send data to NSQ to in seconds
+   interval=1 # does not need to be changed
+
+   # The hostname to identify the server with
+   ## Will try to pick up chunters host_id file if existing otherwise
+   ## simply use the hostname.
+   if [ -f /opt/chunter/etc/host_id ]
+   then
+     hostname="$(cat /opt/chunter/etc/host_id)"
+   else
+     hostname="$(hostname)"
+   fi
+
+   is_smf=yes # Does not need to be changed, required for backgrouding in the SMF
+
+Tachyon Aggregator
+``````````````````
+
+The file ``/opt/local/tachyon/etc/tachyon.conf`` needs to be edited, most options are explained
+in the file, the two most important ones are the following:
+
+.. code-block:: bash
+
+   ## The DalmatinerDB backend (if used).
+   ##
+   ## Default: 127.0.0.1:5555
+   ##
+   ## Acceptable values:
+   ##   - an IP/port pair, e.g. 127.0.0.1:10011
+   ddb = 192.168.1.42:5555 # Needs to be chainged to point to one dalmatinerdb host
+
+   ## One more more nsqlookupd http interfaces for tachyon to discover
+   ## the channels.
+   ##
+   ## Default: 127.0.0.1:4161
+   ##
+   ## Acceptable values:
+   ##   - an IP/port pair, e.g. 127.0.0.1:10011
+   nsqlookupd.name = 127.0.0.1:4161 # Neds to be pointed to a nsq lookup deamon,
+                                    # more then one of this can be used with
+                                    # different names
+
+
+NSQ
+```
+
+The NSQ config is done via the SMF confingration interface changing the configuration works liek this:
+
+.. code-block:: bash
+
+   svccfg -s svc:/network/nsqd:default
+   svc:/network/nsqd:default> addpg application application
+   svc:/network/nsqd:default> setprop application/lookupd-tcp-address="127.0.0.1:4160"
+   svc:/network/nsqd:default> refresh
+
+
+The same applies for nsqadmin and nsqlookupd instances. The available configuration parameters can be
+read via: ``svccfg export nsqd | grep propval``.
+
+DalmatinerDB
+````````````
+
+Please follow the `official guide <https://docs.dalmatiner.io>`_.
+
+Grafana
+```````
+
+It mostly configured over the web interface, oterhwise see the offical documentation.

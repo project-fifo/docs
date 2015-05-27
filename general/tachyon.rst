@@ -21,13 +21,13 @@ Architecture
 
 .. image:: /_static/images/tachyon.png
 
-Tachyon has a multi layered architecture that balanaces data correctness and availability. The general premesis it works under is that over all availability is at a greater importance then absolute correctness. Aside of tachyon itself two aditional components form the stack:
+Tachyon has a multi layered architecture that balanaces data correctness and availability. The general premise it works under is that over all availability is at a greater importance then absolute correctness. Aside of tachyon itself two aditional components form the stack:
 
 * The `nsq <https://nsq.io>`_ message queue, it is used to allow buffering messages in the case of outages, while buffered messages will not be visible in the database they state can later be completed.
-* The `DalmaterDB <https://dalmatiner.io>`_ database, to handle the throughput and storage requirements.
-* The `Grapfana <http://grapfana.org>`_ dashboard, to visualize the metrics and create dashboards. (plugin required!)
+* The `DalmatinerDB <https://dalmatiner.io>`_ database, to handle the throughput and storage requirements.
+* The `Grafana <http://grafana.org>`_ dashboard, to visualize the metrics and create dashboards. (plugin required!)
 
-At the lowest level the tachyon-meter, a slightly modified kstat, gatheres statistics directly from the knernel and send them to a nsqd process. kstat is a wonderful tool for that we easiely can collect hundres if not thousands of metrics from a system with virtually no (or minimal) impact to the system. Timestamps are generated locally (at send time) so a delayed delivery does not affect the precision, and it easiely can be correlated by other metrics generated on the system.
+At the lowest level the tachyon-meter, a slightly modified kstat, gathers statistics directly from the kernel and sends them to a nsqd process. kstat is a wonderful tool for that we easily can collect hundreds if not thousands of metrics from a system with virtually no (or minimal) impact to the system. Timestamps are generated locally (at send time) so a delayed delivery does not affect the precision, and it easiely can be correlated by other metrics generated on the system.
 
 The Tachyon Aggregator is the second station metrics take, it decodes the kstat package and translates it into a insert statement that DalmatinerDB can understand. Those services are stateless and if the connection to DalmertinerDB is interrupted they will requeue packages to NSQ for later processing.
 
@@ -58,7 +58,7 @@ Installing NSQ in a zone is rather simple, Project-FiFo provides a SmartOS packa
 
    pkg_add http://release.project-fifo.net/pkg/rel/nsq
  
-Another option is to install the nsqd in the GZ however that comes wiht it's own issues and at this point is not recommanded.
+Another option is to install the nsqd in the GZ however that comes wiht it's own issues and at this point is not recommended.
 
 
 Tachyon Aggregator
@@ -67,7 +67,7 @@ Tachyon Aggregator
 .. note::
    currently only in the dev repository.
 
-The aggregator can be installed out of the Project FiFo package repository, either via ``pkg_add`` or via pkgin install if the repository was added to the dependenceis. The package name is tahcyon-aggregator
+The aggregator can be installed out of the Project FiFo package repository, either via ``pkg_add`` or via pkgin install if the repository was added to the dependencies. The package name is tahcyon-aggregator
 
 
 DalmatinerDB
@@ -79,11 +79,11 @@ Please follow the `official guide <https://docs.dalmatiner.io>`_.
 Grafana
 ```````
 
-There is currently no SmartOS package for Grafna2, it requires manual complication, you can follow the installation guide. Since DalmatinerDB does not ship as a native datasourece we maintain a `fork <https://github.com/dalmatinerdb/grafana>`_.
+There is currently no SmartOS package for Grafana2, it requires manual compilation, you can follow the installation guide. Since DalmatinerDB does not ship as a native datasource we maintain a `fork <https://github.com/dalmatinerdb/grafana>`_.
 
-Once installed you can add DalmaterDB to the dependecnies, the default port of the Dalmaterin Frontend server is 8080.
+Once installed you can add DalmatinerDB to the dependencies, the default port of the Dalmatiner Frontend server is 8080.
 
-For the time being a precompiled binary of grafana with our changes can be downloaded `here <http://release.project-fifo.net/chunter/rel/grafana-2.0.2.tgz>`_.
+For the time being, a precompiled binary of grafana with our changes can be downloaded `here <http://release.project-fifo.net/chunter/rel/grafana-2.0.2.tgz>`_.
 
 Configuration
 -------------
@@ -96,10 +96,10 @@ The file ``/opt/tachyon-meter/etc/tachyon.conf`` needs to be edited:
 .. code-block:: bash
 
    # The NSQd host to send data to
-   host=192.168.1.41 # Needsto be changed to the IP of the zone hosting the NSQd deamon
+   host=192.168.1.41 # Needs to be changed to the IP of the zone hosting the NSQd daemon
 
    # The port NSQd listens to HTTP messages
-   port=4151 # Does not need to be cahnged
+   port=4151 # Does not need to be changed
 
    # Tne NSQ topic to send to
    topic=tachyon # Does not need to be changed
@@ -133,7 +133,7 @@ in the file, the two most important ones are the following:
    ##
    ## Acceptable values:
    ##   - an IP/port pair, e.g. 127.0.0.1:10011
-   ddb = 192.168.1.42:5555 # Needs to be chainged to point to one dalmatinerdb host
+   ddb = 192.168.1.42:5555 # Needs to be changed to point to one dalmatinerdb host
 
    ## One more more nsqlookupd http interfaces for tachyon to discover
    ## the channels.
@@ -150,7 +150,7 @@ in the file, the two most important ones are the following:
 NSQ
 ```
 
-The NSQ config is done via the SMF confingration interface changing the configuration works liek this:
+The NSQ config is done via the SMF configuration interface changing the configuration works like this:
 
 .. code-block:: bash
 

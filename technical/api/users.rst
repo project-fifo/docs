@@ -20,7 +20,7 @@ API - Users
      GET /users HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -29,17 +29,15 @@ API - Users
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader x-full-list: true - to get a full list instead of UUIDs
    :reqheader x-full-list-fields: fields to include in the full list - please see: :http:get:`/users/(uuid:user)`
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user list is returned
    :status 403: user is not authorized
@@ -55,14 +53,14 @@ ____
    **Related permissions**
 
       users -> ID -> create
-  
+
    **Example request**:
 
    .. sourcecode:: http
 
-     POST /api/0.1.0/users HTTP/1.1
+     POST /api/0.2.0/users HTTP/1.1
      Accept: application/json
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {
@@ -75,14 +73,12 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 303 See Other
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      vary: accept
-     location: /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a
+     location: /api/0.2.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user list is returned
    :status 303: redirect to the session :http:get:`/users/(uuid:user)`
@@ -91,7 +87,7 @@ ____
 
    :>json string user: name of the new user
    :>json string password: password for the new user
-  
+
 ____
 
 
@@ -110,7 +106,7 @@ ____
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -119,7 +115,6 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
@@ -135,9 +130,8 @@ ____
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user information is returned
    :status 404: the user was not found
@@ -169,9 +163,9 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a HTTP/1.1
+     PUT /api/0.2.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a HTTP/1.1
      Accept: application/json
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"password":"top secret"}
@@ -181,12 +175,10 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 403: user is not authorized
@@ -212,17 +204,15 @@ ____
 
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the user was successfully deleted
    :status 404: the user was not found
@@ -246,7 +236,7 @@ ____
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -255,15 +245,13 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       [["..."]]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user information is returned
    :status 404: the user was not found
@@ -271,6 +259,53 @@ ____
    :status 503: one or more subsystems could not be reached
 
    :<json array permissions: list of permissions the user is granted
+
+____
+
+
+.. http:get:: /users/(uuid:user)/permissions/...
+
+   Tests if a user has is allowed to perform an action. Please not that 403 here does
+   **not** mean the user is not allowed but that the requestig token was not allowed to
+   test for the user!
+
+   Please be aware that of the two keys returned (`ok` and `error`) only one is ever present at a time.
+
+   **Related permissions**
+
+     users -> ID -> get
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+     GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions/cloud/vms/create HTTP/1.1
+     host: cloud.project-fifo.net
+     accept: application/json
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 200 OK
+     vary: Accept
+     content-type: application/json
+
+      {ok: "allowed", error: "forbidden"}
+
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader authorization: Bearer token for OAuth2 auth
+   :resheader content-type: the returned datatype, usually ``application/json``
+
+   :status 200: the user information is returned
+   :status 404: the user was not found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json string ok: set to ``"allowed"`` when `user` has the permission in question
+   :<json string error: set to ``"forbidden"`` when `user` **does not have** the permission in question
 
 ____
 
@@ -288,25 +323,23 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/get HTTP/1.1
+     PUT /api/0.2.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/permissions/groupings/35c4cfbb-057c-455b-93f8-e93205d44ada/get HTTP/1.1
      Accept: application/json
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 201 Created
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
-   :status 201: 
-   :status 403: user is not authorized
-   :status 404: the user could not be found.
+   :status 200: the check was performed
+   :status 403: user requesting the check is not authorized
+   :status 404: the checked user could not be found.
    :status 503: one or more subsystems could not be reached
 
 
@@ -328,17 +361,15 @@ ____
 
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/permissions/users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/... HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the permission was successfully revoked from the user
    :status 404: the permission was not found for that user
@@ -362,7 +393,7 @@ ____
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/roles HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -371,14 +402,12 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       [91740c18-3a33-11e4-b9cf-13aca1131ce1]
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: user's roles are returned
    :status 404: no roles were found
@@ -403,21 +432,20 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/roles/094a757b-84cd-46df-92bb-279a943fa489 HTTP/1.1
+     PUT /api/0.2.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/roles/094a757b-84cd-46df-92bb-279a943fa489 HTTP/1.1
      Accept: application/json
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: no content
    :status 403: user is not authorized
@@ -442,17 +470,15 @@ ____
 
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/roles/c7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the role was successfully deleted for the user
    :status 404: the role was not found for the user
@@ -476,7 +502,7 @@ ____
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -485,15 +511,12 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-
 
       {"key-id": "ssh-rsa ..."}
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user's keys are returned
    :status 404: the user was not found
@@ -517,9 +540,9 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/keys HTTP/1.1
+     PUT /api/0.2.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/keys HTTP/1.1
      Accept: application/json
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {
@@ -532,13 +555,11 @@ ____
 
      HTTP/1.1 204 No Content
      Content-Type: application/json
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 400: the ssh key was badly formated
@@ -565,17 +586,15 @@ ____
 
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the key was successfully deleted from the user
    :status 404: the key was not found for the user
@@ -599,7 +618,7 @@ ____
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/yubikeys HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -608,14 +627,12 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       []
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user's yubikeys are returned
    :status 404: no yubikeys were found
@@ -637,9 +654,9 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/yubikeys HTTP/1.1
+     PUT /api/0.2.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/yubikeys HTTP/1.1
      Accept: application/json
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"otp":"someyubikeyotp"}
@@ -649,12 +666,10 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 403: user is not authorized
@@ -681,17 +696,15 @@ ____
 
       DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/yubikeys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
       host: cloud.project-fifo.net
-      x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the key was successfully deleted from the user
    :status 404: the key was not found for the user
@@ -715,7 +728,7 @@ ____
      GET /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/orgs HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -724,14 +737,12 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       [916a16ae-3a33-11e4-9d26-1ffeeda8b532]
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the user's organizations are returned
    :status 404: no organizations were not found
@@ -751,26 +762,24 @@ ____
 
       * users -> ID -> join
       * roles -> ID join
-   
+
    **Example request**:
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/orgs/c1590249-1b2c-4440-952b-eef2ff83ed1f HTTP/1.1
+     PUT /api/0.2.0/users/7df734a1-7332-45da-aa2a-9a3d856fa58a/orgs/c1590249-1b2c-4440-952b-eef2ff83ed1f HTTP/1.1
      Accept: application/json
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: no content
    :status 403: user is not authorized
@@ -792,9 +801,9 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
      Accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
@@ -804,13 +813,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, alias is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: the VM could not be found
@@ -836,17 +843,15 @@ ____
 
      DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/... HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the metadata key was successfully deleted from the user
    :status 404: the metadata key was not found for the user

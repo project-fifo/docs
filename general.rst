@@ -10,7 +10,6 @@ General
 
    general/installation
    general/watchdog
-   general/tachyon
    general/clustering
    general/releasenotes
    general/upgrade

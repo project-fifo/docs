@@ -214,15 +214,38 @@ leo_storage.conf
    distributed_cookie = QvTnSK0vrCohKMkw
    managers = [manager0@10.1.1.21, manager1@10.1.1.22]
 
+Service Startup Sequence
+########################
 
-We then start the services
+We then start the services. Please be aware that the startup order is **very** important and that the ``leofs-adm status`` commands should show the service is up on **BOTH** zones before you start/enable the other services. 
 
 .. code-block:: bash
 
    svcadm enable epmd
    svcadm enable leofs/manager
-   svcadm enable leofs/gateway
+   leofs-adm status
+
+You now **stop** at this point and complete the **Zone 2** configuration and ensure that both zones show the service is up ``leofs-adm status`` before you continue with enabling leofs/storage and leofs/gateway.
+
+.. code-block:: bash
+
    svcadm enable leofs/storage
+   leofs-adm status
+
+Confirm that when running ``leofs-adm status`` the storage is listed. Once confirmed you then **start** the storage with the ``leofs-adm start`` command.
+
+.. code-block:: bash
+
+   leofs-adm start  
+
+The last step is to start the **gateway** service and confirm everything is running correctly.
+
+.. code-block:: bash
+
+   svcadm enable leofs/gateway
+   leofs-adm status   
+
+
 
 Zone 2 Configuration
 --------------------
@@ -261,6 +284,7 @@ We then start the services
 
    svcadm enable epmd
    svcadm enable leofs/manager
+   leofs-adm status
 
 
 .. warning:: LeoFS uses ``Replicas`` to ensure a certain consistency level for your data. Once the replica value has been set and your cluster started, it can **NOT** be changed. You can still add storage nodes to the cluster but your resiliency level will always remain constant.

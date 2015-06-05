@@ -43,6 +43,7 @@ Further documentation can be found in the sections related to the part of the pr
    howl.rst
    wiggle.rst
    chunter.rst
+   tachyon.rst
    jingles.rst
    leofs.rst
    technical.rst

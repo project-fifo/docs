@@ -259,7 +259,6 @@ Zlogin to Zone 1 and enable the following services.
 
    svcadm enable epmd
    svcadm enable leofs/manager
-   leofs-adm status
 
 (Step 3.2) Start Manager B
 ---------------------------
@@ -269,7 +268,6 @@ Zlogin to Zone 2 and enable the following services.
 
    svcadm enable epmd
    svcadm enable leofs/manager
-   leofs-adm status
 
 Please be aware that the startup order is **very** important and that the ``leofs-adm status`` commands should show the service is up on **BOTH** zones before you continue.    
 
@@ -281,7 +279,6 @@ Zlogin to Zone 1 and enable the LeoFS Storage service and confirm it is running.
 .. code-block:: bash
 
    svcadm enable leofs/storage
-   leofs-adm status
 
 Confirm that when running ``leofs-adm status`` the storage is listed. Once confirmed you then **start** the storage with the ``leofs-adm start`` command.
 

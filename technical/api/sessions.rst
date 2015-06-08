@@ -40,8 +40,7 @@ API - Sessions
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader content-type: datatype used in the body, usually ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 302: redirect to the session :http:get:`/sessions/(token:session)`
    :status 400: body missing user or password field
@@ -158,17 +157,15 @@ ____
 
      DELETE /sessions/1b2230af-03bb-4bf7-ab49-86fab503bf16 HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the session was successfully deleted
    :status 404: the session was not found

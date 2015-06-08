@@ -20,7 +20,7 @@ API - Datasets
      GET /datasets HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -29,17 +29,15 @@ API - Datasets
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader x-full-list: true - to get a full list instead of UUIDs
    :reqheader x-full-list-fields: fields to include in the full list - please see: :http:get:`/datasets/(uuid:dataset)`
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the dataset list is returned
    :status 403: user is not authorized
@@ -63,7 +61,7 @@ ____
       POST /api/0.1.0/datasets HTTP/1.1
       accept: application/json
       content-type: application/json
-      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
       {"url": "https://datasets.at/datasets/21274016-2ad3-11e4-9673-e3abad521cc2"}
 
@@ -73,13 +71,11 @@ ____
 
       HTTP/1.1 303 See Other
       content-type: application/json
-      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
       location: /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the dataset list is returned
    :status 303: redirect to the session :http:get:`/datasets/(uuid:dataset)`
@@ -104,7 +100,7 @@ ____
      GET /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -113,7 +109,6 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
@@ -135,9 +130,8 @@ ____
      }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the dataset information is returned
    :status 403: user is not authorized
@@ -177,7 +171,7 @@ ____
 
       PUT /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2 HTTP/1.1
       Accept: application/json
-      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
       Content-Type: application/json
 
       {
@@ -195,13 +189,11 @@ ____
    .. sourcecode:: http
 
       HTTP/1.1 204 No Content
-      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
       vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 403: user is not authorized
@@ -226,7 +218,7 @@ ____
    **Example request**:
 
    .. note::
-      
+
     Input is a DS manifest.
 
    .. sourcecode:: http
@@ -234,7 +226,7 @@ ____
       POST /api/0.1.0/datasets/d34c301e-10c3-11e4-9b79-5f67ca448df0 HTTP/1.1
       accept: application/json
       content-type: application/json
-      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
+      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
       {
       "uuid":"d34c301e-10c3-11e4-9b79-5f67ca448df0",
@@ -272,13 +264,11 @@ ____
    .. sourcecode:: http
 
       HTTP/1.1 303 See Other
-      x-snarl-token: b73b7780-7677-430b-81ef-a57427d166b2
       location: /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the dataset list is returned
    :status 303: redirect to the session :http:get:`/datasets/(uuid:dataset)`
@@ -303,17 +293,15 @@ ____
 
      DELETE /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the dataset was successfully deleted
    :status 404: the dataset was not found
@@ -337,7 +325,7 @@ ____
      GET /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/dataset.gz HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/x-gzip
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -346,14 +334,12 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/x-gzip
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       ... binary data ...
 
    :reqheader accept: the accepted encoding, valid is ``application/x-gzip``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/x-gzip``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the organization's triggers are returned
    :status 404: the triggers were not found
@@ -392,7 +378,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
      Accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
@@ -402,13 +388,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, alias is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: the VM could not be found
@@ -436,17 +420,15 @@ ____
 
      DELETE /datasets/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the metadata key was successfully deleted from the dataset
    :status 404: the metadata key was not found

@@ -16,31 +16,29 @@ API - IPranges
    **Example request**:
 
    .. sourcecode:: http
-  
+
      GET /ipranges HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader x-full-list: true - to get a full list instead of UUIDs
    :reqheader x-full-list-fields: fields to include in the full list - please see: :http:get:`/ipranges/(uuid:iprange)`
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
-   
+
    :status 200: the IPrange list is returned
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
@@ -57,7 +55,7 @@ ____
       cloud -> ipranges -> create
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -78,36 +76,34 @@ ____
      GET /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
-  
+
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
-  
+
      {
       "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
       "name": "admin",
-  
+
       "network": "739faa0d-d098-496c-a87b-dc95520f8d12",
       "netmask": "255.255.255.0",
       "gateway": "192.168.0.1",
       "tag": "admin",
       "vlan": 0,
-  
+
       "free": ["192.168.0.10", "192.168.0.11", "192.168.0.12", "192.168.0.13"],
       "used": ["192.168.0.9", "192.168.0.8"],
       "metadata": {}
      }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the IPrange information is returned
    :status 403: user is not authorized
@@ -116,8 +112,8 @@ ____
 
    :>json string UUID: UUID of the IPrange
    :>json string name: name of the IPrange
-   
-   :>json string network: network using the IPrange 
+
+   :>json string network: network using the IPrange
    :>json string netmask: netmask of the network using the IPrange
    :>json string gateway: gateway of the network using the IPrange
    :>json string tag: network tag
@@ -139,7 +135,7 @@ ____
       *not needed*
 
 .. todo::
-    
+
   Example Requests & Responses still missing.
 
 ____
@@ -156,20 +152,18 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
-  
-     HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+     HTTP/1.1 204 No Content
+
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the IPrange was successfully deleted
    :status 404: the IPrange was not found
@@ -189,20 +183,18 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/<ip> HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
-  
-     HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+     HTTP/1.1 204 No Content
+
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the IP was successfully deleted from the IPrange
    :status 404: the IP was not found
@@ -225,7 +217,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
      Accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
@@ -235,13 +227,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, alias is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: the VM could not be found
@@ -268,20 +258,18 @@ ____
    **Example request**:
 
    .. sourcecode:: http
-  
+
      DELETE /ipranges/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/metadata/(path:metadata) HTTP/1.1
      host: cloud.project-fifo.net
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
    .. sourcecode:: http
-  
-     HTTP/1.1 204 No Content
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+     HTTP/1.1 204 No Content
+
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the metadata key was successfully deleted from the IPrange
    :status 404: the metadata key was not found

@@ -20,7 +20,7 @@ API - VMs
      GET /vms HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -29,17 +29,15 @@ API - VMs
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      ["b7c658e0-2ddb-46dd-8973-4a59ffc9957e"]
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader x-full-list: true - to get a full list instead of UUIDs
    :reqheader x-full-list-fields: fields to include in the full list - please see: :http:get:`/vms/(uuid:vm)`
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the VM list is returned
    :status 403: user is not authorized
@@ -63,7 +61,7 @@ ____
      POST /api/0.1.0/vms HTTP/1.1
      Accept: application/json
      Content-Type: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
       {
        "package": "aa77ce44-cdb6-4e59-8f64-97f65b7eba2d",
@@ -88,7 +86,7 @@ ____
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
    :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)` request
 
@@ -127,7 +125,7 @@ ____
      PUT /api/0.1.0/vms/dry_run HTTP/1.1
      Accept: application/json
      Content-Type: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
      {
       "package":  "aa77ce44-cdb6-4e59-8f64-97f65b7eba2d",
@@ -148,13 +146,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 201 Created
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 201: confirms valid VM spec
    :status 403: user is not authorized
@@ -189,7 +185,7 @@ ____
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -198,7 +194,6 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       {
        "uuid": "b7c658e0-2ddb-46dd-8973-4a59ffc9957e",
@@ -223,9 +218,8 @@ ____
        "metadata": {}
       }
 
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the session information is returned
    :status 403: user is not authorized
@@ -278,7 +272,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab HTTP/1.1
      Accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"action": "stop"}
@@ -289,7 +283,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab HTTP/1.1
      Accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {
@@ -307,13 +301,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: VM could not be found
@@ -353,8 +345,7 @@ ____
 
      HTTP/1.1 204 No Content
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the VM was successfully deleted from the hypervisor
    :status 404: the VM was not found
@@ -378,7 +369,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/owner HTTP/1.1
      accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      content-type: application/json
 
      {"org":  "63952b63-a42f-4649-8cbb-c951724faf2b"}
@@ -388,13 +379,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: VM could not be found
@@ -421,7 +410,7 @@ ____
      POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics HTTP/1.1
      Accept: application/json, text/plain, */*
      Content-Type: application/json;charset=UTF-8
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
      {"network":  "a3850354-d356-4bb7-a9ae-a41387702ad5"}
 
@@ -431,13 +420,11 @@ ____
 
      HTTP/1.1 303 See Other
      vary: accept
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
    :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)` request
 
    :status 303: redirect to the corresponding :http:get:`/vms/(uuid:vm)` request
@@ -465,7 +452,7 @@ ____
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics/d2:1f:b4:36:47:e2 HTTP/1.1
      Accept: application/json
      Content-Type: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
      {"primary":  true}
 
@@ -474,12 +461,10 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: the VM/nic could not be found
@@ -504,7 +489,7 @@ ____
    .. sourcecode:: http
 
      DELETE /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/nics/d2:1f:b4:36:47:e2 HTTP/1.1
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      host: cloud.project-fifo.net
 
    **Example response**:
@@ -512,10 +497,8 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the nic was successfully deleted from VM
    :status 404: the nic was not found on the VM
@@ -539,7 +522,7 @@ ____
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -548,7 +531,6 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      [{
      "comment":"ex",
@@ -559,9 +541,8 @@ ____
 
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the VM'S snapshots are returned
    :status 404: the VM could not be found
@@ -591,7 +572,7 @@ ____
      POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots HTTP/1.1
      Accept: application/json
      Content-Type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
       {"comment": "a snapshot"}
 
@@ -602,13 +583,11 @@ ____
 
      HTTP/1.1 303 See Other
      vary: accept
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/baff8394-08cc-4612-826e-717e75321650
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
    :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)/snapshots/(id:snapshot)` request
 
    :status 303: redirect to the corresponding :http:get:`/vms/(uuid:vm)/snapshots/(id:snapshot)` request
@@ -636,7 +615,7 @@ ____
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/snapshots/917c56d4-3a33-11e4-84fa-0be1f7e1f583 HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -645,14 +624,12 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       {}
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: information about the snapshot is returned
    :status 404: the snapshot was not found
@@ -679,7 +656,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/ HTTP/1.1
      Accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
       {"action":"rollback"}
@@ -689,12 +666,10 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: the VM/snapshot could not be found
@@ -729,8 +704,7 @@ ____
 
      HTTP/1.1 204 No Content
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the snapshot was successfully deleted from VM
    :status 404: the snapshot was not found on the VM
@@ -754,7 +728,7 @@ ____
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/backups HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -763,7 +737,6 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       [{
       "comment":"ex",
@@ -779,9 +752,8 @@ ____
       }]
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: the VM's backups are returned
    :status 404: no backups were found
@@ -789,15 +761,15 @@ ____
    :status 503: one or more subsystems could not be reached
 
    :<json string comment: comment for the backup
-   :<json array files: 
-   :<json string local: 
+   :<json array files:
+   :<json string local:
    :<json string pending:
    :<json string sha1:
    :<json integer size: size of the backup
    :<json state completed: state of the backup (complete/incomplete)
    :<json integer timestamp: timestamp of the backup
    :<json string UUID: UUID of the backup
-   :<json string xml: 
+   :<json string xml:
 
 ____
 
@@ -817,7 +789,7 @@ ____
      POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups HTTP/1.1
      Accept: application/json
      Content-Type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
      {"comment":  "initial"}
 
@@ -826,14 +798,12 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 303 See Other
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
      vary: accept
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
    :resheader location: redirect to the corresponding :http:get:`/vms/(uuid:vm)/backups/(id:backup)` request
 
    :status 303: redirect to the corresponding :http:get:`/vms/(uuid:vm)/backups/(id:backup)` request
@@ -861,7 +831,7 @@ ____
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/backup/917cc81c-3a33-11e4-91be-d75626cf1357 HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -870,7 +840,6 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
      {
      "comment":"ex",
@@ -886,9 +855,8 @@ ____
      }
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: the returned datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 200: information about the backup is returned
    :status 404: the backup was not found
@@ -921,7 +889,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b HTTP/1.1
      Accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"action": "rollback"}
@@ -931,12 +899,10 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: no content
    :status 404: the backups were not found
@@ -969,8 +935,7 @@ ____
 
      HTTP/1.1 204 No Content
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the backup was successfully deleted from the VM
    :status 404: the backup was not found on the VM
@@ -993,7 +958,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
      Accept: application/json
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"notes":  [{"text":"yap","created_at":"2014-09-13T01:34:03.379Z"}]}
@@ -1003,13 +968,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: the VM could not be found
@@ -1042,8 +1005,7 @@ ____
 
      HTTP/1.1 204 No Content
 
-   :reqheader x-snarl-token: the snarl token for this session
-   :resheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
 
    :status 204: the snapshot was successfully deleted from the VM
    :status 404: the snapshot was not found on the VM
@@ -1067,7 +1029,7 @@ ____
      GET /vms/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/services HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -1076,7 +1038,6 @@ ____
      HTTP/1.1 200 OK
      vary: Accept
      content-type: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
 
       {
       "lrc:/etc/rc2_d/S99net_tune":"legacy_run",
@@ -1085,9 +1046,7 @@ ____
       }
 
   :reqheader accept: the accepted encoding, valid is ``application/json``
-  :reqheader x-snarl-token: the snarl token for this session
   :resheader content-type: the returned datatype, usually ``application/json``
-  :resheader x-snarl-token: the snarl token for this session
 
   :status 200: the VM's services are returned
   :status 404: no services were found
@@ -1113,7 +1072,7 @@ ____
 
      PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/services HTTP/1.1
      Accept: application/json, text/plain, */*
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json;charset=UTF-8
 
      {
@@ -1126,13 +1085,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: the VM could not be found
@@ -1159,7 +1116,7 @@ ____
 
      POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/fw_rules HTTP/1.1
      Accept: application/json, text/plain, */*
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json;charset=UTF-8
 
      {
@@ -1175,14 +1132,12 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 303 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
      location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 303: the changed vm
    :status 404: the VM could not be found
@@ -1222,7 +1177,7 @@ ____
 
      DELETE /api/0.1.0/delete/2ca285a3-05a8-4ca6-befd-78fa994929ab/fw_rules/39079269 HTTP/1.1
      Accept: application/json, text/plain, */*
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json;charset=UTF-8
 
 
@@ -1231,13 +1186,11 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     x-snarl-token: d2d685b7-714d-4d28-bb7c-6f80b29da4dd
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: the snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :reqheader content-type: the provided datatype, usually ``application/json``
-   :resheader x-snarl-token: the snarl token for this session
 
    :status 204: no content
    :status 404: the VM could not be found

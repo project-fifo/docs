@@ -441,7 +441,6 @@ ____
    .. sourcecode:: http
 
      HTTP/1.1 204 No Content
-     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      vary: accept
 
    :reqheader accept: the accepted encoding, valid is ``application/json``

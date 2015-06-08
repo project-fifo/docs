@@ -66,7 +66,7 @@ ____
      GET /cloud HTTP/1.1
      host: cloud.project-fifo.net
      accept: application/json
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 
    **Example response**:
 
@@ -74,7 +74,6 @@ ____
 
      HTTP/1.1 200 OK
      vary: Accept
-     x-snarl-token: 1b2230af-03bb-4bf7-ab49-86fab503bf16
      content-type: application/json
 
       {
@@ -110,10 +109,9 @@ ____
       }
 
    :reqheader accept: accepted encoding, valid is ``application/json``
-   :reqheader x-snarl-token: snarl token for this session
-   :resheader x-snarl-token: snarl token for this session
+   :reqheader authorization: Bearer token for OAuth2 auth
    :resheader content-type: returned datatype, usually ``application/json``
-   
+
    :status 200: the system is operational
    :status 403: the logged in user lacks the needed permissions
    :status 503: one or more subsystems could not be reached
@@ -123,13 +121,13 @@ ____
    :>json integer users: number of users on the system
    :>json integer roles: number of roles on the system
    :>json integer orgs: number of organization on the system
-   :>json integer used: 
+   :>json integer used:
    :>json integer total-memory: total memory available to the system
    :>json string storage:
    :>json integer size:
-   :>json integer reserved-memory: 
+   :>json integer reserved-memory:
    :>json integer l2size: size of the level 2 arc
-   :>json integer l2miss: 
+   :>json integer l2miss:
    :>json integer l2its:
    :>json integer l1size: size of the level 1 arc
    :>json integer l1miss:
@@ -137,14 +135,9 @@ ____
    :>json array hypervisors: the hypervisor's UUID
    :>json integer free memory:
    :>json integer VMS: total amount of VMs available
-   
+
    :>json object versions: versions of the system components
    :>json string snarl: snarl version
    :>json string howl: howl version
    :>json string sniffle: sniffle version
    :>json string wiggle: wiggle version
-
-
-
-
-

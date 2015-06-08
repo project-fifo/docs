@@ -67,8 +67,8 @@ If our LeoFS storage zone IP is ``10.1.1.21`` using ``storage.10.1.1.21.xip.io``
 
 .. note::  If your setup uses **internal DNS** or **host file** entries - then all the LeoFS service host names should be resolvable within each LeoFS zones as well as from the **Global Zone** of every hypervisor.
 
-Install Step Overview
-----------------------
+Installation Steps Overview
+---------------------------
 
 .. image:: ../_static/images/leofs_services_sequence_steps.png
 

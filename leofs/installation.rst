@@ -67,8 +67,13 @@ If our LeoFS storage zone IP is ``10.1.1.21`` using ``storage.10.1.1.21.xip.io``
 
 .. note::  If your setup uses **internal DNS** or **host file** entries - then all the LeoFS service host names should be resolvable within each LeoFS zones as well as from the **Global Zone** of every hypervisor.
 
-Creating the Zones
-------------------
+Install Step Overview
+----------------------
+
+.. image:: ../_static/images/leofs_services_sequence_steps.png
+
+(Step 1) Create Zones
+---------------------
 
 
 From the *GZ (Global Zone)* we install the base dataset which we will use for our *LeoFS Zones*. Then we have to confirm it is installed:
@@ -155,8 +160,8 @@ Next we create our *LeoFS JSON* payload files and create our 2 LeoFS zones.
 
 The rest of the setup will be done within our newly created LeoFS zones.
 
-Zone 1 Configuration
---------------------
+(Step 2.1) Zone 1 Configuration
+-------------------------------
 
 We zlogin to the **LeoFS Zone 1** and add the FiFo package repository then install the LeoFS **"Manager", "Gateway" and "Storage"** services.
 
@@ -169,6 +174,8 @@ We zlogin to the **LeoFS Zone 1** and add the FiFo package repository then insta
    pkgin -fy up
    pkgin install leo_manager leo_gateway leo_storage
 
+
+.. warning:: LeoFS uses ``Replicas`` to ensure a certain consistency level for your data. Once the replica value has been set in the below configuration files and your cluster started, it can **NOT** be changed. You can still add storage nodes to the cluster but your resiliency level will always remain constant.
 
 Next we configure all the services in Zone 1 by editing each respective configuration file and changing the following settings:
 
@@ -187,9 +194,6 @@ leo_manager.conf
    consistency.write = 1
    consistency.read = 1
    consistency.delete = 1
-
-
-
 
 leo_gateway.conf
 ################
@@ -214,41 +218,9 @@ leo_storage.conf
    distributed_cookie = QvTnSK0vrCohKMkw
    managers = [manager0@10.1.1.21, manager1@10.1.1.22]
 
-Service Startup Sequence
-########################
 
-We then start the services. Please be aware that the startup order is **very** important and that the ``leofs-adm status`` commands should show the service is up on **BOTH** zones before you start/enable the other services. 
-
-.. code-block:: bash
-
-   svcadm enable epmd
-   svcadm enable leofs/manager
-   leofs-adm status
-
-You now **stop** at this point and complete the **Zone 2** configuration and ensure that both zones show the service is up ``leofs-adm status`` before you continue with enabling leofs/storage and leofs/gateway.
-
-.. code-block:: bash
-
-   svcadm enable leofs/storage
-   leofs-adm status
-
-Confirm that when running ``leofs-adm status`` the storage is listed. Once confirmed you then **start** the storage with the ``leofs-adm start`` command.
-
-.. code-block:: bash
-
-   leofs-adm start  
-
-The last step is to start the **gateway** service and confirm everything is running correctly.
-
-.. code-block:: bash
-
-   svcadm enable leofs/gateway
-   leofs-adm status   
-
-
-
-Zone 2 Configuration
---------------------
+(Step 2.2) Zone 2 Configuration
+-------------------------------
 
 We now zlogin to the **LeoFS Zone 2** and add the FiFo package repository then install the LeoFS **"Manager"** service.
 
@@ -276,9 +248,12 @@ leo_manager.conf
    consistency.num_of_replicas = 1
    consistency.write = 1
    consistency.read = 1
-   consistency.delete = 1
+   consistency.delete = 1   
 
-We then start the services
+
+(Step 3.1) Start Manager A
+---------------------------
+Zlogin to Zone 1 and enable the following services.
 
 .. code-block:: bash
 
@@ -286,8 +261,45 @@ We then start the services
    svcadm enable leofs/manager
    leofs-adm status
 
+(Step 3.2) Start Manager B
+---------------------------
+Zlogin to Zone 2 and enable the following services.
 
-.. warning:: LeoFS uses ``Replicas`` to ensure a certain consistency level for your data. Once the replica value has been set and your cluster started, it can **NOT** be changed. You can still add storage nodes to the cluster but your resiliency level will always remain constant.
+.. code-block:: bash
+
+   svcadm enable epmd
+   svcadm enable leofs/manager
+   leofs-adm status
+
+Please be aware that the startup order is **very** important and that the ``leofs-adm status`` commands should show the service is up on **BOTH** zones before you continue.    
+
+(Step 4) Start Storage
+----------------------
+
+Zlogin to Zone 1 and enable the LeoFS Storage service and confirm it is running.
+
+.. code-block:: bash
+
+   svcadm enable leofs/storage
+   leofs-adm status
+
+Confirm that when running ``leofs-adm status`` the storage is listed. Once confirmed you then **start** the storage with the ``leofs-adm start`` command.
+
+.. code-block:: bash
+
+   leofs-adm start  
+
+
+(Step 5) Start the Gateway
+--------------------------
+
+Zlogin to Zone 1 and enable the LeoFS Gateway service and confirm everything is running correctly.
+
+
+.. code-block:: bash
+
+   svcadm enable leofs/gateway
+   leofs-adm status   
 
 
 Starting the LeoFS Cluster
@@ -325,10 +337,10 @@ Next we create our 3 buckets using our ``access-key-id``
    [root@1.leofs ~]# leofs-adm add-bucket fifo-snapshots ed4528b19bc043770c12
 
 
-.. note::  Do **NOT** lose your **access-key-id** and **secret-access-key** as you will need them later to complete your FiFo setup. 
+.. note::  Do **NOT** lose your **access-key-id** and **secret-access-key** as you will need them later to complete your FiFo setup.
+
 
 Thats it your LeoFS setup is complete, you can now return to the FiFo installation manual and continue with the rest of your FiFo setup.
-
 
 
 

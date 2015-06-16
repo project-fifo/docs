@@ -299,45 +299,21 @@ Zlogin to Zone 1 and enable the LeoFS Gateway service and confirm everything is 
    leofs-adm status   
 
 
+This part of the LeoFS setup is now complete, the final step as shown below is completed **after** your return to the FiFo installation manual and continue with the rest of your FiFo setup.
+
 Starting the LeoFS Cluster
 --------------------------
 
-First we ZLOGIN into the LeoFS Zone 1 and run the following command ``leofs-adm status`` to ensure there is no errors/problems related with "mnesia".
+The last step will be completed in the actual FiFO Zone once you have it up and running. You should now continue with the general FiFo installation manual.
 
-Next we generate a unique password for fifo to access the LeoFs storage.
+Once FiFO is configured the ``sniffle-admin init-leofs`` command should be used from within your FiFo zone - to set up the required, users, buckets and endpoints.
 
 .. code-block:: text
 
-   [root@1.leofs ~]# openssl rand -base64 32 | fold -w16 | head -n1
-   qypdpQ47e/E4oKH3
-
-+-----------------------------+------------------------+
-| Our FiFo S3 user password   |  **qypdpQ47e/E4oKH3**  |
-+-----------------------------+------------------------+
-
-Lastly we start the cluster, add the endpoint and our fifo user.
-
-.. code-block:: bash
-
-   [root@1.leofs ~]# leofs-adm add-endpoint 10.1.1.21.xip.io
-   [root@1.leofs ~]# leofs-adm create-user fifo qypdpQ47e/E4oKH3
-
-   access-key-id: ed4528b19bc043770c12
-   secret-access-key: 18b35c2dc5b0819e31d7c2fece24add0ef9ec221
-
-Next we create our 3 buckets using our ``access-key-id``
-
-.. code-block:: bash
-
-   [root@1.leofs ~]# leofs-adm add-bucket fifo ed4528b19bc043770c12
-   [root@1.leofs ~]# leofs-adm add-bucket fifo-images ed4528b19bc043770c12
-   [root@1.leofs ~]# leofs-adm add-bucket fifo-snapshots ed4528b19bc043770c12
+   [root@1.leofs ~]# sniffle-admin init-leofs 10.1.1.21.xip.io
 
 
-.. note::  Do **NOT** lose your **access-key-id** and **secret-access-key** as you will need them later to complete your FiFo setup.
 
-
-Thats it your LeoFS setup is complete, you can now return to the FiFo installation manual and continue with the rest of your FiFo setup.
 
 
 

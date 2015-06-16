@@ -571,9 +571,9 @@ ____
 ____
 
 
-.. http:delete:: /users/(uuid:user)/keys/(uuid:key)
+.. http:delete:: /users/(uuid:user)/keys/(string:key-id)
 
-   Deltes key with given *uuid* for user with given *uuid*.
+   Deltes key with given *key-id* for user with given *uuid*.
 
    **Related permissions**
 
@@ -583,7 +583,7 @@ ____
 
    .. sourcecode:: http
 
-     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys/b7c658e0-2ddb-46dd-8973-4a59ffc9957e HTTP/1.1
+     DELETE /users/b7c658e0-2ddb-46dd-8973-4a59ffc9957e/keys/testkey HTTP/1.1
      host: cloud.project-fifo.net
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
 

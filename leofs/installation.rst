@@ -306,7 +306,7 @@ Starting the LeoFS Cluster
 
 The last step will be completed in the actual FiFO Zone once you have it up and running. You should now continue with the general FiFo installation manual.
 
-Once FiFO is configured the ``sniffle-admin init-leofs`` command should be used from within your FiFo zone - to set up the required, users, buckets and endpoints.
+Once FiFO is configured the ``sniffle-admin init-leofs`` command should be used from within your FiFo zone. It will set up the required, users, buckets and endpoints.
 
 .. code-block:: text
 

@@ -58,7 +58,7 @@ ____
 
    .. sourcecode:: http
 
-     POST /api/0.1.0/vms HTTP/1.1
+     POST /api/0.2.0/vms HTTP/1.1
      Accept: application/json
      Content-Type: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
@@ -83,7 +83,7 @@ ____
 
      HTTP/1.1 303 See Other
      vary: accept
-     location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
+     location: /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader authorization: Bearer token for OAuth2 auth
@@ -122,7 +122,7 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/dry_run HTTP/1.1
+     PUT /api/0.2.0/vms/dry_run HTTP/1.1
      Accept: application/json
      Content-Type: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
@@ -250,7 +250,7 @@ ____
 ____
 
 
-.. http:put:: /vms/(uuid:vm)
+.. http:put:: /vms/(uuid:vm)/state
 
    Initiates a VM state change for VM with given *uuid*.
 
@@ -258,42 +258,58 @@ ____
 
     vms -> UUID -> state
 
-   Updates the config/package for VM with given *uuid*.
-
-   **Related permissions**
-
-    vms -> UUID -> edit
-
-    .. warning there are two examples for get requests since this endpoint can take different data and act differently
-
-   **Example request #1**:
+   **Example request**:
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab HTTP/1.1
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/state HTTP/1.1
      Accept: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {"action": "stop"}
 
-   **Example request #2**:
+   **Example response**:
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab HTTP/1.1
+     HTTP/1.1 204 No Content
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader authorization: Bearer token for OAuth2 auth
+   :reqheader content-type: the provided datatype, usually ``application/json``
+
+   :status 204: no content
+   :status 404: VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json string action: One of ``start``, ``stop`` or ``reboot``
+   :<json boolean force: Applicable for ``stop`` and ``reboot``, indicates a forced action.
+
+____
+
+
+.. http:put:: /vms/(uuid:vm)/package
+
+   Updates the package for VM with given *uuid*.
+
+   **Related permissions**
+
+    vms -> UUID -> edit
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/package HTTP/1.1
      Accept: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
 
      {
-      "config":
-       {
-        "alias":  "alias",
-        "hostname": "base64",
-        "resolvers":  ["8.8.8.8","8.8.4.4"]
-       },
-      "package":  "356574be-28ba-4e11-8073-166b3ea278a0"
+       "package":  "356574be-28ba-4e11-8073-166b3ea278a0"
      }
 
    **Example response**:
@@ -312,12 +328,61 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :<json object action: package UUID
-   :<json object config: information about VM's config
+   :<json sting package: package UUID
 
-   :<json string dataset: dataset UUID
-   :<json string alias: the VM's alias
-   :<json string hostname: the VM's hostname
+____
+
+
+.. http:put:: /vms/(uuid:vm)/config
+
+   Updates the config for VM with given *uuid*.
+
+   **Related permissions**
+
+    vms -> UUID -> edit
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/config HTTP/1.1
+     Accept: application/json
+     Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
+     Content-Type: application/json
+
+     {
+       "alias":  "alias",
+       "hostname": "base64",
+       "resolvers":  ["8.8.8.8","8.8.4.4"]
+     }
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+     HTTP/1.1 204 No Content
+     vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader authorization: Bearer token for OAuth2 auth
+   :reqheader content-type: the provided datatype, usually ``application/json``
+
+   :status 204: no content
+   :status 404: VM could not be found
+   :status 403: user is not authorized
+   :status 503: one or more subsystems could not be reached
+
+   :<json string  hostname: the hostname of the VM
+   :<json string  alias: the VM's alias
+   :<json array   resolvers: list of VM's resolvers
+   :<json array   remove_nics: list of MAC addresses for nics to remove
+   :<json array   update_nics: list of objects MAC addresses and new settings
+   :<json boolean autoboot: weather the vm boots automatically or not
+   :<json array   set_routes: a list of objects with ``{"target": "router"}`` form to set
+   :<json array   remove_routes: a list routing destinations to remove
+   :<json string  owner: UUID if the new owner, will initiate a ownership transfer
+
+
    :<json array resolvers: list of VM's resolvers
    :<json object package: package UUID
 
@@ -367,7 +432,7 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/owner HTTP/1.1
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/owner HTTP/1.1
      accept: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      content-type: application/json
@@ -407,7 +472,7 @@ ____
 
    .. sourcecode:: http
 
-     POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics HTTP/1.1
+     POST /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics HTTP/1.1
      Accept: application/json, text/plain, */*
      Content-Type: application/json;charset=UTF-8
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
@@ -420,7 +485,7 @@ ____
 
      HTTP/1.1 303 See Other
      vary: accept
-     location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
+     location: /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader authorization: Bearer token for OAuth2 auth
@@ -449,7 +514,7 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics/d2:1f:b4:36:47:e2 HTTP/1.1
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/nics/d2:1f:b4:36:47:e2 HTTP/1.1
      Accept: application/json
      Content-Type: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
@@ -569,7 +634,7 @@ ____
 
    .. sourcecode:: http
 
-     POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots HTTP/1.1
+     POST /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots HTTP/1.1
      Accept: application/json
      Content-Type: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
@@ -583,7 +648,7 @@ ____
 
      HTTP/1.1 303 See Other
      vary: accept
-     location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/baff8394-08cc-4612-826e-717e75321650
+     location: /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/baff8394-08cc-4612-826e-717e75321650
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader authorization: Bearer token for OAuth2 auth
@@ -654,7 +719,7 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/ HTTP/1.1
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/snapshots/ HTTP/1.1
      Accept: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
@@ -786,7 +851,7 @@ ____
 
    .. sourcecode:: http
 
-     POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups HTTP/1.1
+     POST /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups HTTP/1.1
      Accept: application/json
      Content-Type: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
@@ -799,7 +864,7 @@ ____
 
      HTTP/1.1 303 See Other
      vary: accept
-     location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b
+     location: /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader authorization: Bearer token for OAuth2 auth
@@ -887,7 +952,7 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b HTTP/1.1
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/backups/e7ae7ad3-686e-4eef-8478-c289b254824b HTTP/1.1
      Accept: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
@@ -956,7 +1021,7 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/metadata/jingles HTTP/1.1
      Accept: application/json
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json
@@ -1070,7 +1135,7 @@ ____
 
    .. sourcecode:: http
 
-     PUT /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/services HTTP/1.1
+     PUT /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/services HTTP/1.1
      Accept: application/json, text/plain, */*
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json;charset=UTF-8
@@ -1096,8 +1161,8 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :<json object action: action that is requested to be taken
-   :<json object service: the service to start/stop/clear
+   :<jsonobj string action: action that is requested to be taken, one of: ``enable``, ``disable``, ``clear``, ``refresh``, ``restart``
+   :<jsonobj string service: the service to start/stop/clear
 
 ____
 
@@ -1114,7 +1179,7 @@ ____
 
    .. sourcecode:: http
 
-     POST /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/fw_rules HTTP/1.1
+     POST /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab/fw_rules HTTP/1.1
      Accept: application/json, text/plain, */*
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json;charset=UTF-8
@@ -1133,7 +1198,7 @@ ____
 
      HTTP/1.1 303 No Content
      vary: accept
-     location: /api/0.1.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
+     location: /api/0.2.0/vms/2ca285a3-05a8-4ca6-befd-78fa994929ab
 
    :reqheader accept: the accepted encoding, valid is ``application/json``
    :reqheader authorization: Bearer token for OAuth2 auth
@@ -1175,7 +1240,7 @@ ____
 
    .. sourcecode:: http
 
-     DELETE /api/0.1.0/delete/2ca285a3-05a8-4ca6-befd-78fa994929ab/fw_rules/39079269 HTTP/1.1
+     DELETE /api/0.2.0/delete/2ca285a3-05a8-4ca6-befd-78fa994929ab/fw_rules/39079269 HTTP/1.1
      Accept: application/json, text/plain, */*
      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
      Content-Type: application/json;charset=UTF-8

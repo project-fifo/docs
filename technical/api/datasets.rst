@@ -157,9 +157,9 @@ ____
 
 ____
 
-.. http:put:: /datasets/(uuid:dataset)
+.. http:put:: /datasets/(uuid:dataset)/networks/(string:nic)
 
-   Cahnges parameters of dataset with given *uuid*.
+   Updates or adds a network interface `nic`
 
    **Related permissions**
 
@@ -169,19 +169,13 @@ ____
 
    .. sourcecode:: http
 
-      PUT /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2 HTTP/1.1
+      PUT /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2/networks/net0 HTTP/1.1
       Accept: application/json
       Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
       Content-Type: application/json
 
       {
-      "networks": 
-       [{
-       "description":"public", 
-       "name":"net0"}, 
-       {"name":"net1",
-       "description":"internal"
-       }]
+        "description":"public"
       }
 
    **Example response**:
@@ -200,9 +194,43 @@ ____
    :status 404: the dataset could not be found.
    :status 503: one or more subsystems could not be reached
 
-   :>json string networks: contains information about the network
    :>json string description: contains a description of the network
-   :>json string name: name of the network
+
+                              ____
+
+.. http:delete:: /datasets/(uuid:dataset)/networks/(string:nic)
+
+   Removes the network interface `nic`
+
+   **Related permissions**
+
+      datasets -> UUID -> edit
+
+   **Example request**:
+
+   .. sourcecode:: http
+
+      DELETE /api/0.1.0/datasets/21274016-2ad3-11e4-9673-e3abad521cc2/networks/net0 HTTP/1.1
+      Accept: application/json
+      Authorization: Bearer gjGGIkIM2m518n4UmEgubIH0H2Xkt1Y6
+
+   **Example response**:
+
+   .. sourcecode:: http
+
+      HTTP/1.1 204 No Content
+      vary: accept
+
+   :reqheader accept: the accepted encoding, valid is ``application/json``
+   :reqheader authorization: Bearer token for OAuth2 auth
+   :reqheader content-type: the returned datatype, usually ``application/json``
+
+   :status 204: no content
+   :status 403: user is not authorized
+   :status 404: the dataset could not be found.
+   :status 503: one or more subsystems could not be reached
+
+   :>json string description: contains a description of the network
 
 ____
 

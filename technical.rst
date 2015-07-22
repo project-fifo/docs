@@ -11,6 +11,7 @@ Technical
    technical/api/sessions.rst
    technical/api/oauth2.rst
    technical/api/users.rst
+   technical/api/clients.rst
    technical/api/roles.rst
    technical/api/orgs.rst
    technical/api/hypervisors.rst

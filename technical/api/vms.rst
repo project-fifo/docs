@@ -876,7 +876,9 @@ ____
    :status 403: user is not authorized
    :status 503: one or more subsystems could not be reached
 
-   :<json string comment: comment for the backup
+   :<json string comment: comment for the backup.
+   :<json string parent: uuid if the parrent UUID.
+   :<json boolean delete: if parent is set this sets weather the parent snapshot will be deleted, if the parnet is not set this decides weather the snapshot of the backup is deleted.
 
 ____
 
@@ -1218,7 +1220,7 @@ ____
                          * An *object* with the key ``subnet`` with the base address of the subnet as *string*, and key ``mask`` with a *number* indicating the relevant bits as value for a subnet as target.
 
    :<json string protocol: the protocol to match, either ``tcp``, ``udp`` or ``icmp``.
-   :<json object/array filter: One of:
+   :<json object/array filters: One of:
 
                             * A list of one or more ports for UDP and TCP.
                             * The string ``all`` for UDP and TCP.

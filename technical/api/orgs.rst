@@ -209,7 +209,7 @@ ____
 ____
 
 
-.. http:put:: /orgs/(uuid:org)/triggers/(uuid:role)/<trigger_type>
+.. http:post:: /orgs/(uuid:org)/triggers/(uuid:role)/<trigger_type>
 
    Adds a new trigger to org with given *uuid*.
 

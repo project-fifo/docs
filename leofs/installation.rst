@@ -100,7 +100,7 @@ Sample contents of ``leo-zone1.json``
     "autoboot": true,
     "brand": "joyent",
     "image_uuid": "d34c301e-10c3-11e4-9b79-5f67ca448df0",
-    "max_physical_memory": 1024,
+    "max_physical_memory": 3072,
     "cpu_cap": 100,
     "alias": "1.leofs",
     "quota": "80",

@@ -377,7 +377,9 @@ There are a lot more calls for fifoadm that can help depending on where things l
 Reporting an issue
 -------------------
 
-`JIRA <https://jira.project-fifo.net/>`_ is the best place to file a report. If you do so it is often helpful to attach some logs. They can be found in the ``/var/logs/{sniffle,snarl,howl,wiggle}`` and ``/var/log/chunter`` (in the FiFo Zone or GZ respectively).
+`JIRA <https://project-fifo.atlassian.net>`_ is the best place to file a report. If you do so it is often helpful to attach some logs. They can be found in the ``/var/logs/{sniffle,snarl,howl,wiggle}`` and ``/var/log/chunter`` (in the FiFo Zone or GZ respectively).
+
+In addition there is a built in command ``fifoadm diag`` that will prepare all your log files and put them in a ``/var/tmp/[$fifoservice]-diag`` directory. This is to aid you in your log collection and submission process and to encourage folks to **always** attach logs when filing bug reports.
 
 
 

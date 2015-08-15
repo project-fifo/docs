@@ -177,7 +177,7 @@ We zlogin to the **LeoFS Zone 1** and add the FiFo package repository then insta
 
 .. warning:: LeoFS uses ``Replicas`` to ensure a certain consistency level for your data. Once the replica value has been set in the below configuration files and your cluster started, it can **NOT** be changed. You can still add storage nodes to the cluster but your resiliency level will always remain constant.
 
-Next we configure all the services in Zone 1 by editing each respective configuration file and changing the following settings:
+Next we configure all the services in Zone 1 by editing each respective configuration file and changing **ONLY** the following settings - the rest of the config options remain **unchanged** :
 
 leo_manager.conf
 ################
